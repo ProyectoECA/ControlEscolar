@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: linear-gradient(to top, #1e355e 0%, white 70%);
 }
 body{
     height: 100vh;
@@ -42,7 +43,7 @@ td, th {
     text-transform: uppercase;
     color: white;
     border-radius: 5px;
-    background-color: #1e355e;
+    background: #000;
     cursor: pointer;
     border: none;
     border-radius: 10px;
@@ -53,8 +54,13 @@ td, th {
     text-transform: uppercase;
     color: white;
     border-radius: 5px;
-    background-color: #1e355e;
+    background: #000;
     cursor: pointer;
     border: none;
     border-radius: 10px;
 }
+.mostrar_datos{
+    background:white;
+
+}
+
