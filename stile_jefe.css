@@ -1,0 +1,47 @@
+nav{
+    max-width: 70%;
+    margin: auto;
+    background-color: #1e355e;
+    font-size: 20px;
+    margin-top: none;
+} 
+
+.menu-horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+} 
+
+.menu-horizontal > li > a{
+     display: block;
+     padding: 10px;
+     color: white;
+     text-decoration: none;
+} 
+
+.menu-horizontal > li:hover{
+    background-color: #1e255e;
+} 
+
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: #1e255e;
+} 
+
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+} 
+
+.menu-vertical li:hover{
+    background-color: #1e355e;
+} 
+
+.menu-vertical > li > a{
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
