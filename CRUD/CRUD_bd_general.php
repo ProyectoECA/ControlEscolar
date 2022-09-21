@@ -18,6 +18,7 @@ class CRUD_general{
             $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->conexion->exec("SET CHARACTER SET UTF8");
             
+            return $this->conexion;
         } catch (Exception $e) {
 
             die("Error:".$e->getMessage());
@@ -42,7 +43,7 @@ class CRUD_general{
         $filas=$sentencia->fetchAll();
         $sentencia = null;
 
-        var_dump($filas);
+        #var_dump($filas);
         return $filas;
        
     }
