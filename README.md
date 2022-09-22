@@ -1,3 +1,4 @@
 # ControlEscolar
 Control escolar Tecnologico Nacional de Nochistlan
-esto es para lo que nosotros vayaos juntando
+esto es para los que van programar la parte de atras
+
