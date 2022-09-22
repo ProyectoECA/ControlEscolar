@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(to top, #1e355e 0%, white 70%);
+}
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, #1e355e 0%, white 70%);
+}
+table{
+    width: 80%;
+    border-collapse: separate;
+    border-spacing: 5px;
+    background:linear-gradient(to top, #1e355e 0%, white 150%);
+    color: #fff;
+    margin: 0 auto;
+
+}
+.titulo_de_tec{
+    position:relative;
+    padding:30px;
+    text-align: center;
+    
+}
+td, th {
+    background: linear-gradient(to top, #1e355e 0%, white 150%);
+    color: #000;
+ }
+ .botones{
+    position: relative;
+    bottom: -2.5%;
+    left: 20%;
+    width: 80%;
+    transform: translate(-10%,0);
+    display: flex;
+    gap: 30px;
+}
+.boton_consultar{
+    width: 25%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background: #000;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+.boton_cancelar{
+    width: 25%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background: #000;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+.mostrar_datos{
+    background:white;
+
+}
