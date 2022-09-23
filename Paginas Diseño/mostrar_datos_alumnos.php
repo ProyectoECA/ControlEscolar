@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/estilo_muestra_datos_alumnos copy.css">
+    <link rel="stylesheet" href="/css/estilo_muestra_datos_alumnos.css">
     <link rel="shortcut icon" href="./logo_pagina/Logo-TecNM.ico" type="image/x-icon">
     <title>Datos Alumnos</title>
 </head>
 <body>
    <h1 class="titulo_de_tec">Tecnologico Superior De Nochistlan</h1>
-    <div class="logo"><img src="logo-tecnm-2018_orig.png" alt="" width="17%" >
+    <div class="logo"><img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
     </div>
     <div class="contenedor-tabla">
         <table class="table-cebra">
