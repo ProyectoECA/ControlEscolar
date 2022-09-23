@@ -60,6 +60,7 @@ body{
 
 .btn{
     width: 70%;
+    height:11%;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: white;
@@ -68,6 +69,8 @@ body{
     cursor: pointer;
     border: none;
     border-radius: 10px;
+    
+    
 } 
 
 .inputs-container a{
@@ -97,6 +100,17 @@ body{
         width: 70%;
     }
 }
+a {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 19.5%;
+    margin-right: 0.625%;
+    text-align: center;
+    line-height: 3;
+    color: white;
+  }
+  
 
 
 /*Comentario*/

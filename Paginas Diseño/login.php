@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos_login.css"> 
+    <link rel="stylesheet" href="/css/estilos_login.css">
     <title>Login</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="login-info-container">
             <div class="social-login">
                 <div class="image">
-                    <img src="logo-tecnm-2018_orig.png" alt="" width="90%" >
+                    <img src="/logo_pagina/Logo-TecNM.ico" alt="" width="90%" >
                 </div>
             </div>
             <form class="inputs-container">

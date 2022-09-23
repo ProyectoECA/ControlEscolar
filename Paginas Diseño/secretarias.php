@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Secretaria</title>
-    <link rel="stylesheet" href="./css/estilo_pagina_secretaria.css">
+    <link rel="stylesheet" href="/css/estilo_pagina_secretaria.css">
 </head>
 <body>
     <div class="Contenedor_datos_secretaria">
         <div class="secre-datos-contenedor">
             <div class="social_secretaria">
                 <div class="Imagen_de_registr">
-                    <img src="logo-tecnm-2018_orig.png" alt="" width="30%" >
+                    <img src="/logo_pagina/Logo-TecNM.ico" alt="" width="50%" >
                 </div>
             </div>
             <from class="cajas_de_texto_secretaria">
