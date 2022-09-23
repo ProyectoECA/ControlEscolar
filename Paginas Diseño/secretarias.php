@@ -19,7 +19,8 @@
                 <input class="caja_texto" type="text" placeholder="Nombre">
                 <input class="caja_texto" type="text" placeholder="Apellido paterno">
                 <input class="caja_texto" type="text" placeholder="Apellido materno">
-                <input class="caja_texto" type="int" placeholder="No.Telefono">
+                <input class="caja_texto" type="int" placeholder="No.Telefono"> 
+                <input class="caja_texto" type="int" placeholder="Dirección" width="10%">
                 <input class="caja_texto" type="text" placeholder="Correo">
             </from>
         </div>
