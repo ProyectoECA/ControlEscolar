@@ -5,30 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/estilo_muestra_datos_maestros.css">
-    <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./logo_pagina/Logo-TecNM.ico" type="image/x-icon">
     <title>Datos Maestros</title>
 </head>
 <body>
-
-    <div class="logo"><img src="/logo_pagina/Logo-TecNM.ico" alt="" width="17%" >
-        <h1 class="titulo_de_tec">Tecnologico Superior De Nochistlan</h1>
+   <h1 class="titulo_de_tec">Tecnologico Superior De Nochistlan</h1>
+    <div class="logo"><img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
     </div>
-    <div>
-        <table >
+    <div class="contenedor-tabla">
+        <table class="table-cebra">
+         <thead>
             <tr>
-                <th> Clave </th>
+                <th class="sticky"> Clave </th>
                 <th> Nombre </th>
                 <th> Apellido paterno </th>
                 <th> Apellido materno </th>
-                <th> Dirrecion </th>
+                <th> Calle </th>
+                <th>Numero</th>
+                <th>Colonia</th>
+                <th>Municipio</th>
+                <th>Estado</th>
+                <th>Código Postal</th>
                 <th> Telefono </th>
                 <th>RFC</th>
                 <th>Titulo</th>
                 <th>Correo</th>
             </tr>
-
+         </thead>
+         <tbody>
             <tr>
-               <td class="mostrar_datos">&nbsp;</td>
+                <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+             </tr>
+             <tr>
+               <td class="sticky">&nbsp;</td>
                <td class="mostrar_datos">&nbsp;</td>
                <td class="mostrar_datos">&nbsp;</td>
                <td class="mostrar_datos">&nbsp;</td>
@@ -37,224 +59,322 @@
                <td class="mostrar_datos">&nbsp;</td>
                <td class="mostrar_datos">&nbsp;</td>
                <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+               <td class="sticky">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td> 
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
+               <td class="mostrar_datos">&nbsp;</td>
             </tr>
             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-             <tr>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-             </tr>
-            <tr>
-                <td><input type="text" name="Clave" size="20"/></td>
-                <td><input type="text" name="Nombre" size="29"/></td>
-                <td><input type="text" name="Apellido_paterno" size="20"/></td>
-                <td><input type="text" name="Apellido_materno" size="20"/></td>
-                <td><input type="text" name=" direccion" size="20"/></td>
+                <td><input type="text" name="clave" size="20"/></td>
+                <td><input type="text" name="nombre" size="29"/></td>
+                <td><input type="text" name="apellido_paterno" size="20"/></td>
+                <td><input type="text" name="apellido_materno" size="20"/></td>
+                <td><input type="text" name="Calle" size="20"/></td>
+                <td><input type="text" name="Numero" size="20"/></td>
+                <td><input type="text" name="Colonia" size="20"/></td>
+                <td><input type="text" name="Municipio" size="20"/></td>
+                <td><input type="text" name="Estado" size="20"/></td>
+                <td><input type="text" name="Codigo_postal" size="20"/></td>
                 <td><input type="int" name=" telefono" size="20"/></td>
                 <td><input type="text" name="rfc" size="20"/></td>
-                <td><input type="text" name="titulo" size="20"/></td>
+                <td><input type="int" name="titulo" size="20"/></td>
                 <td><input type="email" name="Correo" size="20"/></td>
             </tr>
             
-            
+         </tbody>
         </table>
     </div>
-    <div class="botones">
         <button class="boton_consultar">Consultar</button>
         <button class="boton_cancelar">Cancelar</button>
-    </div>
     
 </body>
 </html>
