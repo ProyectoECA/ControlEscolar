@@ -1,133 +1,167 @@
+body{ 
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; 
+    background-image: linear-gradient(to top, #1e355e 0%, white 60%);
+} 
+
 nav{
     max-width: 70%;
     margin: auto;
-    background-color: #1e355e;
+    background-color: #15469b;
     font-size: 20px;
     margin-top: none;
+}  
+
+.logo{ 
+    height: 7em;
+    width: 15em;
+    display: flexs; 
 } 
 
-.menu-horizontal{
-    list-style: none;
+.nombre{ 
+    height: 7em;
+    width: 50em;
+    margin: 0em auto; 
+    color: #1e355e; 
+    justify-content: space-between;
+    overflow: hidden;
     display: flex;
-    justify-content: space-around;
 } 
 
-.menu-horizontal > li > a{
-     display: block;
-     padding: 10px;
-     color: white;
-     text-decoration: none;
+.conte{ 
+    margin: 0.5em auto;
+    display: flex;
+    justify-content: space-between; 
+    overflow: hidden; 
+    text-align: center; 
+    position: relative;
+}
+
+.contenedor-secretarias{
+    height: 29em;
+    width: 20em;
+    margin: 0em auto;
+    border: 2px solid #1e355e ; 
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex; 
+    background-color: white; 
+}  
+
+.contenedor-imageS{
+    height: 15em;
+    width: 17em;
+    margin: 0em auto; 
+}  
+
+.titulo{
+    color: #1e355e;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.contenedor-maestros{
+    height: 29em;
+    width: 20em;
+    margin: 0em auto;
+    border: 2px solid #1e355e ; 
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex; 
+    background-color: white;
+}  
+
+.contenedor-imageM{
+    height: 15em;
+    width: 20em;
+    margin: 0em auto;
 } 
 
-.menu-horizontal > li:hover{
-    background-color: #1e255e;
-} 
+.contenedor-alumnos{
+    height: 29em;
+    width: 20em;
+    margin: 0em auto;
+    border: 2px solid #1e355e; 
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex; 
+    background-color: white;
+}  
 
-.menu-vertical{
+.contenedor-imageA{
+    height: 15em;
+    width: 16em;
+    margin: 0em auto;
+}  
+
+.botonesS{
+    height: 5em;
+    width: 10em; 
+    margin: 18em 78px; 
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex; 
     position: absolute;
-    display: none;
-    list-style: none;
-    width: 200px;
-    background-color: #1e255e;
-} 
-
-.menu-horizontal li:hover .menu-vertical{
-    display: block;
-} 
-
-.menu-vertical li:hover{
-    background-color: #1e355e;
-} 
-
-.menu-vertical > li > a{
-    display: block;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-}
-.contenedor{
-    width:30%;
-    height:30vh;
-    background-image: linear-gradient(to top, #1e355e 0%, white 70%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    
-
-}
-.boton_cambiar_contraseña{
-    padding:10px 60px;
-    background:#fff;
-    border:0;
-    outline:none;
-    cursor:pointer;
-    font-size:22px;
-    font-weight:500;
-    border-radius:30px;
-}
-.input, .btn{
-    width: 80%;
-    height: 3.125rem;
-    font-size: 1em;
-    border-radius: 1px #1e355e;
-}
-.input{
-    width: 70%;
-    height:11%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background: white;
-     letter-spacing: 1px;
-    box-sizing: border-box;
-    transform: translate(30%,100%);
     
 }
-.boton_guardar{
-    width: 70%;
-    height:11%;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: white;
-    border-radius: 5px;
-    background-color: #1e355e;
+/* ###################################################### */
+
+.btn-registrar{
+    height: 40px;
+    width: 15em;  
+    background-color: white; 
+    border: 1px solid #1e355e; 
+    border-radius: 10px;  
     cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    bottom: 4.5%;
-    transform: translate(10%,290%);
-    
-    
-} 
-.popup{
-    width:400px;
-    height:200px;
-    background-image: linear-gradient(to top, #1e355e 0%, white 70%);
-    border-radius:6px;
-    position:absolute;
-    top:50px;
-    left:50%;
-    transform:translate(100%,100%);
-    text-align:center;
-    padding:0 30px 30px;
+}
+
+.btn-registrar span{
+    transition: .4s ease-in-out all;
+    position: absolute;
+    left: 25%; 
+    color: #1e355e; 
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
+}  
+
+.btn-registrar .icono{
+    display: flex;
     align-items: center;
-    visibility:hidden;
-    transition: transform 0.4s,top 0.4s;
+    position: absolute;
+    z-index: 2;
+    left: -40px;
+    transition: .3s ease-in-out all;
+    opacity: 0;
+}  
 
-    
+.btn-registrar:hover .icono{
+    left: calc(100% - 50px); 
+    opacity: 1;
 }
-.open-popup{
-    visibility:visible;
-    top:0%;
-    transform:translate(-50%,130%);
 
-    
+.btn-registrar svg{ 
+    color: white;
+    width: 25px;
+    height: 35px;
+} 
 
+.btn-registrar:hover{
+    background-color: #1e355e;
 }
-.popup img{
-    width: 100px;
-    margin-top:-50%;
-    border-radius:50%;
 
+.btn-registrar:hover span{
+    left: 20px; 
+    color: white;
+} 
+
+.bi {
+    margin-top: -9px;
 }
+
+/* ################################################################3*/
+
+

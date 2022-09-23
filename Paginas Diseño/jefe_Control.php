@@ -17,7 +17,7 @@
     <div class="conte">
         <div class="contenedor-secretarias">
             <div class="contenedor-imageS">
-                <img src="Secretarias.jpg" alt="" width="90%"> 
+                <img src="../css/imagenes/Secretarias.jpg" alt="" width="90%"> 
                 <span class="titulo">SECRETARIAS</span>
             </div> 
 
@@ -36,7 +36,7 @@
 
         <div class="contenedor-maestros">
             <div class="contenedor-imageM">
-                <img src="Maestros.png" alt="" width="100%">  
+                <img src="../css/imagenes/Maestros.png" alt="" width="100%">  
                 <span class="titulo">MAESTROS</span>
             </div> 
             <div class="botonesS" >
@@ -53,7 +53,7 @@
         
         <div class="contenedor-alumnos">
             <div class="contenedor-imageA" style="float: center;">
-                <img src="Alumnos.png" alt="" width="92%"> 
+                <img src="../css/imagenes/Alumnos.png" alt="" width="92%"> 
                 <span class="titulo">ALUMNOS</span>
             </div> 
             <div class="botonesS" >

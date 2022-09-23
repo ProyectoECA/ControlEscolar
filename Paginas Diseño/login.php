@@ -18,7 +18,7 @@
             <form class="inputs-container">
                 <input class="input" type="text" placeholder="Usuario">
                 <input class="input" type="password" placeholder="Contraseña">
-                <a class="btn" href="jefe_Control.html">COMPROBAR</a> 
+                <a class="btn" href="jefe_Control.php">COMPROBAR</a> 
                 <a href="">Olvidaste tu Contraseña</a>
             </form>
         </div>
