@@ -111,11 +111,12 @@ nav{
 /* ###################################################### */
 
 .btn-registrar{
-    height: 55px;
+    height: 40px;
     width: 15em;  
     background-color: white; 
     border: 1px solid #1e355e; 
-    border-radius: 10px; 
+    border-radius: 10px;  
+    cursor: pointer;
 }
 
 .btn-registrar span{
@@ -143,10 +144,8 @@ nav{
 }
 
 .btn-registrar svg{ 
-    height: 3em;
-    width: 15em;
     color: white;
-    width: 35px;
+    width: 25px;
     height: 35px;
 } 
 
@@ -158,6 +157,10 @@ nav{
     left: 20px; 
     color: white;
 } 
+
+.bi {
+    margin-top: -9px;
+}
 
 /* ################################################################3*/
 
