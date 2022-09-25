@@ -8,55 +8,66 @@
     <link rel="stylesheet" href="/css/stile_jefe.css">
 </head>
 <body> 
-    <div class="logo">
-        <img src="/logo_pagina/Logo-TecNM.ico" alt="" width="20%">
-    </div>
-    <nav>
-        <ul class="menu-horizontal">
-            <li>
-                <a href="">SECRETARIAS</a> 
-                <ul class="menu-vertical">
-                    <li><a href="secretarias.html">REGISTRAR</a></li>
-                    <li><a href="mostrar_datos_secretarias.html">CONSULTAR</a></li> 
-                    <li><a href="">MODIFICAR</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="">MAESTROS</a>
-                <ul class="menu-vertical">
-                    <li><a href="">REGISTRAR</a></li>
-                    <li><a href="mostrar_datos_maestros.html">CONSULTAR</a></li> 
-                    <li><a href="">MODIFICAR</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="">ALUMNOS</a>
-                <ul class="menu-vertical">  
-                    <li><a href="mostrar_datos_alumnos.html">CONSULTAR</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <div class="contenedor">
+    <div class="logo" style="float: left;">
+        <img src="logo-tecnm-2018_orig.png" alt="" width="100%">   
+    </div> 
+    <div class="nombre" style="float: center;">
+        <h1><b>TECNOLOGICO DE NOCHISTLAN</b></h1>
+    </div> 
+    <div class="conte">
+        <div class="contenedor-secretarias">
+            <div class="contenedor-imageS">
+                <img src="Secretarias.jpg" alt="" width="90%"> 
+                <span class="titulo">SECRETARIAS</span>
+            </div> 
 
-        <button type="submit" class="boton_cambiar_contraseña"  onclick="openPopup()"> Cambiar contraseña </button>
-        <div class="popup" id="popup">
-            <immg src="/logo_pagina/Logo-TecNM.ico" width="50%">
-                <input class="input" type="password" placeholder="Contraseña Nueva"><br>
-                <input class="input" type="password" placeholder="Confirmacion">
-                <button class="boton_guardar" type="button" onclick="closePopup()">Guardar</button>
+            <div class="botonesS" >
+                <button class="btn-registrar">
+                    <div class="icono" style="margin-top: -5px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="5" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                        </svg>
+                    </div>
+                    <span><b>REGISTRAR</b></span>
+                </button> 
+
+            </div>
+        </div> 
+
+        <div class="contenedor-maestros">
+            <div class="contenedor-imageM">
+                <img src="Maestros.png" alt="" width="100%">  
+                <span class="titulo">MAESTROS</span>
+            </div> 
+            <div class="botonesS" >
+                <button class="btn-registrar">
+                    <div class="icono">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="5" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                        </svg>
+                    </div>
+                    <span><b>REGISTRAR</b></span>
+                </button> 
+            </div> 
         </div>
+        
+        <div class="contenedor-alumnos">
+            <div class="contenedor-imageA" style="float: center;">
+                <img src="Alumnos.png" alt="" width="92%"> 
+                <span class="titulo">ALUMNOS</span>
+            </div> 
+            <div class="botonesS" >
+                <button class="btn-registrar">
+                    <div class="icono">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="5" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 5">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                        </svg>
+                    </div>
+                    <span><b>CONSULTAR</b></span>
+                </button> 
+            </div>
+        </div>
+    </div>    
 
-    </div>
-    <script>
-        let popup=document.getElementById("popup");
-
-        function openPopup(){
-           popup.classList.add("open-popup"); 
-        }
-        function closePopup(){
-           popup.classList.remove("open-popup"); 
-        }
-    </script>
 </body>
-</html>
+</html>  
