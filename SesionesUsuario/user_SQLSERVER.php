@@ -5,40 +5,64 @@ include_once '../CRUD/CRUD_bd_SQLServer.php';
 
 
 class User extends CRUD_SQL_SERVER {
-    private $nombre;
+
     private $username;
+    private $nivel;
+    
+    public function userComprobacionSecretaria($user, $pass)
+    {
+        $query = "SELECT * FROM [LogSecretarias] WHERE IdSec=?";
+        $parametros = array($user);
+        $datos = $this->Buscar($query, $parametros);
 
-    public function InsertarUsuario($user, $pass, $correo){
-        /** se hace uso de las transacciones para poder insertar en dos tablas a al vez */
+        if(password_verify($pass,trim($datos[0]["PassSec"]))){
 
-        $password_hash = password_hash($pass, PASSWORD_DEFAULT);
-        
-        /*Inicio de la transaccion */
-        if ( sqlsrv_begin_transaction($this->conexion) === false ) {
-            die( print_r( sqlsrv_errors(), true ));
-        }
-
-        /* colocamos y ejecutamos la primera insercion */
-        $sql1 = "INSERT INTO [AdmCor] (UsuaAdm,Correo) VALUES(?,?)";
-        $stmt1 = sqlsrv_query( $this->conexion, $sql1, array($user,$correo));
-
-        /* colocamos y ejecutamos la segunda insercion */
-        $sql2 = "INSERT INTO [LogAdmin] (UsuaAdm,PassAdm) VALUES(?,?)";
-        $stmt2 = sqlsrv_query( $this->conexion, $sql2, array($user,$password_hash));
-
-        /* si las dos ejecuciones funcionaron, hacemos la transaccion */
-        /* si no jala  pondremos un rollback */
-        if( $stmt1 && $stmt2 ) {
-            sqlsrv_commit( $this->conexion );
-            echo "Transaccion hecha<br />";
+            $this->setUser($user,2);
             return true;
-        } else {
-            sqlsrv_rollback( $this->conexion );
-            echo "Transaccion rolled back.<br />";
+        }else{
             return false;
         }
     }
-    public function userComprobacion($user, $pass){
+
+    public function userComprobacionMaestro($user, $pass)
+    {
+        $query = "SELECT * FROM [LogMaestros] WHERE ClaveMa=?";
+        $parametros = array($user);
+        $datos = $this->Buscar($query, $parametros);
+       
+        
+
+        if(password_verify($pass,trim($datos[0]["PassMa"]))){
+            $this->setUser($user,3);
+
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    
+
+    public function userComprobacionAlumno($user, $pass)
+    {
+        $query = "SELECT * FROM [LogAlumnos] WHERE NoControl=?";
+        $parametros = array($user);
+        $datos = $this->Buscar($query, $parametros);
+       
+        var_dump($datos[0]["PassAlu"]);
+
+        if(password_verify($pass,trim($datos[0]["PassAlu"]))){
+            echo "Entraste al sistema";
+            $this->setUser($user,4);
+
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+    
+    public function userComprobacionAdmin($user, $pass){
         
         /**
          * este metodo sirve para saber si el usuario y la contraseña coinciden
@@ -48,46 +72,50 @@ class User extends CRUD_SQL_SERVER {
         $parametros = array($user);
         $datos = $this->Buscar($query, $parametros);
        
+        //var_dump($datos[0]["PassAdm"]);
 
         if(password_verify($pass,trim($datos[0]["PassAdm"]))){
-            echo "Entraste al sistema";
+            $this->setUser($user,1);
 
+            return true;
         }else{
-            echo "Denegada";
+            return false;
         }
-
-
-       
         
     
     }
 
-
-    public function setUser($user)
+    public function setUser($user,$nivel)
     {
-        $query = $this->conexionBD()->prepare("SELECT * FROM usuarios_pass WHERE USUARIOS=:user");
-        $query->execute(['user'=>$user]);
-        foreach ($query as $currentUser) {
-            $this->nombre = $currentUser['USUARIOS'];
-            $this->username = $currentUser['Perfil'];
-           
-        }
+        /**
+         * coloca en las variables de sesion el nombre del usuario y su usuario
+         */
+        $this->username = $user;
+        $this->nivel = $nivel;
+        
     }
-    public function getNombre(){
-        return $this->nombre;
+    public function getUsername(){
+        return $this->username;
     }
+    public function getNivel(){
+        return $this->nivel;
+    }
+ 
     
-}/*
-$base = new User();
+}
+/*$base = new User();
 $base->conexionBD();
+$base->userComprobacion("H2345","8900");
 #$base->InsertarUsuario("HWR12",'12345',"maria@gmail.com");
-$base->userComprobacion("HWR12",'12345');
+#$base->Insertar_Eliminar_Actualizar("INSERT INTO [AdmCor] (UsuaAdm,Correo) VALUES(?,?)", array("H2345","soloun@gmail.com"));
+#$base->Insertar_Eliminar_Actualizar("INSERT INTO [LogAdmin] (UsuaAdm,PassAdm) VALUES(?,?)",array("H2345","8900"));
+#$base->userComprobacion("HWR12",'12345');
 #$base->InsertarUsuario("RH005",'12345',"mariana@gmail.com");
 #$base->userComprobacion("RH005",'12345');
 
 $base->CerrarConexion();
 
-*/
 
+*/
 
 ?>
