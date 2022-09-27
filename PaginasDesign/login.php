@@ -15,10 +15,10 @@
                     <img src="/logo_pagina/Logo-TecNM.ico" alt="" width="90%" >
                 </div>
             </div>
-            <form action="../baseDatosArchivoBacpac/InicioSesion.php" class="inputs-container">
+            <form action="jefe_Control.php" class="inputs-container">
                 <input class="input" type="text" placeholder="Usuario" id="Usua">
                 <input class="input" type="password" placeholder="Contraseña" id="Contra">
-                <a class="btn" href="../baseDatosArchivoBacpac/InicioSesion.php">COMPROBAR</a> 
+                <a class="btn" href="jefe_Control.php">COMPROBAR</a> 
                 <a href="">Olvidaste tu Contraseña</a>
             </form>
         </div>
