@@ -1,5 +1,7 @@
 <?php
-
+/*
+* Este archivo crea las consultas para una base de datos en phpmyadmin
+*/
 define("HOST", "mysql:host=localhost;");
 define("DBNAME", "dbname=pruebas");
 define("USUARIO", "root");
