@@ -10,11 +10,11 @@ class Conexion{
         
         if($connectionInfo)
         {
-            echo "CONEXION EXITOSA";
+            //echo "CONEXION EXITOSA";
         }
         else{
-            echo "FALLO EN LA CONEXION";
-            die(print_r(sqlsrv_errors(), true));
+            //echo "FALLO EN LA CONEXION";
+            //die(print_r(sqlsrv_errors(), true));
         }
 
     } 
