@@ -68,7 +68,26 @@
                 </button> 
             </div>
         </div>
-    </div>    
+    </div>  
+    <div class="contenedor">
+
+    <button type="submit" class="boton_cambiar_contraseña"  onclick="openPopup()"> Cambiar contraseña </button>
+        <div class="popup" id="popup">
+                <input class="input" type="password" placeholder="Contraseña Nueva"><br>
+                <input class="input" type="password" placeholder="Confirmacion">
+                <button class="boton_guardar" type="button" onclick="closePopup()">Guardar</button>
+        </div> 
+    </div>     
+    <script>
+        let popup=document.getElementById("popup");
+    
+        function openPopup(){
+            popup.classList.add("open-popup"); 
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup"); 
+        }
+    </script>     
 
 </body>
 </html>  
