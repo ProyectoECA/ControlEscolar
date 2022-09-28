@@ -333,26 +333,28 @@
                 <td class="mostrar_datos">&nbsp;</td>
             </tr>
             <tr>
-                <td><input type="text" name="numero_de_control" size="20"/></td>
-                <td><input type="text" name="nombre" size="29"/></td>
-                <td><input type="text" name="apellido_paterno" size="20"/></td>
-                <td><input type="text" name="apellido_materno" size="20"/></td>
-                <td><input type="text" name="Calle_y_numero" size="20"/></td>
-                <td><input type="text" name="Colonia" size="20"/></td>
-                <td><input type="text" name="Municipio" size="20"/></td>
-                <td><input type="text" name="Estado" size="20"/></td>
-                <td><input type="text" name="Codigo_postal" size="20"/></td>
-                <td><input type="int" name=" telefono" size="20"/></td>
-                <td><input type="text" name="nombre_del_padre_o_tutor" size="20"/></td>
-                <td><input type="int" name="telefono_padre_o_tutor" size="20"/></td>
-                <td><input type="email" name="Correo" size="20"/></td>
             </tr>
             
          </tbody>
         </table>
     </div>
-        <button class="boton_consultar">Consultar</button>
-        <button class="boton_cancelar">Cancelar</button>
+        <button type="submit" class="boton_consultar" onclick="openPopup()">Consultar</button>
+        <div class="popup" id="popup">
+          <input class="input" type="text" placeholder="Numero de Control"><br>
+          <button class="boton_confirmar" type="button" onclick="closePopup()">Confirmar</button>
+  </div> 
+        <button class="boton_cancelar"><a href="jefe_Control.html">Cancelar</button></a> 
+
+        <script>
+          let popup=document.getElementById("popup");
+      
+          function openPopup(){
+              popup.classList.add("open-popup"); 
+          }
+          function closePopup(){
+              popup.classList.remove("open-popup"); 
+          }
+      </script>         
     
 </body>
 </html>
