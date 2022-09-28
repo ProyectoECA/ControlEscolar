@@ -9,18 +9,28 @@
 </head>
 <body>
     <div class="login-container">
+       
         <div class="login-info-container">
             <div class="social-login">
                 <div class="image">
                     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="90%" >
                 </div>
             </div>
-            <form class="inputs-container">
-                <input class="input" type="text" placeholder="Usuario">
-                <input class="input" type="password" placeholder="Contraseña">
-                <a class="btn" href="jefe_Control.html">COMPROBAR</a> 
+            <!-- codigo php -->
+                <?php
+                    if(isset($errorLogin)){
+                        echo "<p class=''>" . $errorLogin ."</p>";
+                    }
+                ?>
+            <!--  ######################  -->
+            <form class="inputs-container" action="" method="POST">
+                <input class="input" type="text"  name="usuario" placeholder="Usuario">
+                <input class="input" type="password" name="password" placeholder="Contraseña">
+                <input  class="btn" type="submit" value="COMPROBAR">
+                <!--<a class="btn" href="jefe_Control.html">COMPROBAR</a> -->
                 <a href="">Olvidaste tu Contraseña</a>
             </form>
+           
         </div>
     </div>
 </body>

@@ -42,7 +42,7 @@ class CRUD_SQL_SERVER{
                     }
                 }
             }else{
-
+                $datos= array();
                 while($row = sqlsrv_fetch_array($stmt)) {
                     
                     
