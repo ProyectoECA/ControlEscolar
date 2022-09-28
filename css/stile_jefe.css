@@ -160,7 +160,21 @@ nav{
 
 .bi {
     margin-top: -9px;
+} 
+
+span a{
+    color: #000;
+    text-decoration: none;
 }
+
+span a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
 
 /* ################################################################3*/
 
