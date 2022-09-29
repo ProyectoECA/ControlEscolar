@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/estilo_muestra_datos_maestros.css">
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
-    <title>Datos Maestros</title>
+    <title>Datos Secretaria</title>
 </head>
 <body>
-   <h1 class="titulo_de_tec">Tecnologico Superior De Nochistlan</h1>
-    <div class="logo"><img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
-    </div>
+  <div class="Contenedor_titulo">
+    <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
+  </div>
+  <div class="contenedor_titulo_2">
+    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlan</h1>
+  </div>
     <div class="contenedor-tabla">
         <table class="table-cebra">
          <thead>
             <tr>
-                <th class="sticky"> Clave </th>
+                <th class="sticky"> No.Empleado </th>
                 <th> Nombre </th>
                 <th> Apellido paterno </th>
                 <th> Apellido materno </th>
@@ -25,9 +28,7 @@
                 <th>Municipio</th>
                 <th>Estado</th>
                 <th>Código Postal</th>
-                <th> Telefono </th>
-                <th>RFC</th>
-                <th>Titulo</th>
+                <th> Teléfono </th>
                 <th>Correo</th>
             </tr>
          </thead>
@@ -44,10 +45,21 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
              </tr>
              <tr>
+              <td class="sticky">&nbsp;</td>
+              <td class="mostrar_datos">&nbsp;</td>
+              <td class="mostrar_datos">&nbsp;</td>
+              <td class="mostrar_datos">&nbsp;</td>
+              <td class="mostrar_datos">&nbsp;</td>
+              <td class="mostrar_datos">&nbsp;</td>
+              <td class="mostrar_datos">&nbsp;</td>
+              <td class="mostrar_datos">&nbsp;</td>
+              <td class="mostrar_datos">&nbsp;</td> 
+              <td class="mostrar_datos">&nbsp;</td>
+              <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
                 <td class="sticky">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
@@ -57,8 +69,6 @@
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
               </tr>
@@ -74,6 +84,17 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
               </tr>
@@ -89,6 +110,17 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
               </tr>
@@ -104,6 +136,17 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
               </tr>
@@ -119,6 +162,17 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
               </tr>
@@ -134,6 +188,17 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
               </tr>
@@ -149,6 +214,17 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
               </tr>
@@ -164,6 +240,17 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
               </tr>
@@ -179,8 +266,6 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
               </tr>
               <tr>
                 <td class="sticky">&nbsp;</td>
@@ -194,8 +279,6 @@
                 <td class="mostrar_datos">&nbsp;</td> 
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
               </tr>
               <tr>
                 <td class="sticky">&nbsp;</td>
@@ -207,139 +290,44 @@
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="sticky">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="sticky">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="sticky">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="sticky">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="sticky">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="sticky">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="sticky">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="sticky">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td> 
-                <td class="mostrar_datos">&nbsp;</td>
-                <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
             </tr>
+            <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
             <tr>
+                
             </tr>
             
          </tbody>
         </table>
     </div>
-        <button class="boton_consultar">Consultar</button>
-        <button class="boton_cancelar">Cancelar</button>
-    
+    <button type="submit" class="boton_consultar" onclick="openPopup()">Consultar</button>
+    <div class="popup" id="popup">
+      <input class="input" type="text" placeholder="Número de Control"><br>
+      <input class="input" type="text" placeholder="Nombre "><br>
+      <button class="boton_confirmar" type="button" onclick="closePopup()">Confirmar</button>
+</div> 
+    <button class="boton_cancelar"><a href="jefe_Control.html">Cancelar</button></a> 
+
+    <script>
+      let popup=document.getElementById("popup");
+  
+      function openPopup(){
+          popup.classList.add("open-popup"); 
+      }
+      function closePopup(){
+          popup.classList.remove("open-popup"); 
+      }
+  </script>  
 </body>
 </html>

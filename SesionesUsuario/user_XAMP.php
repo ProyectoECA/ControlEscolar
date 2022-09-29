@@ -8,8 +8,9 @@ class User extends CRUD_general {
 
     public function userExist($user, $pass){
         //$md5pass = md5($pass);
+        $password = password_hash($pass, PASSWORD_DEFAULT);
         $query = $this->conexionBD()->prepare("SELECT * FROM usuarios_pass WHERE USUARIOS=:user AND PASSWORD= :pass");
-        $query->execute(['user'=>$user, "pass"=>$pass]);
+        $query->execute(['user'=>$user, "pass"=>$password]);
 
         if($query->rowCount()){
             return true;

@@ -183,7 +183,7 @@ span a:hover {
 /* ################################################################3*/
 
 .boton_cambiar_contraseña{
-    padding:10px 60px;
+    padding:2px 60px;
     background:#1e355e;
     border:0;
     outline:none;
@@ -192,7 +192,19 @@ span a:hover {
     font-weight:200;
     border-radius:30px;
     color: white;
-    transform: translate(300%,-1190%);
+    transform: translate(300%,-1750%);
+}
+.boton_cerrar_sesion{
+    padding:2px 60px;
+    background:#1e355e;
+    border:0;
+    outline:none;
+    cursor:pointer;
+    font-size:22px;
+    font-weight:200;
+    border-radius:30px;
+    color: white;
+    transform: translate(390%,-1999%);
 }
 .input, .btn{
     width: 80%;
