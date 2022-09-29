@@ -14,7 +14,7 @@ if (isset($_SESSION['user'])) {
     switch($user->getNivel()){
 
         case 1:
-            include_once "PaginasVista/jefe_Control.php";
+            include_once "PaginasVista/jefe_Control.html";
             break;
         case 2:
             include_once "PaginasVista/secretarias.php";
@@ -43,7 +43,7 @@ if (isset($_SESSION['user'])) {
             $sesion->setUser($usuario,1);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            include_once "PaginasVista/jefe_Control.php";
+            include_once "PaginasVista/jefe_Control.html";
 
         }else if($user->userComprobacionMaestro($usuario,$pass)){
 

@@ -62,14 +62,14 @@ class User_password extends CRUD_SQL_SERVER{
         return $resultado;
     }
 }
-
+/*
 $user = new User_password();
 $user->conexionBD();
 $user->InsertarUsuarioAdministrador("RH000", "123","maria@gmail.com"); 
 #$user->InsertarUsuarioAlumno("TNM1234567890", "0987");
 #$user->InsertarUsuarioMaestro("RH001", "3456");
 #$user->InsertarUsuarioSecretaria("RH012","hola");
-$user->CerrarConexion();
+$user->CerrarConexion();*/
 
 
 ?>

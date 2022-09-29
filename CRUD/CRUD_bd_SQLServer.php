@@ -1,6 +1,6 @@
 <?php
 
-define("ServerName", 'DESKTOP-J1AR91P');
+define("ServerName", 'localhost');
 define("Database", "ConEscolarNoc");
 define("UID", "Admini");
 define("PWD", "control2022");
