@@ -112,7 +112,7 @@
     <button type="submit" class="boton_cambiar_contraseña"  onclick="openPopup()"> Cambiar contraseña </button>
         <div class="popup" id="popup">
                 <input class="input" type="password" placeholder="Contraseña Nueva"><br>
-                <input class="input" type="password" placeholder="Confirmacion">
+                <input class="input" type="password" placeholder="Confirmación">
                 <button class="boton_guardar" type="button" onclick="closePopup()">Guardar</button>
         </div> 
     </div>  
