@@ -7,12 +7,17 @@ class UserSession{
         session_start();
 
     }
-    public function setCurrentUser($user){
-        $_SESSION['user'] = $user;
+    public function setUser($user,$nivel){
+        $_SESSION['user'][0] = $user;
+        $_SESSION['user'][1] = $nivel;
 
     }
-    public function getCurrentUser(){
-        return $_SESSION["user"];
+    public function getUser(){
+        return $_SESSION["user"][0];
+    }
+    public function getUserNivel()
+    {
+        return $_SESSION["user"][1];
     }
     public function closeSession(){
         session_unset();//borra lo que hay dentro de la sesion
