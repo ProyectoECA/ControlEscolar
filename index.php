@@ -14,17 +14,17 @@ if (isset($_SESSION['user'])) {
     switch($user->getNivel()){
 
         case 1:
-            include_once "PaginasVista/jefe_Control.html";
+            include_once "PaginasVista/jefe_Control.php";
             break;
         case 2:
-            include_once "PaginasVista/secretarias.html";
+            include_once "PaginasVista/secretarias.php";
             break;
         case 3:
-            include_once "PaginasVista/maestros_datos_per.html";
+            include_once "PaginasVista/maestros_datos_per.php";
             break;
 
         case 4:
-            include_once "PaginasVista/mostrar_datos_alumnos.html";
+            include_once "PaginasVista/mostrar_datos_alumnos.php";
             break;
 
     }
@@ -43,21 +43,21 @@ if (isset($_SESSION['user'])) {
             $sesion->setUser($usuario,1);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            include_once "PaginasVista/jefe_Control.html";
+            include_once "PaginasVista/jefe_Control.php";
 
         }else if($user->userComprobacionMaestro($usuario,$pass)){
 
             $sesion->setUser($usuario,3);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            include_once "PaginasVista/maestros_datos_per.html";
+            include_once "PaginasVista/maestros_datos_per.php";
 
         }else if($user->userComprobacionSecretaria($usuario,$pass)){
 
             $sesion->setUser($usuario,2);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            include_once "PaginasVista/secretarias.html";
+            include_once "PaginasVista/secretarias.php";
 
         }else{
             $errorLogin ="Nombre de usuario y/o password incorrecto";
@@ -71,7 +71,7 @@ if (isset($_SESSION['user'])) {
             $sesion->setUser($usuario,4);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            include_once "PaginasVista/mostrar_datos_alumnos.html";
+            include_once "PaginasVista/mostrar_datos_alumnos.php";
 
         }else{
             $errorLogin ="Nombre de usuario y/o password incorrecto";

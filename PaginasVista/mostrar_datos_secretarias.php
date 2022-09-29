@@ -9,9 +9,12 @@
     <title>Datos Secretaria</title>
 </head>
 <body>
-   <h1 class="titulo_de_tec">Tecnologico Superior De Nochistlan</h1>
-    <div class="logo"><img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
-    </div>
+  <div class="Contenedor_titulo">
+    <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
+  </div>
+  <div class="contenedor_titulo_2">
+    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlan</h1>
+  </div>
     <div class="contenedor-tabla">
         <table class="table-cebra">
          <thead>
@@ -20,12 +23,12 @@
                 <th> Nombre </th>
                 <th> Apellido paterno </th>
                 <th> Apellido materno </th>
-                <th> Calle y numero </th>
+                <th> Calle y número </th>
                 <th>Colonia</th>
                 <th>Municipio</th>
                 <th>Estado</th>
                 <th>Código Postal</th>
-                <th> Telefono </th>
+                <th> Teléfono </th>
                 <th>Correo</th>
             </tr>
          </thead>
@@ -290,25 +293,41 @@
                 <td class="mostrar_datos">&nbsp;</td>
                 <td class="mostrar_datos">&nbsp;</td>
             </tr>
+            <td class="sticky">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td> 
+                <td class="mostrar_datos">&nbsp;</td>
+                <td class="mostrar_datos">&nbsp;</td>
             <tr>
-                <td><input type="text" name="numero_de_empleado" size="20"/></td>
-                <td><input type="text" name="nombre" size="29"/></td>
-                <td><input type="text" name="apellido_paterno" size="20"/></td>
-                <td><input type="text" name="apellido_materno" size="20"/></td>
-                <td><input type="text" name="Calle_y_numero" size="20"/></td>
-                <td><input type="text" name="Colonia" size="20"/></td>
-                <td><input type="text" name="Municipio" size="20"/></td>
-                <td><input type="text" name="Estado" size="20"/></td>
-                <td><input type="text" name="Codigo_postal" size="20"/></td>
-                <td><input type="int" name=" telefono" size="20"/></td>
-                <td><input type="email" name="Correo" size="20"/></td>
+                
             </tr>
             
          </tbody>
         </table>
     </div>
-        <button class="boton_consultar">Consultar</button>
-        <button class="boton_cancelar">Cancelar</button>
-    
+    <button type="submit" class="boton_consultar" onclick="openPopup()">Consultar</button>
+    <div class="popup" id="popup">
+      <input class="input" type="text" placeholder="Número de Control"><br>
+      <input class="input" type="text" placeholder="Nombre "><br>
+      <button class="boton_confirmar" type="button" onclick="closePopup()">Confirmar</button>
+</div> 
+    <button class="boton_cancelar"><a href="jefe_Control.html">Cancelar</button></a> 
+
+    <script>
+      let popup=document.getElementById("popup");
+  
+      function openPopup(){
+          popup.classList.add("open-popup"); 
+      }
+      function closePopup(){
+          popup.classList.remove("open-popup"); 
+      }
+  </script>  
 </body>
 </html>
