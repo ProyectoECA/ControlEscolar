@@ -117,6 +117,7 @@
         </div> 
     </div>  
     <div>
+        <a href="../SesionesUsuario/logut.php"></a>
         <button class="boton_cerrar_sesion" type="button">Cerrar sesión</button>
     </div>   
     <script>
