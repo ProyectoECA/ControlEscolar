@@ -12,7 +12,7 @@ class Insertar_Secretaria{
         echo $no_empleado;
         $nombre=$_POST["nombre"];
         $ape_Pat=$_POST["apellidoP"];
-        $ape_Mat=$_POST["appelidoM"];
+        $ape_Mat=$_POST["apellidoM"];
         $calle=$_POST["calle"];
         $colonia=$_POST["colonia"];
         $municipio=$_POST["municipio"];
@@ -39,6 +39,33 @@ class Insertar_Secretaria{
         $query="INSERT INTO [Secretarias] (IdSec,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia) VALUES (?,?,?,?,?,?,?,?)";
         $parametros=array($no_empleado,$nombre,$ape_Pat,$ape_Mat,$telefono,$email,$calle,$colonia);
         $stmt = sqlsrv_query($conexion, $query, $parametros);
+
+        $query="SELECT CP,Municipio,Estado FROM [Lugar] where cp=?";
+        $parametros=array($codPos);
+        $stmt = sqlsrv_query($conexion, $query, $parametros);
+        $datos=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
+    
+        if(empty($datos)){
+            $query="INSERT INTO [LugSecretarias], (IdSec,CP)";
+            $parametros=array($no_empleado,$codPos);
+            $stmt=sqlsrv_query($conexion,$query,$parametros);
+            $resul=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
+            if (empty($resul)){
+                echo json_encode('registro');
+            }
+            else{
+                
+            }
+        }
+        else{
+            $query="INSERT INTO [Lugar] (CP,Municipio,Estado)";
+            $parametros=array($codPos,$municipio,$estado);
+            $stmt = sqlsrv_query($conexion, $query, $parametros);
+
+            $query="INSERT INTO [LugSecretarias], (IdSec,CP)";
+            $parametros=array($no_empleado,$codPos);
+            $stmt=sqlsrv_query($conexion,$query,$parametros);
+        }
         
         include_once '../PaginasVista/secretarias.php';
     }
