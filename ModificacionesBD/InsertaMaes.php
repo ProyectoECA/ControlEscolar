@@ -1,11 +1,9 @@
 <?php
+//nclude_once '../CRUD/CRUD_bd_SQLServer.php';
 
-include_once '../CRUD/CRUD_bd_SQLServer.php';
+class Insertar_Maestros {
 
-class Inserta_Maestros  extends CRUD_SQL_SERVER{
-
-    function Insertando(){
-        $this->conexionBD();
+    function insertando(){
 
         $clave = $_POST["clave"]; 
         $nombre = $_POST["nombre"]; 
@@ -21,48 +19,21 @@ class Inserta_Maestros  extends CRUD_SQL_SERVER{
         $titulo = $_POST["titulo"]; 
         $correo = $_POST["correo"]; 
         
+
+        $serverName='localhost';
+        //$serverName='DESKTOP-J1AR91P';
+        $connectionInfo = array("Database"=>"ConEscolarNoc", "UID"=>"Admini", "PWD"=>"control2022", "CharacterSet"=>"UTF-8");
+        $conexion=sqlsrv_connect($serverName, $connectionInfo);
         $query= "INSERT INTO [Maestros], (ClaveMa,Nombre,ApePaterno,ApeMaterno,RFC, Titulo,Telefono,Correo,Calle,Colonia) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $parametros=array($clave,$nombre,$apePaterno,$apeMaterno,$rfc,$titulo,$telefono,$correo,$calle,$colonia);
-
-        #INSERTA EN LA TABLA SECRETARIAS
-        $this->Insertar_Eliminar_Actualizar($query,$parametros);
-
-        #VERIFICA SI YA ESTA REGISTRADO EL MUNICIPIO EN LA BD
-        $query="SELECT * FROM [Lugar] where cp=?";
-        $cp='99720';
-        echo $cp;
-        $parametros=array($cp);
-        $datos = $this->Buscar($query,$parametros);
-        echo "BUSCANDO CODIGO";
-        if(count($datos) > 0){
-             #HACE LA RELACION DEL MAESTRO CON LUGAR   TABLA LUGMAESTROS
-            $query="INSERT INTO [LugMaestros], (ClaveMa, CP)";
-            $parametros=array($clave,$cp);
-            $this->Insertar_Eliminar_Actualizar($query,$parametros);
-            echo "SI EXISTE EL CODIGO POSTAL";
-
-        }
-        else{
-            #INSERTA EL CP, MUNICIPIO Y ESTADO EN LUGAR
-            $query="INSERT INTO [Lugar], (CP, Municipio, Estado)";
-            $parametros=array($cp, $municipio, $estado);
-            $this->Insertar_Eliminar_Actualizar($query,$parametros);
-            
-            #HACE LA RELACION DEL MAESTRO CON LUGAR   TABLA LUGMAESTROS
-            $query="INSERT INTO [LugMaestros], (ClaveMa, CP)";
-            $parametros=array($clave,$cp);
-            $this->Insertar_Eliminar_Actualizar($query,$parametros);
-            echo "NO EXISTE EL CODIGO POSTAL";
-
-            #INSERTA EL USUARIO Y CONTRASEÑA
-            $query="INSERT INTO [Lugar], (CP, Municipio, Estado)";
-            $parametros=array($cp, $municipio, $estado);
-            $this->Insertar_Eliminar_Actualizar($query,$parametros);
-
-            
-        }
-        $this->CerrarConexion();
+        $stmt= sqlsrv_query($conexion,$query, $parametros);
+    
+       
     }
+}
+
+    $in= new Insertar_Maestros;
+    $in->insertando();
 
         
 
@@ -70,7 +41,8 @@ class Inserta_Maestros  extends CRUD_SQL_SERVER{
 
         
 
-    } 
+    
+
 
     
 
