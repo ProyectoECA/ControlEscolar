@@ -31,7 +31,7 @@
             </form>
         </div>
     </div>
-    <input type="submit" value="Guardar" name="guarda_sec" class="btn">
+    <input type="submit" value="Guardar" name="guarda_sec" class="btn" >
     <input type="submit" value="Cancelar" name="cancela_sec" class="btn">
 
     
