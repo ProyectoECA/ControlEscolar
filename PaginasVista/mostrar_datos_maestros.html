@@ -13,7 +13,7 @@
     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
   </div>
   <div class="contenedor_titulo_2">
-    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlan</h1>
+    <h1 class="titulo_de_tec">TECNOLÓGICO DE NOCHISTLÁN</h1>
   </div>
     <div class="contenedor-tabla">
         <table class="table-cebra">
