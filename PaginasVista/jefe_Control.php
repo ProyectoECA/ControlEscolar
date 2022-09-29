@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JEFE ADMINISTRATIVO</title> 
-    <link rel="stylesheet" href="/css/stile_jefe.css">
+    <link rel="stylesheet" href="../css/stile_jefe.css">
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
-</head>
+</head> 
 <body> 
     <div class="logo" style="float: left;">
         <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
@@ -21,7 +21,6 @@
                 <img src="/img/Secretarias.jpg" alt="" width="90%"> 
                 <span class="titulo">SECRETARIAS</span>
             </div> 
-
             <div class="botonesS" >
                 <button class="btn-registrar">
                     <div class="icono" style="margin-top: -5px;">
@@ -68,7 +67,29 @@
                 </button> 
             </div>
         </div>
-    </div>    
+    </div>  
+    <div class="contenedor">
+
+    <button type="submit" class="boton_cambiar_contraseña"  onclick="openPopup()"> Cambiar contraseña </button>
+        <div class="popup" id="popup">
+                <input class="input" type="password" placeholder="Contraseña Nueva"><br>
+                <input class="input" type="password" placeholder="Confirmacion">
+                <button class="boton_guardar" type="button" onclick="closePopup()">Guardar</button>
+        </div> 
+    </div>  
+    <div>
+        <button class="boton_cerrar_sesion" type="button">Cerrar sesión</button>
+    </div>   
+    <script>
+        let popup=document.getElementById("popup");
+    
+        function openPopup(){
+            popup.classList.add("open-popup"); 
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup"); 
+        }
+    </script>     
 
 </body>
 </html>  
