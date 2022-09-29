@@ -26,14 +26,12 @@
                 <input class="caja_texto" type="text" placeholder="Estado" name="estado" id="estado"><br>
                 <input class="caja_texto" type="int" placeholder="Codigo postal" name="cp" id="cp"><br>
                 <input class="caja_texto" type="int" placeholder="No.Telefono" name="tel" id="tel"><br>
-                <input class="caja_texto" type="email" placeholder="Correo" name="correo" id="correo">
-                <input type="submit" value="Guardar" name="guarda_sec" class="btn">
+                <input class="caja_texto" type="email" placeholder="Correo" name="correo" id="correo"><br><br>
+                <input type="submit" value="Guardar" name="guarda_sec" class="btn" >
+                <input type="submit" value="Cancelar" name="cancela_sec" class="btn">
             </form>
         </div>
     </div>
-    <input type="submit" value="Guardar" name="guarda_sec" class="btn" >
-    <input type="submit" value="Cancelar" name="cancela_sec" class="btn">
-
     
 </body>
 </html>
