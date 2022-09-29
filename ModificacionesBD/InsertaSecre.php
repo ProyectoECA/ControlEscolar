@@ -9,10 +9,10 @@ define("CharacterSet1", 'UTF-8');
 
 class Insertar_Secretaria{
     function insertando(){
-
         $conexion_pass = new User_password;
         $conexion_pass->conexionBD();
 
+        #RECEPCION DE DATOS
         $no_empleado=$_POST["numeroEmple"];
         $nombre=$_POST["nombre"];
         $ape_Pat=$_POST["apellidoP"];
@@ -24,18 +24,6 @@ class Insertar_Secretaria{
         $codPos=$_POST["cp"];
         $telefono=$_POST["tel"];
         $email=$_POST["correo"];
-        
-        /*$no_empleado=005;
-        $nombre="yo";
-        $ape_Pat="fvbn";
-        $ape_Mat="dfgbnm";
-        $calle="vbnm";
-        $colonia="cvbnm";
-        $municipio="dvbhjnkm";
-        $estado="vbnm";
-        $codPos="95625";
-        $telefono="26262622";
-        $email="fghyjmnbg";*/
 
         #INSERTA EN TABLA SECRETARIAS
         $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
@@ -71,7 +59,8 @@ class Insertar_Secretaria{
             $conexion_pass->CerrarConexion();
         }
         sqlsrv_close($conexion);
-        include '../PaginasVista/secretarias.html';
+        closedir('InsertaSecre.php');
+        include '/PaginasVista/secretarias.html';
     }
 }
 $in= new Insertar_Secretaria;
