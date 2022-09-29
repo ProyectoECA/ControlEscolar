@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/estilos_login.css"> 
+    <link rel="stylesheet" href="css/estilos_login.css"> 
     <title>Login</title>
     <style type="text/css">
         #correctousuario {
@@ -57,8 +57,8 @@
                     acepta simbolos, numeros y letras con una longitud de 8-16 caracteres</p>
                 </font>
                 </div>
-                <!-- <input  class="btn" type="submit" value="COMPROBAR"> -->
-                <button onclick='verifica()' type="submit" name="registrar" value="submit">CONTINUAR</button>
+                <!--<input  class="btn" type="submit" value="COMPROBAR">-->
+                <button class="btn" onclick='verifica()' type="submit" name="registrar" value="submit">CONTINUAR</button> 
                 <!--<a class="btn" href="jefe_Control.html">COMPROBAR</a> -->
                 <a href="">Olvidaste tu Contraseña</a>
             </form>

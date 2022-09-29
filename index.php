@@ -28,12 +28,12 @@ if (isset($_SESSION['user'])) {
             break;
 
     }
-}else if(isset($_POST["usuario"]) && isset($_POST["password"])){
+}else if(isset($_POST["username"]) && isset($_POST["password"])){
     /**
      * ver si la contraseña y el usuario estan bien 
      * y si es asi cargar la pagina que le corresponde
      */
-    $usuario = $_POST["usuario"];
+    $usuario = $_POST["username"];
     $pass = $_POST["password"];
     
     if(strpos($usuario,"RH",0)=== 0){
