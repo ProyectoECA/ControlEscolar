@@ -17,7 +17,7 @@ if (isset($_SESSION['user'])) {
             include_once "PaginasVista/jefe_Control.html";
             break;
         case 2:
-            include_once "PaginasVista/secretarias.php";
+            include_once "PaginasVista/secretarias.html";
             break;
         case 3:
             include_once "PaginasVista/maestros_datos_per.php";
@@ -57,7 +57,7 @@ if (isset($_SESSION['user'])) {
             $sesion->setUser($usuario,2);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            include_once "PaginasVista/secretarias.php";
+            include_once "PaginasVista/secretarias.html";
 
         }else{
             $errorLogin ="Nombre de usuario y/o password incorrecto";
@@ -71,7 +71,7 @@ if (isset($_SESSION['user'])) {
             $sesion->setUser($usuario,4);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            include_once "PaginasVista/mostrar_datos_alumnos.php";
+            include_once "PaginasVista/mostrar_datos_alumnos.html";
 
         }else{
             $errorLogin ="Nombre de usuario y/o password incorrecto";

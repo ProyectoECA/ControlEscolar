@@ -1,15 +1,19 @@
 <?php
-define("ServerName", 'DESKTOP-J1AR91P');
-define("Database", "ConEscolarNoc");
-define("UID", "Admini");
-define("PWD", "control2022");
-define("CharacterSet", 'UTF-8');
+include_once "../CRUD/Usuarios_password.php";
+
+define("ServerName1", 'localhost');
+define("Database1", "ConEscolarNoc");
+define("UID1", "Admini");
+define("PWD1", "control2022");
+define("CharacterSet1", 'UTF-8');
 
 class Insertar_Secretaria{
     function insertando(){
-        echo "hola";
+
+        $conexion_pass = new User_password;
+        $conexion_pass->conexionBD();
+
         $no_empleado=$_POST["numeroEmple"];
-        echo $no_empleado;
         $nombre=$_POST["nombre"];
         $ape_Pat=$_POST["apellidoP"];
         $ape_Mat=$_POST["apellidoM"];
@@ -34,40 +38,40 @@ class Insertar_Secretaria{
         $email="fghyjmnbg";*/
 
         #INSERTA EN TABLA SECRETARIAS
-        $connectionInfo = array("Database"=>Database , "UID"=>UID, "PWD"=>PWD, "CharacterSet"=>CharacterSet);
+        $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
         $conexion=sqlsrv_connect(ServerName, $connectionInfo);
         $query="INSERT INTO [Secretarias] (IdSec,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia) VALUES (?,?,?,?,?,?,?,?)";
         $parametros=array($no_empleado,$nombre,$ape_Pat,$ape_Mat,$telefono,$email,$calle,$colonia);
         $stmt = sqlsrv_query($conexion, $query, $parametros);
 
-        $query="SELECT CP,Municipio,Estado FROM [Lugar] where cp=?";
+        $query="SELECT * FROM [Lugar] where cp=?";
         $parametros=array($codPos);
         $stmt = sqlsrv_query($conexion, $query, $parametros);
         $datos=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
     
         if(empty($datos)){
-            $query="INSERT INTO [LugSecretarias], (IdSec,CP)";
+            $query= "INSERT INTO [Lugar] (CP, Municipio, Estado) VALUES (?,?,?)";
+            $parametros=array($codPos, $municipio, $estado);
+            $stmt= sqlsrv_query($conexion,$query, $parametros);
+
+            $query="INSERT INTO [LugSecretarias] (IdSec,CP) VALUES (?,?)";
             $parametros=array($no_empleado,$codPos);
             $stmt=sqlsrv_query($conexion,$query,$parametros);
             $resul=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
-            if (empty($resul)){
-                echo json_encode('registro');
-            }
-            else{
-                
-            }
+
+            $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
+            $conexion_pass->CerrarConexion();
         }
         else{
-            $query="INSERT INTO [Lugar] (CP,Municipio,Estado)";
-            $parametros=array($codPos,$municipio,$estado);
-            $stmt = sqlsrv_query($conexion, $query, $parametros);
-
-            $query="INSERT INTO [LugSecretarias], (IdSec,CP)";
+            $query="INSERT INTO [LugSecretarias] (IdSec,CP) VALUES (?,?)";
             $parametros=array($no_empleado,$codPos);
             $stmt=sqlsrv_query($conexion,$query,$parametros);
+
+            $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
+            $conexion_pass->CerrarConexion();
         }
-        
-        include_once '../PaginasVista/secretarias.php';
+        sqlsrv_close($conexion);
+        include '../PaginasVista/secretarias.html';
     }
 }
 $in= new Insertar_Secretaria;
