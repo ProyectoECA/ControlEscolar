@@ -53,6 +53,12 @@ class Inserta_Maestros  extends CRUD_SQL_SERVER{
             $parametros=array($clave,$cp);
             $this->Insertar_Eliminar_Actualizar($query,$parametros);
             echo "NO EXISTE EL CODIGO POSTAL";
+
+            #INSERTA EL USUARIO Y CONTRASEÑA
+            $query="INSERT INTO [Lugar], (CP, Municipio, Estado)";
+            $parametros=array($cp, $municipio, $estado);
+            $this->Insertar_Eliminar_Actualizar($query,$parametros);
+
             
         }
         $this->CerrarConexion();
