@@ -1,11 +1,15 @@
 <?php
-include_once '../CRUD/CRUD_bd_SQLServer.php';
+define("ServerName", 'DESKTOP-J1AR91P');
+define("Database", "ConEscolarNoc");
+define("UID", "Admini");
+define("PWD", "control2022");
+define("CharacterSet", 'UTF-8');
 
-class Insertar_Secretaria extends CRUD_SQL_SERVER{
+class Insertar_Secretaria{
     function insertando(){
-        $this->conexionBD();
-
+        echo "hola";
         $no_empleado=$_POST["numeroEmple"];
+        echo $no_empleado;
         $nombre=$_POST["nombre"];
         $ape_Pat=$_POST["apellidoP"];
         $ape_Mat=$_POST["appelidoM"];
@@ -16,13 +20,29 @@ class Insertar_Secretaria extends CRUD_SQL_SERVER{
         $codPos=$_POST["cp"];
         $telefono=$_POST["tel"];
         $email=$_POST["correo"];
-
-        $query="INSERT INTO [Secretarias],(IdSec,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia) 
-        VALUES(?,?,?,?,?,?,?,?)";
-        $parametros=array($no_empleado,$nombre,$ape_Pat,$ape_Mat,$telefono,$email,$calle,$colonia);
+        
+        /*$no_empleado=005;
+        $nombre="yo";
+        $ape_Pat="fvbn";
+        $ape_Mat="dfgbnm";
+        $calle="vbnm";
+        $colonia="cvbnm";
+        $municipio="dvbhjnkm";
+        $estado="vbnm";
+        $codPos="95625";
+        $telefono="26262622";
+        $email="fghyjmnbg";*/
 
         #INSERTA EN TABLA SECRETARIAS
-        $this->Insertar_Eliminar_Actualizar($query,$parametros);
+        $connectionInfo = array("Database"=>Database , "UID"=>UID, "PWD"=>PWD, "CharacterSet"=>CharacterSet);
+        $conexion=sqlsrv_connect(ServerName, $connectionInfo);
+        $query="INSERT INTO [Secretarias] (IdSec,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia) VALUES (?,?,?,?,?,?,?,?)";
+        $parametros=array($no_empleado,$nombre,$ape_Pat,$ape_Mat,$telefono,$email,$calle,$colonia);
+        $stmt = sqlsrv_query($conexion, $query, $parametros);
+        
+        include_once '../PaginasVista/secretarias.php';
     }
 }
+$in= new Insertar_Secretaria;
+$in->insertando();
 ?>
