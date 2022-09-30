@@ -87,10 +87,5 @@ define("CharacterSet2", 'UTF-8');
           popup.classList.remove("open-popup"); 
       }
   </script>  
-  <script>
-    $(document).ready(function(){
-      $('#Secre').DataTable();
-    });
-  </script> 
 </body>
 </html>
