@@ -20,7 +20,7 @@ if (isset($_SESSION['user'])) {
             include_once "PaginasVista/secretarias.html";
             break;
         case 3:
-            include_once "PaginasVista/maestros_datos_per.php";
+            include_once "PaginasVista/maestros_datos_per.html";
             break;
 
         case 4:
@@ -50,7 +50,7 @@ if (isset($_SESSION['user'])) {
             $sesion->setUser($usuario,3);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            include_once "PaginasVista/maestros_datos_per.php";
+            include_once "PaginasVista/maestros_datos_per.html";
 
         }else if($user->userComprobacionSecretaria($usuario,$pass)){
 
