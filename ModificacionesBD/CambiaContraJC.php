@@ -16,7 +16,7 @@ class Cambio_Password{
 
         $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
         $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
-        $query="UPDATE LogAdmin.PassAdm SET LogAdmin.PassAdm=$password_hash where LogAdmin.UsuaAdm=$user";
+        $query="UPDATE LogAdmin SET PassAdm=$password_hash where UsuaAdm=$user";
         $stmt = sqlsrv_query($conexion, $query);
     }
 }
