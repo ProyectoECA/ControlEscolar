@@ -15,6 +15,7 @@ class Insertar_Maestros {
         $conexion_pass = new User_password;
         $conexion_pass->conexionBD();
 
+        #RECEPCIÓN DE DATOS
         $clave = $_POST["clave"]; 
         $nombre = $_POST["nombre"]; 
         $apePaterno = $_POST["apePat"]; 
@@ -28,53 +29,121 @@ class Insertar_Maestros {
         $rfc = $_POST["rfc"]; 
         $titulo = $_POST["titulo"]; 
         $correo = $_POST["correo"]; 
-        
-        $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
-        $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
-        $query= "INSERT INTO [Maestros] (ClaveMa,Nombre,ApePaterno,ApeMaterno,RFC,Titulo,Telefono,Correo,Calle,Colonia) 
-        VALUES (?,?,?,?,?,?,?,?,?,?)";
-        $parametros=array($clave,$nombre,$apePaterno,$apeMaterno,$rfc,$titulo,$telefono,$correo,$calle,$colonia);
-        $stmt= sqlsrv_query($conexion,$query, $parametros);
+        $in= new Insertar_Maestros;
 
-        $query="SELECT * FROM [Lugar] where cp=?";
-        $parametros=array($cp);
-        $stmt= sqlsrv_query($conexion,$query, $parametros);
-        $arreResul= sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+        #INSERTA EN TABLA MAESTROS
+        try{
+            $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
+            $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
-        if(empty($arreResul)){
-            $query= "INSERT INTO [Lugar] (CP, Municipio, Estado) VALUES (?,?,?)";
-            $parametros=array($cp, $municipio, $estado);
+            $query= "INSERT INTO [Maestros] (ClaveMa,Nombre,ApePaterno,ApeMaterno,RFC,Titulo,Telefono,Correo,Calle,Colonia) 
+            VALUES (?,?,?,?,?,?,?,?,?,?)";
+            $parametros=array($clave,$nombre,$apePaterno,$apeMaterno,$rfc,$titulo,$telefono,$correo,$calle,$colonia);
             $stmt= sqlsrv_query($conexion,$query, $parametros);
 
-            $query= "INSERT INTO [LugMaestros] (ClaveMa,CP) VALUES (?,?)";
-            $parametros=array($clave,$cp);
+            $query="SELECT * FROM [Lugar] where cp=?";
+            $parametros=array($cp);
             $stmt= sqlsrv_query($conexion,$query, $parametros);
-
-            $conexion_pass->InsertarUsuarioMaestro($clave, $clave);
-            $conexion_pass->CerrarConexion();
-
-
-
-
-        }
-        else{
-            $query= "INSERT INTO [LugMaestros] (ClaveMa,CP) VALUES (?,?)";
-            $parametros=array($clave,$cp);
-            $stmt= sqlsrv_query($conexion,$query, $parametros);
-
-            $conexion_pass->InsertarUsuarioMaestro($clave, $clave);
-            $conexion_pass->CerrarConexion();
+            $arreResul= sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
             
+            #SI EL CP NO ESTA REGISTRADO AÚN LO AÑADE
+            if(empty($arreResul)){
+                $query= "INSERT INTO [Lugar] (CP, Municipio, Estado) VALUES (?,?,?)";
+                $parametros=array($cp, $municipio, $estado);
+                $stmt= sqlsrv_query($conexion,$query, $parametros);
+
+                $query= "INSERT INTO [LugMaestros] (ClaveMa,CP) VALUES (?,?)";
+                $parametros=array($clave,$cp);
+                $stmt= sqlsrv_query($conexion,$query, $parametros);
+
+                #Llamada a Alerta de registrado
+                $ban=true;
+                $in->alerts($ban);
+                
+                #Agrega contraseña en hash
+                $conexion_pass->InsertarUsuarioMaestro($clave, $clave);
+                $conexion_pass->CerrarConexion();
+
+            }
+            #SI EL CP YA ESTA REGISTRADO
+            else{
+                $query= "INSERT INTO [LugMaestros] (ClaveMa,CP) VALUES (?,?)";
+                $parametros=array($clave,$cp);
+                $stmt= sqlsrv_query($conexion,$query, $parametros);
+
+                #Llamada a Alerta de registrado
+                $ban=true;
+                $in->alerts($ban);
+                
+                #Agrega contraseña en hash
+                $conexion_pass->InsertarUsuarioMaestro($clave, $clave);
+                $conexion_pass->CerrarConexion();
+                
+            }
+            sqlsrv_close($conexion);
         }
-    
-        sqlsrv_close($conexion);
-        include_once '../PaginasVista\maestros_datos_per.php';
+        catch(Exception $e){
+            $ban=false;
+        }
+    }
+
+    function alerts($ban){
+        #Alertas (necesitan html a fuerzas)
+        ?>
+        <html>
+        <body>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <?php
+        #Si hay error
+        if($ban==false){
+            ?>
+            <script>
+            Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'No se pudieron agregar los datos',
+            confirmButtonText: 'Aceptar',
+            timer:5000,
+            timerProgressBar:true,
+            }).then((result) => {
+            if (result.isConfirmed) {
+                location.href='../PaginasVista/secretarias.html';
+            }
+            else{
+                location.href='../PaginasVista/secretarias.html';
+            }
+            window.history.back('../PaginasVista/jefe_Control.html');})
+            </script>
+        <?php }
+        #Si agrega con éxito
+        if($ban==true){
+            ?>
+            <script>
+            Swal.fire({
+            icon: 'success',
+            title: 'AGREGACIÓN EXITOSA',
+            text: 'Secretaria añadida con éxito',
+            confirmButtonText: 'Aceptar',
+            timer:5000,
+            timerProgressBar:true,
+            }).then((result) => {
+            if (result.isConfirmed){
+                location.href='../PaginasVista/maestros_datos_per.html';
+            }
+            else{
+                location.href='../PaginasVista/maestros_datos_per.html';
+            }
+            window.history.back('../PaginasVista/jefe_Control.html');})
+            </script>
+        <?php
+        }
+        ?>
+        </body>
+        </html>
+        <?php
     }
 }
-    $in= new Insertar_Maestros;
-    $in->insertando();
-
-    
-
+$in= new Insertar_Maestros;
+$in->insertando();
 ?>
