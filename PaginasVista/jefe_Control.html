@@ -72,10 +72,13 @@
 
     <button type="submit" class="boton_cambiar_contraseña"  onclick="openPopup()"> Cambiar contraseña </button>
         <div class="popup" id="popup">
-                <input class="input" type="password" placeholder="Contraseña Nueva"><br>
-                <input class="input" type="password" placeholder="Confirmacion">
-                <button class="boton_guardar" type="button" onclick="closePopup()">Guardar</button>
-        </div> 
+                <input class="input" type="password" placeholder="Contraseña Nueva" name="pass" id="pass"><br>
+                <input class="input" type="password" placeholder="Confirmacion" name="pass" id="pass">
+                <a href="../ModificacionesBD/CambiaContraJC.php">
+                    <button class="boton_guardar" type="button" onclick="closePopup()">Guardar</button></a>
+        
+                
+            </div> 
     </div>  
     <div>
         <a href="../SesionesUsuario/logout.php">CerrarSesion
