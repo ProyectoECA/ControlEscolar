@@ -10,9 +10,9 @@ body{
     background-image: linear-gradient(to top, #1e355e 0%, white 70%);
 }
 
-.Contenedor_datos_secretaria{
-    height:35em;
-    width: 60em;
+.Contenedor_datos_maestros{
+    height:39em;
+    width: 70em;
     margin: 3em auto;
     display: flex;
     justify-content: space-evenly;
@@ -20,7 +20,7 @@ body{
     
 }
 
-.secre-datos-contenedor{
+.maestros-datos-contenedor{
     width: 80%;
     flex-direction: column;
     align-items: center;
@@ -31,11 +31,11 @@ body{
     
 }
 
-.social_secretaria{
+.social_maestros{
     width: 100%;
     justify-content: space-evenly;
 }
-.cajas_de_texto_secretaria{
+.cajas_de_texto_maestros{
     height: 80%;
     width: 100%;
     display: flex;
@@ -43,7 +43,7 @@ body{
     justify-content: space-around;
     align-items: center;
     background: #1e355e;
-    padding: 10px;
+    padding: 2px;
 }
 .caja_texto{
     padding-left: 20px;
@@ -70,6 +70,7 @@ body{
     transform: translate(-10%,0);
     display: flex;
     gap: 30px;
+    min-width: 250px;
 }
 .guardar_boton{
     width: 25%;
