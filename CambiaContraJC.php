@@ -7,11 +7,8 @@ define("PWD1", "control2022");
 define("CharacterSet1", 'UTF-8');
 
 class Cambio_Password  {
-    
-    function cambiaP_Jefe(){
 
-       
-           
+    function cambiaP_Jefe(){
             $pass = $_POST["pass"];
             echo $pass;
             $pass1 = $_POST["pass1"];
@@ -68,38 +65,7 @@ class Cambio_Password  {
 
         //include_once "PaginasVista/jefe_Control.html";
     }
-
-    function alert(){
-        ?>
-        <html>
-        <body>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script>
-        const (value: pass)= Swal.fire({
-            title: 'Inserta tu nueva contraseña',
-            type: "input",
-            input: 'text',
-            showCancelButton: true,
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: 'Aceptar',
-        }).
-        then((result) => {
-            if (result.isConfirmed) {
-                $con=new Cambio_Password;
-                $con->cambiaP_Jefe();
-            }
-            else{
-                location.href='../PaginasVista/jefe_Conteol.html';
-            }
-            window.history.back('../PaginasVista/jefe_Control.html');})
-            </script>
-        
-    <?php
-    }
 }
-
 $con=new Cambio_Password;
-$con->alert();
+$con->cambiaP_Jefe();
 ?>
-</body>
-</html>
