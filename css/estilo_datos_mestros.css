@@ -11,12 +11,13 @@ body{
 }
 
 .Contenedor_datos_maestros{
-    height:39em;
-    width: 70em;
+    height:70em;
+    width: 85em;
     margin: 3em auto;
     display: flex;
     justify-content: space-evenly;
     overflow: hidden;
+    
     
 }
 
@@ -33,17 +34,17 @@ body{
 
 .social_maestros{
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .cajas_de_texto_maestros{
-    height: 80%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background: #1e355e;
-    padding: 2px;
+    padding: 0px;
 }
 .caja_texto{
     padding-left: 20px;
@@ -62,34 +63,36 @@ body{
     font-size: 1em;
     border-radius: 1px #1e355e;
 }
-.botones{
-    position: relative;
-    bottom: 4.5%;
-    left: 39%;
-    width: 80%;
-    transform: translate(-10%,0);
-    display: flex;
-    gap: 30px;
+form{
+    margin: 0 auto; /* Centramos el formulario */
+    width: 500px;   /* Sin ancho no podemos centrar el formulario */
+    background-color: #1e355e; /* Color blanco para el formulario */
+    padding: 2px; /* separamos los bordes del form del resto de elementos */
+    border-radius: 0px; /* Redondeamos los bordes del form */
+
 }
-.guardar_boton{
+.btn_guardar{
+    margin-top: -30px; /* Damos un margen individual para el contenedor del botón */
     width: 25%;
+    margin-right: 40%;
+    background-color:#1e355e;
+    border-radius: 5px;
+    color: white;
+    font-size: large;
+    cursor: pointer;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: white;
-    border-radius: 5px;
-    background-color: #1e355e;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
+    
 }
-.boton_cancelar{
+.btn_cancelar {
+    margin-top: -30px; /* Damos un margen individual para el contenedor del botón */
     width: 25%;
+    margin-left: 40%;
+    background-color:#1e355e;
+    border-radius: 5px;
+    color: white;
+    font-size: large;
+    cursor: pointer;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: white;
-    border-radius: 5px;
-    background-color: #1e355e;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
 }
