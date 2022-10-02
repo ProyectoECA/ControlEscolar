@@ -9,7 +9,7 @@
     inputValue: '',
 
     inputValue: '',
-    confirmButtonText: 'Guardar',
+    confirmButtonText: 'Continuar',
     padding: '1rem',
     backdrop: true,
     position: 'center',
@@ -23,11 +23,7 @@
     buttonStylingh: true
 
 
-    
-    
-
 });
 
 })()
-
 
