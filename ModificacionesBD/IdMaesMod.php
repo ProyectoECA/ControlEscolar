@@ -43,7 +43,7 @@ class saca_IDMaes{
                 <div class="datos" style="float: center;">
                 <form  method="POST" action="/PaginasVista/modificar_maestros.php" >
                     <input class="input" type="text" placeholder="Clave" name="clave1"></form>
-                    <input class="btnBuscar" type="submit" value="BUSCAR" onclick="location.href = '/ModificacionesBD/IdMaesMod.php' " >
+                    <input class="btnBuscar" type="submit" value="BUSCAR" onclick="location.href = '/PaginasVista/modificar_maestros.php'" >
                 
                 </div> 
                 <div class="contenedor-general" style="float: center;">
@@ -56,7 +56,7 @@ class saca_IDMaes{
                 
                 <form  method="POST" action="../ModificacionesBD/ModificaMaes.php" >
                     <div class="contenedor-datos" style="float: center;">
-                        <input class="conteDatos" type="text" placeholder="Clave"  value="<?php echo $row['ClaveMa'];?>" name="clave2" id="clave" disabled type="text">
+                        <input class="conteDatos" type="text" placeholder="Clave"  value="<?php echo $row['ClaveMa'];?>" name="clave2" readonly>
                         <input class="conteDatos" type="text" placeholder="Nombre" name="nombre" value="<?php echo $row['Nombre']; ?>"> 
                         <input class="conteDatos" type="text" placeholder="Ap. paterno" name="apePat" value="<?php echo $row['ApePaterno']; ?>"> 
                         <input class="conteDatos" type="text" placeholder="Ap. materno" name="apeMat" value="<?php echo $row['ApeMaterno']; ?>"> 
@@ -75,19 +75,7 @@ class saca_IDMaes{
                     <input class="botones" type="submit" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/EliminaMaes.php' ">
                     </div>
                 </form>
-                <script>
-                    let opcion = document.getElementById("modifica")
-                    let caja   = document.getElementById("deshabilitado")
-                    
-                    opcion.addEventListener("change", () => {
-                    let elementoElegido = opcion.options[opcion.selectedIndex].value
-                    if (elementoElegido === onclick) {
-                        caja.disabled = false
-                    } else {
-                        caja.disabled = true
-                    } 
-                    })
-                </script>
+            
                 <?php
                 }
                 ?>

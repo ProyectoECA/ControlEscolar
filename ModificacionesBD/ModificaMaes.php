@@ -14,8 +14,6 @@ class Modificar_Maestros {
         #RECEPCIÓN DE DATOS
         $clave = $_POST["clave2"]; 
         $nombre = $_POST["nombre"]; 
-        echo "nombre";
-        echo $nombre;
         $apePaterno = $_POST["apePat"]; 
         $apeMaterno = $_POST["apeMat"]; 
         $calle = $_POST["calle"]; 
@@ -65,8 +63,7 @@ class Modificar_Maestros {
             $query="UPDATE Maestros SET Nombre=? where ClaveMa=?";
             $parametros=array($nombre,$clave);
             $stmt= sqlsrv_query($conexion,$query, $parametros);
-           
-            echo "MODIFIQUE NOMBER";
+            
 
             $query="UPDATE Maestros SET ApePaterno= ? WHERE ClaveMa = ?";
             $parametros=array($apePaterno,$clave);
