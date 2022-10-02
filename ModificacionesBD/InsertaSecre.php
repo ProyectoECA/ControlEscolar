@@ -86,7 +86,7 @@ class Insertar_Secretaria{
         #Alertas (necesitan html a fuerzas)
         ?>
         <html>
-        <body onload='btn_back_navegador();'>
+        <body>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <?php
         #Si hay error
