@@ -8,18 +8,20 @@
     <link rel="stylesheet" href="/css/estilos_modificar_secretarias.css">
 </head>
 <body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <div class="logo" style="float: left;">
         <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
     </div> 
     <div class="nombre" style="float: center;">
         <h1><b>TECNOLÓGICO DE NOCHISTLÁN</b></h1>
     </div> 
-    <form method="POST" action="/ModificacionesBD/GetIDSecreMod.php">
+    <form method="POST">
     <div class="datos" style="float: center;">
         <input class="input" type="text" placeholder="No. Empleado" name="noEmpl">&nbsp;&nbsp;
         <input class="btnBuscar" type="submit" value="BUSCAR">
     </div> 
     </form>
+    <div class="contenedor-general" style="float: center;">
 <?php
 define("ServerName1", 'localhost');
 define("Database1", "ConEscolarNoc");
@@ -39,7 +41,6 @@ class Saca_ID{
 
         <?php
         if(empty($datos)){?>
-             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                 <script>
                     Swal.fire({
                     icon: 'error',
@@ -48,10 +49,16 @@ class Saca_ID{
                     confirmButtonText: 'Aceptar',
                     timer:5000,
                     timerProgressBar:true,
-                    })
-                    </script>
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href='../PaginasVista/modificar_secretarias.html';
+                    }
+                    else{
+                        location.href='../PaginasVista/modificar_secretarias.html';
+                    }
+                    window.history.back('../PaginasVista/jefe_Control.html');})
+                </script>
         <?php
-        header("Location: htpp://localhost/PaginasVista/modificar_secretarias.php");
         }
         else{
             $query="SELECT Secretarias.IdSec,Nombre,ApePaterno,ApeMaterno,Calle,Colonia,Lugar.CP,Municipio,Estado,Telefono,Correo
@@ -60,10 +67,9 @@ class Saca_ID{
             $parametros=array($id);
             $stmt = sqlsrv_query($conexion, $query, $parametros);
             while($row=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)){?>
-            <div class="contenedor-general" style="float: center;">
                 <form method="POST" action="/ModificacionesBD/ModificaSecre.php">
                 <div class="contenedor-datos" style="float: center;">
-                <input class="conteDatos" type="text" placeholder="No. Empleado" name="numeroEmple" value="<?php echo $row['IdSec'];?>" disabled>
+                <input class="conteDatos" type="text" placeholder="No. Empleado" name="clave2" value="<?php echo $row['IdSec'];?>" readonly>
                 <input class="conteDatos" type="text" placeholder="Nombre" name="nombre" value="<?php echo $row['Nombre'];?>">
                 <input class="conteDatos" type="text" placeholder="Ap. paterno" name="apellidoP" value="<?php echo $row['ApePaterno'];?>">
                 <input class="conteDatos2" type="text" placeholder="Ap. materno" name="apellidoM" value="<?php echo $row['ApeMaterno'];?>">
@@ -75,11 +81,9 @@ class Saca_ID{
                 <input class="conteDatos4" type="text" placeholder="Teléfono" name="tel" value="<?php echo $row['Telefono'];?>">
                 <input class="conteDatos4" type="text" placeholder="Correo" name="correo" value="<?php echo $row['Correo'];?>">
                 </div>
-                </form>
-                <form method="POST" action="/ModificacionesBD/ModificaSecre.php">
-                <div class="contenedor-botones" style="float: left;">
-                <input class="botones" type="submit" value="EDITAR">
-                <input class="botones" type="submit" value="ELIMINAR">
+                <div class="contenedor-botones" style="float: center;">
+                <input class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href='/ModificacionesBD/ModificaSecre.php'">
+                <input class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href='/ModificacionesBD/EliminaSecre.php'">
                 </div>
                 </form>
             </div>
