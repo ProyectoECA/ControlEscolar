@@ -123,7 +123,7 @@ class Insertar_Maestros {
             Swal.fire({
             icon: 'success',
             title: 'AGREGACIÓN EXITOSA',
-            text: 'Secretaria añadida con éxito',
+            text: 'Maestro añadido con éxito',
             confirmButtonText: 'Aceptar',
             timer:5000,
             timerProgressBar:true,
