@@ -56,7 +56,7 @@ class Modifica_Sec{
                     
                     #Llamada a Alerta de modificado
                     $ban=true;
-                    $in->Alerts($ban);
+                    $in->alerts($ban);
                 }
                 #MODIFICA RELACION SECRE-LUGAR
                 $query="UPDATE LugSecretarias SET CP=? where IdSec=?";
@@ -114,12 +114,12 @@ class Modifica_Sec{
                 $stmt = sqlsrv_query($conexion, $query, $parametros);
 
                  #Llamada a Alerta de eliminado
-                 $ban=1;
-                 $in->Alerts($ban);
+                 $ban=true;
+                 $in->alerts($ban);
             }
             catch(Exception $e){
                 #Llamada a Alerta de error
-                $ban=0;
+                $ban=false;
                 $in->alerts($ban);
             }
         }
@@ -160,27 +160,7 @@ class Modifica_Sec{
             Swal.fire({
             icon: 'success',
             title: 'MODIFICACIÓN EXITOSA',
-            text: 'Secretaria modificada con éxito',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed){
-                location.href='../PaginasVista/modificar_secretarias.html';
-            }
-            else{
-                location.href='../PaginasVista/modificar_secretarias.html';
-            }
-            window.history.back('/PaginasVista/jefe_Control.html');})
-            </script><?php
-        #si elimino con exito
-        if($ban==1){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'success',
-            title: 'ELIMINACIÓN EXITOSA',
-            text: 'Secretaria eliminada con éxito',
+            text: 'Secretaria modificada/eliminada con éxito',
             confirmButtonText: 'Aceptar',
             timer:5000,
             timerProgressBar:true,
@@ -197,7 +177,6 @@ class Modifica_Sec{
         }
         ?>
         <?php
-    }
     }
 }
 

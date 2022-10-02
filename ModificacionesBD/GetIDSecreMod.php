@@ -65,8 +65,8 @@ class Saca_ID{
             FROM [Secretarias],[LugSecretarias],[Lugar]
             where (Secretarias.IdSec=? and Secretarias.IdSec=LugSecretarias.IdSec and LugSecretarias.CP=Lugar.CP)";
             $parametros=array($id);
-            $stmt = sqlsrv_query($conexion, $query, $parametros);
-            while($row=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)){?>
+            $stmt2 = sqlsrv_query($conexion, $query, $parametros);
+            while($row=sqlsrv_fetch_array($stmt2,SQLSRV_FETCH_ASSOC)){?>
                 <form method="POST" action="/ModificacionesBD/ModificaSecre.php">
                 <div class="contenedor-datos" style="float: center;">
                 <input class="conteDatos" type="text" placeholder="No. Empleado" name="clave2" value="<?php echo $row['IdSec'];?>" readonly>
@@ -83,7 +83,7 @@ class Saca_ID{
                 </div>
                 <div class="contenedor-botones" style="float: center;">
                 <input class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href='/ModificacionesBD/ModificaSecre.php'">
-                <input class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href='/ModificacionesBD/EliminaSecre.php'">
+                <input class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href='/ModificacionesBD/ModificaSecre.php'">
                 </div>
                 </form>
             </div>
@@ -93,7 +93,7 @@ class Saca_ID{
             }
 
         }
-}
+    }
 }
 $id=new Saca_ID;
 $id->agrega_id();
