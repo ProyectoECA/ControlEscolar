@@ -111,9 +111,25 @@ class Consulta_Alum{
             }
             }
         }
-        catch(Exception $e){
-            echo "hola";
-        
+        catch(Exception $e){?>
+            <script>
+            Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'Ocurrio un error al consultar los datos',
+            confirmButtonText: 'Aceptar',
+            timer:5000,
+            timerProgressBar:true,
+            }).then((result) => {
+            if (result.isConfirmed) {
+                location.href='../PaginasVista/mostrar_datos_alumnos.php';
+            }
+            else{
+                location.href='../PaginasVista/mostrar_datos_alumnos.php';
+            }
+            window.history.back('/PaginasVista/jefe_Control.html');})
+            </script>
+    <?php
     }
 }
 }
