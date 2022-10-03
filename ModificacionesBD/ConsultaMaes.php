@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/estilo_muestra_datos_maestros.css">
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
-    <title>Datos Secretaria</title>
+    <title>Datos Maestro</title>
 </head>
 <body>
   <div class="Contenedor_titulo">
@@ -114,8 +114,25 @@ class Consulta_Maes{
               }
             }
         }
-        catch(Exception $e){
-
+        catch(Exception $e){?>
+          <script>
+            Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'Ocurrio un error al consultar los datos',
+            confirmButtonText: 'Aceptar',
+            timer:5000,
+            timerProgressBar:true,
+            }).then((result) => {
+            if (result.isConfirmed) {
+                location.href='../PaginasVista/mostrar_datos_maestros.php';
+            }
+            else{
+                location.href='../PaginasVista/mostrar_datos_maestros.php';
+            }
+            window.history.back('/PaginasVista/jefe_Control.html');})
+            </script>
+          <?php
         }
     }
 }
