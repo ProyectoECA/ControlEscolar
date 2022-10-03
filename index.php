@@ -43,6 +43,10 @@ if (isset($_SESSION['user'])) {
             $sesion->setUser($usuario,1);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
+            $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
+            fwrite($archivo, $usuario);
+            fclose($archivo);
+
             include_once "PaginasVista/jefe_Control.html";
 
         }else if($user->userComprobacionMaestro($usuario,$pass)){
