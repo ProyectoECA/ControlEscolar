@@ -51,7 +51,7 @@ class Saca_ID{
                     timerProgressBar:true,
                     }).then((result) => {
                     if (result.isConfirmed) {
-                        location.href='../PaginasVista/modificar_secretarias.html';
+                        location.href='../ModificacionesBD/GetIDSecreMod.php';
                     }
                     else{
                         location.href='../PaginasVista/modificar_secretarias.html';

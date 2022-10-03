@@ -80,23 +80,5 @@ define("CharacterSet2", 'UTF-8');
               ?>
         </table>
     </div>
-    <button type="submit" class="boton_consultar" onclick="openPopup()">Consultar</button>
-    <div class="popup" id="popup">
-      <input class="input" type="text" placeholder="Número de Control"><br>
-      <input class="input" type="text" placeholder="Nombre "><br>
-      <button class="boton_confirmar" type="button" onclick="closePopup()">Confirmar</button>
-</div> 
-    <button class="boton_cancelar"><a href="jefe_Control.html">Cancelar</button></a> 
-
-    <script>
-      let popup=document.getElementById("popup");
-  
-      function openPopup(){
-          popup.classList.add("open-popup"); 
-      }
-      function closePopup(){
-          popup.classList.remove("open-popup"); 
-      }
-  </script>  
 </body>
 </html>
