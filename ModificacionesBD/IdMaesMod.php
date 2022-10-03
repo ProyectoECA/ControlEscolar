@@ -1,30 +1,4 @@
-<?php
-
-define("ServerName3", 'localhost');
-define("Database3", "ConEscolarNoc");
-define("UID3", "Admini");
-define("PWD3", "control2022");
-define("CharacterSet3", 'UTF-8');
-
-class saca_IDMaes{
-    function agrega_idMaes(){
-        $connectionInfo = array("Database"=>Database3 , "UID"=>UID3, "PWD"=>PWD3, "CharacterSet"=>CharacterSet3);
-        $conexion=sqlsrv_connect(ServerName3, $connectionInfo);
-     
-        $clave = $_POST["clave1"];
-        //echo "clave";
-        //echo $clave;
-        $query="SELECT Maestros.ClaveMa
-        FROM [Maestros],[LugMaestros],[Lugar] where (Maestros.ClaveMa=? and Maestros.ClaveMa=LugMaestros.ClaveMa and LugMaestros.CP=Lugar.CP)";
-        $parametros=array($clave);
-        $stmt = sqlsrv_query($conexion, $query,$parametros);
-        $arreResul= sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
-
-        #Si se encuentra registrado el maestro se añade al archivo
-        if(!empty($arreResul)){
-           
-            ?>
-            <!DOCTYPE html>
+<!DOCTYPE html>
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
@@ -40,20 +14,61 @@ class saca_IDMaes{
                 <div class="nombre" style="float: center;">
                     <h1><b>TECNOLÓGICO DE NOCHISTLÁN</b></h1>
                 </div> 
+                <form method="POST">
                 <div class="datos" style="float: center;">
-                <form  method="POST" action="/PaginasVista/modificar_maestros.php" >
-                    <input class="input" type="text" placeholder="Clave" name="clave1"></form>
-                    <input class="btnBuscar" type="submit" value="BUSCAR" onclick="location.href = '/PaginasVista/modificar_maestros.php'" >
-                
+                    <input class="input" type="text" placeholder="Clave" name="clave1">
+                    <input class="btnBuscar" type="submit" value="BUSCAR" >&nbsp;&nbsp;
                 </div> 
+                </form>
                 <div class="contenedor-general" style="float: center;">
-                <?php
+
+<?php
+
+define("ServerName3", 'localhost');
+define("Database3", "ConEscolarNoc");
+define("UID3", "Admini");
+define("PWD3", "control2022");
+define("CharacterSet3", 'UTF-8');
+
+class saca_IDMaes{
+    function agrega_idMaes(){
+        $connectionInfo = array("Database"=>Database3 , "UID"=>UID3, "PWD"=>PWD3, "CharacterSet"=>CharacterSet3);
+        $conexion=sqlsrv_connect(ServerName3, $connectionInfo);
+     
+        $clave = $_POST["clave1"];
+        $query="SELECT Maestros.ClaveMa
+        FROM [Maestros],[LugMaestros],[Lugar] where (Maestros.ClaveMa=? and Maestros.ClaveMa=LugMaestros.ClaveMa and LugMaestros.CP=Lugar.CP)";
+        $parametros=array($clave);
+        $stmt = sqlsrv_query($conexion, $query,$parametros);
+        $datos= sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);?> 
+
+        <?php
+        if(empty($datos)){?>
+                <script>
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'ERROR',
+                    text: 'Datos inexistentes',
+                    confirmButtonText: 'Aceptar',
+                    timer:5000,
+                    timerProgressBar:true,
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href='../ModificacionesBD/IdMaesMod.php';
+                    }
+                    else{
+                        location.href='../PaginasVista/modificar_maestros.html';
+                    }
+                    window.history.back('../PaginasVista/jefe_Control.html');})
+                </script>
+        <?php
+        }
+        else{
                 $query="SELECT Maestros.ClaveMa,Nombre,ApePaterno,ApeMaterno,RFC,Titulo,Telefono,Correo,Calle,Colonia,Municipio,Estado,Lugar.CP
                 FROM [Maestros],[LugMaestros],[Lugar] where (Maestros.ClaveMa=? and Maestros.ClaveMa=LugMaestros.ClaveMa and LugMaestros.CP=Lugar.CP)";
                 $parametros=array($clave);
                 $stmt = sqlsrv_query($conexion, $query,$parametros);
                 while($row=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)){?> 
-                
                 <form  method="POST" action="../ModificacionesBD/ModificaMaes.php" >
                     <div class="contenedor-datos" style="float: center;">
                         <input class="conteDatos" type="text" placeholder="Clave"  value="<?php echo $row['ClaveMa'];?>" name="clave2" readonly>
@@ -72,18 +87,14 @@ class saca_IDMaes{
                     </div> 
                     <div class="contenedor-botones" style="float: center;">
                     <input class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificaMaes.php' ">
-                    <input class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/EliminaMaes.php' ">
+                    <input class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificaMaes.php' ">
                     </div>
-                </form>
-            
-                <?php
-                }
-                ?>
-                   
+                </form>   
                 </div>
             </body>
             </html>
                 <?php
+                }
     
         }
     }

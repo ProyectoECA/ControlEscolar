@@ -71,29 +71,13 @@
     <div class="contenedor">
     <a href="/ModificacionesBD/CambiaContraJC.php">Cambiar contraseña
     <button type="submit" class="boton_cambiar_contraseña"> Cambiar contraseña </button></a>
-        <div class="popup" id="popup">
-                <input class="input" type="password" placeholder="Contraseña Nueva" name="pass" id="pass"><br>
-                <input class="input" type="password" placeholder="Confirmacion" name="pass" id="pass">
-                <a href="CambiaContraJC.php">
-                    <button class="boton_guardar" type="button" href="closePopup()">Guardar</button></a>
         
-                
-            </div> 
     </div>  
     <div>
         <a href="../SesionesUsuario/logout.php">CerrarSesion
         <button class="boton_cerrar_sesion" type="button">Cerrar sesión</button></a>
     </div>   
-    <script>
-        let popup=document.getElementById("popup");
-    
-        function openPopup(){
-            popup.classList.add("open-popup"); 
-        }
-        function closePopup(){
-            popup.classList.remove("open-popup"); 
-        }
-    </script>     
+      
     <script>
         //window.history.back('');
     </script>

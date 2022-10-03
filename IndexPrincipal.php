@@ -43,7 +43,7 @@ if (isset($_SESSION['user'])) {
             $sesion->setUser($usuario,1);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            $archivo = fopen("../ModificacionesBD/Archivo.txt", "w") or die("Problema al crear archivo");
+            $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
             fwrite($archivo, $usuario);
             fclose($archivo);
             

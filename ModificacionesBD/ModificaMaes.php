@@ -136,13 +136,13 @@ class Modificar_Maestros {
             $stmt = sqlsrv_query($conexion, $query, $parametros);
 
              #Llamada a Alerta de eliminado
-             $ban=1;
+             $ban=true;
              $in->alerts($ban);
              sqlsrv_close($conexion);
         }
         catch(Exception $e){
             #Llamada a Alerta de error
-            $ban=0;
+            $ban=false;
             $in->alerts($ban);
         }
     }
@@ -182,27 +182,7 @@ function alerts($ban){
         Swal.fire({
         icon: 'success',
         title: 'MODIFICACIÓN EXITOSA',
-        text: 'Maestro modificado con éxito',
-        confirmButtonText: 'Aceptar',
-        timer:5000,
-        timerProgressBar:true,
-        }).then((result) => {
-        if (result.isConfirmed){
-            location.href='../PaginasVista/modificar_maestros.html';
-        }
-        else{
-            location.href='../PaginasVista/modificar_maestros.html';
-        }
-        window.history.back('/PaginasVista/jefe_Control.html');})
-        </script><?php
-    #si elimino con exito
-    if($ban==1){
-        ?>
-        <script>
-        Swal.fire({
-        icon: 'success',
-        title: 'ELIMINACIÓN EXITOSA',
-        text: 'Maestro eliminado con éxito',
+        text: 'Maestro modificado/eliminado con éxito',
         confirmButtonText: 'Aceptar',
         timer:5000,
         timerProgressBar:true,
@@ -222,7 +202,7 @@ function alerts($ban){
     <?php
 }
 }
-}
+
 
 
 $in= new Modificar_Maestros;

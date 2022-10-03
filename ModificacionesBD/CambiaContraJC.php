@@ -15,60 +15,13 @@
   <div class="contenedor_titulo_2">
     <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlan</h1>
   </div>
-  <form method="POST" action="/CambiarContraJC.php">
+  <form method="POST" action="/CamContra.php">
     <div class="datos" style="float: center;">
-      <select name="tipo_consulta" id="tipo_consulta">
       <input class="input" type="text" placeholder="Contraseña Nueva" name="contra1">
       <input class="input" type="text" placeholder="Confirmación" name="contra2">
-      <input class="btnBuscar" type="submit" value="GUARDAR" onclick="location.href='../ModificacionesBD/CambiaContrJC.php'">
+      <input class="btnBuscar" type="submit" value="GUARDAR" onclick="location.href='/CamContra.php'">
     </div> 
     </form>
+</body>
+</html>
 
-
-<?php
-
-define("ServerName1", 'localhost');
-define("Database1", "ConEscolarNoc");
-define("UID1", "Admini");
-define("PWD1", "control2022");
-define("CharacterSet1", 'UTF-8');
-
-class Cambio_Password  {
-
-    function cambiaP_Jefe(){
-            $pass = $_POST["contra1"];
-            echo $pass;
-            $pass1 = $_POST["contra2"];
-            echo $pass1;
-
-        $archivo= fopen("../ModificacionesBD/Archivo.txt","r") or die("Problema al abrir el archivo");
-        while(!feof($archivo)){
-            $user=fgets($archivo);
-        }
-        fclose($archivo);
-        $user='RH000';
-        if($pass==$pass1){
-            echo "dentro de if";
-            echo $pass;
-            $password_hash = password_hash($pass, PASSWORD_DEFAULT);
-
-            $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
-            $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
-            
-            $query="UPDATE LogAdmin SET PassAdm=? where UsuaAdm=?";
-            $parametros=array($password_hash,$user);
-            $stmt= sqlsrv_query($conexion,$query, $parametros);
-    
-            sqlsrv_close($conexion);
-            echo "CONTRASEÑA CAMBIADA";
-
-        }
-        else{
-            echo "LAS CONTRASEÑAS NO SON IGUALES";
-        }
-        
-    }
-}
-$con=new Cambio_Password;
-$con->cambiaP_Jefe();
-?>
