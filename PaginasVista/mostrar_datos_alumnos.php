@@ -22,6 +22,17 @@ define("CharacterSet2", 'UTF-8');
   <div class="contenedor_titulo_2">
     <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlan</h1>
   </div>
+  <form method="POST" action="/ModificacionesBD/ConsultaAlum.php">
+    <div class="datos" style="float: center;">
+      <select name="tipo_consulta" id="tipo_consulta">
+      <option value="no_control">No. de control</option>
+      <option value="nombre">Nombre</option>
+      </select>
+      <input class="input" type="text" placeholder="Inserta dato" name="dato">
+      <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'">
+      <input class="btnBuscar" type="submit" value="CANCELAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'">
+    </div> 
+    </form>
     <div class="contenedor-tabla">
         <table class="table-cebra">
          <thead>
@@ -71,28 +82,7 @@ define("CharacterSet2", 'UTF-8');
              <?php
               }
               ?>
-        </table>
-    </div>
-        <button type="submit" class="boton_consultar" onclick="openPopup()">Consultar</button>
-        <div class="popup" id="popup">
-          <input class="input" type="text" placeholder="Nombre "><br>
-          <input class="input" type="text" placeholder="Número de Control"><br>
-          <input class="input" type="text" placeholder="Carrera"><br>
-          <input class="input" type="text" placeholder="Semestre">
-          <button class="boton_confirmar" type="button" onclick="closePopup()">Confirmar</button>
-  </div> 
-        <button class="boton_cancelar"><a href="jefe_Control.html">Cancelar</button></a> 
-
-        <script>
-          let popup=document.getElementById("popup");
-      
-          function openPopup(){
-              popup.classList.add("open-popup"); 
-          }
-          function closePopup(){
-              popup.classList.remove("open-popup"); 
-          }
-      </script>         
+        </table>       
     
 </body>
 </html>
