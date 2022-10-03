@@ -77,7 +77,7 @@ define("CharacterSet2", 'UTF-8');
               ?>
         </table>
     </div>
-    <button type="submit" class="boton_consultar" onclick="openPopup()">Consultar</button>
+    <button type="submit" class="boton_consultar" onclick="location.href = '/ModificacionesBD/ConsultaMaes.php' ">Consultar</button>
     <div class="popup" id="popup">
       <input class="input" type="text" placeholder="Clave"><br>
       <input class="input" type="text" placeholder="Nombre "><br>
