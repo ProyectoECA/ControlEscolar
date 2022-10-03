@@ -71,8 +71,8 @@ class saca_IDMaes{
                         <input class="conteDatos4" type="text" placeholder="Correo" name="correo" value="<?php echo $row['Correo']; ?>">
                     </div> 
                     <div class="contenedor-botones" style="float: center;">
-                    <input class="botones" type="submit" id="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificaMaes.php' ">
-                    <input class="botones" type="submit" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/EliminaMaes.php' ">
+                    <input class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificaMaes.php' ">
+                    <input class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/EliminaMaes.php' ">
                     </div>
                 </form>
             

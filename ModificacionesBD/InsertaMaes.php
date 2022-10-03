@@ -31,7 +31,7 @@ class Insertar_Maestros {
         $correo = $_POST["correo"]; 
 
         $in= new Insertar_Maestros;
-
+        if(isset($_POST['guarda_sec'])){
         #INSERTA EN TABLA MAESTROS
         try{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
@@ -87,7 +87,15 @@ class Insertar_Maestros {
             $ban=false;
         }
     }
-
+    else if(isset($_POST['cancela_sec'])){
+        try{include_once "../PaginasVista/jefe_Control.html";
+        }
+        catch(Exception $e){
+            $ban=false;
+        }
+  
+    }
+    }
     function alerts($ban){
         #Alertas (necesitan html a fuerzas)
         ?>

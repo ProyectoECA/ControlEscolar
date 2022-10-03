@@ -26,7 +26,7 @@ class Insertar_Secretaria{
         $email=$_POST["correo"];
 
         $in=new Insertar_Secretaria;
-
+        if(isset($_POST['guarda_sec'])){
         #INSERTA EN TABLA SECRETARIAS
         try{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
@@ -49,7 +49,7 @@ class Insertar_Secretaria{
                 $query="INSERT INTO [LugSecretarias] (IdSec,CP) VALUES (?,?)";
                 $parametros=array($no_empleado,$codPos);
                 $stmt=sqlsrv_query($conexion,$query,$parametros);
-                $resul=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
+                #$resul=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
                 
                 #Llamada a Alerta de registrado
                 $ban=true;
@@ -80,6 +80,15 @@ class Insertar_Secretaria{
             $ban=false;
             $in->alerts($ban);
         }
+    }
+    else if(isset($_POST['cancela_sec'])){
+        try{include_once "../PaginasVista/jefe_Control.html";
+        }
+        catch(Exception $e){
+            $ban=false;
+        }
+  
+    }
     }
 
     function alerts($ban){

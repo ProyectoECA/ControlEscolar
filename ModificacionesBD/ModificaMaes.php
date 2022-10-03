@@ -28,6 +28,8 @@ class Modificar_Maestros {
 
         $in= new Modificar_Maestros;
 
+        if(isset($_POST['modifica'])){
+
         #MODIFICA EN TABLA MAESTROS
         try{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
@@ -44,6 +46,10 @@ class Modificar_Maestros {
                 $query= "INSERT INTO [Lugar] (CP, Municipio, Estado) VALUES (?,?,?)";
                 $parametros=array($cp, $municipio, $estado);
                 $stmt= sqlsrv_query($conexion,$query, $parametros);
+                
+                $ban=true;
+            
+                $in->alerts($ban);
             }
             #SI EL CP YA ESTA REGISTRADO, SOLO MODIFICA MUNICIPIO Y/O ESTADO
             else{
@@ -53,6 +59,10 @@ class Modificar_Maestros {
                 $query="UPDATE Lugar SET Estado= ? WHERE cp = ?";
                 $parametros=array($estado,$cp);
                 $stmt= sqlsrv_query($conexion,$query, $parametros);
+                
+                $ban=true;
+            
+                $in->Alerts($ban);
             }
             #MOFICA RELACIÓN DE MAESTRO Y LUGAR
             $query="UPDATE LugMaestros SET cp= ? WHERE ClaveMa =?";
@@ -98,9 +108,7 @@ class Modificar_Maestros {
             $stmt= sqlsrv_query($conexion,$query, $parametros);
             
             #Lama alerta de Modificación con exito
-            $ban=true;
             
-            $in->alerts($ban);
              
             sqlsrv_close($conexion);
         }
@@ -108,63 +116,115 @@ class Modificar_Maestros {
             $ban=false;
         }
     }
+    else if(isset($_POST['elimina'])){
+        #ELIMINA MAESTROS
+        try{
+            $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
+            $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
-    function alerts($ban){
-        #Alertas (necesitan html a fuerzas)
-        ?>
-        <html>
-        <body>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <?php
-        #Si hay error
-        if($ban==false){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'No se pudieron modificar los datos',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed) {
-                location.href='../PaginasVista/secretarias.html';
-            }
-            else{
-                location.href='../PaginasVista/secretarias.html';
-            }
-            window.history.back('../PaginasVista/jefe_Control.html');})
-            </script>
-        <?php }
-        #Si agrega con éxito
-        if($ban==true){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'success',
-            title: 'MODIFICACIÓN EXITOSA',
-            text: 'Maestro modificado con éxito',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed){
-                location.href='../PaginasVista/maestros_datos_per.html';
-            }
-            else{
-                location.href='../PaginasVista/maestros_datos_per.html';
-            }
-            window.history.back('../PaginasVista/jefe_Control.html');})
-            </script>
-        <?php
+            #ELIMINA DE LOGIN
+            $query="DELETE FROM [LogMaestros] where ClaveMa=?";
+            $parametros=array($clave);
+            $stmt = sqlsrv_query($conexion, $query, $parametros);
+            #ELIMINA DE LUGMAESTROS
+            $query="DELETE FROM [LugMaestros] where ClaveMa=?";
+            $parametros=array($clave);
+            $stmt = sqlsrv_query($conexion, $query, $parametros);
+            #ELIMINA DE MAESTROS
+            $query="DELETE FROM [Maestros] where ClaveMa=?";
+            $parametros=array($clave);
+            $stmt = sqlsrv_query($conexion, $query, $parametros);
+
+             #Llamada a Alerta de eliminado
+             $ban=1;
+             $in->alerts($ban);
+             sqlsrv_close($conexion);
         }
-        ?>
-        </body>
-        </html>
-        <?php
+        catch(Exception $e){
+            #Llamada a Alerta de error
+            $ban=0;
+            $in->alerts($ban);
+        }
     }
 }
+function alerts($ban){
+    #Alertas (necesitan html a fuerzas)
+    ?>
+    <html>
+    <body>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php
+    #Si hay error
+    if($ban==false){
+        ?>
+        <script>
+        Swal.fire({
+        icon: 'error',
+        title: 'ERROR',
+        text: 'No se pudieron modificar/eliminar los datos',
+        confirmButtonText: 'Aceptar',
+        timer:5000,
+        timerProgressBar:true,
+        }).then((result) => {
+        if (result.isConfirmed) {
+            location.href='../PaginasVista/modificar_maestros.html';
+        }
+        else{
+            location.href='../PaginasVista/modificar_maestros.html';
+        }
+        window.history.back('/PaginasVista/jefe_Control.html');})
+        </script>
+    <?php }
+    #Si agrega con éxito
+    if($ban==true){
+        ?>
+        <script>
+        Swal.fire({
+        icon: 'success',
+        title: 'MODIFICACIÓN EXITOSA',
+        text: 'Maestro modificado con éxito',
+        confirmButtonText: 'Aceptar',
+        timer:5000,
+        timerProgressBar:true,
+        }).then((result) => {
+        if (result.isConfirmed){
+            location.href='../PaginasVista/modificar_maestros.html';
+        }
+        else{
+            location.href='../PaginasVista/modificar_maestros.html';
+        }
+        window.history.back('/PaginasVista/jefe_Control.html');})
+        </script><?php
+    #si elimino con exito
+    if($ban==1){
+        ?>
+        <script>
+        Swal.fire({
+        icon: 'success',
+        title: 'ELIMINACIÓN EXITOSA',
+        text: 'Maestro eliminado con éxito',
+        confirmButtonText: 'Aceptar',
+        timer:5000,
+        timerProgressBar:true,
+        }).then((result) => {
+        if (result.isConfirmed){
+            location.href='../PaginasVista/modificar_maestros.html';
+        }
+        else{
+            location.href='../PaginasVista/modificar_maestros.html';
+        }
+        window.history.back('/PaginasVista/jefe_Control.html');})
+        </script>
+    <?php
+    }
+    ?>
+    
+    <?php
+}
+}
+}
+
+
 $in= new Modificar_Maestros;
 $in->modificando();
 ?>
