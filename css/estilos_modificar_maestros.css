@@ -1,19 +1,12 @@
 body{ 
     height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 0; 
     box-sizing: border-box;
     text-decoration: none; 
     background-image: linear-gradient(to top, #1e355e 0%, white 60%);
 } 
-
-nav{
-    max-width: 70%;
-    margin: auto;
-    background-color: #15469b;
-    font-size: 20px;
-    margin-top: none;
-}  
+  
 
 .logo{ 
     height: 7em;
@@ -34,13 +27,13 @@ nav{
 .datos{ 
     width: 800px;
     height: 50px;
-    margin: 3em 27em;
+    margin: 3em 24em;
     display: flex; 
-    
+    /*border: 2px solid red;*/
 } 
 
 .input{ 
-    width: 50%;
+    width: 30em;
     height: 3.125rem;
     padding-left: 20px;
     border: 2px solid #1e355e;
@@ -55,8 +48,8 @@ nav{
 } 
 
 .btnBuscar{ 
-    width: 15%;
-    height:90%;
+    width: 10em;
+    height:3.125rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: white;
@@ -70,7 +63,7 @@ nav{
 .contenedor-general{
     height: 23em;
     width: 60em;  
-    margin: 0em auto;
+    margin: 0em 14rem; 
     justify-content: space-between;
     overflow: hidden;
     display: flex;  
@@ -86,7 +79,7 @@ nav{
 .contenedor-botones{
     height: 4em;
     width: 50em;   
-    margin: 18.5em 83.5px;  
+    margin: 18.5em 83.5px;   
     justify-content: space-between;
     overflow: hidden;
     display: flex; 
