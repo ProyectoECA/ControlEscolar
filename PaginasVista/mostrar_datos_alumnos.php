@@ -28,8 +28,8 @@ define("CharacterSet2", 'UTF-8');
       <option value="no_control">No. de control</option>
       <option value="nombre">Nombre</option>
       </select>
-      <input class="input" type="text" placeholder="Inserta dato" name="dato">
-      <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'">
+      <input class="input_trato" type="text" placeholder="Inserta dato" name="dato"><br><br>
+      <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'"><br><br>
       <input class="btnBuscar" type="submit" value="CANCELAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'">
     </div> 
     </form>
