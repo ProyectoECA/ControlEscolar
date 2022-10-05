@@ -191,7 +191,7 @@ body{
 }
 .input_busqueda{
     width: 20%;
-    height: 3.125rem;
+    height: 2em;
     font-size: 1em;
     border: #1e355e;
     border-radius: 5px;
@@ -199,7 +199,7 @@ body{
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    transform:translate(307%,-119%);
+    transform:translate(242%,-160%);
 
 
 
@@ -223,5 +223,6 @@ body{
   -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
+  transform:translate(-60%,-20%);
 }
 
