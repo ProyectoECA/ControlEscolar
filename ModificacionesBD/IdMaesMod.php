@@ -62,28 +62,56 @@ class saca_IDMaes{
                     window.history.back('../PaginasVista/jefe_Control.html');})
                 </script>
         <?php
+         $id='';
+         $nom='';
+         $ap='';
+         $am='';
+         $cal='';
+         $col='';
+         $muni='';
+         $est='';
+         $codp='';
+         $telef='';
+         $rfc='';
+         $tit='';
+         $cor='';
         }
         else{
                 $query="SELECT Maestros.ClaveMa,Nombre,ApePaterno,ApeMaterno,RFC,Titulo,Telefono,Correo,Calle,Colonia,Municipio,Estado,Lugar.CP
                 FROM [Maestros],[LugMaestros],[Lugar] where (Maestros.ClaveMa=? and Maestros.ClaveMa=LugMaestros.ClaveMa and LugMaestros.CP=Lugar.CP)";
                 $parametros=array($clave);
-                $stmt = sqlsrv_query($conexion, $query,$parametros);
-                while($row=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)){?> 
-                <form  method="POST" action="../ModificacionesBD/ModificaMaes.php" >
+                $stmt2 = sqlsrv_query($conexion, $query,$parametros);
+                $row=sqlsrv_fetch_array($stmt2);
+                $id=$row['ClaveMa'];
+                $nom=$row['Nombre'];
+                $ap=$row['ApePaterno'];
+                $am=$row['ApeMaterno'];
+                $cal=$row['Calle'];
+                $col=$row['Colonia'];
+                $muni=$row['Municipio'];
+                $est=$row['Estado'];
+                $codp=$row['CP'];
+                $telef=$row['Telefono'];
+                $rfc=$row['RFC'];
+                $tit=$row['Titulo'];
+                $cor=$row['Correo'];
+            }?>
+                
+            <form  method="POST" action="../ModificacionesBD/ModificaMaes.php" >
                     <div class="contenedor-datos" style="float: center;">
-                        <input class="conteDatos" type="text" placeholder="Clave"  value="<?php echo $row['ClaveMa'];?>" name="clave2" readonly>
-                        <input class="conteDatos" type="text" placeholder="Nombre" name="nombre" value="<?php echo $row['Nombre']; ?>"> 
-                        <input class="conteDatos" type="text" placeholder="Ap. paterno" name="apePat" value="<?php echo $row['ApePaterno']; ?>"> 
-                        <input class="conteDatos" type="text" placeholder="Ap. materno" name="apeMat" value="<?php echo $row['ApeMaterno']; ?>"> 
-                        <input class="conteDatos2" type="text" placeholder="Calle y número" name="calle" value="<?php echo $row['Calle']; ?>"> 
-                        <input class="conteDatos2" type="text" placeholder="Colonia" name="colonia" value="<?php echo $row['Colonia']; ?>"> 
-                        <input class="conteDatos2" type="text" placeholder="Municipio" name="municipio" value="<?php echo $row['Municipio']; ?>"> 
-                        <input class="conteDatos3" type="text" placeholder="Estado" name="estado" value="<?php echo $row['Estado']; ?>"> 
-                        <input class="conteDatos3" type="text" placeholder="Código postal" name="cp" value="<?php echo $row['CP']; ?>"> 
-                        <input class="conteDatos3" type="text" placeholder="Teléfono" name="telefono" value="<?php echo $row['Telefono']; ?>">  
-                        <input class="conteDatos4" type="text" placeholder="RFC" name="rfc" value="<?php echo $row['RFC']; ?>"> 
-                        <input class="conteDatos4" type="text" placeholder="Titulo" name="titulo" value="<?php echo $row['Titulo']; ?>">
-                        <input class="conteDatos4" type="text" placeholder="Correo" name="correo" value="<?php echo $row['Correo']; ?>">
+                        <input class="conteDatos" type="text" placeholder="Clave"  value="<?php echo $id; ?>"  name="clave2" readonly>
+                        <input class="conteDatos" type="text" placeholder="Nombre" name="nombre" value="<?php echo $nom; ?>"> 
+                        <input class="conteDatos" type="text" placeholder="Ap. paterno" name="apePat" value="<?php echo $ap; ?>"> 
+                        <input class="conteDatos" type="text" placeholder="Ap. materno" name="apeMat" value="<?php echo $am; ?>"> 
+                        <input class="conteDatos2" type="text" placeholder="Calle y número" name="calle" value="<?php echo $cal; ?>" > 
+                        <input class="conteDatos2" type="text" placeholder="Colonia" name="colonia" value="<?php echo $col; ?>"> 
+                        <input class="conteDatos2" type="text" placeholder="Municipio" name="municipio" value="<?php echo $muni; ?>"> 
+                        <input class="conteDatos3" type="text" placeholder="Estado" name="estado" value="<?php echo $est; ?>"> 
+                        <input class="conteDatos3" type="text" placeholder="Código postal" name="cp" value="<?php echo $codp; ?>"> 
+                        <input class="conteDatos3" type="text" placeholder="Teléfono" name="telefono" value="<?php echo $telef; ?>">  
+                        <input class="conteDatos4" type="text" placeholder="RFC" name="rfc" value="<?php echo $rfc; ?>"> 
+                        <input class="conteDatos4" type="text" placeholder="Titulo" name="titulo" value="<?php echo $tit; ?>">
+                        <input class="conteDatos4" type="text" placeholder="Correo" name="correo" value="<?php echo $cor; ?>">
                     </div> 
                     <div class="contenedor-botones" style="float: center;">
                     <input class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificaMaes.php' ">
@@ -97,8 +125,7 @@ class saca_IDMaes{
                 }
     
         }
-    }
-}
+
 $id=new saca_IDMaes;
 $id->agrega_idMaes();
 ?>
