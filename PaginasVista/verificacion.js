@@ -1,4 +1,4 @@
-//banderas para verificar que los campos esten correctos al evento del boton
+
 var bcontraseña = false;
 var busuario = false;
 
@@ -7,7 +7,7 @@ var expreg = /^\S+$/;
 const expresiones = {
     alumnos:/^TECNM[\d]{10}$/,
     secretaria:/^RH[\d]{3}$/,  
-    password: /^[\w\W]{8,16}$/,
+    password:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,16}$/,
 }
 
 
