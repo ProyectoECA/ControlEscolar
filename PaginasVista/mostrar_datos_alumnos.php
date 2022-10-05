@@ -24,11 +24,11 @@ define("CharacterSet2", 'UTF-8');
   </div>
   <form method="POST" action="/ModificacionesBD/ConsultaAlum.php">
     <div class="datos" style="float: center;">
-      <select name="tipo_consulta" id="tipo_consulta">
+      <select class="combobox" name="tipo_consulta" id="tipo_consulta">
       <option value="no_control">No. de control</option>
       <option value="nombre">Nombre</option>
       </select>
-      <input class="input" type="text" placeholder="Inserta dato" name="dato">
+      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato"><br>
       <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'">
       <input class="btnBuscar" type="submit" value="CANCELAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'">
     </div> 
