@@ -75,7 +75,7 @@ if (isset($_SESSION['user'])) {
             $sesion->setUser($usuario,4);
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
 
-            include_once "PaginasVista/mostrar_datos_alumnos.html";
+            include_once "PaginasVista/mostrar_datos_alumnos.php";
 
         }else{
             $errorLogin ="Nombre de usuario y/o password incorrecto";
