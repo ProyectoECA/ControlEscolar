@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/estilos_cambioContrasena.css">
     <title>Cambio de Contraseña</title>
+    <style type="text/css">
+        #correctoco {
+            display: none;
+        }
+
+        #incorrectoco {
+            display: none;
+        }
+
+        #correctopass {
+            display: none;
+        }
+
+        #incorrectopass {
+            display: none;
+        }
+    </style>
 </head>
 <body> 
     <div class="logo" style="float: left;">
@@ -16,12 +33,36 @@
     </div> 
     <div class="login-container">
         <div class="login-info-container">
+<<<<<<< HEAD
+            <form class="inputs-container">
+                <input class="input" type="password" placeholder="Contraseña" id="contrasena">
+                <font size="2">
+                    <p id="correctoco">contraseña valida</p>
+                    <p id="incorrectoco">no puede llevar ñ y espacios, <br>
+                    por lo menos debe contener un simbolo, una mayuscula,<br> una minuscula, un numero y
+                    8-16 caracteres</p>
+                </font>
+                <input class="input" type="password" placeholder="Confirmar contraseña" id="confirma">
+                <font size="2">
+                    <p id="correctopass">contraseña comprobada</p>
+                    <p id="incorrectopass">no coinciden</p>
+                </font>
+             
+                <button disabled id="btn" type="submit" value="Guardar" name="guarda_sec" class="btn"> CAMBIAR</button>    
+
+=======
             <form class="inputs-container"  method="POST" action="/CamContra.php">
                 <input class="input" type="password" placeholder="Contraseña" name="contra1">
                 <input class="input" type="password" placeholder="Confirmar contraseña" name="contra2">
-                <a href="/CamContra.php"><button class="btn">CAMBIAR</button> </a>
+                <div class="bot">
+                    <a href="/CamContra.php"><button class="btn" style="float: right;">CAMBIAR</button> </a>
+                    <a href=""><button class="btn" style="float: left;">SALIR</button> </a>
+                </div>
+>>>>>>> 8f5a8e0dfebbe38a224c478e673d8b8abef7d0ec
             </form>
         </div>
     </div>
+    <script src="/PaginasVista/script/cambio_contrasena.js"></script>
 </body>
 </html>
+<!-- cambio -->
