@@ -18,14 +18,14 @@
     <form method="POST">
     <div class="datos" style="float: center;">
         <input class="input" type="text" placeholder="No. Empleado" name="noEmpl">&nbsp;&nbsp;
-        <input class="btnBuscar" type="submit" value="BUSCAR"> 
-        <input class="btnSalir" type="submit" value="SALIR">
+        <input class="btnBuscar" type="submit" value="BUSCAR"> &nbsp;&nbsp;
+        <input class="btnSalir" type="submit" value="SALIR">&nbsp;&nbsp;
     </div>  
     </form>
     <div class="contenedor-general" style="float: center;">
     <form method="POST" action="/ModificacionesBD/ModificaSecre.php">
                 <div class="contenedor-datos" style="float: center;">
-                <input class="conteDatos" type="text" placeholder="No. Empleado" name="clave2" value="<?php echo $row['IdSec'];?>" readonly>
+                
                 <input class="conteDatos" type="text" placeholder="Nombre" name="nombre" value="<?php echo $row['Nombre'];?>">
                 <input class="conteDatos" type="text" placeholder="Ap. paterno" name="apellidoP" value="<?php echo $row['ApePaterno'];?>">
                 <input class="conteDatos2" type="text" placeholder="Ap. materno" name="apellidoM" value="<?php echo $row['ApeMaterno'];?>">
@@ -35,7 +35,7 @@
                 <input class="conteDatos3" type="text" placeholder="Estado" name="estado" value="<?php echo $row['Estado'];?>">
                 <input class="conteDatos3" type="text" placeholder="Código postal" name="cp" value="<?php echo $row['CP'];?>">
                 <input class="conteDatos4" type="text" placeholder="Teléfono" name="tel" value="<?php echo $row['Telefono'];?>">
-                <input class="conteDatos4" type="text" placeholder="Correo" name="correo" value="<?php echo $row['Correo'];?>">
+                <input class="conteDatos4" t<input class="conteDatos" type="text" placeholder="No. Empleado" name="clave2" value="<?php echo $row['IdSec'];?>" readonly>ype="text" placeholder="Correo" name="correo" value="<?php echo $row['Correo'];?>">
                 </div>
                 <div class="contenedor-botones" style="float: center;">
                 <input class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href='/ModificacionesBD/ModificaSecre.php'">
