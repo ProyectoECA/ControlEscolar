@@ -26,14 +26,8 @@ class Saca_ID{
                     confirmButtonText: 'Aceptar',
                     timer:5000,
                     timerProgressBar:true,
-                    }).then((result) => {
-                    if (result.isConfirmed) {
-                        location.href='../ModificacionesBD/GetIDSecreMod.php';
-                    }
-                    else{
-                        location.href='../PaginasVista/modificar_secretarias.html';
-                    }
-                    window.history.back('../PaginasVista/jefe_Control.html');})
+                    })
+                    window.history.back('../PaginasVista/jefe_Control.html');
                 </script>
         <?php
         include_once("../PaginasVista/modificar_secretarias.html");
