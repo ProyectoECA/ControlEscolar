@@ -79,7 +79,7 @@ body{
 .contenedor-botones{
     height: 4em;
     width: 50em;   
-    margin: 18.5em 83.5px;   
+    margin: 3em 2px;    
     justify-content: space-between;
     overflow: hidden;
     display: flex; 
