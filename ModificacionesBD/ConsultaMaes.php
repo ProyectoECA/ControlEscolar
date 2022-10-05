@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/estilo_muestra_datos_maestros.css">
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
-    <title>Datos Maestro</title>
+    <title>Datos Maestros</title>
 </head>
 <body>
   <div class="Contenedor_titulo">
     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
   </div>
   <div class="contenedor_titulo_2">
-    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlan</h1>
+    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlán</h1>
   </div>
   <form method="POST" action="../ModificacionesBD/ConsultaMaes.php">
     <div class="datos" style="float: center;">
-      <select name="tipo_consulta" id="tipo_consulta">
+      <select class="combobox" name="tipo_consulta" id="tipo_consulta">
       <option value="clave">Clave</option>
       <option value="nombre">Nombre</option>
       </select>
-      <input class="input" type="text" placeholder="Inserta dato" name="dato">
+      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato">
       <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaMaes.php'">
       <input class="btnBuscar" type="submit" value="CANCELAR" onclick="location.href='/ModificacionesBD/ConsultaMaes.php'">
     </div> 
