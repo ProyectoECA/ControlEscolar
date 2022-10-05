@@ -45,7 +45,7 @@
                 <div>
                     <font size="2">
                     <p size="8" id="correctousuario">usuario valido</p>
-                    <p size="8" id="incorrectousuario">el username no puede llevar ñ, espacios, etcetera debe contener la clave<br>
+                    <p size="8" id="incorrectousuario">el username no puede llevar ñ, espacios, etcetera; debe contener la clave<br>
                     institucional (ejemplo:RH123 o TECNM1234567899)</p>
                     </font>
                 </div>
@@ -54,7 +54,8 @@
                 <font size="2">
                     <p id="correctopass">contraseña valida</p>
                     <p id="incorrectopass">la contraseña no puede llevar ñ y espacios, <br>
-                    acepta simbolos, numeros y letras con una longitud de 8-16 caracteres</p>
+                    por lo menos debe contener un simbolo, una mayuscula, una minuscula y un numero,<br>
+                    con una longitud de 8-16 caracteres</p>
                 </font>
                 </div>
                 <!--<input  class="btn" type="submit" value="COMPROBAR">-->

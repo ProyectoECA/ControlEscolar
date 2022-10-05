@@ -187,7 +187,7 @@ body{
     border: none;
     border-radius: 10px;
     bottom: 4.5%;
-    transform:translate(50%,180%);
+    transform:translate(50%,-130%);
 }
 .input_busqueda{
     width: 20%;
@@ -199,7 +199,7 @@ body{
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    transform:translate(199%,-30%);
+    transform:translate(320%,-119%);
 
 
 
