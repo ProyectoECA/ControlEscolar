@@ -18,8 +18,9 @@
     <form method="POST">
     <div class="datos" style="float: center;">
         <input class="input" type="text" placeholder="No. Empleado" name="noEmpl">&nbsp;&nbsp;
-        <input class="btnBuscar" type="submit" value="BUSCAR">
-    </div> 
+        <input class="btnBuscar" type="submit" value="BUSCAR"> &nbsp;&nbsp;
+        <input class="btnSalir" type="submit" value="SALIR">&nbsp;&nbsp;
+    </div>  
     </form>
     <div class="contenedor-general" style="float: center;">
     <form method="POST" action="/ModificacionesBD/ModificaSecre.php">
