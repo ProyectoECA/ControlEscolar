@@ -16,10 +16,10 @@
     </div> 
     <div class="login-container">
         <div class="login-info-container">
-            <form class="inputs-container">
-                <input class="input" type="password" placeholder="Contraseña">
-                <input class="input" type="password" placeholder="Confirmar contraseña">
-                <button class="btn">CAMBIAR</button> 
+            <form class="inputs-container"  method="POST" action="/CamContra.php">
+                <input class="input" type="password" placeholder="Contraseña" name="contra1">
+                <input class="input" type="password" placeholder="Confirmar contraseña" name="contra2">
+                <a href="/CamContra.php"><button class="btn">CAMBIAR</button> </a>
             </form>
         </div>
     </div>

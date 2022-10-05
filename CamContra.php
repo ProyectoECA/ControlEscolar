@@ -1,6 +1,5 @@
 <?php
 
-
 define("ServerName1", 'localhost');
 define("Database1", "ConEscolarNoc");
 define("UID1", "Admini");
