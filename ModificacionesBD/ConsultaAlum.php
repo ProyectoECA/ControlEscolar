@@ -23,7 +23,7 @@
       </select>
       <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato"><br>
       <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'">
-      <input class="btnBuscar" type="submit" value="CANCELAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'">
+      <input class="btnBuscar" type="submit" value="CANCELAR" onclick="location.href = '/PaginasVista/jefe_Control.html' ">
     </div> 
     </form>
     <div class="contenedor-tabla">
