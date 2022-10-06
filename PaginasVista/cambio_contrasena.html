@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/estilos_cambioContrasena.css">
     <title>Cambio de Contraseña</title>
+    <style type="text/css">
+        #correctoco {
+            display: none;
+        }
+
+        #incorrectoco {
+            display: none;
+        }
+
+        #correctopass {
+            display: none;
+        }
+
+        #incorrectopass {
+            display: none;
+        }
+    </style>
 </head>
 <body> 
     <div class="logo" style="float: left;">
@@ -21,10 +38,12 @@
                 <input class="input" type="password" placeholder="Confirmar contraseña" name="contra2">
                 <div class="bot">
                     <a href="/CamContra.php"><button class="btn" style="float: right;">CAMBIAR</button> </a>
-                    <a href=""><button class="btn" style="float: left;">SALIR</button> </a>
+                    <a href="/PaginasVista/jefe_Control.html"><button class="btn" style="float: left;">SALIR</button> </a>
                 </div>
             </form>
         </div>
     </div>
+    <script src="/PaginasVista/script/cambio_contrasena.js"></script>
 </body>
 </html>
+<!-- cambio -->

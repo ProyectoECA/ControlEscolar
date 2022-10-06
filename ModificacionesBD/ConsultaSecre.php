@@ -57,7 +57,6 @@ class Consulta_Secre{
     function consultando(){
         $tipo=$_POST["tipo_consulta"];
         $dato=$_POST["dato"];
-        echo $dato;
         try{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
             $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
