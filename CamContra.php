@@ -48,27 +48,6 @@ class Cambio_Password  {
         <body>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <?php
-        #Si hay error
-        if($ban==false){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'Las contraseñas no son iguales',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed) {
-                location.href='/PaginasVista/jefe_Control.html';
-            }
-            else{
-                location.href='/PaginasVista/jefe_Control.html';
-            }
-            window.history.back('/PaginasVista/jefe_Control.html');})
-            </script>
-        <?php }
         #Si agrega con éxito
         if($ban==true){
             ?>
