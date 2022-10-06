@@ -33,11 +33,21 @@
     </div> 
     <div class="login-container">
         <div class="login-info-container">
-            <form class="inputs-container"  method="POST" action="/CamContra.php">
-                <input class="input" type="password" placeholder="Contraseña" name="contra1">
-                <input class="input" type="password" placeholder="Confirmar contraseña" name="contra2">
+            <form class="inputs-container"  method="POST" action="/CamContra.php" >
+                <input class="input" type="password" placeholder="Contraseña" name="contra1" id="contrasena">
+                <font size="2">
+                    <p id="correctoco">contraseña valida</p>
+                    <p id="incorrectoco">no puede llevar ñ y espacios, <br>
+                    por lo menos debe contener un simbolo, una mayuscula,<br> una minuscula, un numero y
+                    8-16 caracteres</p>
+                </font>
+                <input class="input" type="password" placeholder="Confirmar contraseña" name="contra2" id="confirma">
+                <font size="2">
+                    <p id="correctopass">contraseña comprobada</p>
+                    <p id="incorrectopass">no coinciden</p>
+                </font>
                 <div class="bot">
-                    <a href="/CamContra.php"><button class="btn" style="float: right;">CAMBIAR</button> </a>
+                    <a href="/CamContra.php"><button class="btn" style="float: right;" id="btn">CAMBIAR</button> </a>
                     <a href="'http://localhost/index.php'"><button class="btn" style="float: left;">SALIR</button> </a>
                 </div>
             </form>
