@@ -12,6 +12,12 @@ var b11=false;
 var b12=false;
 var b13=false;
 
+//expresion regular para texto que comience letra y continue numero
+const expresion = /^[a-zA-Z][a-zA-Z0-9]*$/;
+//expresion regular de correo
+const expresion2 = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+//expresion regular de letras con acentos
+const expresion3 = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/;
 
 
 
@@ -25,15 +31,18 @@ const expresiones = {
     rfc:/^[\w\W]{13}$/,
     telefono:/^[\d]{10}$/,
     secretaria:/^RH[\d]{3}$/,  
-    nom:/^([a-zA-Z]{3,30})+$/,
-    apellido:/^([a-zA-Z]{3,15})+$/,
+    //nom:/^([a-zA-Z]{3,30})+$/,
+    nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,30}$/,
+    //apellido:/^([a-zA-Z]{3,15})+$/,
+    apellido:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,15}$/,
     colonia:/^([a-zA-Z]{4,10})+$/,
     estado:/^([a-zA-Z]{4,20})+$/,
     titulo:/^([\d]{8})+$/,
     municipio:/^([a-zA-Z]{4,25})+$/,
     calle:/^([\w\W]{5,30})+$/,
     password: /^[\w\W]{8,16}$/,
-    correo:/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+    //correo:/^([a-zA-Z0-9_\.\-]{1,30})+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+    correo:/^(([a-zA-Z][a-zA-Z0-9\_]{1,30}))+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
 }
 
 
