@@ -29,7 +29,7 @@ const expresiones = {
     apellido:/^([a-zA-Z]{3,15})+$/,
     colonia:/^([a-zA-Z]{4,10})+$/,
     estado:/^([a-zA-Z]{4,20})+$/,
-    titulo:/^([a-zA-Z]{20})+$/,
+    titulo:/^([\d]{8})+$/,
     municipio:/^([a-zA-Z]{4,25})+$/,
     calle:/^([\w\W]{5,30})+$/,
     password: /^[\w\W]{8,16}$/,
