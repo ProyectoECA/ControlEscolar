@@ -1,3 +1,5 @@
+<html>
+<body>
 <?php
 
 define("ServerName1", 'localhost');
@@ -18,7 +20,13 @@ class Cambio_Password  {
 
         $con=new Cambio_Password;
 
-        if($pass==$pass1){
+        if($pass=="" or $pass1==""){?>
+            <script>
+            location.href='/PaginasVista/jefe_Control.html';
+            </script>
+        <?php
+        }
+        else if($pass==$pass1){
             
             $password_hash = password_hash($pass, PASSWORD_DEFAULT);
 
@@ -44,8 +52,6 @@ class Cambio_Password  {
     function alerts($ban){
         #Alertas (necesitan html a fuerzas)
         ?>
-        <html>
-        <body>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <?php
         #Si agrega con éxito
@@ -70,9 +76,26 @@ class Cambio_Password  {
             </script>
         <?php
         }
-        ?>
-        
+        else{?>
+            <script>
+            Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'Las contraseñas no coinciden',
+            confirmButtonText: 'Aceptar',
+            timer:5000,
+            timerProgressBar:true,
+            }).then((result) => {
+            if (result.isConfirmed){
+                location.href='/PaginasVista/jefe_Control.html';
+            }
+            else{
+                location.href='/PaginasVista/jefe_Control.html';
+            }
+            window.history.back('/PaginasVista/jefe_Control.html');})
+            </script>
         <?php
+        }
     }
 }
 
