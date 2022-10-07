@@ -31,75 +31,75 @@ class Insertar_Secretaria{
 
         $in=new Insertar_Secretaria;
         if(isset($_POST['guarda_sec'])){
-
-        #COMPRUEBA QUE EL ID NO ESTE REGISTRADO
-        $query="SELECT * FROM [Secretarias] where IdSec=?";
-        $parametros=array($no_empleado);
-        $res=$cone->Buscar($query,$parametros);
-        $cone->CerrarConexion();
-
-        if($res[0][0]="IdSec")
-        {
-            echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
-        }
-        else{
- 
-        #INSERTA EN TABLA SECRETARIAS
-        try{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
             $conexion=sqlsrv_connect(ServerName, $connectionInfo);
 
+            #COMPRUEBA QUE EL ID NO ESTE REGISTRADO
+            $query="SELECT * FROM [Secretarias] where IdSec=?";
+            $parametros=array($no_empleado);
+            $res=$cone->Buscar($query,$parametros);
+            $cone->CerrarConexion();
 
-            $query="INSERT INTO [Secretarias] (IdSec,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia) VALUES (?,?,?,?,?,?,?,?)";
-            $parametros=array($no_empleado,$nombre,$ape_Pat,$ape_Mat,$telefono,$email,$calle,$colonia);
-            $stmt = sqlsrv_query($conexion, $query, $parametros);
+            if(empty($res)){
+                #INSERTA EN TABLA SECRETARIAS
+                try{
+                    
 
-            $query="SELECT * FROM [Lugar] where cp=?";
-            $parametros=array($codPos);
-            $stmt = sqlsrv_query($conexion, $query, $parametros);
-            $datos=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
 
-            #SI EL CP NO ESTA REGISTRADO AÚN LO AÑADE
-            if(empty($datos)){
-                $query= "INSERT INTO [Lugar] (CP, Municipio, Estado) VALUES (?,?,?)";
-                $parametros=array($codPos, $municipio, $estado);
-                $stmt= sqlsrv_query($conexion,$query, $parametros);
+                    $query="INSERT INTO [Secretarias] (IdSec,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia) VALUES (?,?,?,?,?,?,?,?)";
+                    $parametros=array($no_empleado,$nombre,$ape_Pat,$ape_Mat,$telefono,$email,$calle,$colonia);
+                    $stmt = sqlsrv_query($conexion, $query, $parametros);
 
-                $query="INSERT INTO [LugSecretarias] (IdSec,CP) VALUES (?,?)";
-                $parametros=array($no_empleado,$codPos);
-                $stmt=sqlsrv_query($conexion,$query,$parametros);
-                #$resul=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
-                
-                #Llamada a Alerta de registrado
-                $ban=true;
-                $in->alerts($ban);
-                
-                #Agrega contraseña en hash
-                $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
-                $conexion_pass->CerrarConexion();
+                    $query="SELECT * FROM [Lugar] where cp=?";
+                    $parametros=array($codPos);
+                    $stmt = sqlsrv_query($conexion, $query, $parametros);
+                    $datos=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
+
+                    #SI EL CP NO ESTA REGISTRADO AÚN LO AÑADE
+                    if(empty($datos)){
+                        $query= "INSERT INTO [Lugar] (CP, Municipio, Estado) VALUES (?,?,?)";
+                        $parametros=array($codPos, $municipio, $estado);
+                        $stmt= sqlsrv_query($conexion,$query, $parametros);
+
+                        $query="INSERT INTO [LugSecretarias] (IdSec,CP) VALUES (?,?)";
+                        $parametros=array($no_empleado,$codPos);
+                        $stmt=sqlsrv_query($conexion,$query,$parametros);
+                        #$resul=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
+                        
+                        #Llamada a Alerta de registrado
+                        $ban=true;
+                        $in->alerts($ban);
+                        
+                        #Agrega contraseña en hash
+                        $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
+                        $conexion_pass->CerrarConexion();
+                    }
+                    #SI EL CP YA ESTA REGISTRADO
+                    else{
+                        $query="INSERT INTO [LugSecretarias] (IdSec,CP) VALUES (?,?)";
+                        $parametros=array($no_empleado,$codPos);
+                        $stmt=sqlsrv_query($conexion,$query,$parametros);
+                        
+                        #Llamada a Alerta de registrado
+                        $ban=true;
+                        $in->Alerts($ban);
+
+                        #Agrega contraseña en hash
+                        $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
+                        $conexion_pass->CerrarConexion();
+                    }
+                    sqlsrv_close($conexion);
+                }
+                catch(Exception $e){
+                    #Llamada a Alerta de error
+                    $ban=false;
+                    $in->alerts($ban);
+                }
             }
-            #SI EL CP YA ESTA REGISTRADO
             else{
-                $query="INSERT INTO [LugSecretarias] (IdSec,CP) VALUES (?,?)";
-                $parametros=array($no_empleado,$codPos);
-                $stmt=sqlsrv_query($conexion,$query,$parametros);
-                
-                #Llamada a Alerta de registrado
-                $ban=true;
-                $in->Alerts($ban);
-
-                #Agrega contraseña en hash
-                $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
-                $conexion_pass->CerrarConexion();
+                echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
             }
-            sqlsrv_close($conexion);
-        }
-        catch(Exception $e){
-            #Llamada a Alerta de error
-            $ban=false;
-            $in->alerts($ban);
-        }
-    }
+    
    
 }
     else if(isset($_POST['cancela_sec'])){

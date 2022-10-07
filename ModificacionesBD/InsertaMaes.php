@@ -35,6 +35,8 @@ class Insertar_Maestros {
 
         $in= new Insertar_Maestros;
         if(isset($_POST['guarda_sec'])){
+            $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
+            $conexion=sqlsrv_connect(ServerName, $connectionInfo);
 
             #COMPRUEBA QUE EL ID NO ESTE REGISTRADO
             $query="SELECT * FROM [Maestros] where ClaveMa=?";
@@ -42,11 +44,7 @@ class Insertar_Maestros {
             $res=$cone->Buscar($query,$parametros);
             $cone->CerrarConexion();
 
-            if($res[0][0]="ClaveMa")
-            {
-                echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
-            }
-            else{
+            if(empty($res)){
                 #INSERTA EN TABLA MAESTROS
                 try{
                     $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
@@ -102,6 +100,10 @@ class Insertar_Maestros {
                     $ban=false;
                 }
             }
+            else{
+                echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
+            }
+            
         }
     else if(isset($_POST['cancela_sec'])){
         try{include_once "../PaginasVista/jefe_Control.html";
