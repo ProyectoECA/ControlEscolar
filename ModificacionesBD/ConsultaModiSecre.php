@@ -18,56 +18,12 @@
     <form method="POST">
     <div class="datos" style="float: center;">
         <input class="input" type="text" placeholder="No. Empleado" name="noEmpl">&nbsp;&nbsp;
-        <input class="btnBuscar" type="submit" value="BUSCAR">
-    </div> 
+        <input class="btnBuscar" type="submit" value="BUSCAR"> &nbsp;&nbsp;
+        <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php'">&nbsp;&nbsp;
+    </div>  
     </form>
     <div class="contenedor-general" style="float: center;">
-<?php
-define("ServerName1", 'localhost');
-define("Database1", "ConEscolarNoc");
-define("UID1", "Admini");
-define("PWD1", "control2022");
-define("CharacterSet1", 'UTF-8');
-
-class Saca_ID{
-    function agrega_id(){
-        $id=$_POST["noEmpl"];
-        $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
-        $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
-        $query="SELECT IdSec FROM [Secretarias] where IdSec=?";
-        $parametros=array($id);
-        $stmt = sqlsrv_query($conexion, $query, $parametros);
-        $datos=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);?>
-
-        <?php
-        if(empty($datos)){?>
-                <script>
-                    Swal.fire({
-                    icon: 'error',
-                    title: 'ERROR',
-                    text: 'Datos inexistentes',
-                    confirmButtonText: 'Aceptar',
-                    timer:5000,
-                    timerProgressBar:true,
-                    }).then((result) => {
-                    if (result.isConfirmed) {
-                        location.href='../ModificacionesBD/GetIDSecreMod.php';
-                    }
-                    else{
-                        location.href='../PaginasVista/modificar_secretarias.html';
-                    }
-                    window.history.back('../PaginasVista/jefe_Control.html');})
-                </script>
-        <?php
-        }
-        else{
-            $query="SELECT Secretarias.IdSec,Nombre,ApePaterno,ApeMaterno,Calle,Colonia,Lugar.CP,Municipio,Estado,Telefono,Correo
-            FROM [Secretarias],[LugSecretarias],[Lugar]
-            where (Secretarias.IdSec=? and Secretarias.IdSec=LugSecretarias.IdSec and LugSecretarias.CP=Lugar.CP)";
-            $parametros=array($id);
-            $stmt2 = sqlsrv_query($conexion, $query, $parametros);
-            while($row=sqlsrv_fetch_array($stmt2,SQLSRV_FETCH_ASSOC)){?>
-                <form method="POST" action="/ModificacionesBD/ModificaSecre.php">
+    <form method="POST" action="/ModificacionesBD/ModificaSecre.php">
                 <div class="contenedor-datos" style="float: center;">
                 <input class="conteDatos" type="text" placeholder="No. Empleado" name="clave2" value="<?php echo $row['IdSec'];?>" readonly>
                 <input class="conteDatos" type="text" placeholder="Nombre" name="nombre" value="<?php echo $row['Nombre'];?>">
@@ -89,12 +45,3 @@ class Saca_ID{
             </div>
             </body>
             </html>
-            <?php
-            }
-
-        }
-    }
-}
-$id=new Saca_ID;
-$id->agrega_id();
-?>

@@ -12,31 +12,34 @@
         <div class="alumnos-datos-contenedor">
             <div class="social_alumnos">
                 <div class="Imagen_de_registr">
-                    <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="30%" >
+                    <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="20%" >
                 </div>
             </div>
             <from class="cajas_de_texto_alumnos">
-                <input class="caja_texto" type="text" placeholder="No.Control"><br>
-                <input class="caja_texto" type="text" placeholder="Nombre"><br>
-                <input class="caja_texto" type="text" placeholder="Apellido paterno"><br>
-                <input class="caja_texto" type="text" placeholder="Apellido materno"><br>
-                <input class="caja_texto" type="text" placeholder="Calle y número"><br>
-                <input class="caja_texto" type="text" placeholder="Colonia"><br>
-                <input class="caja_texto" type="text" placeholder="Municipio"><br>
-                <input class="caja_texto" type="text" placeholder="Estado"><br>
-                <input class="caja_texto" type="int" placeholder="Código postal"><br>
-                <input class="caja_texto" type="int" placeholder="No.Teléfono"><br>
-                <input class="caja_texto" type="int" placeholder="Nombre del padre o tutor"><br>
-                <input class="caja_texto" type="int" placeholder="No.Teléfono padre o tutor"><br>
-                <input class="caja_texto" type="email" placeholder="Correo">
+                <input class="caja_texto" type="text" placeholder="No. control           (ejemplo: TECNM1234567899)" name="No. control" id="numerocontrol"><br>
+                <input class="caja_texto" type="text" placeholder="Nombre                (ejemplo: Juan)" name="nombre " id="nombre"><br>
+                <input class="caja_texto" type="text" placeholder="Apellido paterno  (ejemplo: Arteaga)" name="apellidoP"
+                    id="apellidoP"><br>
+                <input class="caja_texto" type="text" placeholder="Apellido materno (ejemplo: Moreno)" name="apellidoM"
+                    id="apellidoM"><br>
+                <input class="caja_texto" type="text" placeholder="Calle y numero     (Hidalgo#2)" name="calle" id="calle"><br>
+                <input class="caja_texto" type="text" placeholder="Colonia                (ejemplo: centro)" name="colonia" id="colonia"><br>
+                <input class="caja_texto" type="text" placeholder="Municipio            (ejemplo: Tepechitlan)" name="municipio" id="municipio"><br>
+                <input class="caja_texto" type="text" placeholder="Estado                 (ejemplo: Zacatecas)" name="estado" id="estado"><br>
+                <input class="caja_texto" type="int" placeholder="Codigo postal      (ejemplo: 12345)" name="cp" id="cp"><br>
+                <input class="caja_texto" type="int" placeholder="No.Telefono         (ejemplo: 1234567890)" name="tel" id="tel"><br>
+                <input class="caja_texto" type="text" placeholder="Nombre del padre o tutor       (ejemplo: Alonso)" name="tutor"
+                    id="tutor"><br>
+                <input class="caja_texto" type="int" placeholder="telefono de padre o tutor  (ejemplo: 1234567890)" name="teltutor"
+                    id="teltutor"><br>
+                <input class="caja_texto" type="email" placeholder="Correo                     (ejemplo: jose@gmail.com)" name="correo" id="correo">
             </from>
         </div>
     </div>
     <div class="botones">
-        <button class="guardar_boton">Guardar</button>
-        <button class="boton_cancelar">Cancelar</button>
+        <button disabled id="btn" class="guardar_boton">Guardar</button>
+        <button class="boton_cancelar" >Cancelar</button>
     </div>
-
-    
+    <script src="/PaginasVista/script/cajas_alumnos.js"></script>    
 </body>
 </html>

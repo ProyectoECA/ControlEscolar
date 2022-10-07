@@ -13,17 +13,17 @@
     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
   </div>
   <div class="contenedor_titulo_2">
-    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlan</h1>
+    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlán</h1>
   </div>
   <form method="POST" action="/ModificacionesBD/ConsultaSecre.php">
     <div class="datos" style="float: center;">
-      <select name="tipo_consulta" id="tipo_consulta">
+      <select class="combobox" name="tipo_consulta" id="tipo_consulta">
       <option value="clave">Clave</option>
       <option value="nombre">Nombre</option>
       </select>
-      <input class="input" type="text" placeholder="Inserta dato" name="dato">
+      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato">
       <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaSecre.php'">
-      <input class="btnBuscar" type="submit" value="CANCELAR" onclick="location.href='/ModificacionesBD/ConsultaSecre.php'">
+      <input class="btnBuscar" type="button" value="CANCELAR"  onclick="location.href='http://localhost/index.php'">
     </div> 
     </form>
     <div class="contenedor-tabla">
@@ -57,7 +57,6 @@ class Consulta_Secre{
     function consultando(){
         $tipo=$_POST["tipo_consulta"];
         $dato=$_POST["dato"];
-        echo $dato;
         try{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
             $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
