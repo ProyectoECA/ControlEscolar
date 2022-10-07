@@ -11,8 +11,8 @@ body{
 }
 
 .Contenedor_datos_maestros{
-    height:50em;
-    width: 75em;
+    height:70em;
+    width: 70em;
     margin: 3em auto;
     display: flex;
     justify-content: space-evenly;
@@ -22,7 +22,7 @@ body{
 }
 
 .maestros-datos-contenedor{
-    width: 70%;
+    width: 80%;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -37,14 +37,14 @@ body{
     justify-content: center;
 }
 .cajas_de_texto_maestros{
-    height: 70%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background: #1e355e;
-    padding: 10px;
+    padding: 2px;
 }
 .caja_texto{
     padding-left: 20px;
@@ -59,7 +59,7 @@ body{
     border: 2px solid #1e355e;
 }
 .caja_texto,boton{
-    width: 70%;
+    width: 50%;
     height: 3.125rem;
     font-size: 1em;
     border-radius: 1px #1e355e;
@@ -70,7 +70,6 @@ body{
     border-radius: 10px;
     font-weight: 600;
     letter-spacing: 1px;
-    box-sizing: border-box;
 }
 
 .caja_texto_email,boton{
@@ -78,6 +77,20 @@ body{
     height: 3.125rem;
     font-size: 1em;
     border-radius: 1px #1e355e;
+}
+label{
+    font : 1.3em "typewriter";
+    color: white;
+}
+.Contenedor_ubicacion{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+    font-size: large;
 }
 form{
     margin: 0 auto; /* Centramos el formulario */

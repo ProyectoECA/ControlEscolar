@@ -16,12 +16,15 @@ define("CharacterSet2", 'UTF-8');
     <title>Datos Secretaria</title>
 </head>
 <body>
-  <div class="Contenedor_titulo">
-    <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
-  </div>
   <div class="contenedor_titulo_2">
     <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlán</h1>
   </div>
+  <div class="Contenedor_titulo">
+    <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
+  </div>
+  <div class="Contenedor_ubicacion">
+    <h2 class="ubicacion">Consulta Secretarias</h2>
+</div>
   <form method="POST" action="/ModificacionesBD/ConsultaSecre.php">
     <div class="datos" style="float: center;">
       <select class="combobox" name="tipo_consulta" id="tipo_consulta">
@@ -37,7 +40,7 @@ define("CharacterSet2", 'UTF-8');
         <table class="table-cebra" id="Secre">
          <thead>
             <tr>
-                <th class="sticky"> No.Empleado </th>
+                <th class="sticky"> No.empleado </th>
                 <th> Nombre </th>
                 <th> Apellido paterno </th>
                 <th> Apellido materno </th>
@@ -45,7 +48,7 @@ define("CharacterSet2", 'UTF-8');
                 <th>Colonia</th>
                 <th>Municipio</th>
                 <th>Estado</th>
-                <th>Código Postal</th>
+                <th>Código postal</th>
                 <th> Teléfono </th>
                 <th>Correo</th>
             </tr>
