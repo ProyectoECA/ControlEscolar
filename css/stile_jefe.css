@@ -19,13 +19,15 @@ nav{
     height: 7em;
     width: 15em;
     display: flexs; 
+    
 } 
 
 .nombre{ 
     height: 7em;
-    width: 50em;
-    margin: 0em auto; 
-    color: #1e355e; 
+    width: 63em;
+    margin: 0em 20em; 
+    color: #1e355e;  
+    text-align: center; 
     justify-content: space-between;
     overflow: hidden;
     display: flex;
@@ -182,29 +184,29 @@ span a:hover {
 
 /* ################################################################3*/
 
-.boton_cambiar_contraseña{
-    padding:2px 60px;
+.boton_cambiar_contraseña{ 
+    padding:4px 30px;
     background:#1e355e;
     border:0;
     outline:none;
     cursor:pointer;
-    font-size:22px;
+    font-size:16px;
     font-weight:200;
     border-radius:30px;
     color: white;
-    transform: translate(300%,-1750%);
-}
+    transform: translate(400%,-1970%);
+} 
 .boton_cerrar_sesion{
-    padding:2px 60px;
+    padding:3px 52px;
     background:#1e355e;
     border:0;
     outline:none;
     cursor:pointer;
-    font-size:22px;
+    font-size:17px;
     font-weight:200;
     border-radius:30px;
     color: white;
-    transform: translate(390%,-1999%);
+    transform: translate(408%,-2190%);
 }
 .input, .btn{
     width: 80%;
@@ -502,4 +504,24 @@ span a:hover {
     color: #fff;
 }
 
+/*###################################################*/
+
+.mostrar_usuario{ 
+    height: 45px; 
+    width: 290px; 
+    margin: 0.19em auto;
+    border: 1.45px solid #1e355e; 
+    border-radius: 10px;  
+    
+} 
+
+.imagen{ 
+    height: 45px; 
+    width: 50px;
+} 
+
+.texto{
+    height: 45px;
+    width: 230px; 
+}
 
