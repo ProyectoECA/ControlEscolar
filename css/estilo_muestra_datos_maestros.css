@@ -44,6 +44,16 @@ body{
     justify-content: center;
     display: flex;
 }
+.Contenedor_ubicacion{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+    font-size: large;
+}
 
 .table-cebra td{
     color:black;
