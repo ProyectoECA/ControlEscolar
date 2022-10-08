@@ -24,14 +24,19 @@ nav{
 
 .nombre{ 
     height: 7em;
-    width: 63em;
+    width: 64em;
     margin: 0em 20em; 
     color: #1e355e;  
-    text-align: center; 
+    text-align: center;   
     justify-content: space-between;
     overflow: hidden;
     display: flex;
-} 
+}  
+
+.titulo{
+    height: 7em;
+    width: 40em;
+}
 
 .conte{ 
     margin: 0.5em auto;
