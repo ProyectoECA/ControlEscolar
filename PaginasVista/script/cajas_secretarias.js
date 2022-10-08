@@ -70,7 +70,7 @@ nombre.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    nombre.value = valorinput.replace(/\s/g, '').trim();
+    //nombre.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.nom.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b2 = true;
         nombre.removeAttribute("style");
@@ -85,7 +85,7 @@ nombre.addEventListener('keyup', (e) => {
         validar();
     }
 });
-const apellidoP = document.getElementById('apellidoP');
+//const apellidoP = document.getElementById('apellidoP');
 apellidoP.addEventListener('keyup', (e) => {
     let valorinput = e.target.value;
     console.log(valorinput);
@@ -97,7 +97,7 @@ apellidoP.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    apellidoP.value = valorinput.replace(/\s/g, '').trim();
+    //apellidoP.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.apellido.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b3 = true;
         apellidoP.removeAttribute("style");
@@ -123,7 +123,7 @@ apellidoM.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    apellidoM.value = valorinput.replace(/\s/g, '').trim();
+    //apellidoM.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.apellido.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b4 = true;
         apellidoM.removeAttribute("style");
@@ -330,7 +330,7 @@ correo.addEventListener('keyup', (e) => {
 
 function validar(){
     const bot = document.getElementById('btn');
-    if(b1 == true && b2 == true && b3 == true && b4 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true){
+    if(b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true){
         bot.disabled=false;
     }
     else{

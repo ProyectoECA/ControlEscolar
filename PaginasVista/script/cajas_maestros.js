@@ -87,7 +87,7 @@ nombre.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    nombre.value = valorinput.replace(/\s/g, '').trim();
+    //nombre.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.nom.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b2 = true;
@@ -115,7 +115,7 @@ apePat.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    apePat.value = valorinput.replace(/\s/g, '').trim();
+    //apePat.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.apellido.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b3= true;
@@ -143,7 +143,7 @@ apeMat.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    apeMat.value = valorinput.replace(/\s/g, '').trim();
+    //apeMat.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.apellido.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b4= true;
@@ -414,7 +414,7 @@ correo.addEventListener('keyup', (e) => {
 
 function validar(){
     const btn = document.getElementById('btn');
-    if (b1 == true && b2 == true && b3 == true && b4 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true && b13 == true) {
+    if (b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true && b13 == true) {
         btn.disabled=false;
     }
     else {
