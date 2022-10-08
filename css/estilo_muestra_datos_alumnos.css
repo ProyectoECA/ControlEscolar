@@ -236,26 +236,5 @@ body{
 }
 
 
-.btnBuscar{
-    width: 20%;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: white;
-    border-radius: 5px;
-    background-color: #1e355e;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    bottom: 4.5%;    
-}
-.input_trato{
-    padding-left: 20px;
-    border: #1e355e;
-    border-radius: 5px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    box-sizing: border-box;
-    
-}
 
 

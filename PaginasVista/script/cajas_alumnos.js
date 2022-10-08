@@ -20,15 +20,15 @@ const expresiones = {
     rfc:/^[\w\W]{13}$/,
     telefono:/^[\d]{10}$/,
     secretaria:/^RH[\d]{3}$/,  
-    nom:/^([a-zA-Z]{3,30})+$/,
-    apellido:/^([a-zA-Z]{3,15})+$/,
+    nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,30}$/,
+    apellido:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,15}$/,
     colonia:/^([a-zA-Z]{4,10})+$/,
     estado:/^([a-zA-Z]{4,20})+$/,
     titulo:/^([a-zA-Z]{20})+$/,
     municipio:/^([a-zA-Z]{4,25})+$/,
     calle:/^([\w\W]{5,30})+$/,
     password: /^[\w\W]{8,16}$/,
-    correo:/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+    correo:/^(([a-zA-Z][a-zA-Z0-9\_]{1,30}))+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
 }
 
 const numerocontrol = document.getElementById('numerocontrol');

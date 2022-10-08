@@ -1,5 +1,6 @@
 <?php
 include_once "../CRUD/Usuarios_password.php";
+include_once "../CRUD/CRUD_bd_SQLServer.php";
 
 define("ServerName1", 'localhost');
 define("Database1", "ConEscolarNoc");
@@ -9,6 +10,9 @@ define("CharacterSet1", 'UTF-8');
 
 class Insertar_Secretaria{
     function insertando(){
+        $cone=new CRUD_SQL_SERVER();
+        $cone->conexionBD();
+
         $conexion_pass = new User_password;
         $conexion_pass->conexionBD();
 
@@ -27,10 +31,25 @@ class Insertar_Secretaria{
 
         $in=new Insertar_Secretaria;
         if(isset($_POST['guarda_sec'])){
+
+        #COMPRUEBA QUE EL ID NO ESTE REGISTRADO
+        $query="SELECT * FROM [Secretarias] where IdSec=?";
+        $parametros=array($no_empleado);
+        $res=$cone->Buscar($query,$parametros);
+        $cone->CerrarConexion();
+
+        if($res[0][0]="IdSec")
+        {
+            echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
+        }
+        else{
+ 
         #INSERTA EN TABLA SECRETARIAS
         try{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
             $conexion=sqlsrv_connect(ServerName, $connectionInfo);
+
+
             $query="INSERT INTO [Secretarias] (IdSec,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia) VALUES (?,?,?,?,?,?,?,?)";
             $parametros=array($no_empleado,$nombre,$ape_Pat,$ape_Mat,$telefono,$email,$calle,$colonia);
             $stmt = sqlsrv_query($conexion, $query, $parametros);
@@ -81,6 +100,8 @@ class Insertar_Secretaria{
             $in->alerts($ban);
         }
     }
+   
+}
     else if(isset($_POST['cancela_sec'])){
         try{include_once "../PaginasVista/jefe_Control.html";
         }

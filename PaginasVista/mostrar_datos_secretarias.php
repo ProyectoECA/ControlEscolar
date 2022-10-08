@@ -33,7 +33,7 @@ define("CharacterSet2", 'UTF-8');
       </select>
       <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato">
       <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaSecre.php'">
-      <input class="btnBuscar" type="submit" value="CANCELAR" onclick="location.href='/ModificacionesBD/ConsultaSecre.php'">
+      <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php'">
     </div> 
     </form>
     <div class="contenedor-tabla">

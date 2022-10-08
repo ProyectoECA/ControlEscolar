@@ -18,7 +18,7 @@
                 <div class="datos" style="float: center;">
                     <input class="input" type="text" placeholder="Clave" name="clave1">&nbsp;&nbsp;
                     <input class="btnBuscar" type="submit" value="BUSCAR" onclick="location.href = '/ModificacionesBD/IdMaesMod.php' ">&nbsp;&nbsp;
-                    <input class="btnSalir" type="submit" value="SALIR" onclick="location.href = '/ModificacionesBD/IdMaesMod.php' ">&nbsp;&nbsp;
+                    <input class="btnSalir" type="button" value="CANCELAR"  onclick="location.href='http://localhost/index.php'">&nbsp;&nbsp;
                 </div>
                 </form>
                 <div class="contenedor-general" style="float: center;">

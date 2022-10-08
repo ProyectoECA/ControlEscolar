@@ -12,6 +12,7 @@ let contra=" ";
 let aux=" ";
 
 //escuchador de eventos para caja usuario
+
 const contrasena = document.getElementById('contrasena');
 contrasena.addEventListener('keyup', (e) => {
     let valorinput = e.target.value;
@@ -24,9 +25,6 @@ contrasena.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    contrasena.value = valorinput.replace(/\s/g, '').trim();
-    console.log(valorinput);
-
     if(valorinput!=aux && valorinput.length > 0){
         bcontraseña = false;
         correctopass.style.display = "none";
@@ -46,6 +44,26 @@ contrasena.addEventListener('keyup', (e) => {
         correctopass.style.color = "green";
         verifica();
     }  
+});
+
+
+
+//const contrasena = document.getElementById('contrasena');
+contrasena.addEventListener('keyup', (e) => {
+    let valorinput = e.target.value;
+    contra = e.target.value;
+    var i = 0;
+    var encontrado = false;
+    while (i < valorinput.length && encontrado == false) {
+        if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
+            encontrado = true;
+        }
+        i++;
+    }
+    contrasena.value = valorinput.replace(/\s/g, '').trim();
+    console.log(valorinput);
+
+
 
     if ((expresiones.password.test(valorinput.replace(/\s/g, '').trim()) || expresiones.secretaria.test(valorinput.replace(/\s/g, '').trim()) ) && encontrado == false) {
         busuario = true;
@@ -56,7 +74,7 @@ contrasena.addEventListener('keyup', (e) => {
         correctoco.style.display = "block";
         correctoco.style.color = "green";
         verifica();
-
+    
     }
     else {
         busuario = false;

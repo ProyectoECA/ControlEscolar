@@ -23,7 +23,7 @@
       </select>
       <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato">
       <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaSecre.php'">
-      <input class="btnBuscar" type="submit" value="CANCELAR" onclick="location.href='/ModificacionesBD/ConsultaSecre.php'">
+      <input class="btnBuscar" type="button" value="CANCELAR"  onclick="location.href='http://localhost/index.php'">
     </div> 
     </form>
     <div class="contenedor-tabla">
@@ -57,7 +57,6 @@ class Consulta_Secre{
     function consultando(){
         $tipo=$_POST["tipo_consulta"];
         $dato=$_POST["dato"];
-        echo $dato;
         try{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
             $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
