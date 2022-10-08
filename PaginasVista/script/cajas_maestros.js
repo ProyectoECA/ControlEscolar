@@ -199,7 +199,7 @@ colonia.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    colonia.value = valorinput.replace(/\s/g, '').trim();
+    //colonia.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.colonia.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b6 = true;
@@ -227,7 +227,7 @@ municipio.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    municipio.value = valorinput.replace(/\s/g, '').trim();
+    //municipio.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.municipio.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b7 = true;
@@ -255,7 +255,7 @@ estado.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    estado.value = valorinput.replace(/\s/g, '').trim();
+    //estado.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.estado.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b8 = true;
