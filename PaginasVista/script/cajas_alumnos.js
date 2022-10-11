@@ -70,7 +70,7 @@ nombre.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    nombre.value = valorinput.replace(/\s/g, '').trim();
+    //nombre.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.nom.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b2 = true;
         nombre.removeAttribute("style");
@@ -97,7 +97,7 @@ apellidoP.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    apellidoP.value = valorinput.replace(/\s/g, '').trim();
+    //apellidoP.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.apellido.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b3 = true;
         apellidoP.removeAttribute("style");
@@ -123,7 +123,7 @@ apellidoM.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    apellidoM.value = valorinput.replace(/\s/g, '').trim();
+    //apellidoM.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.apellido.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b4 = true;
         apellidoM.removeAttribute("style");
@@ -177,7 +177,7 @@ colonia.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    colonia.value = valorinput.replace(/\s/g, '').trim();
+    //colonia.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.colonia.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b6 = true;
         colonia.removeAttribute("style");
@@ -204,7 +204,7 @@ municipio.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    municipio.value = valorinput.replace(/\s/g, '').trim();
+    //municipio.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.municipio.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b7 = true;
         municipio.removeAttribute("style");
@@ -231,7 +231,7 @@ estado.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    estado.value = valorinput.replace(/\s/g, '').trim();
+    //estado.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.estado.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b8 = true;
         estado.removeAttribute("style");
@@ -312,7 +312,7 @@ tutor.addEventListener('keyup', (e) => {
         }
         i++;
     }
-    tutor.value = valorinput.replace(/\s/g, '').trim();
+    //tutor.value = valorinput.replace(/\s/g, '').trim();
     if (expresiones.nom.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b11 = true;
         tutor.removeAttribute("style");
@@ -384,7 +384,7 @@ correo.addEventListener('keyup', (e) => {
 
 function validar(){
     const bot = document.getElementById('btn');
-    if(b1 == true && b2 == true && b3 == true && b4 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true &&  b13 == true ){
+    if(b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true &&  b13 == true ){
         bot.disabled=false;
     }
     else{
