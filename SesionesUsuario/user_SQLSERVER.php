@@ -8,6 +8,7 @@ class User extends CRUD_SQL_SERVER {
 
     private $username;
     private $nivel;
+    private $nombre;
     
     public function userComprobacionSecretaria($user, $pass)
     {
@@ -108,6 +109,42 @@ class User extends CRUD_SQL_SERVER {
     
     }
 
+    public function BuscarNombreUsuario($clave,$nivel)
+    {
+        # busca el nombre de la persona que se esta logeando
+
+        if($nivel == 1 ){
+            return "Administrador";
+        }else{
+
+            $this->conexionBD();
+            switch($nivel){
+            case 2:
+                $query = "SELECT Nombre FROM [Secretarias] WHERE IdSec=?";
+                break;
+            case 3:
+                $query = "SELECT Nombre FROM [Maestros] WHERE ClaveMa=?";
+                break;
+            case 4:
+                $query = "SELECT Nombre FROM [Alumnos] WHERE NoControl=?";
+                break;
+                
+            }
+            $parametros = array($clave);
+            $datos = $this->Buscar($query, $parametros);
+            $this->CerrarConexion();
+
+            var_dump($datos);
+            return $datos[0][0];
+        
+
+        
+
+        }
+        
+
+    }
+
     public function setUser($user,$nivel)
     {
         /**
@@ -116,12 +153,21 @@ class User extends CRUD_SQL_SERVER {
         $this->username = $user;
         $this->nivel = $nivel;
         
+        
+    }
+    public function setNombre($nombre)
+    {
+        # code...
+        $this->nombre = $nombre;
     }
     public function getUsername(){
         return $this->username;
     }
     public function getNivel(){
         return $this->nivel;
+    }
+    public function getNombre(){
+        return $this->nombre;
     }
  
     
