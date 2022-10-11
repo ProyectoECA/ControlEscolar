@@ -97,7 +97,9 @@ class Insertar_Secretaria{
                 }
             }
             else{
-                echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
+                $ban=false;
+                $in->alerts($ban);
+                #echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
             }
     
    
@@ -147,7 +149,7 @@ class Insertar_Secretaria{
             Swal.fire({
             icon: 'success',
             title: 'AGREGACIÓN EXITOSA',
-            text: 'Secretaria añadida con éxito',
+            text: 'Secretaria/o añadida con éxito',
             confirmButtonText: 'Aceptar',
             timer:5000,
             timerProgressBar:true,
