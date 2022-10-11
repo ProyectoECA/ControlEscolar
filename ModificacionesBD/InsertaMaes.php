@@ -101,7 +101,9 @@ class Insertar_Maestros {
                 }
             }
             else{
-                echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
+                $ban=false;
+                $in->alerts($ban);
+                #echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
             }
             
         }
@@ -134,10 +136,10 @@ class Insertar_Maestros {
             timerProgressBar:true,
             }).then((result) => {
             if (result.isConfirmed) {
-                location.href='../PaginasVista/secretarias.html';
+                location.href='../PaginasVista/maestros_datos_per.html';
             }
             else{
-                location.href='../PaginasVista/secretarias.html';
+                location.href='../PaginasVista/maestros_datos_per.html';
             }
             window.history.back('../PaginasVista/jefe_Control.html');})
             </script>
@@ -149,7 +151,7 @@ class Insertar_Maestros {
             Swal.fire({
             icon: 'success',
             title: 'AGREGACIÓN EXITOSA',
-            text: 'Maestro añadido con éxito',
+            text: 'Maestro/a añadido con éxito',
             confirmButtonText: 'Aceptar',
             timer:5000,
             timerProgressBar:true,
