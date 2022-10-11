@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos Maestros</title>
+    <title>Registro Maestros</title>
     <link rel="stylesheet" href="/css/estilo_datos_mestros.css">
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
 <body>
+    <div class="Contenedor_ubicacion">
+        <h1 class="ubicacion">Registro  maestros</h1>
+   </div>
     <div class="Contenedor_datos_maestros">
         <div class="maestros-datos-contenedor">
             <div class="social_maestros">
@@ -16,21 +19,34 @@
                 </div>
             </div>
             <form  method="POST" action="../ModificacionesBD/InsertaMaes.php" class="cajas_de_texto_maestros" >
-                <input class="caja_texto" type="text" placeholder="Clave                               (ejemplo: RH123)" name="clave" id="clave"><br>
-                <input class="caja_texto" type="text" placeholder="Nombre                          (ejemplo: Juan)" name="nombre" id="nombre"><br>
-                <input class="caja_texto" type="text" placeholder="Apellido paterno        (ejemplo: Arteaga)" name="apePat" id="apePat"><br>
-                <input class="caja_texto" type="text" placeholder="Apellido materno       (ejemplo: perez)" name="apeMat"  id="apeMat"><br>
-                <input class="caja_texto" type="text" placeholder="Calle y número           (ejemplo: Hidalgo#2)" name="calle" id="calle"><br>
-                <input class="caja_texto" type="text" placeholder="Colonia                         (ejemplo: centro)"  name="colonia" id="colonia"><br>
-                <input class="caja_texto" type="text" placeholder="Municipio                      (ejemplo: Tepechitlan)" name="municipio" id="municipio"><br>
-                <input class="caja_texto" type="text" placeholder="Estado                          (ejemplo: Zacatecas)" name="estado" id="estado"><br>
-                <input class="caja_texto" type="int" placeholder="Código postal             (ejemplo: 12345)" name="cp" id="cp"><br>
-                <input class="caja_texto" type="int" placeholder="No.Teléfono                (ejemplo: 1234567899)" name="telefono" id="telefono"><br>
-                <input class="caja_texto" type="text" placeholder="RFC                                 (ejemplo: 1234567890123)" name="rfc" id="rfc"><br>
-                <input class="caja_texto" type="text" placeholder="Titulo                            (ejemplo: 12345678)" name="titulo" id="titulo"><br>
-                <input class="caja_texto" type="email" placeholder="Correo                     (ejemplo: jose@gmail.com)" name="correo" id="correo"><br>
-                <button disabled id="btn" type="submit" value="Guardar" name="guarda_sec" class="btn_guardar" onclick="location.href = '../ModificacionesBD/InsertaMaes.php' "> Guardar</button>    
-                <button class="btn_cancelar" type="button" value="Cancelar" name="cancela_sec" onclick="location.href = 'http://localhost/index.php' "> Cancelar</button>
+                <label>Clave</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: RH123)" name="clave" id="clave">
+                <label>Nombre</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Juan)" name="nombre" id="nombre">
+                <label>Apellido paterno</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Arteaga)" name="apePat" id="apePat">
+                <label>Apellido materno</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: perez)" name="apeMat"  id="apeMat">
+                <label>Calle y número</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Hidalgo#2)" name="calle" id="calle">
+                <label>Colonia</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: centro)"  name="colonia" id="colonia">
+                <label>Municipio</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Tepechitlan)" name="municipio" id="municipio">
+                <label>Estado</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Zacatecas)" name="estado" id="estado">
+                <label>Código postal</label>
+                <input class="caja_texto" type="int" placeholder="(ejemplo: 12345)" name="cp" id="cp">
+                <label>No.teléfono</label>
+                <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567899)" name="telefono" id="telefono">
+                <label>RFC</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: 1234567890123)" name="rfc" id="rfc">
+                <label>Título</label>
+                <input class="caja_texto" type="text" placeholder="('estudios')" name="titulo" id="titulo">
+                <label>Correo</label>
+                <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: jose@gmail.com)" name="correo" id="correo">
+                <button disabled id="btn_guardar" type="submit" value="Guardar" name="guarda_sec" class="btn_guardar" onclick="location.href = '../ModificacionesBD/InsertaMaes.php' "> Guardar</button>    
+                <button class="btn_cancelar" type="submit" value="Cancelar" name="cancela_sec" onclick="location.href = '../PaginasVista/jefe_Control.html' "> Cancelar</button>
             </form>
         </div>
     </div>

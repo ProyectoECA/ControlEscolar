@@ -11,7 +11,7 @@ body{
 }
 
 .Contenedor_datos_alumnos{
-    height:39em;
+    height:70em;
     width: 70em;
     margin: 3em auto;
     display: flex;
@@ -36,7 +36,7 @@ body{
     justify-content: space-evenly;
 }
 .cajas_de_texto_alumnos{
-    height: 80%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -52,6 +52,7 @@ body{
     font-weight: 600;
     letter-spacing: 1px;
     box-sizing: border-box;
+    text-transform: uppercase;
 }
 .caja_texto:hover{
     border: 2px solid #1e355e;
@@ -61,6 +62,91 @@ body{
     height: 3.125rem;
     font-size: 1em;
     border-radius: 1px #1e355e;
+}
+.caja_texto_email{
+    padding-left: 20px;
+    border: #1e355e;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.caja_texto_email,boton{
+    width: 50%;
+    height: 3.125rem;
+    font-size: 1em;
+    border-radius: 1px #1e355e;
+}
+.numero_de_control{
+    font : 1.2em "typewriter";
+    color: white;
+}
+.Nombre{
+    font : 1.3em "typewriter";
+    color: white;
+}
+.Apellido_pater{
+    font : 1.3em "typewriter";
+    color: white;
+    
+}
+.Apellido_mater{
+    font : 1.3em "typewriter";
+    color: white;
+    
+}
+.calle_numero{
+    font : 1.3em "typewriter";
+    color: white;
+     
+}
+.Colonia{
+    font : 1.3em "typewriter";
+    color: white;
+    
+}
+.Municipio{
+    font : 1.3em "typewriter";
+    color: white;
+}
+.estado{
+    font : 1.3em "typewriter";
+    color: white;
+    
+}
+.Codigo_postal{
+    font : 1.3em "typewriter";
+    color: white;
+    
+}
+.no_telefono{
+    font : 1.3em "typewriter";
+    color: white;
+    
+}
+.nombrepadre{
+    font : 1.3em "typewriter";
+    color: white;
+    
+}
+.telefonopadre{
+    font : 1.3em "typewriter";
+    color: white;
+}
+.correo{
+    font : 1.3em "typewriter";
+    color: white;
+}
+.Contenedor_ubicacion{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+    font-size: large;
 }
 .botones{
     position: relative;

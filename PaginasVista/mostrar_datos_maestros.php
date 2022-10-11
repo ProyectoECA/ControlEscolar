@@ -17,12 +17,15 @@ define("CharacterSet2", 'UTF-8');
     <title>Datos Maestros</title>
 </head>
 <body>
+<div class="contenedor_titulo_2">
+    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlán</h1>
+  </div>
   <div class="Contenedor_titulo">
     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
   </div>
-  <div class="contenedor_titulo_2">
-    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlán</h1>
-  </div>
+  <div class="Contenedor_ubicacion">
+    <h2 class="ubicacion">Consulta Maestros</h2>
+</div>
   <form method="POST" action="../ModificacionesBD/ConsultaMaes.php">
     <div class="datos" style="float: center;">
       <select class="combobox" name="tipo_consulta" id="tipo_consulta">
@@ -40,16 +43,16 @@ define("CharacterSet2", 'UTF-8');
             <tr>
                 <th class="sticky"> Clave </th>
                 <th> Nombre </th>
-                <th> Apellido Paterno </th>
-                <th> Apellido Materno </th>
-                <th> Calle y Número </th>
+                <th> Apellido paterno </th>
+                <th> Apellido materno </th>
+                <th> Calle y número </th>
                 <th>Colonia</th>
                 <th>Municipio</th>
                 <th>Estado</th>
-                <th>Código Postal</th>
+                <th>Código postal</th>
                 <th> Teléfono </th>
                 <th>RFC</th>
-                <th>Titulo</th>
+                <th>Título</th>
                 <th>Correo</th>
             </tr>
          </thead>
