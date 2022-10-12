@@ -20,7 +20,7 @@
             </div>
             <from class="cajas_de_texto_alumnos">
                 <label class="numero_de_control">No.control</label>
-                <input class="caja_texto" type="text" placeholder="(ejemplo: TECNM1234567899)" name="No. control" id="numerocontrol">
+                <input class="caja_texto" type="text" placeholder="(ejemplo: TNM1234567899)" name="No. control" id="numerocontrol">
                 <label class="Nombre">Nombre</label>
                 <input class="caja_texto" type="text" placeholder="(ejemplo: Juan)" name="nombre " id="nombre">
                 <label class="Apellido_pater">Apellido paterno</label>
@@ -41,20 +41,20 @@
                 <input class="caja_texto" type="int" placeholder="(ejemplo: 12345)" name="cp" id="cp">
                 <label class="no_telefono">No.teléfono</label> 
                 <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567890)" name="tel" id="tel">
+                <label class="correo">Correo</label>       
+                <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: jose@gmail.com)" name="correo" id="correo">
                 <label class="nombrepadre">Nombre del padre o tutor</label> 
                 <input class="caja_texto" type="text" placeholder="(ejemplo: Alonso)" name="tutor"
                     id="tutor">
                 <label class="telefonopadre">Teléfono del padre o tutor</label>     
                 <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567890)" name="teltutor"
                     id="teltutor">
-                <label class="correo">Correo</label>       
-                <input class="caja_texto" type="email" placeholder="(ejemplo: jose@gmail.com)" name="correo" id="correo">
             </from>
         </div>
     </div>
     <div class="botones">
-        <button disabled id="btn" class="guardar_boton">Guardar</button>
-        <button class="boton_cancelar" >Cancelar</button>
+        <button disabled id="btn" class="guardar_boton" name="guardar">Guardar</button>
+        <button class="boton_cancelar" name="cancela">Cancelar</button>
     </div>
     <script src="/PaginasVista/script/cajas_alumnos.js"></script>    
 </body>
