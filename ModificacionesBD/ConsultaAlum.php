@@ -39,7 +39,7 @@
                 <th>Municipio</th>
                 <th>Estado</th>
                 <th>Código Postal</th>
-                <th> Teléfono  </th>
+                <th>Teléfono  </th>
                 <th>Nombre del padre o tutor</th>
                 <th>Teléfono  padre o tutor</th>
                 <th>Correo</th>

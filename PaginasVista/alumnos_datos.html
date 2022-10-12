@@ -18,7 +18,7 @@
                     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="20%" >
                 </div>
             </div>
-            <from class="cajas_de_texto_alumnos">
+            <form  method="POST" action="../ModificacionesBD/InsertaEstu.php" class="cajas_de_texto_alumnos">
                 <label class="numero_de_control">No.control</label>
                 <input class="caja_texto" type="text" placeholder="(ejemplo: TNM1234567899)" name="No. control" id="numerocontrol">
                 <label class="Nombre">Nombre</label>
@@ -49,13 +49,14 @@
                 <label class="telefonopadre">Teléfono del padre o tutor</label>     
                 <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567890)" name="teltutor"
                     id="teltutor">
-            </from>
+            </form>
         </div>
     </div>
     <div class="botones">
-        <button disabled id="btn" class="guardar_boton" name="guardar">Guardar</button>
-        <button class="boton_cancelar" name="cancela">Cancelar</button>
+        <button disabled id="btn" class="guardar_boton" name="guardar" onclick="location.href = '/ModificacionesBD/InsertaEstu.php' " >Guardar</button>
+        <button class="boton_cancelar" name="cancela" onclick="location.href = '/PaginasVista/principal_secretarias.php'">Cancelar</button>
     </div>
-    <script src="/PaginasVista/script/cajas_alumnos.js"></script>    
+    <script src="/PaginasVista/script/cajas_alumnos.js"></script> 
+    <script src="../SesionesUsuario/session_expiracion.js"></script>   
 </body>
 </html>

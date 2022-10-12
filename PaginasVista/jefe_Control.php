@@ -21,8 +21,16 @@
             <div class="imagen" style="float: left;">
                 <img src="/css/imagenes/Usuario.png" alt="" width="89%">
             </div>  
+
             <div class="texto" style="float: center;">
-                <h3>Aqui Estefania</h3>
+            
+            <!-- codigo php -->
+            <?php
+                if(isset($nombre_bienvenida)){
+                    echo "<a href=''>Bienvenid@ $nombre_bienvenida</a>";
+                }
+            ?>
+            <!-- Codigo php     -->
             </div>
         </div> 
     </div>  
@@ -132,9 +140,7 @@
         <button class="boton_cerrar_sesion" type="button">CERRAR SESIÓN</button></a>
     </div>  
       
-    <script>
-        //window.history.back('');
-    </script>
+    <script src="../SesionesUsuario/session_expiracion.js"></script>
 
 </body>
 </html>  

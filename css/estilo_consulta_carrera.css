@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+.page-container{
+    max-width: 700px;
+    margin: 2rem auto;
+
+}
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #1e355e 0%, white 150%);
+    
+    
+}
+.Contenedor_titulo{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: left;
+    display: flex;
+    
+}
+.contenedor_titulo_2{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+}
+.Contenedor_ubicacion{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+    font-size: large;
+}
+.contenedor-tabla{
+    max-width: 100%;
+    border-left: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+ }
+.table-cebra td{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:white;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 250px;
+ }
+ .table-cebra th{
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(to top, #1e355e 0%, white 150%);
+    width: 250px;
+ }
+ .table-cebra td:last-child,
+ .table-cebra th:last-child{
+    border-right: 0;
+ }
+ .table-cebra tbody tr{
+    background: #1e355e;
+ }
+ .table-cebra tbody tr:nth-child(2n){
+    background: white;
+ }
+ .table-cebra .sticky{
+    position: sticky;
+    left: 0;
+ }
+ .table-cebra tbody tr .sticky{
+    background: white;
+ }
+ .table-cebra tbody tr:nth-child(2n){
+    background: #f2f2f2;
+ }

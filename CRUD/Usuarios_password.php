@@ -68,7 +68,7 @@ $user->conexionBD();
 $user->InsertarUsuarioAdministrador("RH000", "123","maria@gmail.com"); 
 #$user->InsertarUsuarioAlumno("TNM1234567890", "0987");
 #$user->InsertarUsuarioMaestro("RH012", "3456");
-#$user->InsertarUsuarioSecretaria("RH012","hola");
+#$user->InsertarUsuarioSecretaria("RH002","RH002");
 $user->CerrarConexion();
 
 */
