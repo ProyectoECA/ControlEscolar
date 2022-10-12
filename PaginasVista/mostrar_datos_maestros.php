@@ -104,6 +104,6 @@ define("CharacterSet2", 'UTF-8');
           popup.classList.remove("open-popup"); 
       }
   </script>  
-    
+  <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>

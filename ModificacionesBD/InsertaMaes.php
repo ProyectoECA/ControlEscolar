@@ -42,9 +42,13 @@ class Insertar_Maestros {
             $query="SELECT * FROM [Maestros] where ClaveMa=?";
             $parametros=array($clave);
             $res=$cone->Buscar($query,$parametros);
+
+            $query="SELECT * FROM [Secretarias] where IdSec=?";
+            $parametros=array($clave);
+            $res=$cone->Buscar($query,$parametros);
             $cone->CerrarConexion();
 
-            if(empty($res)){
+            if((empty($res))and(empty($res1))){
                 #INSERTA EN TABLA MAESTROS
                 try{
                     $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);

@@ -38,9 +38,13 @@ class Insertar_Secretaria{
             $query="SELECT * FROM [Secretarias] where IdSec=?";
             $parametros=array($no_empleado);
             $res=$cone->Buscar($query,$parametros);
+
+            $query="SELECT * FROM [Maestros] where ClaveMa=?";
+            $parametros=array($no_empleado);
+            $res1=$cone->Buscar($query,$parametros);
             $cone->CerrarConexion();
 
-            if(empty($res)){
+            if((empty($res))and (empty($res1))){
                 #INSERTA EN TABLA SECRETARIAS
                 try{
                     

@@ -10,14 +10,16 @@ $sesion = new UserSession();
 
 if (isset($_SESSION['user'])) {
     $user->setUser($sesion->getUser(), $sesion->getUserNivel());
+    $user->setNombre($sesion->getNombre());
+    $nombre_bienvenida = $user->getNombre();
 
     switch($user->getNivel()){
 
         case 1:
-            include_once "PaginasVista/jefe_Control.html";
+            include_once "PaginasVista/jefe_Control.php";
             break;
         case 2:
-            include_once "PaginasVista/secretarias.html";
+            include_once "PaginasVista/principal_secretarias.php";
             break;
         case 3:
             include_once "PaginasVista/maestros_datos_per.html";
@@ -40,28 +42,53 @@ if (isset($_SESSION['user'])) {
 
         if($user->userComprobacionAdmin($usuario,$pass)){
 
+            //busca el nombre de la persona que se esta logeando
+            $nombre_bienvenida = $user->BuscarNombreUsuario($usuario,1);
+
+            //establece la session con los datos
             $sesion->setUser($usuario,1);
+            $sesion->setNombre($nombre_bienvenida);
+
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
+            $user->setNombre($nombre_bienvenida);
+
+            
+
+            
 
             $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
             fwrite($archivo, $usuario);
             fclose($archivo);
 
-            include_once "PaginasVista/jefe_Control.html";
+            include_once "PaginasVista/jefe_Control.php";
 
         }else if($user->userComprobacionMaestro($usuario,$pass)){
 
+            //busca el nombre de la persona que se esta logeando
+            $nombre_bienvenida = $user->BuscarNombreUsuario($usuario,3);
+
+            //establece la session con los datos
             $sesion->setUser($usuario,3);
+            $sesion->setNombre($nombre_bienvenida);
+            
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
+            $user->setNombre($nombre_bienvenida);
 
             include_once "PaginasVista/maestros_datos_per.html";
 
         }else if($user->userComprobacionSecretaria($usuario,$pass)){
 
-            $sesion->setUser($usuario,2);
-            $user->setUser($sesion->getUser(), $sesion->getUserNivel());
+            //busca el nombre de la persona que se esta logeando
+            $nombre_bienvenida = $user->BuscarNombreUsuario($usuario,2);
 
-            include_once "PaginasVista/secretarias.html";
+            //establece la session con los datos
+            $sesion->setUser($usuario,2);
+            $sesion->setNombre($nombre_bienvenida);
+            
+            $user->setUser($sesion->getUser(), $sesion->getUserNivel());
+            $user->setNombre($nombre_bienvenida);
+
+            include_once "PaginasVista/principal_secretarias.php";
 
         }else{
             $errorLogin ="Nombre de usuario y/o password incorrecto";
@@ -72,10 +99,18 @@ if (isset($_SESSION['user'])) {
 
         if($user->userComprobacionAlumno($usuario,$pass)){
 
-            $sesion->setUser($usuario,4);
-            $user->setUser($sesion->getUser(), $sesion->getUserNivel());
+           //busca el nombre de la persona que se esta logeando
+           $nombre_bienvenida = $user->BuscarNombreUsuario($usuario,4);
 
-            include_once "PaginasVista/mostrar_datos_alumnos.php";
+           //establece la session con los datos
+           $sesion->setUser($usuario,4);
+           $sesion->setNombre($nombre_bienvenida);
+           
+           $user->setUser($sesion->getUser(), $sesion->getUserNivel());
+           $user->setNombre($nombre_bienvenida);
+
+           
+           include_once "PaginasVista/mostrar_datos_alumnos.php";
 
         }else{
             $errorLogin ="Nombre de usuario y/o password incorrecto";

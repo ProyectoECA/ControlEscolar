@@ -5,20 +5,17 @@ $in=new CRUD_SQL_SERVER();
 $in->conexionBD();
 
 $parametros=array("99720");
-$query="SELECT * FROM [Lugar] where CP=?";
+$query="SELECT * FROM [Lugar]";
 
-$res=$in->Buscar($query,$parametros);
+$res=$in->Buscar($query);
 $in->CerrarConexion();
-var_dump($res);
 
-echo $res[0][0];
-if ($res[0][0]="CP"){
-    echo "Ya se encuentra en la base de datos";
+for ($i=0; $i < count($res) ; $i++) { 
+    echo "Registro $i";
+    echo $res[$i]["CP"] ." ";
+    echo $res[$i]["Municipio"] ." ";
+    echo $res[$i]["Estado"] ." ";
+    echo "<br>";
 }
-else{
-    echo "Se puede registrar";
-}
-
-
 
 ?>

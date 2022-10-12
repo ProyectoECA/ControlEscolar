@@ -24,7 +24,13 @@
                         <img src="/css/imagenes/Usuario.png" alt="" width="89%">
                     </div>  
                     <div class="texto" style="float: center;">
-                        <h3>Aqui Estefania</h3>
+                        <!-- codigo php -->
+                        <?php
+                            if(isset($nombre_bienvenida)){
+                                echo "<a href=''>Bienvenid@ $nombre_bienvenida</a>";
+                            }
+                        ?>
+                        <!-- Codigo php     -->
                     </div>
                 </div>
                 <div class="contenedor"> 
@@ -61,7 +67,7 @@
                                 <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
                             </svg>
                         </div>
-                        <span><b><a href="">MODIFICAR</b></span></a>
+                        <span><b><a href="/PaginasVista/modificar_alumnos.html">MODIFICAR</b></span></a>
                     </button> 
                 </div> 
                 <div class="botonC" >
@@ -71,7 +77,7 @@
                                 <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
                             </svg>
                         </div>
-                        <span><b><a href="">CONSULTAR</b></span></a>
+                        <span><b><a href="/PaginasVista/mostrar_datos_alumnos.php">CONSULTAR</b></span></a>
                     </button> 
                 </div>
             </div> 
@@ -98,7 +104,7 @@
                                 <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
                             </svg>
                         </div>
-                        <span><b><a href="">MODIFICAR</b></span></a>
+                        <span><b><a href="/PaginasVista/modificar_carreras.html">MODIFICAR</b></span></a>
                     </button> 
                 </div> 
                 <div class="botonC" >
@@ -131,5 +137,6 @@
             </div>
         </div>
     </form>
+    <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>
