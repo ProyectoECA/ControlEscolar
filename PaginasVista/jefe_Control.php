@@ -27,7 +27,7 @@
             <!-- codigo php -->
             <?php
                 if(isset($nombre_bienvenida)){
-                    echo "<a href=''>Bienvenido $nombre_bienvenida</a>";
+                    echo "<a href=''>Bienvenid@ $nombre_bienvenida</a>";
                 }
             ?>
             <!-- Codigo php     -->

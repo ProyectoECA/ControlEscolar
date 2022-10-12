@@ -83,5 +83,6 @@ define("CharacterSet2", 'UTF-8');
               ?>
         </table>
     </div>
+    <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>

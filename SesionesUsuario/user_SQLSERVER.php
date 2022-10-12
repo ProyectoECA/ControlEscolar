@@ -134,7 +134,6 @@ class User extends CRUD_SQL_SERVER {
             $datos = $this->Buscar($query, $parametros);
             $this->CerrarConexion();
 
-            var_dump($datos);
             return $datos[0][0];
         
 

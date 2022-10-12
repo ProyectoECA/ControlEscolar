@@ -24,7 +24,13 @@
                         <img src="/css/imagenes/Usuario.png" alt="" width="89%">
                     </div>  
                     <div class="texto" style="float: center;">
-                        <h3>Aqui Estefania</h3>
+                        <!-- codigo php -->
+                        <?php
+                            if(isset($nombre_bienvenida)){
+                                echo "<a href=''>Bienvenid@ $nombre_bienvenida</a>";
+                            }
+                        ?>
+                        <!-- Codigo php     -->
                     </div>
                 </div>
                 <div class="contenedor"> 
@@ -131,5 +137,6 @@
             </div>
         </div>
     </form>
+    <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>
