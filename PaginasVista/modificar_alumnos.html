@@ -38,28 +38,31 @@
             <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = 'http://localhost/index.php' ">&nbsp;&nbsp;
         </div>
         <div class="contenedor_generalDatos">  
-            <input class="parte1" type="text" placeholder="No. control">
-            <input class="parte1" type="text" placeholder="Nombre(s)">
-            <input class="parte1" type="text" placeholder="Ap. paterno">
-            <input class="parte1" type="text" placeholder="Ap. materno">
+            <input class="parte1" type="text" placeholder="No. control" id="ncontrol">
+            <input class="parte1" type="text" placeholder="Nombre(s)" id="nombre">
+            <input class="parte1" type="text" placeholder="Ap. paterno" id="apaterno">
+            <input class="parte1" type="text" placeholder="Ap. materno" id="amaterno">
             
-            <input class="parte2" type="text" placeholder="Calle y número">
-            <input class="parte2" type="text" placeholder="Colonia">
-            <input class="parte2" type="text" placeholder="Municipio">
-            <input class="parte2" type="text" placeholder="Estado"> 
+            <input class="parte2" type="text" placeholder="Calle y número" id="calle">
+            <input class="parte2" type="text" placeholder="Colonia" id="colonia">
+            <input class="parte2" type="text" placeholder="Municipio" id="municipio">
+            <input class="parte2" type="text" placeholder="Estado" id="estado"> 
 
-            <input class="parte3" type="text" placeholder="Codigo postal">
-            <input class="parte3" type="text" placeholder="No. teléfono">
-            <input class="parte3" type="text" placeholder="Correo"> 
+            <input class="parte3" type="text" placeholder="Codigo postal" id="cp">
+            <input class="parte3" type="text" placeholder="No. teléfono" id="tel">
+            <input class="parte3" type="text" placeholder="Correo" id="correo"> 
 
-            <input class="parte4" type="text" placeholder="Nombre completo del padre o tutor">
-            <input class="parte4" type="text" placeholder="Teléfono del padre o tutor">
+            <input class="parte4" type="text" placeholder="Nombre completo del padre o tutor" id="tutor">
+            <input class="parte4" type="text" placeholder="Teléfono del padre o tutor" id="teltutor">
         </div> 
         <div class="contenedor-botones" style="float: center;">
-            <input class="botones" type="submit" name="modifica" value="EDITAR">
-            <input class="botones" type="submit" name="elimina" value="ELIMINAR">
+            <button disabled id="btn" class="btn_guardar">modifica</button>
+            <button disabled id="btn1" class="btn_guardar">elimina</button>
+            <!-- <input class="botones" type="submit" name="modifica" value="EDITAR">
+            <input class="botones" type="submit" name="elimina" value="ELIMINAR"> -->
         </div>
     </form>
     <script src="../SesionesUsuario/session_expiracion.js"></script>
+    <script src="/PaginasVista/script/modificar_alumnos.js"></script>
 </body>
 </html>

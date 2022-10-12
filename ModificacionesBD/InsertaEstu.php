@@ -24,6 +24,8 @@ class Insertar_Estu{
         $tutor = $_POST["tutor"]; 
         $teltutor = $_POST["teltutor"]; 
         $correo = $_POST["correo"]; 
+        $carrera = $_POST["carrera"]; 
+        $semestre = $_POST["semestre"]; 
 
         $in= new Insertar_Estu;
         
