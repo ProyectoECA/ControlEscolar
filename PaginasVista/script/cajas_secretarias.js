@@ -11,6 +11,7 @@ var b10=false;
 var b11=false;
 
 
+
 var expreg = /^\S+$/;
 const expresiones = {
 
@@ -22,11 +23,11 @@ const expresiones = {
     secretaria:/^RH[\d]{3}$/,  
     nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,30}$/,
     apellido:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,15}$/,
-    colonia:/^([a-zA-Z]{4,10})+$/,
-    estado:/^([a-zA-Z]{4,20})+$/,
+    colonia:/^([a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,10})+$/,
+    estado:/^(^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,20})+$/,
     titulo:/^([a-zA-Z]{20})+$/,
-    municipio:/^([a-zA-Z]{4,25})+$/,
-    calle:/^([\w\W]{5,30})+$/,
+    municipio:/^([a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,25})+$/,
+    calle:/^(^[\w\WáéíóúÁÉÍÓÚñÑ]{5,30})+$/,
     password: /^[\w\W]{8,16}$/,
     correo:/^(([a-zA-Z][a-zA-Z0-9\_]{1,30}))+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
 }
@@ -111,7 +112,7 @@ apellidoP.addEventListener('keyup', (e) => {
         validar();
     }
 });
-const apellidoM = document.getElementById('apellidoM');
+/* const apellidoM = document.getElementById('apellidoM');
 apellidoM.addEventListener('keyup', (e) => {
     let valorinput = e.target.value;
     console.log(valorinput);
@@ -137,21 +138,14 @@ apellidoM.addEventListener('keyup', (e) => {
         apellidoM.style.border = "3px solid red";
         validar();
     }
-});
+}); */
 const calle = document.getElementById('calle');
 calle.addEventListener('keyup', (e) => {
     let valorinput = e.target.value;
     console.log(valorinput);
-    var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
-        if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
-            encontrado = true;
-        }
-        i++;
-    }
-    calle.value = valorinput.replace(/\s/g, '').trim();
-    if (expresiones.calle.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
+    
+    if (expresiones.calle.test(valorinput) && encontrado == false) {
         b5= true;
         calle.removeAttribute("style");
         calle.style.border = "3px solid green";
