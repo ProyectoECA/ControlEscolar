@@ -4,6 +4,7 @@ define("Database2", "ConEscolarNoc");
 define("UID2", "Admini");
 define("PWD2", "control2022");
 define("CharacterSet2", 'UTF-8');
+include_once "../CRUD/CRUD_bd_SQLServer.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@ define("CharacterSet2", 'UTF-8');
       <option value="no_control">No. de control</option>
       <option value="nombre">Nombre</option>
       </select>
-      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato"><br>
+      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato" id="dato"><br>
       <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaAlum.php'">
       <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php' ">
     </div> 
@@ -57,35 +58,32 @@ define("CharacterSet2", 'UTF-8');
          </thead>
          <tbody>
             <tr>
-            <?php
-              $connectionInfo = array("Database"=>Database2 , "UID"=>UID2, "PWD"=>PWD2, "CharacterSet"=>CharacterSet2);
-              $conexion=sqlsrv_connect(ServerName2, $connectionInfo);
-              $query="SELECT Alumnos.NoControl,Nombre,ApePaterno,ApeMaterno,Calle,Colonia,Municipio,Estado,Lugar.CP,Telefono,NomTutor,TelTutor,Correo
-              FROM [Alumnos],[LugAlumnos],[Lugar] where (Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP)";
-              $stmt = sqlsrv_query($conexion, $query);
-              #$datos=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
-              #echo sizeof($datos);
+              <?php
+              $cone=new CRUD_SQL_SERVER();
+              $cone->conexionBD();
 
-              while($row=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)){?>
-                <td class="sticky"><?php echo $row['NoControl'];?></td>
-                <td class="mostrar_datos"><?php echo $row['Nombre'];?></td>
-                <td class="mostrar_datos"><?php echo $row['ApePaterno'];?></td>
-                <td class="mostrar_datos"><?php echo $row['ApeMaterno'];?></td>
-                <td class="mostrar_datos"><?php echo $row['Calle'];?></td>
-                <td class="mostrar_datos"><?php echo $row['Colonia'];?></td>
-                <td class="mostrar_datos"><?php echo $row['Municipio'];?></td>
-                <td class="mostrar_datos"><?php echo $row['Estado'];?></td>
-                <td class="mostrar_datos"><?php echo $row['CP'];?></td> 
-                <td class="mostrar_datos"><?php echo $row['Telefono'];?></td>
-                <td class="mostrar_datos"><?php echo $row['NomTutor'];?></td>
-                <td class="mostrar_datos"><?php echo $row['TelTutor'];?></td>
-                <td class="mostrar_datos"><?php echo $row['Correo'];?></td>
+              $query="SELECT Alumnos.NoControl,Nombre,ApePaterno,ApeMaterno,Calle,Colonia,Municipio,Estado,Lugar.CP,Telefono,NomTutor,TelTutor,Correo
+              FROM [Alumnos],[LugAlumnos],[Lugar] where Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP";
+              $res=$cone->Buscar($query);
+              for($i=0;$i<count($res);$i++){?>
+                <td class="sticky"><?php echo $res[$i]['NoControl'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['Nombre'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['ApePaterno'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['ApeMaterno'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['Calle'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['Colonia'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['Municipio'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['Estado'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['CP'];?></td> 
+                <td class="mostrar_datos"><?php echo $res[$i]['Telefono'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['NomTutor'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['TelTutor'];?></td>
+                <td class="mostrar_datos"><?php echo $res[$i]['Correo'];?></td>
              </tr>
              </tbody>
              <?php
               }
               ?>
         </table>       
-    
 </body>
 </html>
