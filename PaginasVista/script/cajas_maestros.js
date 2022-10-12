@@ -42,7 +42,7 @@ const expresiones = {
     calle:/^([\w\WáéíóúÁÉÍÓÚñÑ]{5,30})+$/,
     password: /^[\w\W]{8,16}$/,
     //correo:/^([a-zA-Z0-9_\.\-]{1,30})+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
-    correo:/^(([a-zA-Z][a-zA-Z0-9\_]{1,30}))+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+    correo:/^(([a-zA-ZáéíóúÁÉÍÓÚñÑ][a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\_]{1,30}))+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
 }
 
 
@@ -53,12 +53,12 @@ clave.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+   /*  while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     clave.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.maestros.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -81,12 +81,12 @@ nombre.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+    /* while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     //nombre.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.nom.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -109,12 +109,12 @@ apePat.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+   /*  while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     //apePat.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.apellido.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -188,12 +188,12 @@ colonia.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+    /* while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     //colonia.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.colonia.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -216,12 +216,12 @@ municipio.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+    /* while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     //municipio.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.municipio.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -244,12 +244,12 @@ estado.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+    /* while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     //estado.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.estado.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -272,12 +272,12 @@ cp.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+   /*  while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     cp.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.codigo.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -300,12 +300,12 @@ telefono.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+    /* while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     telefono.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.telefono.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -328,12 +328,12 @@ rfc.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+    /* while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     rfc.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.rfc.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -356,12 +356,12 @@ titulo.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+    /* while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     titulo.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.titulo.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
@@ -384,12 +384,12 @@ correo.addEventListener('keyup', (e) => {
     console.log(valorinput);
     var i = 0;
     var encontrado = false;
-    while (i < valorinput.length && encontrado == false) {
+    /* while (i < valorinput.length && encontrado == false) {
         if (valorinput.charAt(i) == "ñ" || valorinput.charAt(i) == "Ñ") {
             encontrado = true;
         }
         i++;
-    }
+    } */
     correo.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
     if (expresiones.correo.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
