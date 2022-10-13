@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
 <body>
-    <form action="">
+    
         <div class="logo" style="float: left;">
             <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
         </div>  
@@ -32,13 +32,15 @@
         <div class="titulo1">
             <h2>MODIFICAR DATOS DE ALUMNOS</h2>
         </div> 
-        <form  method="POST" action="/ModificacionesBD/IdEstuMod.php" ></form>
+        <form  method="POST" action="/ModificacionesBD/IdEstuMod.php" >
         <div class="datos" style="float: center;">
-            <input class="input" type="text" placeholder="No. control" >&nbsp;&nbsp;
-            <input class="btnBuscar" type="submit" value="BUSCAR" onclick="location.href = '/ModificacionesBD/IdEstuMod.php' ">&nbsp;&nbsp;
+            <input class="input" type="text" placeholder="No. control" name="clave1">&nbsp;&nbsp;
+            <input class="btnBuscar" type="submit" value="BUSCAR"  onclick="location.href = '/ModificacionesBD/IdEstuMod.php' ">&nbsp;&nbsp;
             <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = '/PaginasVista/principal_secretarias.php' ">&nbsp;&nbsp;
         </div>
+        </form>
         <div class="contenedor_generalDatos">  
+        <form action="">
             <input class="parte1" type="text" placeholder="No. control">
             <input class="parte1" type="text" placeholder="Nombre(s)">
             <input class="parte1" type="text" placeholder="Ap. paterno">

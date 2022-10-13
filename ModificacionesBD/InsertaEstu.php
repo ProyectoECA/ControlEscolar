@@ -43,6 +43,16 @@ class Insertar_Estu{
                     VALUES (?,?,?,?,?,?,?,?,?,?)";
                     $parametros=array($clave,$nombre,$apePaterno,$apeMaterno,$telefono,$correo,$calle,$colonia,$tutor,$teltutor);
                     $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                    
+                    #Consultar la clave de la carrera
+                    $query="SELECT * FROM [Carreras] where Nombre=?";
+                    $parametros=array($carrera);
+                    $carre=$cone->Buscar($query,$parametros);
+
+                    #Agrega a CarreAlumnos
+                    $query= "INSERT INTO [CarreAlumnos] (NoControl, ClaveCa, Semestre) VALUES (?,?,?)";
+                    $parametros=array($clave, $carre[0], $semestre);
+                    $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
                     $query="SELECT * FROM [Lugar] where cp=?";
                     $parametros=array($cp);
