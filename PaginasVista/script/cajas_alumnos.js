@@ -19,7 +19,7 @@ var expreg = /^\S+$/;
 const expresiones = {
     alumnos:/^TNM[\d]{10}$/,
     codigo:/^[\d]{5}$/,
-    rfc:/^[\w\W]{12,13}$/,
+    rfc:/^[a-zA-Z0-9]{12,13}$/,
     telefono:/^[\d]{10}$/,
     semestre:/^[\d]{1}$/,
     secretaria:/^RH[\d]{3}$/,  
