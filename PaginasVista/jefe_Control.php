@@ -129,15 +129,11 @@
         </div>
     </div>  
     <div class="contenedor">
-    <a href="/PaginasVista/cambio_contrasena.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button type="submit" class="boton_cambiar_contraseña"> CAMBIAR CONTRASEÑA </button></a>
+    <button type="submit" class="boton_cambiar_contraseña" onclick="location.href = '/PaginasVista/cambio_contrasena.html'"> CAMBIAR CONTRASEÑA </button>
         
     </div>  
     <div>
-        <a href="../SesionesUsuario/logout.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="boton_cerrar_sesion" type="button">CERRAR SESIÓN</button></a>
+        <button class="boton_cerrar_sesion" type="button" onclick="location.href = '../SesionesUsuario/logout.php'">CERRAR SESIÓN</button>
     </div>  
       
     <script src="../SesionesUsuario/session_expiracion.js"></script>
