@@ -10,7 +10,8 @@ var b9=false;
 var b10=false;
 var b11=false;
 
-
+//expresion regular para aceptar simbolo # , letras y numeros
+//onst expreg = /^[a-zA-Z0-9#]+$/;
 
 var expreg = /^\S+$/;
 const expresiones = {
@@ -23,13 +24,16 @@ const expresiones = {
     secretaria:/^RH[\d]{3}$/,  
     nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,30}$/,
     apellido:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,15}$/,
-    colonia:/^([a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,10})+$/,
+    colonia:/^([a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]{4,10})+$/,
     estado:/^(^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,20})+$/,
     titulo:/^([a-zA-Z]{20})+$/,
     municipio:/^([a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,25})+$/,
-    calle:/^(^[\w\WáéíóúÁÉÍÓÚñÑ]{5,30})+$/,
+    //calle:/^(^[\w\WáéíóúÁÉÍÓÚñÑ]{5,30})+$/,
+    //calle:/^(^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{5,30})+$/,
+    calle:/^(^[a-zA-Z0-9#áéíóúÁÉÍÓÚñÑ ]{5,30})+$/,
     password: /^[\w\W]{8,16}$/,
-    correo:/^(([a-zA-ZáéíóúÁÉÍÓÚñÑ][a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\_]{1,30}))+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+    //correo:/^(([a-zA-ZáéíóúÁÉÍÓÚñÑ][a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\_]{1,30}))+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+    correo:/^(([a-zA-ZáéíóúÁÉÍÓÚñÑ][a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\_]{1,30}))+\@(([a-zA-Z])+\.)+([a-zA-Z]{2,4})+$/,
 }
 
 const numeroEmple = document.getElementById('numeroEmple');
