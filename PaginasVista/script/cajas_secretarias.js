@@ -19,7 +19,7 @@ const expresiones = {
     alumnos:/^TECNM[\d]{10}$/,
     codigo:/^[\d]{5}$/,
     maestros:/^RH[\d]{3}$/,  
-    rfc:/^[\w\W]{13}$/,
+    rfc:/^[a-zA-Z0-9]{12,13}$/,
     telefono:/^[\d]{10}$/,
     secretaria:/^RH[\d]{3}$/,  
     nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,30}$/,
