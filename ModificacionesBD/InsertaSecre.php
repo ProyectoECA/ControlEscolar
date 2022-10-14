@@ -34,13 +34,23 @@ class Insertar_Secretaria{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
             $conexion=sqlsrv_connect(ServerName, $connectionInfo);
 
-            #COMPRUEBA QUE EL ID NO ESTE REGISTRADO
+            #COMPRUEBA QUE EL ID NO ESTE REGISTRADO SECRETARIA
             $query="SELECT * FROM [Secretarias] where IdSec=?";
             $parametros=array($no_empleado);
             $res=$cone->Buscar($query,$parametros);
+            
+            #COMPRUEBA QUE EL ID NO ESTE REGISTRADO MAESTROS
+            $query="SELECT * FROM [Maestros] where ClaveMa=?";
+            $parametros=array($no_empleado);
+            $res1=$cone->Buscar($query,$parametros);
+
+            #COMPRUEBA QUE EL ID NO ESTE REGISTRADO ADMINISTRADOR
+            $query="SELECT * FROM [AdmCor] where UsuaAdm=?";
+            $parametros=array($no_empleado);
+            $res2=$cone->Buscar($query,$parametros);
             $cone->CerrarConexion();
 
-            if(empty($res)){
+            if((empty($res))and (empty($res1))and (empty($res2))){
                 #INSERTA EN TABLA SECRETARIAS
                 try{
                     

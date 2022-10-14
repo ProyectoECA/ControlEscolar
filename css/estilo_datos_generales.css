@@ -49,7 +49,7 @@ body{
     width: 150px;
     height: 150px;
     align-items: center;
-    border: 3px solid black; 
+    border: 3px solid #1e355e; 
     transform: translate(400%,0%);
 }
 .contenedor-tabla{
@@ -71,5 +71,24 @@ body{
     width: 550px;
     height: 60px;
  }
+ @media (max-width:992px){
+    .contenedor_foto{
+        transform: translate(270%,0%);
+        border: 3px solid #1e355e; 
+    }
+ }
+ @media (max-width:758px){
+    .contenedor_foto{
+        transform: translate(210%,0%);
+        border: 3px solid #1e355e;
+    }
+ @media (max-width:600px){
+    .contenedor_foto{
+        transform: translate(80%,0%);
+        border: 3px solid #1e355e; 
+    }
+ }  
+ }
+
 
  

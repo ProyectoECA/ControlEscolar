@@ -11,7 +11,7 @@ class Insertar_Estu{
         $conexion_pass = new User_password;
         $conexion_pass->conexionBD();
 
-        $clave = $_POST["No. control"]; 
+        $clave = $_POST["numerocontrol"]; 
         $nombre = $_POST["nombre"]; 
         $apePaterno = $_POST["apellidoP"]; 
         $apeMaterno = $_POST["apellidoM"]; 
@@ -24,6 +24,8 @@ class Insertar_Estu{
         $tutor = $_POST["tutor"]; 
         $teltutor = $_POST["teltutor"]; 
         $correo = $_POST["correo"]; 
+        $carrera = $_POST["carrera"]; 
+        $semestre = $_POST["semestre"]; 
 
         $in= new Insertar_Estu;
         
@@ -40,6 +42,16 @@ class Insertar_Estu{
                     $query= "INSERT INTO [Alumnos] (NoControl,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia,NomTutor,TelTutor) 
                     VALUES (?,?,?,?,?,?,?,?,?,?)";
                     $parametros=array($clave,$nombre,$apePaterno,$apeMaterno,$telefono,$correo,$calle,$colonia,$tutor,$teltutor);
+                    $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                    
+                    #Consultar la clave de la carrera
+                    $query="SELECT * FROM [Carreras] where Nombre=?";
+                    $parametros=array($carrera);
+                    $carre=$cone->Buscar($query,$parametros);
+
+                    #Agrega a CarreAlumnos
+                    $query= "INSERT INTO [CarreAlumnos] (NoControl, ClaveCa, Semestre) VALUES (?,?,?)";
+                    $parametros=array($clave, $carre[0], $semestre);
                     $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
                     $query="SELECT * FROM [Lugar] where cp=?";
@@ -68,7 +80,7 @@ class Insertar_Estu{
                     else{
                         $query= "INSERT INTO [LugAlumnos] (NoControl,CP) VALUES (?,?)";
                         $parametros=array($clave,$cp);
-                        $stmt= sqlsrv_query($conexion,$query, $parametros);
+                        $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
                         #Llamada a Alerta de registrado
                         $ban=true;
@@ -84,6 +96,7 @@ class Insertar_Estu{
                 }
                 catch(Exception $e){
                     $ban=false;
+                    $in->alerts($ban);
                 }
             }
             else{
@@ -95,7 +108,7 @@ class Insertar_Estu{
             }
         
         else if(isset($_POST['cancela'])){
-            try{include_once "../PaginasVista/jefe_Control.html";
+            try{include_once "../PaginasVista/principal_secretarias.php";
             }
             catch(Exception $e){
                 $ban=false;
@@ -130,7 +143,7 @@ class Insertar_Estu{
             else{
                 location.href='../PaginasVista/alumnos_datos.html';
             }
-            window.history.back('../PaginasVista/principal_secretarias.html');})
+            window.history.back('../PaginasVista/principal_secretarias.php');})
             </script>
         <?php }
         #Si agrega con éxito
@@ -151,7 +164,7 @@ class Insertar_Estu{
             else{
                 location.href='../PaginasVista/alumnos_datos.html';
             }
-            window.history.back('../PaginasVista/principal_secretarias.html');})
+            window.history.back('../PaginasVista/principal_secretarias.php');})
             </script>
         <?php
         }
@@ -165,4 +178,3 @@ $in= new Insertar_Estu;
 $in->insertando();
 ?>
 
-?>
