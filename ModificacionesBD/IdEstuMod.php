@@ -10,7 +10,8 @@ class saca_IDEstu{
 
         $clave = $_POST["clave1"];
         $query="SELECT Alumnos.NoControl
-        FROM [Alumnos],[LugAlumnos],[Lugar] where (Alumnos.NoControl=? and Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP and Alumnos.NoControl=CarreAlumnos.NoControl)";
+        FROM [Alumnos],[LugAlumnos],[Lugar],[Carreras],[CarreAlumnos] where (Alumnos.NoControl=? and Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP and Alumnos.NoControl=CarreAlumnos.NoControl and Carreras.ClaveCa=CarreAlumnos.ClaveCa )";
+        #FROM [Alumnos],[LugAlumnos],[Lugar] where (Alumnos.NoControl=? and Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP and Alumnos.NoControl=CarreAlumnos.NoControl)";
         $parametros=array($clave);
         $datos=$cone->Buscar($query,$parametros);
 
@@ -36,11 +37,12 @@ class saca_IDEstu{
         include_once("../PaginasVista/modificar_alumnos.html");
         }
         else{
-                $query="SELECT Alumnos.NoControl,Nombre,ApePaterno,ApeMaterno,Carreras.Nombre,CarreAlumnos,Semestre,Telefono,Correo,Calle,Colonia,Municipio,Estado,Lugar.CP,NomTutor,TelTutor
+                echo "FUE ENCONTRADO";
+                $query="SELECT Alumnos.NoControl,Alumnos.Nombre,ApePaterno,ApeMaterno,Carreras.Nombre,CarreAlumnos.Semestre,Telefono,Correo,Calle,Colonia,Municipio,Estado,Lugar.CP,NomTutor,TelTutor
                 FROM [Alumnos],[LugAlumnos],[Lugar],[Carreras],[CarreAlumnos] where (Alumnos.NoControl=? and Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP and Alumnos.NoControl=CarreAlumnos.NoControl and Carreras.ClaveCa=CarreAlumnos.ClaveCa )";
                 $parametros=array($clave);
-                $datos2=$cone->Buscar($query,$parametros);
-                $row=$datos2;
+                $stmt2 = sqlsrv_query($conexion, $query,$parametros);
+                $row=sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC);
                 include_once("ConsultaModiEstu.php");
             }
     }
