@@ -158,7 +158,7 @@ class Insertar_Secretaria{
             <script>
             Swal.fire({
             icon: 'success',
-            title: 'AGREGACIÓN EXITOSA',
+            title: 'REGISTRO EXITOSO',
             text: 'Secretaria/o añadida con éxito',
             confirmButtonText: 'Aceptar',
             timer:5000,

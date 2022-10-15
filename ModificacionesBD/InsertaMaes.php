@@ -50,7 +50,7 @@ class Insertar_Maestros {
 
             #COMPRUEBA QUE EL ID NO ESTE REGISTRADO ADMINISTRADOR
             $query="SELECT * FROM [AdmCor] where UsuaAdm=?";
-            $parametros=array($no_empleado);
+            $parametros=array($clave);
             $res2=$cone->Buscar($query,$parametros);
             $cone->CerrarConexion();
 
@@ -160,7 +160,7 @@ class Insertar_Maestros {
             <script>
             Swal.fire({
             icon: 'success',
-            title: 'AGREGACIÓN EXITOSA',
+            title: 'REGISTRO EXITOSO',
             text: 'Maestro/a añadido con éxito',
             confirmButtonText: 'Aceptar',
             timer:5000,
