@@ -38,7 +38,7 @@
         </div>
         </form>
         
-        <form action="POST" action="../ModificacionesBD/ModificaEstu.php" >
+        <form action="POST" action="/ModificacionesBD/ModificaEstu.php" >
         <div class="contenedor_generalDatos">  
             <input class="parte1" type="text" placeholder="No. control" value="<?php echo $row['NoControl']; ?>"  name="clave2" readonly>
             <input class="parte1" type="text" placeholder="Nombre(s)"  name="nombre" value="<?php echo $row['Nombre']; ?>">
