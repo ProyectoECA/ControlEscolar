@@ -1,0 +1,118 @@
+
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, #1e355e 0%, white 70%);
+}
+
+.login-container{
+    height: 35em;
+    width: 60em;
+    margin: 3em auto;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+} 
+
+.login-info-container{
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid gray;
+    padding-top: 0%;
+    background-color: white;
+} 
+
+.social-login{
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.inputs-container{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+} 
+
+.input, .btn{
+    width: 70%;
+    height: 3.125rem;
+    font-size: 1em;
+    border-radius: 1px #1e355e;
+}
+
+.input{
+    padding-left: 20px;
+    border: #1e355e;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.input:hover{
+    border: 2px solid #1e355e;
+} 
+
+.btn{
+    width: 70%;
+    height:11%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background-color: #1e355e;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    
+    
+} 
+
+.link{
+    text-decoration: none; 
+    color: #1e355e;
+} 
+
+@media screen and (max-width: 1000px){
+    .login-container{
+        width: 70%; height: 90%;
+    }
+    .social-login{
+        width: 90%;
+    }
+    .login-info-container{
+        width: 70%;
+    }
+} 
+
+@media screen and (max-width: 650px){
+    .login-container{
+        width: 70%; height: 70%;
+    }
+    .social-login{
+        width: 90%;
+    }
+    .login-info-container{
+        width: 70%;
+    }
+}
+a {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 19.5%;
+    margin-right: 0.625%;
+    text-align: center;
+    line-height: 3;
+    color: white;
+  } 
+  
+
+
+/*Comentario*/
+

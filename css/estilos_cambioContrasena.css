@@ -1,0 +1,131 @@
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, #1e355e 0%, white 70%);
+} 
+
+.logo{ 
+    height: 7em;
+    width: 15em;
+    display: flexs; 
+} 
+
+.nombre{ 
+    height: 5em;
+    width: 50em;
+    margin: 0em auto; 
+    color: #1e355e; 
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex;
+} 
+
+.login-container{
+    height: 15em;
+    width: 60em;
+    margin: 8em auto; 
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+} 
+
+.login-info-container{
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid gray;
+    padding-top: 0%;
+    background-color: white;
+} 
+
+
+.inputs-container{
+    height: 70%;
+    width: 90%; 
+    margin: 2em auto; 
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}  
+
+.input, .btn{
+    width: 70%;
+    height: 30%; 
+    font-size: 1em; 
+    border-radius: 1px #1e355e;
+}
+
+.input{
+    padding-left: 20px;
+    border: #1e355e;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.input:hover{
+    border: 2px solid #1e355e;
+} 
+
+.bot{
+    width: 90%;
+    align-items: center;
+    text-align: center;
+    padding-top: 0%;
+    background-color: white; 
+    display: flex;
+}
+
+.btn{ 
+    width: 12rem;
+    height: 2.2em; 
+    color: white;
+    background-color: #1e355e; 
+    border-radius: 5px;
+    letter-spacing: 1px;  
+    justify-content: space-between; 
+    margin-top: 0%;
+    
+} 
+
+.link{
+    text-decoration: none; 
+    color: #1e355e;
+} 
+
+@media screen and (max-width: 1000px){
+    .login-container{
+        width: 70%; height: 90%;
+    }
+    .social-login{
+        width: 90%;
+    }
+    .login-info-container{
+        width: 70%;
+    }
+} 
+
+@media screen and (max-width: 650px){
+    .login-container{
+        width: 70%; height: 70%;
+    }
+    .social-login{
+        width: 90%;
+    }
+    .login-info-container{
+        width: 70%;
+    }
+}
+a {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 19.5%;
+    margin-right: 0.625%;
+    text-align: center;
+    line-height: 3;
+    color: white;
+  } 

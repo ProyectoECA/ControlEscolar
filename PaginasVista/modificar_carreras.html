@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODIFICAR ALUMNOS</title> 
+    <link rel="stylesheet" href="/css/estilos_modificar_carrera.css"> 
+    <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
+</head>
+<body>
+    <form action="">
+        <div class="logo" style="float: left;">
+            <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
+        </div>  
+
+        <div class="nombre" style="float: center;"> 
+            <div class="tituloP" style="float: left;">
+                <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
+            </div> 
+            <div class="contenedor_der" style="float: right;">
+                <div class="mostrar_usuario" style="float: center;"> 
+                    <div class="imagen" style="float: left;">
+                        <img src="/css/imagenes/Usuario.png" alt="" width="89%">
+                    </div>  
+                    <div class="texto" style="float: center;">
+                        <h3>Aqui Estefania</h3>
+                    </div>
+                </div> 
+            </div>
+        </div> 
+        <div class="titulo1">
+            <h2>MODIFICAR DATOS DE LAS CARRERAS</h2>
+        </div> 
+        <div class="datos" style="float: center;">
+            <input class="input" type="text" placeholder="No. control" >&nbsp;&nbsp;
+            <input class="btnBuscar" type="submit" value="BUSCAR" onclick="location.href = '/ModificacionesBD/IdMaesMod.php' ">&nbsp;&nbsp;
+            <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = 'http://localhost/index.php' ">&nbsp;&nbsp;
+        </div>
+        <div class="contenedor_generalDatos">  
+            <input class="parte1" type="text" placeholder="Clave" id="clave">
+            <input class="parte1" type="text" placeholder="Nombre" id="nombre">
+            <input class="parte1" type="text" placeholder="No. semestres" id="semestres">
+        </div> 
+        <div class="contenedor-botones" style="float: center;">
+            <button disabled id="btn" class="botones">modifica</button>
+            <button disabled id="btn1" class="botones">elimina</button>
+<!--             <input class="botones" type="submit" name="modifica" value="EDITAR">
+            <input class="botones" type="submit" name="elimina" value="ELIMINAR"> -->
+        </div>
+    </form>
+    <script src="../SesionesUsuario/session_expiracion.js"></script>
+    <script src="/PaginasVista/script/modificar_carrera.js"></script>
+</body>
+</html>

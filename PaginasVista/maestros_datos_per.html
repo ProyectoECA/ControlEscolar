@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Maestros</title>
+    <link rel="stylesheet" href="/css/estilo_datos_mestros.css">
+    <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="Contenedor_ubicacion">
+        <h1 class="ubicacion">REGISTRO MAESTROS(AS)</h1>
+   </div>
+    <div class="Contenedor_datos_maestros">
+        <div class="maestros-datos-contenedor">
+            <div class="social_maestros">
+                <div class="Imagen_de_registr">
+                    <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="25%" >
+                </div>
+            </div>
+            <form  method="POST" action="../ModificacionesBD/InsertaMaes.php" class="cajas_de_texto_maestros" >
+                <label>Clave</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: RH123)" name="clave" id="clave">
+                <label>Nombre</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Juan)" name="nombre" id="nombre">
+                <label>Apellido paterno</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Arteaga)" name="apePat" id="apePat">
+                <label>Apellido materno</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: perez)" name="apeMat"  id="apeMat">
+                <label>Calle y número</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Hidalgo#2)" name="calle" id="calle">
+                <label>Colonia</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: centro)"  name="colonia" id="colonia">
+                <label>Municipio</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Tepechitlan)" name="municipio" id="municipio">
+                <label>Estado</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Zacatecas)" name="estado" id="estado">
+                <label>Código postal</label>
+                <input class="caja_texto" type="int" placeholder="(ejemplo: 12345)" name="cp" id="cp">
+                <label>No.teléfono</label>
+                <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567899)" name="telefono" id="telefono">
+                <label>RFC</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: 1234567890123)" name="rfc" id="rfc">
+                <label>Cédula</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: 12345678)" name="titulo" id="titulo">
+                <label>Correo</label>
+                <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: jose@gmail.com)" name="correo" id="correo">
+                <button disabled id="btn" type="submit" value="Guardar" name="guarda_sec" class="btn_guardar" onclick="location.href = '../ModificacionesBD/InsertaMaes.php' "> Guardar</button>    
+                <button class="btn_cancelar" type="button" value="Cancelar" name="cancela_sec" onclick="location.href = '../index.php' "> Cancelar</button>
+            </form>
+        </div>
+    </div>
+<script src="/PaginasVista/script/cajas_maestros.js"></script>
+<script src="../SesionesUsuario/session_expiracion.js"></script>
+</body>
+</html>
