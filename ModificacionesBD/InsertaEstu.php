@@ -48,10 +48,12 @@ class Insertar_Estu{
                     $query="SELECT * FROM [Carreras] where Nombre=?";
                     $parametros=array($carrera);
                     $carre=$cone->Buscar($query,$parametros);
+                    $carre1=$carre[0][0];
+                    $carre1=strval($carre1);
 
                     #Agrega a CarreAlumnos
                     $query= "INSERT INTO [CarreAlumnos] (NoControl, ClaveCa, Semestre) VALUES (?,?,?)";
-                    $parametros=array($clave, $carre[0], $semestre);
+                    $parametros=array($clave, $carre1, $semestre);
                     $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
                     $query="SELECT * FROM [Lugar] where cp=?";
