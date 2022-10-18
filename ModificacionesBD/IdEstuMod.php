@@ -13,7 +13,7 @@ class saca_IDEstu{
         $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
         $id=($_POST['control']);
-        $id='TNM1234551322';
+        #$id='TNM1234551322';
         $query="SELECT NoControl FROM [Alumnos] where NoControl=?";
         $parametros=array($id);
         $stmt = sqlsrv_query($conexion, $query, $parametros);
