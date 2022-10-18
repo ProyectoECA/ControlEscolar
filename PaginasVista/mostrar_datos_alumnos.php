@@ -24,7 +24,7 @@ include_once "../CRUD/CRUD_bd_SQLServer.php";
     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
   </div>
   <div class="Contenedor_ubicacion">
-       <h2 class="ubicacion">Consulta alumnos</h2>
+       <h2 class="ubicacion">CONSULTA ESTUDIANTES</h2>
   </div>
   <form method="POST" action="/ModificacionesBD/ConsultaAlum.php">
     <div class="datos" style="float: center;">

@@ -23,7 +23,7 @@ define("CharacterSet2", 'UTF-8');
     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
   </div>
   <div class="Contenedor_ubicacion">
-    <h2 class="ubicacion">Consulta Secretarias</h2>
+    <h2 class="ubicacion">CONSULTA SECRETARIAS(OS)</h2>
 </div>
   <form method="POST" action="/ModificacionesBD/ConsultaSecre.php">
     <div class="datos" style="float: center;">
