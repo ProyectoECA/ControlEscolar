@@ -28,17 +28,17 @@
             </div>
         </div> 
         <div class="titulo1">
-            <h2>MODIFICAR DATOS DE ALUMNOS</h2>
+            <h2>MODIFICAR DATOS DE ESTUDIANTES</h2>
         </div> 
         <form  method="POST">
         <div class="datos" style="float: center;">
-            <input class="input" type="text" placeholder="No. control" name="clave1">&nbsp;&nbsp;
+            <input class="input" type="text" placeholder="No. control" name="control">&nbsp;&nbsp;
             <input class="btnBuscar" type="submit" value="BUSCAR"  onclick="location.href = '/ModificacionesBD/IdEstuMod.php' ">&nbsp;&nbsp;
             <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = '/PaginasVista/principal_secretarias.php' ">&nbsp;&nbsp;
         </div>
         </form>
         
-        <form action="POST" action="/ModificacionesBD/ModificaEstu.php" >
+        <form action="POST" action="../ModificacionesBD/ModificaEstu.php" >
         <div class="contenedor_generalDatos">  
             <input class="parte1" type="text" placeholder="No. control" value="<?php echo $row['NoControl']; ?>"  name="clave2" readonly>
             <input class="parte1" type="text" placeholder="Nombre(s)"  name="nombre" value="<?php echo $row['Nombre']; ?>">
@@ -50,19 +50,18 @@
             <input class="parte2" type="text" placeholder="Municipio" name="municipio" value="<?php echo $row['Municipio']; ?>">
             <input class="parte2" type="text" placeholder="Estado" name="estado" value="<?php echo $row['Estado']; ?>"> 
 
-            <input class="parte3" type="text" placeholder="Codigo postal" name="cp" value="<?php echo $row['CP']; ?>">>
+            <input class="parte3" type="text" placeholder="Codigo postal" name="cp" value="<?php echo $row['CP']; ?>">
             <input class="parte3" type="text" placeholder="No. teléfono" name="telefono" value="<?php echo $row['Telefono']; ?>">
             <input class="parte3" type="text" placeholder="Correo" name="correo" value="<?php echo $row['Correo']; ?>"> 
 
             <input class="parte4" type="text" placeholder="Nombre completo del padre o tutor" name="nomTutor" value="<?php echo $row['NomTutor']; ?>">
             <input class="parte4" type="text" placeholder="Teléfono del padre o tutor" name="telTutor" value="<?php echo $row['TelTutor']; ?>">
 
-            <input class="parte4" type="text" placeholder="Carrera" name="carrera" value="<?php echo $row['Nombre']; ?>">
-            <input class="parte4" type="text" placeholder="Semestre" name="semestre" value="<?php echo $row['Semestre']; ?>">
+            
         </div> 
         <div class="contenedor-botones" style="float: center;">
-            <input class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificaEstu.php' ">
-            <input class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificaEstu.php' ">
+            <input class="botones" type="button" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificaEstu.php' ">
+            <input class="botones" type="button" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificaEstu.php' ">
         </div>
     </form>
     <script src="../SesionesUsuario/session_expiracion.js"></script>
