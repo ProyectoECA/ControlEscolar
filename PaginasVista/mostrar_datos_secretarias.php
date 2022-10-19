@@ -15,6 +15,8 @@ define("CharacterSet2", 'UTF-8');
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
     <title>Datos Secretaria</title>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="script/consulSecre.js"></script>
 <body>
   <div class="contenedor_titulo_2">
     <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlán</h1>
@@ -27,61 +29,13 @@ define("CharacterSet2", 'UTF-8');
 </div>
   <form method="POST" action="/ModificacionesBD/ConsultaSecre.php">
     <div class="datos" style="float: center;">
-      <select class="combobox" name="tipo_consulta" id="tipo_consulta">
-      <option value="clave">Clave</option>
-      <option value="nombre">Nombre</option>
-      </select>
-      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato">
-      <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaSecre.php'">
+      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato" id="dato">
       <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php'">
     </div> 
     </form>
     <div class="contenedor-tabla">
-        <table class="table-cebra" id="Secre">
-         <thead>
-            <tr>
-                <th class="sticky"> No.empleado </th>
-                <th> Nombre </th>
-                <th> Apellido paterno </th>
-                <th> Apellido materno </th>
-                <th> Calle y número </th>
-                <th>Colonia</th>
-                <th>Municipio</th>
-                <th>Estado</th>
-                <th>Código postal</th>
-                <th> Teléfono </th>
-                <th>Correo</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-              <?php
-              $connectionInfo = array("Database"=>Database2 , "UID"=>UID2, "PWD"=>PWD2, "CharacterSet"=>CharacterSet2);
-              $conexion=sqlsrv_connect(ServerName2, $connectionInfo);
-              $query="SELECT Secretarias.IdSec,Nombre,ApePaterno,ApeMaterno,Calle,Colonia,Municipio,Estado,Lugar.CP,Telefono,Correo
-              FROM [Secretarias],[LugSecretarias],[Lugar] where (Secretarias.IdSec=LugSecretarias.IdSec and LugSecretarias.CP=Lugar.CP)";
-              $stmt = sqlsrv_query($conexion, $query);
-              #$datos=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
-              #echo sizeof($datos);
-
-              while($row=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)){?>
-                <td class="sticky"><?php echo $row['IdSec'];?></td>
-                <td class="mostrar_datos"><?php echo $row['Nombre']; ?></td>
-                <td class="mostrar_datos"><?php echo $row['ApePaterno']; ?></td>
-                <td class="mostrar_datos"><?php echo $row['ApeMaterno']; ?></td>
-                <td class="mostrar_datos"><?php echo $row['Calle']; ?></td>
-                <td class="mostrar_datos"><?php echo $row['Colonia']; ?></td>
-                <td class="mostrar_datos"><?php echo $row['Municipio']; ?></td>
-                <td class="mostrar_datos"><?php echo $row['Estado']; ?></td>
-                <td class="mostrar_datos"><?php echo $row['CP']; ?></td> 
-                <td class="mostrar_datos"><?php echo $row['Telefono']; ?></td>
-                <td class="mostrar_datos"><?php echo $row['Correo']; ?></td>
-             </tr>
-             </tbody>
-             <?php
-              }
-              ?>
-        </table>
+        <table class="table" name="tablaSecre" id="tablaSecre">
+         
     </div>
     <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
