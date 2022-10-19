@@ -41,6 +41,7 @@ class CRUD_SQL_SERVER{
                         echo "message: ".$error['message']."<br /> mmm";
                     }
                 }
+                return false;
             }else{
                 $datos= array();
                 while($row = sqlsrv_fetch_array($stmt)) {
