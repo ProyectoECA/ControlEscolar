@@ -29,6 +29,7 @@ class CRUD_SQL_SERVER{
         /**
          * Busca en la base de datos, con una queri y los parametros que son opcionales
          */
+        $datos= array();
         try {
 
             $stmt = sqlsrv_query($this->conexion, $query, $parametros);
@@ -38,12 +39,12 @@ class CRUD_SQL_SERVER{
                     foreach ($errors as $error) {
                         echo "SQLSTATE: ".$error['SQLSTATE']."<br />";
                         echo "code: ".$error['code']."<br />";
-                        echo "message: ".$error['message']."<br /> mmm";
+                         echo "message: ".$error['message']."<br /> mmm";
                     }
                 }
-                return false;
+                return $datos;
             }else{
-                $datos= array();
+                
                 while($row = sqlsrv_fetch_array($stmt)) {
                     
                     
