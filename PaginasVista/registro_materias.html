@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro materias</title>
+    <link rel="stylesheet" href="/css/estilo_registro_materias.css">
+    <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="Contenedor_ubicacion">
+        <h1 class="ubicacion">REGISTRO MATERIAS</h1>
+   </div>
+    <div class="Contenedor_datos_materias">
+        <div class="materias-datos-contenedor">
+            <div class="social_materias">
+                <div class="Imagen_de_registr">
+                    <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="20%" >
+                </div>
+            </div>
+            <form  method="POST" action="../ModificacionesBD/InsertaEstu.php" class="cajas_de_texto_materias">
+                <label >Clave</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: TNM1234567899)" name="clave" id="clave">
+                <label >Nombre</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Juan)" name="nombre" id="nombre">
+                <label >Créditos</label>
+                <input class="caja_texto" type="text" placeholder="(ejemplo: Arteaga)" name="creditos" id="creditos">
+                <label >Carreras</label>
+                <select class="combobox" name="tipo_consulta" id="tipo_consulta">
+                    <option value="no_control">Va lo de base de datos</option>
+                    <option value="nombre">va lo de base de datos</option>
+                    </select>
+                <label >Unidades</label>
+                    <select class="combobox" name="tipo_consulta" id="tipo_consulta">
+                        <option value="unidad_1">1</option>
+                        <option value="unidad_2">2</option>
+                        <option value="unidad_3">3</option>
+                        <option value="unidad_4">4</option>
+                        <option value="unidad_5">5</option>
+                        <option value="unidad_6">6</option>
+                        <option value="unidad_7">7</option>
+                        <option value="unidad_8">8</option>
+                        <option value="unidad_9">9</option>
+                        <option value="unidad_10">10</option>
+                        </select>    
+                    <button disabled id="btn" class="btn_guardar" name="guardar" onclick="location.href = '/ModificacionesBD/InsertaEstu.php' " >Guardar</button>
+                    <button class="btn_cancelar" name="cancela" onclick="location.href = '/PaginasVista/principal_secretarias.php'">Cancelar</button>    
+            </form>
+        </div>
+    </div>
+</body>
+</html>
