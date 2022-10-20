@@ -9,6 +9,7 @@ class User extends CRUD_SQL_SERVER {
     private $username;
     private $nivel;
     private $nombre;
+    private $passwordigual;
     
     public function userComprobacionSecretaria($user, $pass)
     {
@@ -156,9 +157,18 @@ class User extends CRUD_SQL_SERVER {
     }
     public function setNombre($nombre)
     {
-        # code...
         $this->nombre = $nombre;
     }
+    public function setPasswordigual($passwordigual)
+    {
+        $this->passwordigual = $passwordigual;
+    }
+
+    public function getPasswordigual()
+    {
+        return $this->passwordigual;
+    }
+
     public function getUsername(){
         return $this->username;
     }
