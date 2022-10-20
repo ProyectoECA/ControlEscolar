@@ -45,7 +45,7 @@ class Insertar_Estu{
                     $cone->Insertar_Eliminar_Actualizar($query,$parametros);
                     
                     #Consultar la clave de la carrera
-                    $query="SELECT * FROM [Carreras] where Nombre=?";
+                    $query="SELECT * FROM [Carreras] where NombreCarre=?";
                     $parametros=array($carrera);
                     $carre=$cone->Buscar($query,$parametros);
                     $carre1=$carre[0][0];
