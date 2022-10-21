@@ -63,6 +63,8 @@ if (isset($_SESSION['user'])) {
 
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
             $user->setNombre($nombre_bienvenida);
+            $user->setPasswordigual($passwordigual);
+            
 
             $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
             fwrite($archivo, $usuario);
@@ -117,6 +119,13 @@ if (isset($_SESSION['user'])) {
             
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
             $user->setNombre($nombre_bienvenida);
+            $user->setPasswordigual($passwordigual);
+
+            if($usuario == $pass){
+
+                include_once "PaginasVista/cambio_contrasena.html";
+                
+            }else{
 
             $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
             fwrite($archivo, $usuario);
@@ -170,6 +179,8 @@ if (isset($_SESSION['user'])) {
 }else{
     include_once "PaginasVista/login.php";
 }
+
+
 
 
 
