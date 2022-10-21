@@ -22,34 +22,70 @@ class Cambio_Password  {
 
         $nivel=$_SESSION['user'][1] ;
 
-        if($pass=="" or $pass1==""){?>
-            <script>
-            location.href='/PaginasVista/jefe_Control.html';
-            </script>
-        <?php
-        }
-        else if($pass==$pass1){
-            
-            $password_hash = password_hash($pass, PASSWORD_DEFAULT);
-
-            $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
-            $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
-            
-            $query="UPDATE [LogAdmin] SET PassAdm=? where UsuaAdm=?";
-            $parametros=array($password_hash,$user);
-            $stmt= sqlsrv_query($conexion,$query, $parametros);
+        if ($nivel=="1"){
+            if($pass=="" or $pass1==""){?>
+                <script>
+                location.href='/PaginasVista/jefe_Control.html';
+                </script>
+            <?php
+            }
+            else if($pass==$pass1){
+                
+                $password_hash = password_hash($pass, PASSWORD_DEFAULT);
     
-            sqlsrv_close($conexion);
-            $ban=true;
-            $_SESSION['user'][3] = false;
-             
-            $con->alerts($ban);
+                $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
+                $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
+                
+                $query="UPDATE [LogAdmin] SET PassAdm=? where UsuaAdm=?";
+                $parametros=array($password_hash,$user);
+                $stmt= sqlsrv_query($conexion,$query, $parametros);
+        
+                sqlsrv_close($conexion);
+                $ban=true;
+                $_SESSION['user'][3] = false;
+                 
+                $con->alerts($ban);
+    
+            }
+            else{
+                $ban=false;
+                $con->alerts($ban);
+            }
 
         }
-        else{
-            $ban=false;
-            $con->alerts($ban);
+        else if($nivel=="2"){
+            if($pass=="" or $pass1==""){?>
+                <script>
+                location.href='/PaginasVista/principal_secretarias.php';
+                </script>
+            <?php
+            }
+            else if($pass==$pass1){
+                
+                $password_hash = password_hash($pass, PASSWORD_DEFAULT);
+    
+                $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
+                $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
+                
+                $query="UPDATE [LogSecretarias] SET PassSec=? where IdSec=?";
+                $parametros=array($password_hash,$user);
+                $stmt= sqlsrv_query($conexion,$query, $parametros);
+        
+                sqlsrv_close($conexion);
+                $ban=true;
+                $_SESSION['user'][3] = false;
+                 
+                $con->alerts($ban);
+    
+            }
+            else{
+                $ban=false;
+                $con->alerts($ban);
+            }
+
         }
+
+        
         
     }
 
