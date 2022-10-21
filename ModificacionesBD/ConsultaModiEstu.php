@@ -33,7 +33,7 @@
         <form  method="POST">
         <div class="datos" style="float: center;">
             <input class="input" type="text" placeholder="No. control" name="control">&nbsp;&nbsp;
-            <input class="btnBuscar" type="submit" value="BUSCAR"  onclick="location.href = '/ModificacionesBD/IdEstuMod.php' ">&nbsp;&nbsp;
+            <input class="btnBuscar" type="button" value="BUSCAR"  onclick="location.href = '/ModificacionesBD/IdEstuMod.php' ">&nbsp;&nbsp;
             <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = '/PaginasVista/principal_secretarias.php' ">&nbsp;&nbsp;
         </div>
         </form>
