@@ -11,8 +11,8 @@ class saca_IDEstu{
         
         $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
         $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
-
-        $id=($_POST['control']);
+        
+        $id = $_POST["clave1"];
         #$id='TNM1234551322';
         $query="SELECT NoControl FROM [Alumnos] where NoControl=?";
         $parametros=array($id);

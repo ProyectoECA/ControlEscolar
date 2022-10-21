@@ -52,10 +52,6 @@ if (isset($_SESSION['user'])) {
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
             $user->setNombre($nombre_bienvenida);
 
-            
-
-            
-
             $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
             fwrite($archivo, $usuario);
             fclose($archivo);
@@ -87,6 +83,9 @@ if (isset($_SESSION['user'])) {
             
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
             $user->setNombre($nombre_bienvenida);
+            
+            $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
+            fwrite($archivo, $usuario);
 
             include_once "PaginasVista/principal_secretarias.php";
 

@@ -20,6 +20,8 @@ class Cambio_Password  {
 
         $con=new Cambio_Password;
 
+        $nivel=$_SESSION['user'][1] ;
+
         if($pass=="" or $pass1==""){?>
             <script>
             location.href='/PaginasVista/jefe_Control.html';
