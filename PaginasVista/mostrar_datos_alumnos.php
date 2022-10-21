@@ -22,7 +22,7 @@
   <div class="Contenedor_ubicacion">
        <h2 class="ubicacion">CONSULTA ESTUDIANTES</h2>
   </div>
-  <form method="POST" action="/ModificacionesBD/ConsultaAlum.php">
+  <form method="POST" action="">
     <div class="datos" style="float: center;">
       <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato" id="dato"><br>
       <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php' ">

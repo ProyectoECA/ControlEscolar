@@ -9,17 +9,20 @@ class Consultas_Alumnos{
 
         #CONSULTA GENERAL
         $salida="";
-        $query="SELECT Alumnos.NoControl,Nombre,ApePaterno,ApeMaterno,Calle,Colonia,Municipio,Estado,Lugar.CP,Telefono,NomTutor,TelTutor,Correo
-        FROM [Alumnos],[LugAlumnos],[Lugar] where Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP";
+        $query="SELECT Alumnos.NoControl,Alumnos.Nombre,ApePaterno,ApeMaterno,Calle,Colonia,Municipio,Estado,Lugar.CP,Telefono,NomTutor,TelTutor,Correo,CarreAlumnos.Semestre, Carreras.NombreCarre
+        FROM [Alumnos],[LugAlumnos],[Lugar],[CarreAlumnos],[Carreras] where (Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP and
+        Alumnos.NoControl=CarreAlumnos.NoControl and CarreAlumnos.ClaveCa=Carreras.ClaveCa)";
 
         #CONSULTA INTELIGENTE
         if(isset($_POST['consulta'])){
             $q=($_POST['consulta']);
-            $query="SELECT Alumnos.NoControl,Nombre,ApePaterno,ApeMaterno,Calle,Colonia,Municipio,Estado,Lugar.CP,Telefono,NomTutor,TelTutor,Correo
-                FROM [Alumnos],[LugAlumnos],[Lugar] where 
-                (Nombre like '%".$q."%' OR Alumnos.NoControl like '%".$q."%' OR ApePaterno like '%".$q."%' OR ApeMaterno like '%".$q."%' 
-                OR Municipio like '%".$q."%' OR Estado like '%".$q."%' OR Lugar.CP like '%".$q."%' or Correo like '%".$q."%')
-                and (Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP)";
+            $query="SELECT Alumnos.NoControl,Alumnos.Nombre,ApePaterno,ApeMaterno,Calle,Colonia,Municipio,Estado,Lugar.CP,Telefono,NomTutor,TelTutor,Correo,CarreAlumnos.Semestre, NombreCarre
+                FROM [Alumnos],[LugAlumnos],[Lugar],[CarreAlumnos],[Carreras] where 
+                (Alumnos.Nombre like '%".$q."%' OR Alumnos.NoControl like '%".$q."%' OR ApePaterno like '%".$q."%' OR ApeMaterno like '%".$q."%' 
+                OR Municipio like '%".$q."%' OR Estado like '%".$q."%' OR Lugar.CP like '%".$q."%' or Correo like '%".$q."%' OR
+                CarreAlumnos.Semestre like '%".$q."%' OR NombreCarre like '%".$q."%')
+                and (Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP and 
+                Alumnos.NoControl=CarreAlumnos.NoControl and CarreAlumnos.ClaveCa=Carreras.ClaveCa)";
         }
 
         $res=sqlsrv_query($con, $query);
@@ -61,6 +64,8 @@ class Consultas_Alumnos{
                 $nomTut=$row['NomTutor'];
                 $telTut=$row['TelTutor'];
                 $email=$row['Correo'];
+                $sem=$row['Semestre'];
+                $carre=$row['NombreCarre'];
 
                 $salida.=
                 "<tr>
@@ -77,8 +82,8 @@ class Consultas_Alumnos{
                     <th>$nomTut</th> 
                     <th>$telTut</th> 
                     <th>$email</th> 
-                    <th>Carrera</th>
-                    <th>1</th>
+                    <th>$sem</th>
+                    <th>$carre</th>
                 </tr>";
             }
             $salida.="
