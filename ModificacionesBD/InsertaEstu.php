@@ -24,7 +24,7 @@ class Insertar_Estu{
         $tutor = $_POST["tutor"]; 
         $teltutor = $_POST["teltutor"]; 
         $correo = $_POST["correo"]; 
-        $carrera = $_POST["carrera"]; 
+        $carrera = $_POST["seleccion_carrera"]; 
         $semestre = $_POST["semestre"]; 
 
         $in= new Insertar_Estu;
@@ -45,15 +45,15 @@ class Insertar_Estu{
                     $cone->Insertar_Eliminar_Actualizar($query,$parametros);
                     
                     #Consultar la clave de la carrera
-                    $query="SELECT * FROM [Carreras] where NombreCarre=?";
-                    $parametros=array($carrera);
-                    $carre=$cone->Buscar($query,$parametros);
-                    $carre1=$carre[0][0];
-                    $carre1=strval($carre1);
+                    #$query="SELECT * FROM [Carreras] where NombreCarre=?";
+                    #$parametros=array($carrera);
+                    #$carre=$cone->Buscar($query,$parametros);
+                    #$carre1=$carre[0][0];
+                    #$carre1=strval($carre1);
 
                     #Agrega a CarreAlumnos
                     $query= "INSERT INTO [CarreAlumnos] (NoControl, ClaveCa, Semestre) VALUES (?,?,?)";
-                    $parametros=array($clave, $carre1, $semestre);
+                    $parametros=array($clave, $carrera, $semestre);
                     $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
                     $query="SELECT * FROM [Lugar] where cp=?";

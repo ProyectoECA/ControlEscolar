@@ -1,3 +1,18 @@
+<?php
+
+define("ServerName1", 'localhost');
+define("Database1", "ConEscolarNoc");
+define("UID1", "Admini");
+define("PWD1", "control2022");
+define("CharacterSet1", 'UTF-8');
+$connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
+$conexion=sqlsrv_connect(ServerName1, $connectionInfo);
+
+$query="SELECT ClaveCa, NombreCarre FROM Carreras ";
+$resultado= sqlsrv_query($conexion,$query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +60,12 @@
                 <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: jose@gmail.com)" name="correo" id="correo">
                 <label class="carrera">Carrera</label>       
                 <select class="combobox" name="selecion_carrera" id="selecion_carrera">
-                    <option value="no_control">Va lo de base de datos</option>
+                    <option value=""></option>
+                    <?php
+                    while($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)){?>
+                    <option value="<?php echo $row['ClaveCa'];?>"><?php echo $row['NombreCarre'];?></option>
+                  <?php }
+                   ?>
                     </select>
                 <label class="semestre">Semestre</label>       
                 <input class="caja_texto" type="int" placeholder="(ejemplo: 5)" name="semestre" id="semestre">

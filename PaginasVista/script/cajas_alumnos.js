@@ -37,7 +37,7 @@ const expresiones = {
 }
 
 
-const carrera = document.getElementById('carrera');
+/* const carrera = document.getElementById('carrera');
 carrera.addEventListener('keyup', (e) => {
     let valorinput = e.target.value;
     console.log(valorinput);
@@ -57,7 +57,7 @@ carrera.addEventListener('keyup', (e) => {
         carrera.style.border = "3px solid red";
         validar();
     }
-});
+}); */
 
 
 const semestre= document.getElementById('semestre');
@@ -432,7 +432,7 @@ correo.addEventListener('keyup', (e) => {
 
 function validar(){
     const bot = document.getElementById('btn');
-    if(b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true &&  b13 == true &&  b14 == true &&  b15 == true){
+    if(b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true &&  b13 == true &&  b15 == true){
         bot.disabled=false;
     }
     else{

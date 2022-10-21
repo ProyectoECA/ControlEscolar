@@ -127,6 +127,10 @@ if (isset($_SESSION['user'])) {
                 
             }else{
 
+            $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
+            fwrite($archivo, $usuario);
+            fclose($archivo);
+
                 include_once "PaginasVista/principal_secretarias.php";
 
             }
@@ -178,9 +182,6 @@ if (isset($_SESSION['user'])) {
 
 
 
-
-
-?>
 
 
 
