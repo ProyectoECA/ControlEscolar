@@ -41,6 +41,8 @@ class Cambio_Password  {
     
             sqlsrv_close($conexion);
             $ban=true;
+            $_SESSION['user'][3] = false;
+             
             $con->alerts($ban);
 
         }
