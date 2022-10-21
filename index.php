@@ -167,11 +167,10 @@ if (isset($_SESSION['user'])) {
         include_once "PaginasVista/login.php";
     }
     
-else{
+}else{
     include_once "PaginasVista/login.php";
 }
 
-}
 
 
 
