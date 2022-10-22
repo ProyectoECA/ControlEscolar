@@ -26,11 +26,14 @@
                 <input class="caja_texto" type="text" placeholder="(ejemplo: Juan)" name="nombre" id="nombre">
                 <label >Créditos</label>
                 <input class="caja_texto" type="text" placeholder="(ejemplo: Arteaga)" name="creditos" id="creditos">
+                <div>
                 <label >Carreras</label>
                 <select class="combobox" name="tipo_consulta" id="tipo_consulta">
                     <option value="no_control">Va lo de base de datos</option>
                     <option value="nombre">va lo de base de datos</option>
                     </select>
+                </div>
+                <div>    
                 <label >Unidades</label>
                     <select class="combobox" name="tipo_consulta" id="tipo_consulta">
                         <option value="unidad_1">1</option>
@@ -43,7 +46,11 @@
                         <option value="unidad_8">8</option>
                         <option value="unidad_9">9</option>
                         <option value="unidad_10">10</option>
-                        </select>    
+                        </select>   
+                    </div>   
+                <label>Objetivos</label>      
+                <textarea name="objetivos" class="textarea" cols="45" rows="8"></textarea>
+
                     <button disabled id="btn" class="btn_guardar" name="guardar" onclick="location.href = '/ModificacionesBD/InsertaEstu.php' " >Guardar</button>
                     <button class="btn_cancelar" name="cancela" onclick="location.href='http://localhost/index.php'">Cancelar</button>    
             </form>

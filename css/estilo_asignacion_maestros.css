@@ -58,8 +58,8 @@ body{
     border: 2px solid #1e355e;
 }
 .caja_texto,boton{
-    width: 50%;
-    height: 3.125rem;
+    width: 58%;
+    height: 2.125rem;
     font-size: 1em;
     border-radius: 1px #1e355e;
 }
@@ -93,7 +93,7 @@ label{
     color: #444;
     line-height: 1.3;
     padding: .4em 1.4em .3em .8em;
-    width: 300px;
+    width: 320px;
     max-width: 100%; 
     box-sizing: border-box;
     margin: 20px auto;
@@ -106,7 +106,7 @@ label{
     background-color: #fff;
   }
   .btn_guardar{
-    margin-top: -10px; /* Damos un margen individual para el contenedor del botón */
+    margin-top: -1px; /* Damos un margen individual para el contenedor del botón */
     width: 25%;
     margin-right: 40%;
     background-color:#1e355e;
@@ -119,7 +119,7 @@ label{
     
 }
 .btn_cancelar {
-    margin-top: -60px; /* Damos un margen individual para el contenedor del botón */
+    margin-top: -72px; /* Damos un margen individual para el contenedor del botón */
     width: 25%;
     margin-left: 40%;
     background-color:#1e355e;

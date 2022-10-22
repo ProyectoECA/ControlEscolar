@@ -20,19 +20,21 @@
                 </div>
             </div>
             <form  method="POST" action="../ModificacionesBD/InsertaEstu.php" class="cajas_de_texto_asignacion">
-                <label >Carrera</label>
+                <div><label >Carrera</label>
                 <select class="combobox" name="tipo_consulta" id="tipo_consulta">
                     <option value="no_control">Va lo de base de datos</option>
                     <option value="nombre">va lo de base de datos</option>
                     </select>
+                </div>    
+                <div>
                 <label >Materia</label>
                 <select class="combobox" name="tipo_consulta" id="tipo_consulta">
                     <option value="no_control">Va lo de base de datos</option>
                     <option value="nombre">va lo de base de datos</option>
                     </select>
+                </div>   
                 <label >Clave maestro</label>
                 <input class="caja_texto" type="text" placeholder="" name="clave_maestro" id="clave_maestro">
-
                     <button disabled id="btn" class="btn_guardar" name="guardar" onclick="location.href = '/ModificacionesBD/InsertaEstu.php' " >Guardar</button>
                     <button class="btn_cancelar" name="cancela" onclick="location.href='http://localhost/index.php'">Cancelar</button>    
             </form>
