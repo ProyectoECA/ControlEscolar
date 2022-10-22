@@ -40,29 +40,30 @@
         
         <form method="POST" action="/ModificacionesBD/ModificarEstu.php" >
         <div class="contenedor_generalDatos">  
-            <input class="parte1" type="text" placeholder="No. control" value="<?php echo $row['NoControl']; ?>"  name="clave2" readonly>
-            <input class="parte1" type="text" placeholder="Nombre(s)"  name="nombre" value="<?php echo $row['Nombre']; ?>">
-            <input class="parte1" type="text" placeholder="Ap. paterno"  name="apePat" value="<?php echo $row['ApePaterno']; ?>">
-            <input class="parte1" type="text" placeholder="Ap. materno" name="apeMat" value="<?php echo $row['ApeMaterno']; ?>">
+            <input id="control" class="parte1" type="text" placeholder="No. control" value="<?php echo $row['NoControl']; ?>"  name="clave2" readonly>
+            <input id="nombre" class="parte1" type="text" placeholder="Nombre(s)"  name="nombre" value="<?php echo $row['Nombre']; ?>">
+            <input id="ap" class="parte1" type="text" placeholder="Ap. paterno"  name="apePat" value="<?php echo $row['ApePaterno']; ?>">
+            <input id="am" class="parte1" type="text" placeholder="Ap. materno" name="apeMat" value="<?php echo $row['ApeMaterno']; ?>">
             
-            <input class="parte2" type="text" placeholder="Calle y número" name="calle" value="<?php echo $row['Calle']; ?>" >
-            <input class="parte2" type="text" placeholder="Colonia" name="colonia" value="<?php echo $row['Colonia']; ?>">
-            <input class="parte2" type="text" placeholder="Municipio" name="municipio" value="<?php echo $row['Municipio']; ?>">
-            <input class="parte2" type="text" placeholder="Estado" name="estado" value="<?php echo $row['Estado']; ?>"> 
+            <input id="calle" class="parte2" type="text" placeholder="Calle y número" name="calle" value="<?php echo $row['Calle']; ?>" >
+            <input id="colonia" class="parte2" type="text" placeholder="Colonia" name="colonia" value="<?php echo $row['Colonia']; ?>">
+            <input id="municipio" class="parte2" type="text" placeholder="Municipio" name="municipio" value="<?php echo $row['Municipio']; ?>">
+            <input id="estado" class="parte2" type="text" placeholder="Estado" name="estado" value="<?php echo $row['Estado']; ?>"> 
 
-            <input class="parte3" type="text" placeholder="Codigo postal" name="cp" value="<?php echo $row['CP']; ?>">
-            <input class="parte3" type="text" placeholder="No. teléfono" name="telefono" value="<?php echo $row['Telefono']; ?>">
-            <input class="parte3" type="text" placeholder="Correo" name="correo" value="<?php echo $row['Correo']; ?>"> 
+            <input id="cp" class="parte3" type="text" placeholder="Codigo postal" name="cp" value="<?php echo $row['CP']; ?>">
+            <input id="tel" class="parte3" type="text" placeholder="No. teléfono" name="telefono" value="<?php echo $row['Telefono']; ?>">
+            <input id="correo" class="parte3" type="text" placeholder="Correo" name="correo" value="<?php echo $row['Correo']; ?>"> 
 
-            <input class="parte4" type="text" placeholder="Nombre completo del padre o tutor" name="nomTutor" value="<?php echo $row['NomTutor']; ?>">
-            <input class="parte4" type="text" placeholder="Teléfono del padre o tutor" name="telTutor" value="<?php echo $row['TelTutor']; ?>">
+            <input id="nomtu" class="parte4" type="text" placeholder="Nombre completo del padre o tutor" name="nomTutor" value="<?php echo $row['NomTutor']; ?>">
+            <input id="teltu" class="parte4" type="text" placeholder="Teléfono del padre o tutor" name="telTutor" value="<?php echo $row['TelTutor']; ?>">
 
             
         </div> 
         <div class="contenedor-botones" style="float: center;">
-            <input class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificarEstu.php' ">
-            <input class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificarEstu.php' ">
+            <input disabled id="btn" class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificarEstu.php' ">
+            <input disabled id="btn2" class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificarEstu.php' ">
         </div>
     </form>
+    <script src="modialumnos.js"></script>
 </body>
 </html>
