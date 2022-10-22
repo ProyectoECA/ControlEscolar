@@ -1,6 +1,9 @@
 <html>
 <body>
 <?php
+include_once "SesionesUsuario/user_session.php";
+
+
 
 define("ServerName1", 'localhost');
 define("Database1", "ConEscolarNoc");
@@ -19,10 +22,11 @@ class Cambio_Password  {
         $pass1 = $_POST["contra2"];
 
         $con=new Cambio_Password;
+        $sesion = new UserSession();
+        
+        $nivel=$sesion->getUserNivel();
 
-        $nivel=$_SESSION['user'][1] ;
-
-        if ($nivel=="1"){
+        if ($nivel==1){
             if($pass=="" or $pass1==""){?>
                 <script>
                 location.href='/PaginasVista/jefe_Control.html';
@@ -53,7 +57,7 @@ class Cambio_Password  {
             }
 
         }
-        else if($nivel=="2"){
+        else if($nivel==2){
             if($pass=="" or $pass1==""){?>
                 <script>
                 location.href='/PaginasVista/principal_secretarias.php';
@@ -107,15 +111,17 @@ class Cambio_Password  {
             timerProgressBar:true,
             }).then((result) => {
             if (result.isConfirmed){
-                location.href='/PaginasVista/jefe_Control.html';
+                location.href='/PaginasVista/jefe_Control.php';
             }
             else{
-                location.href='/PaginasVista/jefe_Control.html';
+                location.href='/PaginasVista/jefe_Control.php';
             }
-            window.history.back('/PaginasVista/jefe_Control.html');})
+            window.history.back('/PaginasVista/jefe_Control.php');})
             </script>
         <?php
         }
+       
+        
         else{?>
             <script>
             Swal.fire({

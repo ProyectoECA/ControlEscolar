@@ -38,7 +38,7 @@
         </div>
         </form>
         
-        <form action="POST" action="../ModificacionesBD/ModificaEstu.php" >
+        <form method="POST" action="/ModificacionesBD/ModificarEstu.php" >
         <div class="contenedor_generalDatos">  
             <input class="parte1" type="text" placeholder="No. control" value="<?php echo $row['NoControl']; ?>"  name="clave2" readonly>
             <input class="parte1" type="text" placeholder="Nombre(s)"  name="nombre" value="<?php echo $row['Nombre']; ?>">
@@ -60,10 +60,9 @@
             
         </div> 
         <div class="contenedor-botones" style="float: center;">
-            <input class="botones" type="button" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificaEstu.php' ">
-            <input class="botones" type="button" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificaEstu.php' ">
+            <input class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificarEstu.php' ">
+            <input class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificarEstu.php' ">
         </div>
     </form>
-    <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>

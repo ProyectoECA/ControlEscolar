@@ -120,6 +120,10 @@ if (isset($_SESSION['user'])) {
             $user->setUser($sesion->getUser(), $sesion->getUserNivel());
             $user->setNombre($nombre_bienvenida);
             $user->setPasswordigual($passwordigual);
+            
+            $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
+            fwrite($archivo, $usuario);
+            fclose($archivo);
 
             if($usuario == $pass){
 
@@ -127,9 +131,7 @@ if (isset($_SESSION['user'])) {
                 
             }else{
 
-            $archivo = fopen("Archivo.txt", "w") or die("Problema al crear archivo");
-            fwrite($archivo, $usuario);
-            fclose($archivo);
+            
 
                 include_once "PaginasVista/principal_secretarias.php";
 
