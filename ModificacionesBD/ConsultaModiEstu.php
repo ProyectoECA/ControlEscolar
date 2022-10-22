@@ -30,14 +30,14 @@
         <div class="titulo1">
             <h2>MODIFICAR DATOS DE ESTUDIANTES</h2>
         </div> 
-        <form  method="POST">
+        <form  method="POST" action="/ModificacionesBD/IdEstuMod.php">
         <div class="datos" style="float: center;">
             <input class="input" type="text" placeholder="No. control" name="control">&nbsp;&nbsp;
             <input class="btnBuscar" type="button" value="BUSCAR"  onclick="location.href = '/ModificacionesBD/IdEstuMod.php' ">&nbsp;&nbsp;
             <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = '/PaginasVista/principal_secretarias.php' ">&nbsp;&nbsp;
         </div>
         </form>
-        
+       
         <form method="POST" action="/ModificacionesBD/ModificarEstu.php" >
         <div class="contenedor_generalDatos">  
             <input id="control" class="parte1" type="text" placeholder="No. control" value="<?php echo $row['NoControl']; ?>"  name="clave2" readonly>
@@ -60,10 +60,11 @@
             
         </div> 
         <div class="contenedor-botones" style="float: center;">
-            <input disabled id="btn" class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificarEstu.php' ">
+            <input disabled id="btn" class="botones" type="submit" name="modifica" value="EDITAR">
             <input disabled id="btn2" class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificarEstu.php' ">
         </div>
     </form>
     <script src="modialumnos.js"></script>
+    <script src="../ManejoAlertas/alertaModiEstu.js"></script> 
 </body>
 </html>

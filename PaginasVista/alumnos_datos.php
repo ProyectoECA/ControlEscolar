@@ -33,7 +33,8 @@ $resultado= sqlsrv_query($conexion,$query);
                     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="20%" >
                 </div>
             </div>
-            <form  method="POST" action="../ModificacionesBD/InsertaEstu.php" class="cajas_de_texto_alumnos">
+            <form action="#" id="formulario" method="POST">
+           <!-- <form  method="POST" action="../ModificacionesBD/InsertaEstu.php" class="cajas_de_texto_alumnos">-->
                 <label class="numero_de_control">No.control</label>
                 <input class="caja_texto" type="text" placeholder="(ejemplo: TNM1234567899)" name="numerocontrol" id="numerocontrol">
                 <label class="Nombre">Nombre</label>
@@ -75,12 +76,13 @@ $resultado= sqlsrv_query($conexion,$query);
                 <label class="telefonopadre">Teléfono del padre o tutor</label>     
                 <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567890)" name="teltutor"
                     id="teltutor">
-                    <button disabled id="btn" class="btn_guardar" name="guardar" onclick="location.href = '/ModificacionesBD/InsertaEstu.php' " >Guardar</button>
+                    <button disabled id="btn" class="btn_guardar" name="guardar" type="submit">Guardar</button>
                     <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">Cancelar</button>    
             </form>
         </div>
     </div>
     <script src="/PaginasVista/script/cajas_alumnos.js"></script> 
-    <script src="../SesionesUsuario/session_expiracion.js"></script>   
+    <script src="../SesionesUsuario/session_expiracion.js"></script>  
+    <script src="../ManejoAlertas/alertaInsertaEstu.js"></script> 
 </body>
 </html>
