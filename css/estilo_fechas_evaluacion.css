@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, #1e355e 0%, white 70%);
+}
+.Contenedor_ubicacion{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+    font-size: large;
+}
+.Contenedor_titulo{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: left;
+    display: flex;
+    
+}
+.contenedor_titulo_2{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+}
+.contenedor_tabla_general{
+    max-width: 100%;
+    border-left: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    text-align: left;
+    justify-items: left;
+    justify-content: left;
+    align-items:left;
+    display: flex;
+ }
+ .table-datos_generales td{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: white;
+    border-right: 5px solid #1e355e;
+    border-bottom: 5px solid #1e355e;
+    width: 550px;
+    height: 60px;
+ }
+ .Contenedor_tabla_evaluación{
+    max-width: 100%;
+    border-left: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    text-align: center;
+    justify-items: center;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+ }
+ .table-calificaciones td{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: white;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    width: 150px;
+    height: 60px;
+ }
+ .table-calificaciones th{
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(to top, #1e355e 0%, white 150%);
+    width: 250px;
+ }
+ .caja_fecha{
+    padding-left: 20px;
+    border: black;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}

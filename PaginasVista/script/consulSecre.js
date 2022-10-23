@@ -2,14 +2,14 @@ $(buscar_datos());
 
 function buscar_datos(consulta){
     $.ajax({
-        url: '/ModificacionesBD/ConsultaAlum.php',
+        url: '/ModificacionesBD/ConsultaSecre.php',
         type: 'POST',
         dataType: 'html',
         data: {consulta:consulta},
     })
 
     .done(function(respuesta){
-        $("#tablaAlumnos").html(respuesta);
+        $("#tablaSecre").html(respuesta);
     })
     .fail(function(){
         console.log("error");

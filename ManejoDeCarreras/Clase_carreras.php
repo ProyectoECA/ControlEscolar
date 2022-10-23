@@ -9,7 +9,7 @@ class Carreras extends CRUD_SQL_SERVER{
         $query="SELECT * FROM [Carreras]";
         $exite = $this->Buscar($query,$parametros);
 
-        if($exite){
+        if(count($exite) > 0 ){
             
             return "La carrera que usted intenta insertar ya existe";
         }else{

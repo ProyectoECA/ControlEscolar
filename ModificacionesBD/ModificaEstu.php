@@ -29,6 +29,7 @@ class Modifica_Estu{
         $telTutor=$_POST["telTutor"];
         $carrera=$_POST["carrera"];
         $semestre=$_POST["semestre"];
+        echo $control;
 
         $in=new Modifica_Estu;
 

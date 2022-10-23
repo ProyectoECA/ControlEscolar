@@ -80,7 +80,8 @@ body{
     background: white;
  }
  .contenedor-tabla{
-    max-width: 100%;
+    width: 180%;
+    max-width: 180%;
     overflow-x:scroll;
     border-left: solid 1px #ccc;
     border-right: solid 1px #ccc;
@@ -182,9 +183,6 @@ body{
     visibility:visible;
     top:0%;
     transform:translate(-50%,70%);
-
-    
-
 }
 .btnBuscar{
     width: 20%;
@@ -234,7 +232,35 @@ body{
   appearance: none;
   background-color: #fff;
 }
+/* TABLAS*/
+.table{
+	background-color: white;
+	border-collapse: collapse;
+	width: auto;
+    text-align: center;
+}
 
+th, td{
+    width: 10%;
+    max-width: 120%;
+	padding: 4px 4px;
+}
 
+thead{
+	background-color: #1e355e;
+	border-bottom: solid 2px white;
+	color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #1e355e;
+	color: white;
+}
 
 

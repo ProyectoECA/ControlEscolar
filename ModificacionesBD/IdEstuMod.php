@@ -8,17 +8,13 @@ define("CharacterSet1", 'UTF-8');
 
 class saca_IDEstu{
     function agrega_idEstu(){
-        
+        $id = $_POST["clave1"];
         $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
         $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
-
-        $id=($_POST['control']);
-        #$id='TNM1234551322';
         $query="SELECT NoControl FROM [Alumnos] where NoControl=?";
         $parametros=array($id);
         $stmt = sqlsrv_query($conexion, $query, $parametros);
         $datos=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);?>
-
         <?php
         if(empty($datos)){?>
                 <script>
@@ -36,7 +32,7 @@ class saca_IDEstu{
         include_once("../PaginasVista/modificar_alumnos.html");
         }
         else{
-            $query="SELECT Alumnos.NoControl,Alumnos.Nombre,ApePaterno,ApeMaterno,Carreras.Nombre,CarreAlumnos.Semestre,Telefono,Correo,Calle,Colonia,Municipio,Estado,Lugar.CP,NomTutor,TelTutor
+            $query="SELECT Alumnos.NoControl,Alumnos.Nombre,ApePaterno,ApeMaterno,NombreCarre,CarreAlumnos.Semestre,Telefono,Correo,Calle,Colonia,Municipio,Estado,Lugar.CP,NomTutor,TelTutor
                 FROM [Alumnos],[LugAlumnos],[Lugar],[Carreras],[CarreAlumnos] where (Alumnos.NoControl=? and Alumnos.NoControl=LugAlumnos.NoControl 
                 and LugAlumnos.CP=Lugar.CP and Alumnos.NoControl=CarreAlumnos.NoControl and Carreras.ClaveCa=CarreAlumnos.ClaveCa )";
             $parametros=array($id);
