@@ -6,7 +6,7 @@ class Carreras extends CRUD_SQL_SERVER{
     public function insertar_carrera($clave, $nombre, $numero_semestres)
     {
         $parametros=array($clave);
-        $query="SELECT * FROM [Carreras]";
+        $query="SELECT Nombre FROM [Carreras] WHERE ClaveCa=?";
         $exite = $this->Buscar($query,$parametros);
 
         if(count($exite) > 0 ){
