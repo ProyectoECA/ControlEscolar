@@ -36,7 +36,7 @@ define("CharacterSet2", 'UTF-8');
     </div> 
     </form>
     <div class="contenedor-tabla">
-        <div class="table-cebra" name="tablaMtros" id="tablaMtros">
+        <div class="table" name="tablaMtros" id="tablaMtros">
 
         </div>
     </div>
