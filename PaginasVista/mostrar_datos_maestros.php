@@ -21,7 +21,7 @@ define("CharacterSet2", 'UTF-8');
 <body>
 <body>
 <div class="contenedor_titulo_2">
-    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlán</h1>
+    <h1 class="titulo_de_tec">TECNOLÓGICO DE NOCHISTLÁN</h1>
   </div>
   <div class="Contenedor_titulo">
     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
@@ -36,7 +36,7 @@ define("CharacterSet2", 'UTF-8');
     </div> 
     </form>
     <div class="contenedor-tabla">
-        <div class="table" name="tablaMtros" id="tablaMtros">
+        <div class="table-cebra" name="tablaMtros" id="tablaMtros">
 
         </div>
     </div>
