@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/estilo_consulta_carrera.css">
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="script/consulCarre.js"></script>
 <body>
     <div class="contenedor_titulo_2">
         <h1 class="titulo_de_tec"><b>Tecnológico  Superior De Nochistlán</b></h1>
@@ -18,23 +20,19 @@
       <div class="Contenedor_ubicacion">
            <h2 class="ubicacion">CONSULTAS CARRERAS</h2>
       </div>
-    
+      <form method="POST" action="/ModificacionesBD/ConsultaMaes.php">
+        <div class="datos" style="float: center;">
+          <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato" id="dato">
+          <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php'">
+        </div> 
+        </form>
     <div class="contenedor-tabla">
-        <table class="table-cebra">
-            <thead>
-                <tr>
-                    <th class="sticky"> Clave </th>
-                    <th> Nombre </th>
-                    <th> Cantidad de semetres </th>
-                </tr>
-             </thead>
-        </table>
-        <tbody>
-            
-        </tbody>
+        <div class="table" name="tablaCarre" id="tablaCarre">
+
+        </div>
 
     </div>  
 
-    
+    <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>
