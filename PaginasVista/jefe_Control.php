@@ -14,26 +14,33 @@
     </div>  
 
     <div class="nombre" style="float: center;"> 
-        <div class="titulo">
-            <h2><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h2>  
-        </div>
-        <div class="mostrar_usuario" style="float: right;"> 
-            <div class="imagen" style="float: left;">
-                <img src="/css/imagenes/Usuario.png" alt="" width="89%">
-            </div>  
-
-            <div class="texto" style="float: center;">
-            
-            <!-- codigo php -->
-            <?php
-                if(isset($nombre_bienvenida)){
-                    echo "<a href=''>Bienvenid@ $nombre_bienvenida</a>";
-                }
-            ?>
-            <!-- Codigo php     -->
-            </div>
+        <div class="tituloP" style="float: left;">
+            <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
         </div> 
-    </div>  
+        <div class="contenedor_der" style="float: right;">
+            <div class="mostrar_usuario" style="float: center;"> 
+                <div class="imagen" style="float: left;">
+                    <img src="/css/imagenes/Usuario.png" alt="" width="89%">
+                </div>  
+                <div class="texto" style="float: center;">
+                    <!-- codigo php -->
+                    <?php
+                        if(isset($nombre_bienvenida)){
+                            echo "<a href=''>Bienvenid@ $nombre_bienvenida</a>";
+                        }
+                    ?>
+                    <!-- Codigo php     -->
+                </div>
+            </div>
+            <div class="contenedor"> 
+                <a href="../SesionesUsuario/logout.php"> 
+                    <button class="boton_cerrar_sesion" type="button">CERRAR SESIÓN</button></a>
+
+                <a href="/PaginasVista/cambio_contrasena.html">
+                <button type="button" class="boton_cambiar_contraseña"> CAMBIAR CONTRASEÑA </button></a>
+            </div>  
+        </div>
+    </div> 
 
     <div class="conte">
         <div class="contenedor-secretarias">
@@ -128,14 +135,8 @@
             </div>
         </div>
     </div>  
-    <div class="contenedor">
-    <button type="submit" class="boton_cambiar_contraseña" onclick="location.href = '/PaginasVista/cambio_contrasena.html'"> CAMBIAR CONTRASEÑA </button>
-        
-    </div>  
-    <div>
-        <button class="boton_cerrar_sesion" type="button" onclick="location.href = '../SesionesUsuario/logout.php'">CERRAR SESIÓN</button>
-    </div>  
-      
+     
+    
     <script src="../SesionesUsuario/session_expiracion.js"></script>
 
 </body>

@@ -41,7 +41,7 @@
                     <button type="button" class="boton_cambiar_contraseña"> CAMBIAR CONTRASEÑA </button></a>
                 </div>  
             </div>
-        </div> 
+        </div>   
         <!--**********************************-->  
         <div class="conte">
             <div class="contenedor-secretarias">
