@@ -34,10 +34,10 @@
             </div>
             <div class="contenedor"> 
                 <a href="../SesionesUsuario/logout.php"> 
-                    <button class="boton_cerrar_sesion" type="button">CERRAR SESIÓN</button></a>
+                    <button class="boton_cerrarSesion" type="button">CERRAR SESIÓN</button></a>
 
                 <a href="/PaginasVista/cambio_contrasena.html">
-                <button type="button" class="boton_cambiar_contraseña"> CAMBIAR CONTRASEÑA </button></a>
+                <button type="button" class="boton_cambiarContraseña"> CAMBIAR CONTRASEÑA </button></a>
             </div>  
         </div>
     </div> 
