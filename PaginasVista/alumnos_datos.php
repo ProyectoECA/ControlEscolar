@@ -36,29 +36,29 @@ $resultado= sqlsrv_query($conexion,$query);
             <form class="cajas_de_texto_alumnos" action="#" id="formulario" method="POST">
            <!-- <form  method="POST" action="../ModificacionesBD/InsertaEstu.php" class="cajas_de_texto_alumnos">-->
                 <label class="numero_de_control">No.control</label>
-                <input class="caja_texto" type="text" placeholder="(ejemplo: TNM1234567899)" name="numerocontrol" id="numerocontrol">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: TNM1234567899)" name="numerocontrol" id="numerocontrol">
                 <label class="Nombre">Nombre</label>
-                <input class="caja_texto" type="text" placeholder="(ejemplo: Juan)" name="nombre" id="nombre">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: JUAN)" name="nombre" id="nombre">
                 <label class="Apellido_pater">Apellido paterno</label>
-                <input class="caja_texto" type="text" placeholder="(ejemplo: Arteaga)" name="apellidoP"
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ARTEAGA)" name="apellidoP"
                     id="apellidoP">
                 <label class="Apellido_mater">Apellido materno</label>    
-                <input class="caja_texto" type="text" placeholder="(ejemplo: Moreno)" name="apellidoM"
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: MORENO)" name="apellidoM"
                     id="apellidoM">
                 <label class="calle_numero">Calle y número</label>     
-                <input class="caja_texto" type="text" placeholder="(Hidalgo#2)" name="calle" id="calle">
+                <input class="caja_texto" type="text" placeholder="(HIDALGO #2)" name="calle" id="calle">
                 <label class="Colonia">Colonia</label>  
-                <input class="caja_texto" type="text" placeholder="(ejemplo: centro)" name="colonia" id="colonia">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: CENTRO)" name="colonia" id="colonia">
                 <label class="Municipio">Municipio</label>  
-                <input class="caja_texto" type="text" placeholder="(ejemplo: Tepechitlan)" name="municipio" id="municipio">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: TEPECHITLAN)" name="municipio" id="municipio">
                 <label class="estado">Estado</label>  
-                <input class="caja_texto" type="text" placeholder="(ejemplo: Zacatecas)" name="estado" id="estado">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ZACATECAS)" name="estado" id="estado">
                 <label class="Codigo_postal">Código postal</label> 
-                <input class="caja_texto" type="int" placeholder="(ejemplo: 12345)" name="cp" id="cp">
+                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 12345)" name="cp" id="cp">
                 <label class="no_telefono">No.teléfono</label> 
-                <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567890)" name="tel" id="tel">
+                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 1234567890)" name="tel" id="tel">
                 <label class="correo">Correo</label>       
-                <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: jose@gmail.com)" name="correo" id="correo">
+                <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: JOSE@GMAIL.COM)" name="correo" id="correo">
                 <label class="carrera">Carrera</label>       
                 <select class="combobox" name="selecion_carrera" id="selecion_carrera">
                     <option value=""></option>
@@ -76,8 +76,8 @@ $resultado= sqlsrv_query($conexion,$query);
                 <label class="telefonopadre">Teléfono del padre o tutor</label>     
                 <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567890)" name="teltutor"
                     id="teltutor">
-                    <button disabled id="btn" class="btn_guardar" name="guardar" type="submit">Guardar</button>
-                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">Cancelar</button>    
+                    <button disabled id="btn" class="btn_guardar" name="guardar" type="submit">GUARDAR</button>
+                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">CANCELAR</button>    
             </form>
         </div>
     </div>

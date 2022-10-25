@@ -27,17 +27,17 @@
     <div class="contenedor-general" style="float: center;">
     <form method="POST" action="/ModificacionesBD/ModificaSecre.php">
                 <div class="contenedor-datos" style="float: center;">
-                <input id="numeroe" class="conteDatos" type="text" placeholder="No. Empleado" name="clave2" value="<?php echo $row['IdSec'];?>" readonly>
-                <input id="nombre" class="conteDatos" type="text" placeholder="Nombre" name="nombre" value="<?php echo $row['Nombre'];?>">
-                <input id="ap" class="conteDatos" type="text" placeholder="Ap. paterno" name="apellidoP" value="<?php echo $row['ApePaterno'];?>">
-                <input id="am" class="conteDatos" type="text" placeholder="Ap. materno" name="apellidoM" value="<?php echo $row['ApeMaterno'];?>">
-                <input id="calle" class="conteDatos2" type="text" placeholder="Calle y número" name="calle" value="<?php echo $row['Calle'];?>">
-                <input id="colonia" class="conteDatos2" type="text" placeholder="Colonia" name="colonia" value="<?php echo $row['Colonia'];?>">
-                <input id="municipio" class="conteDatos2" type="text" placeholder="Municipio" name="municipio" value="<?php echo $row['Municipio'];?>"> 
-                <input id="estado" class="conteDatos2" type="text" placeholder="Estado" name="estado" value="<?php echo $row['Estado'];?>">
-                <input id="cp" class="conteDatos3" type="text" placeholder="Código postal" name="cp" value="<?php echo $row['CP'];?>">
-                <input id="tel" class="conteDatos3" type="text" placeholder="Teléfono" name="tel" value="<?php echo $row['Telefono'];?>">
-                <input id="correo" class="conteDatos3" type="text" placeholder="Correo" name="correo" value="<?php echo $row['Correo'];?>">
+                <input id="numeroe" class="conteDatos" type="text" placeholder="NO. EMPLEADO" name="clave2" value="<?php echo $row['IdSec'];?>" readonly>
+                <input id="nombre" class="conteDatos" type="text" placeholder="NOMBRE" name="nombre" value="<?php echo $row['Nombre'];?>">
+                <input id="ap" class="conteDatos" type="text" placeholder="AP. PATERNO" name="apellidoP" value="<?php echo $row['ApePaterno'];?>">
+                <input id="am" class="conteDatos" type="text" placeholder="AP. MATERNO" name="apellidoM" value="<?php echo $row['ApeMaterno'];?>">
+                <input id="calle" class="conteDatos2" type="text" placeholder="CALLE Y NÚMERO" name="calle" value="<?php echo $row['Calle'];?>">
+                <input id="colonia" class="conteDatos2" type="text" placeholder="COLONIA" name="colonia" value="<?php echo $row['Colonia'];?>">
+                <input id="municipio" class="conteDatos2" type="text" placeholder="MUNICIPIO" name="municipio" value="<?php echo $row['Municipio'];?>"> 
+                <input id="estado" class="conteDatos2" type="text" placeholder="ESTADO" name="estado" value="<?php echo $row['Estado'];?>">
+                <input id="cp" class="conteDatos3" type="text" placeholder="CÓDIGO POSTAL" name="cp" value="<?php echo $row['CP'];?>">
+                <input id="tel" class="conteDatos3" type="text" placeholder="TELÉFONO" name="tel" value="<?php echo $row['Telefono'];?>">
+                <input id="correo" class="conteDatos3" type="text" placeholder="CORREO" name="correo" value="<?php echo $row['Correo'];?>">
                 </div>
                 <div class="contenedor-botones" style="float: center;">
                 <input disabled id="btn" class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href='/ModificacionesBD/ModificaSecre.php'">
