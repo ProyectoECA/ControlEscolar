@@ -14,7 +14,7 @@
 <script src="script/consulAlum.js"></script>
 <body>
   <div class="contenedor_titulo_2">
-    <h1 class="titulo_de_tec">Tecnológico  Superior De Nochistlán</h1>
+    <h1 class="titulo_de_tec">TECNOLÓGICO DE NOCHISTLÁN</h1>
   </div>
   <div class="Contenedor_titulo">
     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
@@ -24,7 +24,7 @@
   </div>
   <form method="POST" action="">
     <div class="datos" style="float: center;">
-      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato" id="dato"><br>
+      <input class="input_busqueda" type="text" placeholder="INSERTA DATO" name="dato" id="dato"><br>
       <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php' ">
     </div> 
     </form>

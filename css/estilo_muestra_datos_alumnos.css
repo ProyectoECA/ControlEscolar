@@ -232,11 +232,11 @@ body{
   appearance: none;
   background-color: #fff;
 }
-/* TABLAS*/
-.table{
+ /* TABLAS*/
+ .table{
 	background-color: white;
 	border-collapse: collapse;
-	width: auto;
+	width: 200%;
     text-align: center;
 }
 

@@ -41,7 +41,7 @@
                 ?>
             <!--  ######################  -->
             <form class="inputs-container" action="" method="POST">
-                <input class="input" type="text"  name="username" placeholder="Usuario" id="usuario">
+                <input class="input" type="text"  name="username" placeholder="USUARIO" id="usuario">
                 <div>
                     <font size="2">
                     <p size="8" id="correctousuario">usuario valido</p>
@@ -49,7 +49,7 @@
                     institucional (ejemplo:RH123 o TECNM1234567899)</p>
                     </font>
                 </div>
-                <input class="input" type="password" name="password" placeholder="Contraseña" id="contraseña">
+                <input class="input" type="password" name="password" placeholder="CONTRASEÑA" id="contraseña">
                 <div>
                 <font size="2">
                     <p id="correctopass">contraseña valida</p>
