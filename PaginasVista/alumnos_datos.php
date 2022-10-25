@@ -33,7 +33,7 @@ $resultado= sqlsrv_query($conexion,$query);
                     <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="20%" >
                 </div>
             </div>
-            <form action="#" id="formulario" method="POST">
+            <form action="../ModificacionesBD/InsertaEstu.php" class="cajas_de_texto_alumnos" id="formulario" method="POST">
            <!-- <form  method="POST" action="../ModificacionesBD/InsertaEstu.php" class="cajas_de_texto_alumnos">-->
                 <label class="numero_de_control">No.control</label>
                 <input class="caja_texto" type="text" placeholder="(ejemplo: TNM1234567899)" name="numerocontrol" id="numerocontrol">

@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
 <body>
-    <form action="">
+    <form action="" id="formulario_modificar_careras">
         <div class="logo" style="float: left;">
             <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
         </div>  
@@ -33,23 +33,24 @@
             <h2>MODIFICAR DATOS DE LAS CARRERAS</h2>
         </div> 
         <div class="datos" style="float: center;">
-            <input class="input" type="text" placeholder="No. control" >&nbsp;&nbsp;
-            <input class="btnBuscar" type="submit" value="BUSCAR" onclick="location.href = '/ModificacionesBD/IdMaesMod.php' ">&nbsp;&nbsp;
-            <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = 'http://localhost/index.php' ">&nbsp;&nbsp;
+            <input class="input" type="text" name="clave_buscar" placeholder="Clave" >&nbsp;&nbsp;
+            <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" >&nbsp;&nbsp;
+            <input class="btnSalir" type="button"  value="CANCELAR" onclick="location.href = 'http://localhost/index.php' ">&nbsp;&nbsp;
         </div>
         <div class="contenedor_generalDatos">  
-            <input class="parte1" type="text" placeholder="Clave" id="clave">
-            <input class="parte1" type="text" placeholder="Nombre" id="nombre">
-            <input class="parte1" type="text" placeholder="No. semestres" id="semestres">
+            <input class="parte1" type="text" name="clave" placeholder="Clave" id="clave">
+            <input class="parte1" type="text" name="nombre" placeholder="Nombre" id="nombre">
+            <input class="parte1" type="text" name="semestres" placeholder="No. semestres" id="semestres">
         </div> 
         <div class="contenedor-botones" style="float: center;">
-            <button disabled id="btn" class="botones">modifica</button>
-            <button disabled id="btn1" class="botones">elimina</button>
+            <button disabled id="btn" name="modificar"  class="botones">modifica</button>
+            <button disabled id="btn1"  class="botones" >elimina</button>
 <!--             <input class="botones" type="submit" name="modifica" value="EDITAR">
             <input class="botones" type="submit" name="elimina" value="ELIMINAR"> -->
         </div>
     </form>
     <script src="../SesionesUsuario/session_expiracion.js"></script>
-    <script src="/PaginasVista/script/modificar_carrera.js"></script>
+    <!-- <script src="/PaginasVista/script/modificar_carrera.js"></script> -->
+    <script src="/PaginasVista/script/modificar_carreras_datos.js"></script>
 </body>
 </html>
