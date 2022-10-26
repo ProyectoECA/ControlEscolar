@@ -83,6 +83,6 @@ $resultado= sqlsrv_query($conexion,$query);
     </div>
     <script src="/PaginasVista/script/cajas_alumnos.js"></script> 
     <script src="../SesionesUsuario/session_expiracion.js"></script>  
-    <script src="../ManejoAlertas/alertaInsertaEstu.js"></script> 
+    <script src="../PaginasVista/script/alertaInsertaEstu.js"></script> 
 </body>
 </html>

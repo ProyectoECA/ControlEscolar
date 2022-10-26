@@ -9,7 +9,7 @@ const expresiones = {
     nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,30}$/,
 }
 
-const clave = document.getElementById('clave');
+/* const clave = document.getElementById('clave');
 clave.addEventListener('keyup', (e) => {
     let valorinput = e.target.value;
     console.log(valorinput);
@@ -29,7 +29,7 @@ clave.addEventListener('keyup', (e) => {
         clave.style.border = "3px solid red";
         validar();
     }
-});
+}); */
 
 const semestres = document.getElementById('semestres');
 semestres.addEventListener('keyup', (e) => {
@@ -78,7 +78,7 @@ nombre.addEventListener('keyup', (e) => {
 function validar() {
     const btn = document.getElementById('btn');
     const btn1 = document.getElementById('btn1');
-    if (b1 == true && b2 == true && b3 == true) {
+    if ( b2 == true && b3 == true) {
         btn.disabled=false;
         btn1.disabled=false;
         
