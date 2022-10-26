@@ -31,12 +31,12 @@ define("CharacterSet2", 'UTF-8');
 </div>
   <form method="POST" action="/ModificacionesBD/ConsultaMaes.php">
     <div class="datos" style="float: center;">
-      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato" id="dato">
+      <input class="input_busqueda" type="text" placeholder="INSERTA DATO" name="dato" id="dato">
       <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php'">
     </div> 
     </form>
     <div class="contenedor-tabla">
-        <div class="table-cebra" name="tablaMtros" id="tablaMtros">
+        <div class="table" name="tablaMtros" id="tablaMtros">
 
         </div>
     </div>

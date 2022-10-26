@@ -24,7 +24,7 @@
   </div>
   <form method="POST" action="">
     <div class="datos" style="float: center;">
-      <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato" id="dato"><br>
+      <input class="input_busqueda" type="text" placeholder="INSERTA DATO" name="dato" id="dato"><br>
       <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php' ">
     </div> 
     </form>
