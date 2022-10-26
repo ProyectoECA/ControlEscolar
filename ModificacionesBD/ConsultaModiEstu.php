@@ -16,16 +16,6 @@
             <div class="tituloP" style="float: left;">
                 <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
             </div> 
-            <div class="contenedor_der" style="float: right;">
-                <div class="mostrar_usuario" style="float: center;"> 
-                    <div class="imagen" style="float: left;">
-                        <img src="/css/imagenes/Usuario.png" alt="" width="89%">
-                    </div>  
-                    <div class="texto" style="float: center;">
-                        <h3>Aqui Estefania</h3>
-                    </div>
-                </div> 
-            </div>
         </div> 
         <div class="titulo1">
             <h2>MODIFICAR DATOS DE ESTUDIANTES</h2>
