@@ -26,7 +26,6 @@ class Modificar_Estudiantes {
         $nomTutor = $_POST["nomTutor"]; 
         $telTutor = $_POST["telTutor"]; 
 
-        $in= new Modificar_Estudiantes;
 
         if(isset($_POST['modifica'])){
 
@@ -47,9 +46,7 @@ class Modificar_Estudiantes {
                 $parametros=array($cp, $municipio, $estado);
                 $stmt= sqlsrv_query($conexion,$query, $parametros);
                 
-                $ban=true;
-            
-                $in->alerts($ban);
+           
             }
             #SI EL CP YA ESTA REGISTRADO, SOLO MODIFICA MUNICIPIO Y/O ESTADO
             else{
@@ -59,10 +56,7 @@ class Modificar_Estudiantes {
                 $query="UPDATE Lugar SET Estado= ? WHERE cp = ?";
                 $parametros=array($estado,$cp);
                 $stmt= sqlsrv_query($conexion,$query, $parametros);
-                
-                $ban=true;
-            
-                $in->Alerts($ban);
+               
             }
             #MOFICA RELACIÓN DE ALUMNO Y LUGAR
             $query="UPDATE LugAlumnos SET cp= ? WHERE NoControl =?";
@@ -108,12 +102,17 @@ class Modificar_Estudiantes {
             $stmt= sqlsrv_query($conexion,$query, $parametros);
             
             #Lama alerta de Modificación con exito
-            
-             
+            echo"<script>alert('Estudiante modificado con éxito')</script>";
+            include_once("../PaginasVista/modifica_alumnos2.html");
+           
+                
             sqlsrv_close($conexion);
         }
         catch(Exception $e){
-            $ban=false;
+            echo"<script>alert('No se pudo modificar el estudiante')</script>";
+            include_once("../PaginasVista/modifica_alumnos2.html");
+            //location.href='PaginasVista/modifica_alumnos2.php'</script>";
+            
         }
     }
     else if(isset($_POST['elimina'])){
@@ -140,72 +139,23 @@ class Modificar_Estudiantes {
             $stmt = sqlsrv_query($conexion, $query, $parametros);
 
              #Llamada a Alerta de eliminado
-             $ban=true;
-             $in->alerts($ban);
+           
+            echo"<script>alert('Estudiante eliminado con éxito')</script>";
+            include_once("../PaginasVista/modifica_alumnos2.html");
+            //header("location.href=modifica_alumnos2.php");
              sqlsrv_close($conexion);
         }
         catch(Exception $e){
-            #Llamada a Alerta de error
-            $ban=false;
-            $in->alerts($ban);
+            echo"<script>alert('No se pudo eliminar el estudiante)</script>";
+            include_once("../PaginasVista/modifica_alumnos2.html");
+            //header("location.href='/PaginasVista/modifica_alumnos2.php'");
+        
         }
     }
 }
-function alerts($ban){
-    #Alertas (necesitan html a fuerzas)
-    ?>
-    <html>
-    <body>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <?php
-    #Si hay error
-    if($ban==false){
-        ?>
-        <script>
-        Swal.fire({
-        icon: 'error',
-        title: 'ERROR',
-        text: 'No se pudieron modificar/eliminar los datos',
-        confirmButtonText: 'Aceptar',
-        timer:5000,
-        timerProgressBar:true,
-        }).then((result) => {
-        if (result.isConfirmed) {
-            location.href='../PaginasVista/modifica_alumnos2.html';
-        }
-        else{
-            location.href='../PaginasVista/modifica_alumnos2.html';
-        }
-        window.history.back('/PaginasVista/principal_secretarias.php');})
-        </script>
-    <?php }
-    #Si agrega con éxito
-    if($ban==true){
-        ?>
-        <script>
-        Swal.fire({
-        icon: 'success',
-        title: 'MODIFICACIÓN EXITOSA',
-        text: 'Estudiante modificado/eliminado con éxito',
-        confirmButtonText: 'Aceptar',
-        timer:5000,
-        timerProgressBar:true,
-        }).then((result) => {
-        if (result.isConfirmed){
-            location.href='../PaginasVista/modifica_alumnos2.html';
-        }
-        else{
-            location.href='../PaginasVista/modifica_alumnos2.html';
-        }
-        window.history.back('/PaginasVista/principal_secretarias.php');})
-        </script>
-    <?php
-    }
-    ?>
-    
-    <?php
+
 }
-}
+
 
 
 

@@ -16,29 +16,19 @@
             <div class="tituloP" style="float: left;">
                 <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
             </div> 
-            <div class="contenedor_der" style="float: right;">
-                <div class="mostrar_usuario" style="float: center;"> 
-                    <div class="imagen" style="float: left;">
-                        <img src="/css/imagenes/Usuario.png" alt="" width="89%">
-                    </div>  
-                    <div class="texto" style="float: center;">
-                        <h3>Aqui Estefania</h3>
-                    </div>
-                </div> 
-            </div>
         </div> 
         <div class="titulo1">
             <h2>MODIFICAR DATOS DE ESTUDIANTES</h2>
         </div> 
-        <form  method="POST" action="/ModificacionesBD/IdEstuMod.php">
+        <form  method="POST" >
         <div class="datos" style="float: center;">
             <input class="input" type="text" placeholder="NO. CONTROL" name="control">&nbsp;&nbsp;
-            <input class="btnBuscar" type="button" value="BUSCAR"  onclick="location.href = '/ModificacionesBD/IdEstuMod.php' ">&nbsp;&nbsp;
-            <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = '/PaginasVista/principal_secretarias.php' ">&nbsp;&nbsp;
+            <input class="btnBuscar" type="button" value="BUSCAR"  onclick="location.href = '../ModificacionesBD/IdEstuMod.php' ">&nbsp;&nbsp;
+            <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = '../PaginasVista/principal_secretarias.php' ">&nbsp;&nbsp;
         </div>
         </form>
        
-        <form method="POST" action="/ModificacionesBD/ModificarEstu.php" >
+        <form method="POST" action="../ModificacionesBD/ModificarEstu.php"  >
         <div class="contenedor_generalDatos">  
             <input id="control" class="parte1" type="text" placeholder="NO. CONTROL" value="<?php echo $row['NoControl']; ?>"  name="clave2" readonly>
             <input id="nombre" class="parte1" type="text" placeholder="NOMBRE(S)"  name="nombre" value="<?php echo $row['Nombre']; ?>">
@@ -61,10 +51,12 @@
         </div> 
         <div class="contenedor-botones" style="float: center;">
             <input disabled id="btn" class="botones" type="submit" name="modifica" value="EDITAR">
-            <input disabled id="btn2" class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificarEstu.php' ">
+            <input disabled id="btn2" class="botones" type="submit" name="elimina" value="ELIMINAR" >
         </div>
     </form>
     <script src="modialumnos.js"></script>
-    <script src="../ManejoAlertas/alertaModiEstu.js"></script> 
+    
+    
+
 </body>
 </html>
