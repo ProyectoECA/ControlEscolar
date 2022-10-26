@@ -45,15 +45,19 @@ class Cambio_Password  {
                 $stmt= sqlsrv_query($conexion,$query, $parametros);
         
                 sqlsrv_close($conexion);
-                $ban=true;
+               
                 $_SESSION['user'][3] = false;
-                 
-                $con->alerts($ban);
+                echo"<script>alert('Contraseña modificada con éxito');
+                location.href='http://localhost/index.php'</script>";
+                //onclick="location.href ='http://localhost/index.php'";
+                //include_once("/PaginasVista/jefe_Control.php");
+           
     
             }
             else{
-                $ban=false;
-                $con->alerts($ban);
+                echo"<script>alert('No se pudo modificar la contraseña');
+                location.href='http://localhost/index.php'</script>";
+               
             }
 
         }
@@ -74,17 +78,22 @@ class Cambio_Password  {
                 $query="UPDATE [LogSecretarias] SET PassSec=? where IdSec=?";
                 $parametros=array($password_hash,$user);
                 $stmt= sqlsrv_query($conexion,$query, $parametros);
-        
+            
                 sqlsrv_close($conexion);
-                $ban=true;
+              
                 $_SESSION['user'][3] = false;
-                 
-                $con->alerts($ban);
+
+                echo"<script>alert('Contraseña modificada con éxito');
+                location.href='http://localhost/index.php'</script>";
+              
+            
     
             }
             else{
-                $ban=false;
-                $con->alerts($ban);
+                echo"<script>alert('No se pudo modificar la contraseña');
+                location.href='http://localhost/index.php'</script>";
+           
+                
             }
 
         }
@@ -93,59 +102,7 @@ class Cambio_Password  {
         
     }
 
-    function alerts($ban){
-        #Alertas (necesitan html a fuerzas)
-        ?>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <?php
-        #Si agrega con éxito
-        if($ban==true){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'success',
-            title: 'MODIFICACIÓN EXITOSA',
-            text: 'La contraseña se ha modificado con éxito',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed){
-                location.href='/PaginasVista/jefe_Control.php';
-            }
-            else{
-                location.href='/PaginasVista/jefe_Control.php';
-            }
-            window.history.back('/PaginasVista/jefe_Control.php');})
-            </script>
-        <?php
-        }
-       
-        
-        else{?>
-            <script>
-            Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'Las contraseñas no coinciden',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed){
-                location.href='/PaginasVista/jefe_Control.html';
-            }
-            else{
-                location.href='/PaginasVista/jefe_Control.html';
-            }
-            window.history.back('/PaginasVista/jefe_Control.html');})
-            </script>
-        <?php
-        }
-    }
 }
-
-
 $con=new Cambio_Password;
 $con->cambiaP_Jefe();
 ?>
