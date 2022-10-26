@@ -16,20 +16,11 @@ class saca_IDEstu{
         $stmt = sqlsrv_query($conexion, $query, $parametros);
         $datos=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);?>
         <?php
-        if(empty($datos)){?>
-                <script>
-                    Swal.fire({
-                    icon: 'error',
-                    title: 'ERROR',
-                    text: 'Datos inexistentes',
-                    confirmButtonText: 'Aceptar',
-                    timer:5000,
-                    timerProgressBar:true,
-                    })
-                    window.history.back('../PaginasVista/principal_secretarias.php');
-                </script>
-        <?php
-        include_once("../PaginasVista/modificar_alumnos.html");
+        if(empty($datos)){
+            echo"<script>alert('No existe el estudiante')</script>";
+                
+                //location.href='PaginasVista/modifica_alumnos2.php'</script>"
+            include_once("../PaginasVista/modifica_alumnos2.html");
         }
         else{
             $query="SELECT Alumnos.NoControl,Alumnos.Nombre,ApePaterno,ApeMaterno,NombreCarre,CarreAlumnos.Semestre,Telefono,Correo,Calle,Colonia,Municipio,Estado,Lugar.CP,NomTutor,TelTutor

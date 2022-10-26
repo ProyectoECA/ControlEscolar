@@ -4,7 +4,7 @@ var respuesta=document.getElementById('respuesta');
 formulario.addEventListener('submit', function(e){
     e.preventDefault();
     var datos = new FormData(formulario);
-    fetch('/ModificacionesBD/ModificarEstu.php', { 
+    fetch('/CamContra.php', { 
         method:'POST',
         body: datos
     })
