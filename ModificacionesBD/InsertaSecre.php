@@ -16,6 +16,7 @@ class Insertar_Secretaria{
         $conexion_pass = new User_password;
         $conexion_pass->conexionBD();
 
+        if($cone){
         #RECEPCIÓN DE DATOS
         $no_empleado=$_POST["numeroEmple"];
         $nombre=$_POST["nombre"];
@@ -29,8 +30,7 @@ class Insertar_Secretaria{
         $telefono=$_POST["tel"];
         $email=$_POST["correo"];
 
-        $in=new Insertar_Secretaria;
-        if(isset($_POST['guarda_sec'])){
+        /*if(isset($_POST['guarda_sec'])){*/
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
             $conexion=sqlsrv_connect(ServerName, $connectionInfo);
 
@@ -52,10 +52,6 @@ class Insertar_Secretaria{
 
             if((empty($res))and (empty($res1))and (empty($res2))){
                 #INSERTA EN TABLA SECRETARIAS
-                try{
-                    
-
-
                     $query="INSERT INTO [Secretarias] (IdSec,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia) VALUES (?,?,?,?,?,?,?,?)";
                     $parametros=array($no_empleado,$nombre,$ape_Pat,$ape_Mat,$telefono,$email,$calle,$colonia);
                     $stmt = sqlsrv_query($conexion, $query, $parametros);
@@ -76,106 +72,36 @@ class Insertar_Secretaria{
                         $stmt=sqlsrv_query($conexion,$query,$parametros);
                         #$resul=sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
                         
-                        #Llamada a Alerta de registrado
-                        $ban=true;
-                        $in->alerts($ban);
-                        
                         #Agrega contraseña en hash
                         $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
                         $conexion_pass->CerrarConexion();
+                        echo"<script>alert('Secretari@ registrado con éxito','Recuerda que el usuario y la contraseña es el RH con mayúsculas');
+                        location.href='/PaginasVista/secretarias.html'</script>";
                     }
                     #SI EL CP YA ESTA REGISTRADO
                     else{
                         $query="INSERT INTO [LugSecretarias] (IdSec,CP) VALUES (?,?)";
                         $parametros=array($no_empleado,$codPos);
                         $stmt=sqlsrv_query($conexion,$query,$parametros);
-                        
-                        #Llamada a Alerta de registrado
-                        $ban=true;
-                        $in->Alerts($ban);
 
                         #Agrega contraseña en hash
                         $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
                         $conexion_pass->CerrarConexion();
+                        echo"<script>alert('Secretari@ registrado con éxito','Recuerda que el usuario y la contraseña es el RH con mayúsculas');
+                        location.href='/PaginasVista/secretarias.html'</script>";
                     }
                     sqlsrv_close($conexion);
-                }
-                catch(Exception $e){
-                    #Llamada a Alerta de error
-                    $ban=false;
-                    $in->alerts($ban);
-                }
             }
             else{
-                $ban=false;
-                $in->alerts($ban);
-                #echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
+                echo"<script>alert('Ya existe un usuario registrado con RH');
+                        location.href='/PaginasVista/secretarias.html'</script>";
             }
-    
    
-}
-    else if(isset($_POST['cancela_sec'])){
-        try{include_once "../PaginasVista/jefe_Control.html";
-        }
-        catch(Exception $e){
-            $ban=false;
-        }
-  
     }
+    else{
+        echo"<script>alert('No se puede establecer una conexión');
+                        location.href='/PaginasVista/secretarias.html'</script>";
     }
-
-    function alerts($ban){
-        #Alertas (necesitan html a fuerzas)
-        ?>
-        <html>
-        <body>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <?php
-        #Si hay error
-        if($ban==false){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'No se pudieron agregar los datos',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed) {
-                location.href='../PaginasVista/secretarias.html';
-            }
-            else{
-                location.href='../PaginasVista/secretarias.html';
-            }
-            window.history.back('../PaginasVista/jefe_Control.html');})
-            </script>
-        <?php }
-        #Si agrega con éxito
-        if($ban==true){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'success',
-            title: 'REGISTRO EXITOSO',
-            text: 'Secretaria/o añadida con éxito',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed){
-                location.href='../PaginasVista/secretarias.html';
-            }
-            else{
-                location.href='../PaginasVista/secretarias.html';
-            }
-            window.history.back('../PaginasVista/jefe_Control.html');})
-            </script>
-        <?php
-        }
-        ?>
-        <?php
     }
 
 }
