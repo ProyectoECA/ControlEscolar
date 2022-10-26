@@ -59,6 +59,7 @@ $resultado= sqlsrv_query($conexion,$query);
                 <input class="caja_texto" type="int" placeholder="(EJEMPLO: 1234567890)" name="tel" id="tel">
                 <label class="correo">Correo</label>       
                 <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: JOSE@GMAIL.COM)" name="correo" id="correo">
+                <div>
                 <label class="carrera">Carrera</label>       
                 <select class="combobox" name="selecion_carrera" id="selecion_carrera">
                     <option value=""></option>
@@ -68,8 +69,24 @@ $resultado= sqlsrv_query($conexion,$query);
                   <?php }
                    ?>
                     </select>
+                </div>    
+                <div>    
                 <label class="semestre">Semestre</label>       
-                <input class="caja_texto" type="int" placeholder="(ejemplo: 5)" name="semestre" id="semestre">
+                <select class="combobox" name="selecion_semestre" id="selecion_semestre">
+                    <option value="semestre_1">1</option>
+                    <option value="semestre_2">2</option>
+                    <option value="semestre_3">3</option>
+                    <option value="semestre_4">4</option>
+                    <option value="semestre_5">5</option>
+                    <option value="semestre_6">6</option>
+                    <option value="semestre_7">7</option>
+                    <option value="semestre_8">8</option>
+                    <option value="semestre_9">9</option>
+                    <option value="semestre_10">10</option>
+                    <option value="semestre_11">11</option>
+                    <option value="semestre_12">12</option>
+                    </select>  
+                </div>      
                 <label class="nombrepadre">Nombre del padre o tutor</label> 
                 <input class="caja_texto" type="text" placeholder="(ejemplo: Alonso)" name="tutor"
                     id="tutor">
