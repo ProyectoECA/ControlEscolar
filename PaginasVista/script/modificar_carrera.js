@@ -75,7 +75,7 @@ nombre.addEventListener('keyup', (e) => {
     }
 });
 
-/* function validar() {
+ function validar() {
     const btn = document.getElementById('btn');
     const btn1 = document.getElementById('btn1');
     if ( b2 == true && b3 == true) {
@@ -88,4 +88,4 @@ nombre.addEventListener('keyup', (e) => {
         btn1.disabled=true;
         
     }
-} */
+} 
