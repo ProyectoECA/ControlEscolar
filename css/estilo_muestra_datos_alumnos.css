@@ -185,7 +185,7 @@ body{
     transform:translate(-50%,70%);
 }
 .btnBuscar{
-    width: 20%;
+    width: 15%;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: white;
@@ -195,11 +195,11 @@ body{
     border: none;
     border-radius: 10px;
     bottom: 4.5%;
-    transform:translate(150%,-30%);
+    transform:translate(400%,-150%);
 }
 .input_busqueda{
     width: 20%;
-    height: 3.125rem;
+    height: 2.125rem;
     font-size: 1em;
     border: #1e355e;
     border-radius: 5px;
@@ -207,7 +207,7 @@ body{
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    transform:translate(199%,-30%);
+    transform:translate(199%,-0%);
 
 
 
