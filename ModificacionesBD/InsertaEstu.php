@@ -26,7 +26,8 @@ class Insertar_Estu{
         $teltutor = $_POST["teltutor"]; 
         $correo = $_POST["correo"]; 
         $carrera = $_POST["selecion_carrera"]; 
-        $semestre = $_POST["semestre"]; 
+        $semestre = $_POST["selecion_semestre"]; 
+        echo $semestre;
 
 
         

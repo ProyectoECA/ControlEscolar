@@ -73,18 +73,18 @@ $resultado= sqlsrv_query($conexion,$query);
                 <div>    
                 <label class="semestre">Semestre</label>       
                 <select class="combobox" name="selecion_semestre" id="selecion_semestre">
-                    <option value="semestre_1">1</option>
-                    <option value="semestre_2">2</option>
-                    <option value="semestre_3">3</option>
-                    <option value="semestre_4">4</option>
-                    <option value="semestre_5">5</option>
-                    <option value="semestre_6">6</option>
-                    <option value="semestre_7">7</option>
-                    <option value="semestre_8">8</option>
-                    <option value="semestre_9">9</option>
-                    <option value="semestre_10">10</option>
-                    <option value="semestre_11">11</option>
-                    <option value="semestre_12">12</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
                     </select>  
                 </div>      
                 <label class="nombrepadre">Nombre del padre o tutor</label> 
