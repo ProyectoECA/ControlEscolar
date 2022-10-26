@@ -6,14 +6,14 @@ class Carreras extends CRUD_SQL_SERVER{
     public function insertar_carrera($clave, $nombre, $numero_semestres)
     {
         $parametros=array($clave);
-        $query="SELECT Nombre FROM [Carreras] WHERE ClaveCa=?";
+        $query="SELECT NombreCarre FROM [Carreras] WHERE ClaveCa=?";
         $exite = $this->Buscar($query,$parametros);
 
         if(count($exite) > 0 ){
             
             return "La carrera que usted intenta insertar ya existe";
         }else{
-            $query = "INSERT INTO [Carreras] (ClaveCa,Nombre,Semestre) VALUES(?,?,?)";
+            $query = "INSERT INTO [Carreras] (ClaveCa,NombreCarre,Semestre) VALUES(?,?,?)";
             $parametros = array($clave,$nombre,$numero_semestres);
             $seInserto = $this->Insertar_Eliminar_Actualizar($query,$parametros);
 
@@ -44,7 +44,7 @@ class Carreras extends CRUD_SQL_SERVER{
         $resultado = $this->BuscarCarrera($clave);
         if(count($resultado) > 0){
             $parametros=array($nombre,$numero_semestres,$clave);
-            $query="UPDATE [Carreras] SET Nombre=?, Semestre=? WHERE ClaveCa=?";
+            $query="UPDATE [Carreras] SET NombreCarre=?, Semestre=? WHERE ClaveCa=?";
             $seCambio = $this->Insertar_Eliminar_Actualizar($query,$parametros);
 
             if($seCambio){

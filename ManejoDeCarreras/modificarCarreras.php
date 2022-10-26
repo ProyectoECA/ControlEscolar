@@ -20,7 +20,7 @@ if (isset($_POST['boton'])) {
         $resultado = $conexion_carreras->BuscarCarrera($clave);
      
         if(count($resultado) > 0){
-            $data = ["clave"=> $resultado[0]['ClaveCa'],"nombre"=>$resultado[0]['Nombre'],  "numero_semestres"=>$resultado[0]['Semestre'], "mensaje"=>"Se han encontrado los datos"];
+            $data = ["clave"=> $resultado[0]['ClaveCa'],"nombre"=>$resultado[0]['NombreCarre'],  "numero_semestres"=>$resultado[0]['Semestre'], "mensaje"=>"Se han encontrado los datos"];
     
         }
          
