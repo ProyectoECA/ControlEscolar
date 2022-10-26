@@ -98,7 +98,7 @@ $resultado= sqlsrv_query($conexion,$query);
             </form>
         </div>
     </div>
-    <script src="/PaginasVista/script/cajas_alumnos.js"></script> 
+    <script src="../PaginasVista/script/cajas_alumnos.js"></script> 
     <script src="../SesionesUsuario/session_expiracion.js"></script>  
     <script src="../PaginasVista/script/alertaInsertaEstu.js"></script> 
 </body>
