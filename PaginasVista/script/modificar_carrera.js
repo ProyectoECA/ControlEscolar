@@ -42,14 +42,14 @@ semestres.addEventListener('keyup', (e) => {
         b2 = true;
         semestres.removeAttribute("style");
         semestres.style.border = "3px solid green";
-      /*   validar(); */
+       validar(); 
 
     }
     else {
         b2 = false;
         semestres.removeAttribute("style");
         semestres.style.border = "3px solid red";
-        /* validar(); */
+        validar(); 
     }
 });
 
@@ -64,14 +64,14 @@ nombre.addEventListener('keyup', (e) => {
         b3 = true;
         nombre.removeAttribute("style");
         nombre.style.border = "3px solid green";
-        /* validar(); */
+        validar();
 
     }
     else {
         b3 = false;
         nombre.removeAttribute("style");
         nombre.style.border = "3px solid red";
-        /* validar(); */
+         validar();
     }
 });
 
