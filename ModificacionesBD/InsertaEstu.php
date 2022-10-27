@@ -27,10 +27,7 @@ class Insertar_Estu{
         $correo = $_POST["correo"]; 
         $carrera = $_POST["selecion_carrera"]; 
         $semestre = $_POST["selecion_semestre"]; 
-        echo $semestre;
-
-
-        
+ 
         #if(isset($_POST['guardar'])){
             #COMPRUEBA QUE EL ID NO ESTE REGISTRADO
             $query="SELECT * FROM [Alumnos] where NoControl=?";
@@ -76,7 +73,8 @@ class Insertar_Estu{
                         $conexion_pass->CerrarConexion();
 
                         #Llamada a Alerta de registrado
-                        echo json_encode('registrado');
+                        echo"<script>alert('Estudiante registrado con éxito (Recuerda que el usuario y la contraseña es el TNM con mayúsculas)');
+                        location.href='/PaginasVista/alumnos_datos.php'</script>";
                           
                     }
                     #SI EL CP YA ESTA REGISTRADO
@@ -90,20 +88,25 @@ class Insertar_Estu{
                         $conexion_pass->CerrarConexion();
 
                         #Llamada a Alerta de registrado
-                        echo json_encode('registrado');
-                        
+                        echo"<script>alert('Estudiante registrado con éxito (Recuerda que el usuario y la contraseña es el TNM con mayúsculas)');
+                        location.href='/PaginasVista/alumnos_datos.php'</script>";
+                      
                     }
                     $cone->CerrarConexion();
                    
             }
             else{
-                echo json_encode('control');
+                echo"<script>alert('El número de control ya se encuentra registrado');
+                location.href='/PaginasVista/alumnos_datos.php'</script>";
+               
             }
         
             }
         
         else{
-            echo json_encode('error');
+            echo"<script>alert('No se pudo establecer una conexión');
+            location.href='/PaginasVista/alumnos_datos.php'</script>";
+            
         }
     } 
     
