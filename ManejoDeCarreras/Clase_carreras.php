@@ -61,20 +61,29 @@ class Carreras extends CRUD_SQL_SERVER{
     public function EliminarCarreras($clave)
     {
         #elimina la carrera
-        $resultado = $this->BuscarCarrera($clave);
-        if(count($resultado) > 0){
-            $parametros=array($clave);
-            $query="DELETE [Carreras] WHERE ClaveCa=?";
-            $seCambio = $this->Insertar_Eliminar_Actualizar($query,$parametros);
-
-            if($seCambio){
-                return "La carrera se elimino con exito";
-            }else{
-                return "La carrera no se pudo eliminar";
-            }
+        
+        #busca si un alumno la tiene asignada
+        $esta_asignada = $this->Buscar("SELECT NoControl FROM CarreAlumnos WHERE ClaveCa=?",array($clave));
+        if(count($esta_asignada)>0){
+            return "La carrera que intenta eliminar, esta asignada a un alumno";
         }else{
-            return "La carrera que intenta eliminar no existe";
+            $resultado = $this->BuscarCarrera($clave);
+            if(count($resultado) > 0){
+                $parametros=array($clave);
+                $query="DELETE [Carreras] WHERE ClaveCa=?";
+                $seCambio = $this->Insertar_Eliminar_Actualizar($query,$parametros);
+    
+                if($seCambio){
+                    return "La carrera se elimino con exito";
+                }else{
+                    return "La carrera no se pudo eliminar";
+                }
+            }else{
+                return "La carrera que intenta eliminar no existe";
+            }
+
         }
+        
     }
 
 }
