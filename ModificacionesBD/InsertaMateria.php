@@ -25,7 +25,7 @@ class Insertar_Mat{
 
             if(empty($res)){
                 #INSERTA EN TABLA MATERIAS
-                $query= "INSERT INTO [Materias] (ClaveMat,Nombre,Creditos,Carrera,Unidades) VALUES (?,?,?,?,?)";
+                $query= "INSERT INTO [Materias] (ClaveMat,Nombre,Creditos,Carrera,Unidades,Objetivos) VALUES (?,?,?,?,?,?)";
                 $parametros=array($clave,$nombre,$creditos,$carrera,$unidades,$objetivos);
                 $cone->Insertar_Eliminar_Actualizar($query,$parametros);
                 echo"<script>alert('Materia registrada con éxito');
