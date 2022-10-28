@@ -62,7 +62,6 @@ $resultado= sqlsrv_query($conexion,$query);
                 <div>
                 <label class="carrera">Carrera</label>       
                 <select class="combobox" name="selecion_carrera" id="selecion_carrera">
-                    <option value="d"></option>
                     <?php
                     while($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)){?>
                     <option value="<?php echo $row['ClaveCa'];?>"><?php echo $row['NombreCarre'];?></option>
