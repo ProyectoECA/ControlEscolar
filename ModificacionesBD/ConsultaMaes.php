@@ -17,7 +17,9 @@ class Consultas_Maestros{
             $q=($_POST['consulta']);
             $query="SELECT Maestros.ClaveMa,Nombre,ApePaterno,ApeMaterno,RFC,Titulo,Telefono,Correo,Calle,Colonia,Municipio,Estado,Lugar.CP
                 FROM [Maestros],[LugMaestros],[Lugar] where (Maestros.ClaveMa=LugMaestros.ClaveMa and LugMaestros.CP=Lugar.CP) AND
-                (Maestros.ClaveMa like '%".$q."%' OR RFC like '%".$q."%' OR Nombre like '%".$q."%' OR ApePaterno like '%".$q."%' OR ApeMaterno like '%".$q."%'  OR Municipio like '%".$q."%' OR Estado like '%".$q."%' OR Lugar.CP like '%".$q."%' OR Correo like '%".$q."%')";
+                (Maestros.ClaveMa like '%".$q."%' OR RFC like '%".$q."%' OR Nombre like '%".$q."%' OR ApePaterno like '%".$q."%' OR ApeMaterno like '%".$q."%'  
+                OR Municipio like '%".$q."%' OR Estado like '%".$q."%' OR Lugar.CP like '%".$q."%' OR Correo like '%".$q."%')
+                ORDER BY Maestros.ClaveMa";
         }
 
         $res=sqlsrv_query($con, $query);

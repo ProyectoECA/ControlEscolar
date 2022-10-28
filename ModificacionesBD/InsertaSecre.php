@@ -93,7 +93,7 @@ class Insertar_Secretaria{
                     sqlsrv_close($conexion);
             }
             else{
-                echo"<script>alert('Ya existe un usuario registrado con RH');
+                echo"<script>alert('Ya existe un usuario registrado con este RH');
                         location.href='/PaginasVista/secretarias.html'</script>";
             }
    

@@ -25,7 +25,7 @@ const expresiones = {
     apellido:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,15}$/,
     colonia:/^([a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]{4,10})+$/,
     estado:/^(^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,20})+$/,
-    titulo:/^([a-zA-Z]{20})+$/,
+    titulo:/^[\d]{8}$/,
     municipio:/^([a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,25})+$/,
     calle:/^(^[a-zA-Z0-9#áéíóúÁÉÍÓÚñÑ ]{5,30})+$/,
     password: /^[\w\W]{8,16}$/,
@@ -286,7 +286,7 @@ rfc.addEventListener('keyup', (e) => {
 });
 //funcion validar
 function validar() {
-    if (b1 == true && b2 == true && b3 == true && b4 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true) {
+    if (b2 == true && b3 == true && b4 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true) {
         document.getElementById("btn").disabled = false;
         document.getElementById("btn2").disabled = false;
     }
