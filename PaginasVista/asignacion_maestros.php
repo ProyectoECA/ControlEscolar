@@ -39,7 +39,6 @@ $resultado1= sqlsrv_query($conexion,$query1);
             <form  method="POST" action="../ModificacionesBD/AsignaMaestros.php" class="cajas_de_texto_asignacion">
                 <div><label >Carrera</label>
                 <select class="combobox" name="carrera" id="carrera">
-                <option value="0"><?php echo "TODAS LAS CARRERAS";?></option>
                     <?php
                     while($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)){?>
                     <option value="<?php echo $row['ClaveCa'];?>"><?php echo $row['NombreCarre'];?></option>

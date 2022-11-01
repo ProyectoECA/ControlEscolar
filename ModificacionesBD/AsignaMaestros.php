@@ -24,45 +24,14 @@ class Asigna_Maes{
             $idMat = $_POST["materia"];
             $maestro = $_POST["maestro"]; 
 
-            if($idCarre=="0"){
-                $query="SELECT * FROM Carreras";
-                $resul= sqlsrv_query($conexion,$query);
-                $c=0;
-                while($row = sqlsrv_fetch_array($resul)) {
-                    $dato= $row['ClaveCa']; 
-
-                    $query="SELECT * FROM [AsigMaes] where ClaveMat=? and ClaveCa=? and Maestro=?";
-                    $parametros=array($idMat,$dato,$maestro);
-                    $res=$cone->Buscar($query,$parametros);
-                    if(empty($res)){
-                        $query= "INSERT INTO [AsigMaes] (ClaveMat,ClaveCa,Maestro) VALUES (?,?,?)";
-                        $parametros=array($idMat,$dato,$maestro);
-                        $cone->Insertar_Eliminar_Actualizar($query,$parametros);
-                    }
-                    else{
-                        $c++;
-                    }
-                
-            }
-            if($c!=0){
-                echo"<script>alert('Ya se encontraba registrada alguna asignación');
-                location.href='/PaginasVista/asignacion_maestros.php'</script>";
-            }
-            else{
-                echo"<script>alert('Asignaciones realizadas con éxito');
-                location.href='/PaginasVista/asignacion_maestros.php'</script>";
-            }
             
-            }
-            else{
-                
             #COMPRUEBA QUE LA MATERIA NO ESTE ASIGNADA A MAESTRO
             $query="SELECT * FROM [AsigMaes] where ClaveMat=? and ClaveCa=? and Maestro=?";
             $parametros=array($idMat,$idCarre,$maestro);
             $res=$cone->Buscar($query,$parametros);
 
             if(empty($res)){
-                #INSERTA EN TABLA ASIGNAMAES
+                #INSERTA EN TABLA ASIGMAES
                 $query= "INSERT INTO [AsigMaes] (ClaveMat,ClaveCa,Maestro) VALUES (?,?,?)";
                 $parametros=array($idMat,$idCarre,$maestro);
                 $cone->Insertar_Eliminar_Actualizar($query,$parametros);
@@ -77,7 +46,7 @@ class Asigna_Maes{
                
             }
             }
-        }
+        
         else{
             echo"<script>alert('No se pudo establecer una conexión');
             location.href='/PaginasVista/asignacion_maestros.php'</script>";
