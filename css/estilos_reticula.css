@@ -1,0 +1,71 @@
+body{ 
+    height: 120vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; 
+    background-image: linear-gradient(to top, #1e355e 0%, white 60%);
+} 
+
+nav{
+    max-width: 70%;
+    margin: auto;
+    background-color: #15469b;
+    font-size: 20px;
+    margin-top: none;
+}  
+
+.logo{ 
+    height: 5.5em;
+    width: 15em;
+    display: flexs;  
+    /*border: 2px solid red;*/
+    
+} 
+
+.nombre{ 
+    height: 5.5em;
+    width: 64em;
+    margin: 0em 20em; 
+    color: #1e355e;  
+    text-align: center;    
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex; 
+    /*border: 2px solid orange;*/
+}  
+
+.tituloP{
+    height: 7em;
+    width: 40em;  
+}  
+
+.contenedor-general{ 
+    height: 90%; 
+    width: 99%;
+    /*border: 2px solid black; */
+    margin: 1em auto;
+} 
+
+.sem{ 
+    width: 10%; 
+    height: 99%;
+    border: 2px solid #1e355e;  
+    background-color: white; 
+    border-radius: 10px;
+    align-items: center; 
+    display: flex; 
+    justify-content: space-between; 
+    margin: auto 0.3em; 
+    flex-direction: column;
+}  
+
+.materia{
+    width: 90%;  
+    height: 15%;
+    border: 2px solid #1e355e;  
+    align-items: center; 
+    flex-direction: column;   
+    margin: 0.5em auto;
+}
+
