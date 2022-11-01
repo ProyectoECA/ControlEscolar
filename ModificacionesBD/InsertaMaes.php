@@ -56,7 +56,6 @@ class Insertar_Maestros {
 
             if((empty($res))and(empty($res1))and(empty($res2))){
                 #INSERTA EN TABLA MAESTROS
-                try{
                     $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
                     $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
@@ -79,10 +78,6 @@ class Insertar_Maestros {
                         $query= "INSERT INTO [LugMaestros] (ClaveMa,CP) VALUES (?,?)";
                         $parametros=array($clave,$cp);
                         $stmt= sqlsrv_query($conexion,$query, $parametros);
-
-                        #Llamada a Alerta de registrado
-                        $ban=true;
-                        $in->alerts($ban);
                         
                         #Agrega contraseña en hash
                         $conexion_pass->InsertarUsuarioMaestro($clave, $clave);
@@ -94,93 +89,26 @@ class Insertar_Maestros {
                         $query= "INSERT INTO [LugMaestros] (ClaveMa,CP) VALUES (?,?)";
                         $parametros=array($clave,$cp);
                         $stmt= sqlsrv_query($conexion,$query, $parametros);
-
-                        #Llamada a Alerta de registrado
-                        $ban=true;
-                        $in->alerts($ban);
-                        
                         #Agrega contraseña en hash
                         $conexion_pass->InsertarUsuarioMaestro($clave, $clave);
                         $conexion_pass->CerrarConexion();
                         
                     }
+                    echo"<script>alert('Maestr@ registrado con éxito (Recuerda que el usuario y la contraseña es el RH con mayúsculas)');
+                        location.href='/PaginasVista/maestros_datos_per.html'</script>";
                     sqlsrv_close($conexion);
-                }
-                catch(Exception $e){
-                    $ban=false;
-                }
             }
             else{
-                $ban=false;
-                $in->alerts($ban);
-                #echo "YA SE ENCUENTRA REGISTRADA ESA CLAVE";
+                echo"<script>alert('Ya existe un usuario registrado con este RH');
+                        location.href='/PaginasVista/maestros_datos_per.html'</script>";
             }
             
         }
     else if(isset($_POST['cancela_sec'])){
-        try{include_once "../PaginasVista/jefe_Control.html";
-        }
-        catch(Exception $e){
-            $ban=false;
-        }
-  
+        include_once "../PaginasVista/jefe_Control.html";
     }
 }
-    function alerts($ban){
-        #Alertas (necesitan html a fuerzas)
-        ?>
-        <html>
-        <body>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <?php
-        #Si hay error
-        if($ban==false){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'No se pudieron agregar los datos',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed) {
-                location.href='../PaginasVista/maestros_datos_per.html';
-            }
-            else{
-                location.href='../PaginasVista/maestros_datos_per.html';
-            }
-            window.history.back('../PaginasVista/jefe_Control.html');})
-            </script>
-        <?php }
-        #Si agrega con éxito
-        if($ban==true){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'success',
-            title: 'REGISTRO EXITOSO',
-            text: 'Maestro/a añadido con éxito',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed){
-                location.href='../PaginasVista/maestros_datos_per.html';
-            }
-            else{
-                location.href='../PaginasVista/maestros_datos_per.html';
-            }
-            window.history.back('../PaginasVista/jefe_Control.html');})
-            </script>
-        <?php
-        }
-        ?>
-        </body>
-        </html>
-        <?php
-    }
+    
 }
 $in= new Insertar_Maestros;
 $in->insertando();

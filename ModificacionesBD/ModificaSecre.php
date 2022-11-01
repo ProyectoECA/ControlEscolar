@@ -21,11 +21,9 @@ class Modifica_Sec{
         $tel=$_POST["tel"];
         $correo=$_POST["correo"];
         
-        $in=new Modifica_Sec;
 
         if(isset($_POST['modifica'])){
             #MODIFICA EN TABLA SECRETARIAS
-            try{
                 $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
                 $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
@@ -39,10 +37,6 @@ class Modifica_Sec{
                     $query= "INSERT INTO [Lugar] (CP, Municipio, Estado) VALUES (?,?,?)";
                     $parametros=array($codPos, $municipio, $estado);
                     $stmt= sqlsrv_query($conexion,$query, $parametros);
-                    
-                    #Llamada a Alerta de modificacion
-                    $ban=true;
-                    $in->alerts($ban);
                 }
                 #SI EL CP YA ESTA REGISTRADO
                 else{
@@ -54,9 +48,6 @@ class Modifica_Sec{
                     $parametros=array($estado,$codPos);
                     $stmt=sqlsrv_query($conexion,$query,$parametros);
                     
-                    #Llamada a Alerta de modificado
-                    $ban=true;
-                    $in->alerts($ban);
                 }
                 #MODIFICA RELACION SECRE-LUGAR
                 $query="UPDATE LugSecretarias SET CP=? where IdSec=?";
@@ -85,18 +76,14 @@ class Modifica_Sec{
                 $query="UPDATE Secretarias SET Colonia=? where IdSec=?";
                 $parametros=array($colonia,$no_empleado);
                 $stmt=sqlsrv_query($conexion,$query,$parametros);
+                
+                echo"<script>alert('Secretari@ modifIcado con éxito');
+                location.href='/PaginasVista/modificar_maestros.html'</script>";
 
                 sqlsrv_close($conexion);
-            }
-            catch(Exception $e){
-                #Llamada a Alerta de error
-                $ban=false;
-                $in->alerts($ban);
-            }
         }
         else if(isset($_POST['elimina'])){
             #ELIMINA SECRETARIAS
-            try{
                 $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
                 $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
@@ -114,71 +101,12 @@ class Modifica_Sec{
                 $stmt = sqlsrv_query($conexion, $query, $parametros);
 
                  #Llamada a Alerta de eliminado
-                 $ban=true;
-                 $in->alerts($ban);
-            }
-            catch(Exception $e){
-                #Llamada a Alerta de error
-                $ban=false;
-                $in->alerts($ban);
-            }
+                 echo"<script>alert('Secretari@ eliminado con éxito');
+                        location.href='/PaginasVista/modificar_secretarias.html'</script>";
+            
         }
     }
 
-    function alerts($ban){
-        #Alertas (necesitan html a fuerzas)
-        ?>
-        <html>
-        <body>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <?php
-        #Si hay error
-        if($ban==false){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'No se pudieron modificar/eliminar los datos',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed) {
-                location.href='../PaginasVista/modificar_secretarias.html';
-            }
-            else{
-                location.href='../PaginasVista/modificar_secretarias.html';
-            }
-            window.history.back('/PaginasVista/jefe_Control.html');})
-            </script>
-        <?php }
-        #Si agrega con éxito
-        if($ban==true){
-            ?>
-            <script>
-            Swal.fire({
-            icon: 'success',
-            title: 'MODIFICACIÓN EXITOSA',
-            text: 'Secretaria modificada/eliminada con éxito',
-            confirmButtonText: 'Aceptar',
-            timer:5000,
-            timerProgressBar:true,
-            }).then((result) => {
-            if (result.isConfirmed){
-                location.href='../PaginasVista/modificar_secretarias.html';
-            }
-            else{
-                location.href='../PaginasVista/modificar_secretarias.html';
-            }
-            window.history.back('/PaginasVista/jefe_Control.html');})
-            </script>
-        <?php
-        }
-        ?>
-        
-        <?php
-    }
 }
 
 $mod=new Modifica_Sec;

@@ -17,7 +17,8 @@ class Consultas_Secre{
             $query="SELECT Secretarias.IdSec,Nombre,ApePaterno,ApeMaterno,Telefono,Correo,Calle,Colonia,Municipio,Estado,Lugar.CP
             FROM [Secretarias],[LugSecretarias],[Lugar] where (Secretarias.IdSec=LugSecretarias.IdSec and LugSecretarias.CP=Lugar.CP) AND
                 (Secretarias.IdSec like '%".$q."%' OR Nombre like '%".$q."%' OR ApePaterno like '%".$q."%' OR ApeMaterno like '%".$q."%'  
-                OR Municipio like '%".$q."%' OR Estado like '%".$q."%' OR Lugar.CP like '%".$q."%' OR Correo like '%".$q."%')";
+                OR Municipio like '%".$q."%' OR Estado like '%".$q."%' OR Lugar.CP like '%".$q."%' OR Correo like '%".$q."%')
+                ORDER BY Secretarias.IdSec";
         }
 
         $res=sqlsrv_query($con, $query);

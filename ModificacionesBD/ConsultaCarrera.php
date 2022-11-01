@@ -15,7 +15,7 @@ class Consultas_Carre{
         if(isset($_POST['consulta'])){
             $q=($_POST['consulta']);
             $query="SELECT ClaveCa, NombreCarre, Semestre from Carreras WHERE
-            ClaveCa like '%".$q."%' OR NombreCarre like '%".$q."%' OR Semestre like '%".$q."%'";
+            ClaveCa like '%".$q."%' OR NombreCarre like '%".$q."%' OR Semestre like '%".$q."%' ORDER BY ClaveCa";
         }
 
         $res=sqlsrv_query($con, $query);

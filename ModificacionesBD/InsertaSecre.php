@@ -75,7 +75,7 @@ class Insertar_Secretaria{
                         #Agrega contraseña en hash
                         $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
                         $conexion_pass->CerrarConexion();
-                        echo"<script>alert('Secretari@ registrado con éxito','Recuerda que el usuario y la contraseña es el RH con mayúsculas');
+                        echo"<script>alert('Secretari@ registrado con éxito (Recuerda que el usuario y la contraseña es el RH con mayúsculas)');
                         location.href='/PaginasVista/secretarias.html'</script>";
                     }
                     #SI EL CP YA ESTA REGISTRADO
@@ -87,13 +87,13 @@ class Insertar_Secretaria{
                         #Agrega contraseña en hash
                         $conexion_pass->InsertarUsuarioSecretaria($no_empleado, $no_empleado);
                         $conexion_pass->CerrarConexion();
-                        echo"<script>alert('Secretari@ registrado con éxito','Recuerda que el usuario y la contraseña es el RH con mayúsculas');
+                        echo"<script>alert('Secretari@ registrado con éxito (Recuerda que el usuario y la contraseña es el RH con mayúsculas)');
                         location.href='/PaginasVista/secretarias.html'</script>";
                     }
                     sqlsrv_close($conexion);
             }
             else{
-                echo"<script>alert('Ya existe un usuario registrado con RH');
+                echo"<script>alert('Ya existe un usuario registrado con este RH');
                         location.href='/PaginasVista/secretarias.html'</script>";
             }
    

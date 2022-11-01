@@ -191,13 +191,12 @@ body{
     letter-spacing: 1px;
     text-transform: uppercase;
     color: white;
-    border-radius: 5px;
     background-color: #1e355e;
     cursor: pointer;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     bottom: 4.5%;
-    transform:translate(278%,-9%);
+    transform:translate(210%,10%);
 }
 .input_busqueda{
     width: 19%;
@@ -209,7 +208,8 @@ body{
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    transform:translate(220%,-10%);
+    transform:translate(170%,5%);
+    margin: 1%;
 
 
 

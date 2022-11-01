@@ -22,7 +22,7 @@ class Consultas_Alumnos{
                 OR Municipio like '%".$q."%' OR Estado like '%".$q."%' OR Lugar.CP like '%".$q."%' or Correo like '%".$q."%' OR
                 CarreAlumnos.Semestre like '%".$q."%' OR NombreCarre like '%".$q."%')
                 and (Alumnos.NoControl=LugAlumnos.NoControl and LugAlumnos.CP=Lugar.CP and 
-                Alumnos.NoControl=CarreAlumnos.NoControl and CarreAlumnos.ClaveCa=Carreras.ClaveCa)";
+                Alumnos.NoControl=CarreAlumnos.NoControl and CarreAlumnos.ClaveCa=Carreras.ClaveCa) ORDER BY Alumnos.NoControl";
         }
 
         $res=sqlsrv_query($con, $query);

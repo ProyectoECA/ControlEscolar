@@ -42,7 +42,7 @@ function buscarCarrera(event) {
             mostrar();
 
         }
-        if(boton_desencadenador == 3){
+        if(boton_desencadenador == 3 && data.mensaje !== "La carrera que intenta eliminar, esta asignada a un alumno"){
             
             limpiarCampos();
         }

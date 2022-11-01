@@ -38,7 +38,7 @@ numeroe.addEventListener('keyup', (e) => {
     var i = 0;
     var encontrado = false;
 
-    if (expresiones.secretaria.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
+   if (expresiones.secretaria.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b1 = true;
         numeroe.removeAttribute("style");
         numeroe.style.border = "3px solid green";
@@ -243,7 +243,7 @@ correo.addEventListener('keyup', (e) => {
 });
 //funcion validar
 function validar() {
-    if (b1 == true && b2 == true && b3 == true && b4 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true) {
+    if (b2 == true && b3 == true && b4 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true) {
         document.getElementById("btn").disabled = false;
         document.getElementById("btn2").disabled = false;
     }
