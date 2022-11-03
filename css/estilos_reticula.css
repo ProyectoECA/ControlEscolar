@@ -43,9 +43,14 @@ nav{
 .contenedor-general{ 
     height: 80%; 
     width: 99%;
-    /*border: 2px solid red;*/ 
+    /*border: 2px solid red; */
     margin: 1em auto;
 } 
+
+h2{
+    color: #1e355e;
+    text-align: center;
+}
 
 .sem{ 
     width: 10%; 
