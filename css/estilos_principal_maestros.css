@@ -105,7 +105,7 @@ nav{
 .contenedor-general{
     height: 400px;
     width: 90%;  
-    margin: 1em auto; 
+    margin: 2em auto; 
     /*border: 2px solid red ; */
     align-items: center;
 } 
@@ -125,6 +125,12 @@ th, td{
     width: 10%;
     max-width: 100%;
 	padding: 4px 4px;
+} 
+
+td{
+    background-color: white;
+    color: #1e355e; 
+    border: 1px solid #1e355e;
 }
 
 thead{
@@ -141,6 +147,6 @@ tr:nth-child(even){
 }
 
 tr:hover td{
-	background-color: #1e355e;
+	background-color: #274374;
 	color: white;
 }
