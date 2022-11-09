@@ -51,21 +51,8 @@ $resultado= sqlsrv_query($conexion,$query);
                    ?>
                 </select>
                 </div>
-                <div>
-                  <label >Semestres</label>
-                   <select class="combobox" name="carre" id="carre">
-                     <option value="semestre_1">Semestre 1</option>
-                     <option value="semestre_2">Semestre 2</option>
-                     <option value="semestre_3">Semestre 3</option>
-                     <option value="semestre_4">Semestre 4</option>
-                     <option value="semestre_5">Semestre 5</option>
-                     <option value="semestre_6">Semestre 6</option>
-                     <option value="semestre_7">Semestre 7</option>
-                     <option value="semestre_8">Semestre 8</option>
-                     <option value="semestre_9">Semestre 9</option>
-                </div>
                 <div>    
-                <label >Unidades</label>
+                <label> Unidades </label>
                     <select class="combobox" name="unidades" id="unidades">
                         <option value="u1">1</option>
                         <option value="2">2</option>
@@ -77,8 +64,21 @@ $resultado= sqlsrv_query($conexion,$query);
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>
-                        </select>   
-                    </div>   
+                    </select>   
+                </div> 
+                <div>
+                  <label >Semestres</label>
+                   <select class="combobox" >
+                     <option value="semestre_1">Semestre 1</option>
+                     <option value="semestre_2">Semestre 2</option>
+                     <option value="semestre_3">Semestre 3</option>
+                     <option value="semestre_4">Semestre 4</option>
+                     <option value="semestre_5">Semestre 5</option>
+                     <option value="semestre_6">Semestre 6</option>
+                     <option value="semestre_7">Semestre 7</option>
+                     <option value="semestre_8">Semestre 8</option>
+                     <option value="semestre_9">Semestre 9</option>
+                </div>  
                 <label>Objetivos</label>      
                 <textarea name="objetivos" id="objetivos" class="textarea" cols="45" rows="8"></textarea>
 

@@ -61,12 +61,11 @@ h2{
     margin: 5px 210px;
     text-align: center; 
     align-items: center;
-    overflow: hidden;
     display: flex;
 } 
 
 .combobox{
-    width: 20em; 
+    width: 22em; 
     height: 35px; 
     align-items: center; 
     border-radius: 4px;  
