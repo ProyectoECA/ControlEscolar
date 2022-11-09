@@ -12,10 +12,11 @@
     <div class="logo" style="float: left;">
         <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
     </div> 
-    <div class="titulo">
+    <div class="nombre" style="float: center;"> 
+        <div class="titulo">
             <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
         </div> 
-        <h2>MODIFICAR DATOS DE MAESTROS(AS)</h2>
+        <h2>MODIFICAR DATOS DE SECRETARIAS(OS)</h2>
     </div> 
     <form method="POST">
     <div class="datos" style="float: center;">

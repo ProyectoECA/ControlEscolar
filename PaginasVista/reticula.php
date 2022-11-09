@@ -196,6 +196,7 @@ sqlsrv_close($con);
 
 
 <div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -204,8 +205,8 @@ sqlsrv_close($con);
                     ?>
                 </td>
                 </tr>
-
-
+            </div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -214,6 +215,8 @@ sqlsrv_close($con);
                     ?>
                 </td>
                 </tr>
+            </div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -222,6 +225,8 @@ sqlsrv_close($con);
                     ?>
                 </td>
             </tr>
+            </div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -230,6 +235,8 @@ sqlsrv_close($con);
                     ?>
                 </td>
             </tr>
+            </div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -238,6 +245,8 @@ sqlsrv_close($con);
                     ?>
                 </td>
             </tr>
+            </div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -246,6 +255,8 @@ sqlsrv_close($con);
                     ?>
                 </td>
             </tr>
+            </div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -254,6 +265,8 @@ sqlsrv_close($con);
                     ?>
                 </td>
             </tr>
+            </div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -262,6 +275,8 @@ sqlsrv_close($con);
                     ?>
                 </td>
             </tr>
+            </div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -270,6 +285,8 @@ sqlsrv_close($con);
                     ?>
                 </td>
             </tr>
+            </div>
+            <div>
             <table border="1"  width="130.5" height="0" id="tab">
             <tr>
                 <td width="130.5" height="100">
@@ -278,6 +295,7 @@ sqlsrv_close($con);
                     ?>
                 </td>
             </tr>
+            </div>
     </div>
 </body>
 </html>
