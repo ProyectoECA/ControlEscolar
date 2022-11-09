@@ -51,6 +51,21 @@ $resultado= sqlsrv_query($conexion,$query);
                    ?>
                 </select>
                 </div>
+                <div>    
+                <label> Unidades </label>
+                    <select class="combobox" name="unidades" id="unidades">
+                        <option value="u1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>   
+                </div> 
                 <div>
                   <label >Semestres</label>
                    <select class="combobox" >
@@ -63,22 +78,7 @@ $resultado= sqlsrv_query($conexion,$query);
                      <option value="semestre_7">Semestre 7</option>
                      <option value="semestre_8">Semestre 8</option>
                      <option value="semestre_9">Semestre 9</option>
-                </div>
-                <div>    
-                <label >Unidades</label>
-                    <select class="combobox" name="unidades" id="unidades">
-                        <option value="u1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        </select>   
-                    </div>   
+                </div>  
                 <label>Objetivos</label>      
                 <textarea name="objetivos" id="objetivos" class="textarea" cols="45" rows="8"></textarea>
 
