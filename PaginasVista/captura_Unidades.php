@@ -72,10 +72,10 @@ $resultado= sqlsrv_query($conexion,$query);
             ?>
             </select>
             <label class="etiquetas"><b>Nombre materia</b></label> 
-            <input class="cajas_texto" type="text"id="nombre" name="nombre" readonly>
+            <input class="cajas_texto" type="text"id="nombre" name="nombre" placeholder="" readonly>
             <label class="etiquetas"><b>Número de unidad</b></label>  
             <select class="combobox" id="unidad" name="unidad"> 
-                <option value="u1">1</option>
+                <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
