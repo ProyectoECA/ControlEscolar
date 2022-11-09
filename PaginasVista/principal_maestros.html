@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECRETARIAS(OS)</title> 
+    <link rel="stylesheet" href="/css/estilos_principal_maestros.css">
+    <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
+</head>
+<body> 
+    <form action="">
+        <div class="logo" style="float: left;">
+            <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
+        </div>  
+
+        <div class="nombre" style="float: center;"> 
+            <div class="tituloP" style="float: left;">
+                <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
+            </div> 
+            <div class="contenedor_der" style="float: right;">
+                <div class="mostrar_usuario" style="float: center;"> 
+                    <div class="imagen" style="float: left;">
+                        <img src="/css/imagenes/Usuario.png" alt="" width="89%">
+                    </div>  
+                    <div class="texto" style="float: center;">
+                        <!-- codigo php -->
+                        <?php
+                            if(isset($nombre_bienvenida)){
+                                echo "<a href=''>Bienvenid@ $nombre_bienvenida</a>";
+                            }
+                        ?>
+                        <!-- Codigo php     -->
+                    </div>
+                </div>
+                <div class="contenedor"> 
+                    <a href="../SesionesUsuario/logout.php"> 
+                        <button class="boton_cerrar_sesion" type="button">CERRAR SESIÓN</button></a>
+
+                    <a href="/PaginasVista/cambio_contrasena.html">
+                    <button type="button" class="boton_cambiar_contraseña"> CAMBIAR CONTRASEÑA </button></a>
+                </div>  
+            </div>
+        </div> 
+        <div class="contenedor-general"> 
+            <table class="table-cebra">
+                <thead>
+                    <tr>
+                        <th class="sticky"> Clave materias </th>
+                        <th> Nombre materias</th>
+                    </tr>
+                </thead> 
+            </table> 
+        </div>
