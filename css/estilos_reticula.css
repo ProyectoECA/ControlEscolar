@@ -1,5 +1,5 @@
 body{ 
-    height: 120vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -41,11 +41,16 @@ nav{
 }  
 
 .contenedor-general{ 
-    height: 90%; 
+    height: 80%; 
     width: 99%;
-    /*border: 2px solid black; */
+    /*border: 2px solid red; */
     margin: 1em auto;
 } 
+
+h2{
+    color: #1e355e;
+    text-align: center;
+}
 
 .sem{ 
     width: 10%; 

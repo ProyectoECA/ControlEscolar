@@ -63,7 +63,7 @@ body{
     border-right: solid 1px #ccc;
     text-align: center;
     justify-items: center;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     display: flex;
  }
@@ -73,16 +73,16 @@ body{
     background-color: white;
     border-right: 1px solid gray;
     border-bottom: 1px solid gray;
-    width: 850px;
+    width: 250px;
     height: 150px;
  }
  .table-calificaciones th{
     color:white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: linear-gradient(to top, #1e355e 0%, white 150%);
-    width:50px;
+    width:110px;
  }
- .caja_fecha{
+ .caja_de_texto_fecha{
     padding-left: 20px;
     border: black;
     border-radius: 5px;
@@ -90,5 +90,37 @@ body{
     letter-spacing: 1px;
     box-sizing: border-box;
     text-transform: uppercase;
-    width: 50px;    
+    width: 130px;    
+}
+.contenedor_botones{
+    max-width: 100%;
+    text-align: center;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+    transform: translate(-500%,350%);
+}
+.formulario_de_tabla{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top, #1e355e 0%, white 150%);
+    padding: 2px;
+
+}
+.btnGuardar{
+    margin-top: 10px; /* Damos un margen individual para el contenedor del botón */
+    width: 355%;
+    margin-right: 30%;
+    background-color:#1e355e;
+    border-radius: 10px;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: translate(-220%,50%);
 }

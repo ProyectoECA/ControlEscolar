@@ -1,0 +1,82 @@
+body{ 
+    height: 100vh;
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    text-decoration: none; 
+    background-image: linear-gradient(to top, #1e355e 0%, white 60%);
+} 
+  
+
+.logo{ 
+    height: 7em;
+    width: 15em;
+    display: flexs; 
+} 
+
+.nombre{ 
+    height: 7em;
+    width: 64em;
+    margin: 0em auto; 
+    color: #1e355e;  
+    text-align: center;
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex;
+}  
+
+.titulo{
+    height: 7em;
+    width: 40em; 
+} 
+
+/* ############################################################## */ 
+
+.contenedor-general{
+    height: 400px;
+    width: 90%;  
+    margin: 1em auto; 
+    /*border: 2px solid red ; */
+    align-items: center;
+} 
+
+/* TABLA */
+
+.table{
+	background-color: white;
+	border-collapse: collapse;
+	width: 200%;
+    text-align: center; 
+    margin: auto; 
+    align-items: center;
+}
+
+th, td{
+    width: 10%;
+    max-width: 100%;
+	padding: 4px 4px;
+} 
+
+td{
+    background-color: white;
+    color: #1e355e; 
+    border: 1px solid #1e355e;
+}
+
+thead{
+	background-color: #1e355e;
+	border-bottom: solid 1px white;
+	color: white;
+    font-size: 20px;
+    text-align: center; 
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #274374;
+	color: white;
+}

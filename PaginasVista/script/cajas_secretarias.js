@@ -53,7 +53,7 @@ numeroEmple.addEventListener('keyup', (e) => {
         b1 = true;
         numeroEmple.removeAttribute("style");
         numeroEmple.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
@@ -80,7 +80,7 @@ nombre.addEventListener('keyup', (e) => {
         b2 = true;
         nombre.removeAttribute("style");
         nombre.style.border = "3px solid green";
-        validar();
+       /*  validar(); */
 
     }
     else {
@@ -107,7 +107,7 @@ apellidoP.addEventListener('keyup', (e) => {
         b3 = true;
         apellidoP.removeAttribute("style");
         apellidoP.style.border = "3px solid green";
-        validar();
+       /*  validar(); */
     }
     else {
         b3 = false;
@@ -153,7 +153,7 @@ calle.addEventListener('keyup', (e) => {
         b5= true;
         calle.removeAttribute("style");
         calle.style.border = "3px solid green";
-        validar();
+       /*  validar(); */
 
     }
     else {
@@ -180,7 +180,7 @@ colonia.addEventListener('keyup', (e) => {
         b6 = true;
         colonia.removeAttribute("style");
         colonia.style.border = "3px solid green";
-        validar();
+     /*    validar(); */
 
     }
     else {
@@ -207,7 +207,7 @@ municipio.addEventListener('keyup', (e) => {
         b7 = true;
         municipio.removeAttribute("style");
         municipio.style.border = "3px solid green";
-        validar();
+      /*   validar(); */
 
     }
     else {
@@ -234,7 +234,7 @@ estado.addEventListener('keyup', (e) => {
         b8 = true;
         estado.removeAttribute("style");
         estado.style.border = "3px solid green";
-        validar();
+     /*    validar(); */
 
     }
     else {
@@ -261,7 +261,7 @@ cp.addEventListener('keyup', (e) => {
         b9 = true;
         cp.removeAttribute("style");
         cp.style.border = "3px solid green";
-        validar();
+      /*   validar(); */
 
     }
     else {
@@ -288,7 +288,7 @@ tel.addEventListener('keyup', (e) => {
         b10 = true;
         tel.removeAttribute("style");
         tel.style.border = "3px solid green";
-        validar();
+       /*  validar(); */
 
     }
     else {
@@ -315,7 +315,7 @@ correo.addEventListener('keyup', (e) => {
         b11 = true;
         correo.removeAttribute("style");
         correo.style.border = "3px solid green";
-        validar();
+      /*   validar(); */
 
     }
     else {
@@ -329,9 +329,10 @@ correo.addEventListener('keyup', (e) => {
 function validar(){
     const bot = document.getElementById('btn');
     if(b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true){
-        bot.disabled=false;
+        bot.disabled=true;
+        location.href = '../ModificacionesBD/InsertaSecre.php' 
     }
     else{
-        bot.disabled=true;
+        bot.disabled=false;
     }
 }
