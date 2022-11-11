@@ -7,7 +7,7 @@ define("CharacterSet1", 'UTF-8');
 $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
 $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
-$query="SELECT ClaveMat FROM Materias";
+$query="SELECT ClaveMat,Nombre FROM Materias";
 $resultado= sqlsrv_query($conexion,$query);
 ?>
 <!DOCTYPE html>
@@ -67,12 +67,10 @@ $resultado= sqlsrv_query($conexion,$query);
             <select class="combobox" id="clave" name="clave">
             <?php
                 while($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)){?>
-                <option value="<?php echo $row['ClaveMat'];?>"><?php echo $row['ClaveMat'];?></option>
+                <option value="<?php echo $row['ClaveMat'];?>"><?php echo ($row['ClaveMat'].'- '.$row['Nombre']);?></option>
             <?php }
             ?>
             </select>
-            <label class="etiquetas"><b>Nombre materia</b></label> 
-            <input class="cajas_texto" type="text"id="nombre" name="nombre" placeholder="" readonly>
             <label class="etiquetas"><b>Número de unidad</b></label>  
             <select class="combobox" id="unidad" name="unidad"> 
                 <option value="1">1</option>

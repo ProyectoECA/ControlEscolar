@@ -14,7 +14,7 @@ if($conexion){
     while($row = mysqli_fetch_array($resultados)){
         $nombre=$row['Nombre'];
         echo $nombre;
-        $html = "<input value='" . $nombre . "'>" . $nombre;
+        $html = "<option value='" . $nombre . "'>" . $nombre . "</option>";
         echo $html;
     }
 }
