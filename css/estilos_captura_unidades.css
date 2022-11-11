@@ -1,5 +1,5 @@
 body{ 
-    height: 100vh;
+    height: 135vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,7 +40,7 @@ nav{
 
 .contenedor-principal{ 
     width: 550px; 
-    height: 500px;
+    height: 670px;
     border: 2px solid #1e355e;
     background-color: white; 
     margin: auto; 
@@ -83,7 +83,15 @@ h2{
     text-align: center;
     overflow: hidden;
     display: flex;
-} 
+}  
+
+.textarea{
+    width:450px;
+    height:190px;
+    border: 1px solid #1e355e;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 120%;
+}
 
 .btnGuardar{ 
     width: 20%;

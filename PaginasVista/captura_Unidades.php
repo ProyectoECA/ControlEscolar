@@ -87,7 +87,7 @@ $resultado= sqlsrv_query($conexion,$query);
             <label class="etiquetas"  style="float: center;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tema</b></label>
             <input class="cajas_texto" type="text" placeholder="Tema">
             <label class="etiquetas" style="float: center;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subtemas</b></label> 
-            <input class="cajas_texto" type="text" placeholder="Subtemas">
+            <textarea class="textarea" cols="45" rows="8"></textarea>
             <input class="btnGuardar" type="submit" value="GUARDAR">
             <input class="btnCancelar" type="button" value="CANCELAR">
         </div>

@@ -3,9 +3,9 @@
 
 class Conexion{
     function conexionBD(){
-        $serverName='localhost';
+        $serverName='controlescolarservidor.database.windows.net';
         //$serverName='DESKTOP-J1AR91P';
-        $connectionInfo = array("Database"=>"ConEscolarNoc", "UID"=>"Admini", "PWD"=>"control2022", "CharacterSet"=>"UTF-8");
+        $connectionInfo = array("Database"=>"ConEscolarBD", "UID"=>"nochistlanadm", "PWD"=>"Sok03951", "CharacterSet"=>"UTF-8");
         $con=sqlsrv_connect($serverName, $connectionInfo);
         
         if($con)
