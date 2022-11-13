@@ -1,7 +1,6 @@
 <?php
 include_once "../CRUD/Usuarios_password.php";
 include_once "../CRUD/CRUD_bd_SQLServer.php";
-
 define("ServerName1", 'localhost');
 define("Database1", "ConEscolarNoc");
 define("UID1", "Admini");

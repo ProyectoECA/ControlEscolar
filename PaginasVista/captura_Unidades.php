@@ -19,36 +19,6 @@ $resultado= sqlsrv_query($conexion,$query);
     <title>UNIDADES</title> 
     <link rel="stylesheet" href="/css/estilos_captura_unidades.css">
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
-    <script languaje="javascript" src="../PaginasVista/script/jquery-3.6.1.min.js"></script>
-    <script languaje="javascript">
-		$(document).ready(function() {
-			$("#clave").change(function() {
-				$("#clave option:selected").each(function() {
-					Id = $(this).val();
-					$.post("../PaginasVista/getNombreMat.php", {
-						Id: Id
-					}, function(data) {
-						$("#nombre").html(data);
-					});
-				});
-			})
-		});
-	</script>
-    <!--Para el nombre de la materia
-     <script lenguaje="javascript">
-      $(document).ready(function(){
-        $("#clave").change(function(){
-          $("#clave option:selected").each(function(){
-            Id=$(this).val();
-            $.post("../PaginasVista/getNombreMat.php",{
-              Id:Id
-            }, function(data){
-              $("#nombre").html(data);
-            });
-          });
-        })
-      });
-     </script>-->
 </head>
 <body>
     <div class="logo" style="float: left;">
@@ -62,7 +32,7 @@ $resultado= sqlsrv_query($conexion,$query);
     </div>
     <div class="contenedor-principal">
         <h2>CAPTURA DE UNIDADES</h2> 
-        <div class="datos">
+        <form  method="POST" action="../ModificacionesBD/capturaUnidades.php" class="datos">
             <label class="etiquetas" style="float: center;"><b>Clave materia</b></label> 
             <select class="combobox" id="clave" name="clave">
             <?php
@@ -85,12 +55,12 @@ $resultado= sqlsrv_query($conexion,$query);
                 <option value="10">10</option>
             </select>
             <label class="etiquetas"  style="float: center;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tema</b></label>
-            <input class="cajas_texto" type="text" placeholder="Tema">
+            <input class="cajas_texto" type="text" placeholder="Tema" name="tema" id="tema">
             <label class="etiquetas" style="float: center;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subtemas</b></label> 
-            <textarea class="textarea" cols="45" rows="8"></textarea>
-            <input class="btnGuardar" type="submit" value="GUARDAR">
+            <textarea class="textarea" cols="45" rows="8"  name="subtema" id="subtema"></textarea>
+            <input class="btnGuardar" type="submit" value="GUARDAR" onclick="location.href = '../ModificacionesBD/capturaUnidades.php' ">
             <input class="btnCancelar" type="button" value="CANCELAR">
-        </div>
+          </form>
     </div>
     <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
