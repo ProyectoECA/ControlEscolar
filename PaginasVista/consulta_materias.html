@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/estilo_muestra_datos_materias.css">
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="script/consulMat.js"></script>
 <body>
     <div class="contenedor_titulo_2">
         <h1 class="titulo_de_tec">TECNOLÓGICO DE NOCHISTLÁN</h1>
@@ -18,14 +20,14 @@
       <div class="Contenedor_ubicacion">
         <h2 class="ubicacion">CONSULTA MATERIAS</h2>
     </div>
-      <form method="POST" action="/ModificacionesBD/ConsultaMaes.php">
+      <form method="POST" action="/ModificacionesBD/ConsultaMateria.php">
         <div class="datos" style="float: center;">
           <input class="input_busqueda" type="text" placeholder="INSERTA DATO" name="dato" id="dato">
           <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php'">
         </div> 
         </form>
         <div class="contenedor-tabla">
-            <div class="table" name="tablaMtros" id="tablaMtros">
+            <div class="table" name="tablaMate" id="tablaMate">
                 
             </div>
         </div>
