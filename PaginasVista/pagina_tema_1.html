@@ -37,7 +37,7 @@
 
       </article>
     <div>  
-    <form class="formulario_de_tabla">
+    <form class="formulario_de_tabla" method="POST" action="../ModificacionesBD/FechasEvaluacion.php">
         <div class="Contenedor_tabla_evaluación">
             <table class="table-calificaciones">
                <thead>
@@ -67,17 +67,17 @@
                    <tr>
                        <td><a href="ventana_auxiliar_qr.html"> 01 El secmento de aprender etica  </a></td>
                        <td> Se saca de la base de datos </td>
-                       <td><input class="caja_de_texto_fecha" type="date"></td>
-                       <td><input class="caja_de_texto_fecha" type="date"></td>
-                       <td><input class="caja_de_texto_fecha" type="date"></td>
-                       <td><input class="caja_de_texto_fecha" type="date"></td>
-                       <td><input class="caja_de_texto_fecha" type="date"></td>
-                       <td><input class="caja_de_texto_fecha" type="date"></td>
+                       <td><input class="caja_de_texto_fecha" type="date" name="ProI" id="Pro"></td>
+                       <td><input class="caja_de_texto_fecha" type="date" name="ProT" id="ProT"></td>
+                       <td><input class="caja_de_texto_fecha" type="date" name="RealI" id="RealI"></td>
+                       <td><input class="caja_de_texto_fecha" type="date" name="RealT" id=RealT></td>
+                       <td><input class="caja_de_texto_fecha" type="date" name="EvaP" id="EvaP"></td>
+                       <td><input class="caja_de_texto_fecha" type="date" name="EvaR" id="EvaR"></td>
                    </tr>
                </tbody>
             </table>   
         <div class="contenedor_botones">    
-            <input disabled id="btn" class="btnGuardar" type="submit" value="GUARDAR">
+            <input  id="btn" class="btnGuardar" type="submit" value="GUARDAR">
         </div>    
     </form>  
 </div>
