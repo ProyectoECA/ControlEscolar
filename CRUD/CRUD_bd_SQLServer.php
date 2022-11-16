@@ -1,9 +1,9 @@
 <?php
 
-define("ServerName", 'localhost');
-define("Database", "ConEscolarNoc");
-define("UID", "Admini");
-define("PWD", "control2022");
+define("ServerName", 'controlescolarservidor.database.windows.net');
+define("Database", "ConEscolarBD");
+define("UID", "nochistlanadm");
+define("PWD", "Sok03951");
 define("CharacterSet", 'UTF-8');
 
 

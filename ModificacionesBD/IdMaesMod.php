@@ -1,9 +1,9 @@
 <?php
 
-define("ServerName3", 'localhost');
-define("Database3", "ConEscolarNoc");
-define("UID3", "Admini");
-define("PWD3", "control2022");
+define("ServerName3", 'controlescolarservidor.database.windows.net');
+define("Database3", "ConEscolarBD");
+define("UID3", "nochistlanadm");
+define("PWD3", "Sok03951");
 define("CharacterSet3", 'UTF-8');
 
 class saca_IDMaes{

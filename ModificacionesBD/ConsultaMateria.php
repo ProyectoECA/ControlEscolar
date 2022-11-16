@@ -1,9 +1,14 @@
 <?php
+define("ServerName1", 'controlescolarservidor.database.windows.net');
+define("Database1", "ConEscolarBD");
+define("UID1", "nochistlanadm");
+define("PWD1", "Sok03951");
+define("CharacterSet1", 'UTF-8');
 class ConsultaMat{
     function consultando(){
-        $serverName='localhost';
-        $connectionInfo=array("Database"=>"ConEscolarNoc", "UID"=>"Admini", "PWD"=>"control2022", "CharacterSet"=>"UTF-8");
-        $con = sqlsrv_connect($serverName, $connectionInfo); 
+
+        $connectionInfo=array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
+        $con = sqlsrv_connect(ServerName1, $connectionInfo); 
 
 
         #CONSULTA GENERAL

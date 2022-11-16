@@ -48,10 +48,10 @@
          <tbody>
             <tr>
 <?php
-define("ServerName1", 'localhost');
-define("Database1", "ConEscolarNoc");
-define("UID1", "Admini");
-define("PWD1", "control2022");
+define("ServerName1", 'controlescolarservidor.database.windows.net');
+define("Database1", "ConEscolarBD");
+define("UID1", "nochistlanadm");
+define("PWD1", "Sok03951");
 define("CharacterSet1", 'UTF-8');
 
 class Consulta_Maes{
