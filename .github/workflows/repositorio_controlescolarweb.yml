@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'controlescolarweb'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_913978B11512476D97ED2D706DC32925 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_347438395ADF48E6AFF0FC1EB0A5CC09 }}
           package: .
