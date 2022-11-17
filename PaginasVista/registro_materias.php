@@ -54,7 +54,7 @@ $resultado= sqlsrv_query($conexion,$query);
                 <div>    
                 <label> Unidades </label>
                     <select class="combobox" name="unidades" id="unidades">
-                        <option value="u1">1</option>
+                        <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -68,16 +68,16 @@ $resultado= sqlsrv_query($conexion,$query);
                 </div> 
                 <div>
                   <label>Semestres</label>
-                   <select class="combobox" >
-                     <option value="semestre_1">Semestre 1</option>
-                     <option value="semestre_2">Semestre 2</option>
-                     <option value="semestre_3">Semestre 3</option>
-                     <option value="semestre_4">Semestre 4</option>
-                     <option value="semestre_5">Semestre 5</option>
-                     <option value="semestre_6">Semestre 6</option>
-                     <option value="semestre_7">Semestre 7</option>
-                     <option value="semestre_8">Semestre 8</option>
-                     <option value="semestre_9">Semestre 9</option>
+                   <select class="combobox" name="semestre" id="semestre">
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
                    </select> 
                 </div>  
                 <label>Objetivos</label>      
