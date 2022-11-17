@@ -66,3 +66,6 @@ $resultado1= sqlsrv_query($conexion,$query1);
     <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>
+<?php
+sqlsrv_close($conexion);
+?>

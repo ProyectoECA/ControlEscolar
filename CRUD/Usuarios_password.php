@@ -65,11 +65,10 @@ class User_password extends CRUD_SQL_SERVER{
 /*
 $user = new User_password();
 $user->conexionBD();
-$user->InsertarUsuarioAdministrador("RH000", "123","maria@gmail.com"); 
+#$user->InsertarUsuarioAdministrador("RH000", "123","maria@gmail.com"); 
 #$user->InsertarUsuarioAlumno("TNM1234567890", "0987");
-#$user->InsertarUsuarioMaestro("RH012", "3456");
+$user->InsertarUsuarioMaestro("RH005", "3456");
 #$user->InsertarUsuarioSecretaria("RH002","RH002");
 $user->CerrarConexion();
-
 */
 ?>
