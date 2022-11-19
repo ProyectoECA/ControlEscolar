@@ -30,7 +30,7 @@ define("CharacterSet2", 'UTF-8');
   <form method="POST" action="/ModificacionesBD/ConsultaSecre.php">
     <div class="datos" style="float: center;">
       <input class="input_busqueda" type="text" placeholder="INSERTA DATO" name="dato" id="dato">
-      <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php'">
+      <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='https://controlescolarweb.azurewebsites.net'">
     </div> 
     </form>
     <div class="contenedor-tabla">

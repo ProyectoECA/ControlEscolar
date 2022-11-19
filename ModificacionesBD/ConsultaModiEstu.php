@@ -24,7 +24,7 @@
         <div class="datos" style="float: center;">
             <input class="input" type="text" placeholder="NO. CONTROL" name="control">&nbsp;&nbsp;
             <input class="btnBuscar" type="button" value="BUSCAR"  onclick="location.href = '../ModificacionesBD/IdEstuMod.php' ">&nbsp;&nbsp;
-            <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = '../PaginasVista/principal_secretarias.php' ">&nbsp;&nbsp;
+            <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = 'https://controlescolarweb.azurewebsites.net' ">&nbsp;&nbsp;
         </div>
         </form>
        

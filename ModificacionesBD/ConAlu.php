@@ -23,7 +23,7 @@
       </select>
       <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato">
       <input class="btnBuscar" type="submit" value="CONSULTAR" onclick="location.href='/ModificacionesBD/ConsultaMaes.php'">
-      <input class="btnBuscar" type="button" value="CANCELAR"  onclick="location.href='http://localhost/index.php'">
+      <input class="btnBuscar" type="button" value="CANCELAR"  onclick="location.href='https://controlescolarweb.azurewebsites.net'">
     </div> 
     </form>
     <div class="contenedor-tabla">

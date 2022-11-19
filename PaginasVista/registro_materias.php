@@ -83,7 +83,7 @@ $resultado= sqlsrv_query($conexion,$query);
                 <textarea name="objetivos" id="objetivos" class="textarea" cols="45" rows="8"></textarea>
 
                     <button id="btn" class="btn_guardar" name="guardar" onclick="location.href = '../ModificacionesBD/InsertaMateria.php' ">GUARDAR</button>
-                    <button class="btn_cancelar" name="cancela" onclick="location.href='http://localhost/index.php'">CANCELAR</button>    
+                    <button class="btn_cancelar" name="cancela" onclick="location.href='https://controlescolarweb.azurewebsites.net'">CANCELAR</button>    
             </form>
         </div>
     </div>

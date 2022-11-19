@@ -13,6 +13,6 @@ const id = window.setInterval(function () {
     
     if (expiracion_session <= -1) {
         alert("La sesion expiro");
-        location.href="../SesionesUsuario/logout.php";
+        location.href="https://controlescolarweb.azurewebsites.net/SesionesUsuario/logout.php";
     }
 }, 1200);/** repetir cada 1.2 segundos */

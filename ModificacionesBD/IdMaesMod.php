@@ -34,7 +34,7 @@ class saca_IDMaes{
                     else{
                         location.href='../PaginasVista/modificar_maestros.html';
                     }
-                    window.history.back('../PaginasVista/jefe_Control.html');})
+                    window.history.back('https://controlescolarweb.azurewebsites.net');})
                 </script>
         <?php
         include_once("../PaginasVista/modificar_maestros.html");
