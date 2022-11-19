@@ -20,37 +20,38 @@
             </div>
             <form  method="POST" action="../ModificacionesBD/InsertaMaes.php" class="cajas_de_texto_maestros" >
                 <label>Clave</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: RH123)" name="clave" id="clave">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: RH123)" name="clave" id="clave"required pattern="RH[\d]{3}$">
                 <label>Nombre</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: JUAN)" name="nombre" id="nombre">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: JUAN)" name="nombre" id="nombre" required minlength="3" >
                 <label>Apellido paterno</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ARTEAGA)" name="apePat" id="apePat">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ARTEAGA)" name="apePat" id="apePat" required minlength="3" >
                 <label>Apellido materno</label>
                 <input class="caja_texto" type="text" placeholder="(EJEMPLO: PEREZ)" name="apeMat"  id="apeMat">
                 <label>Calle y número</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: HIDALGO #2)" name="calle" id="calle">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: HIDALGO #2)" name="calle" id="calle" required minlength="5" >
                 <label>Colonia</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: CENTRO)"  name="colonia" id="colonia">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: CENTRO)"  name="colonia" id="colonia" required minlength="4" >
                 <label>Municipio</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: TEPECHITLAN)" name="municipio" id="municipio">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: TEPECHITLAN)" name="municipio" id="municipio" required minlength="4" >
                 <label>Estado</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ZACATECAS)" name="estado" id="estado">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ZACATECAS)" name="estado" id="estado" required minlength="4" >
                 <label>Código postal</label>
-                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 12345)" name="cp" id="cp">
+                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 12345)" name="cp" id="cp" required pattern="[\d]{5}$">">
                 <label>No.teléfono</label>
-                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 1234567899)" name="telefono" id="telefono">
+                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 1234567899)" name="telefono" id="telefono" required pattern="[\d]{10}$">">
                 <label>RFC</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: 1234567890123)" name="rfc" id="rfc">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: 1234567890123)" name="rfc" id="rfc" required pattern="[a-zA-Z0-9]{12,13}$" >
                 <label>Cédula</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: 12345678)" name="titulo" id="titulo">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: 12345678)" name="titulo" id="titulo" required pattern="[\d]{8}$">
                 <label>Correo</label>
-                <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: JOSE@GMAIL.COM)" name="correo" id="correo">
-                <button disabled id="btn" type="submit" value="Guardar" name="guarda_sec" class="btn_guardar" onclick="location.href = '../ModificacionesBD/InsertaMaes.php' "> GUARDAR</button>    
+                <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: JOSE@GMAIL.COM)" name="correo" id="correo" required pattern="([a-zA-Z0-9áéíóúÁÉÍÓÚñÑ_.+-]{2})+@[a-zA-Z0-9-]+\.([a-zA-Z0-9-.]{2,5})+$">
+                <!-- <button disabled id="btn" type="submit" value="Guardar" name="guarda_sec" class="btn_guardar" onclick="location.href = '../ModificacionesBD/InsertaMaes.php' "> GUARDAR</button> -->    
+                <button id="btn" type="submit" value="Guardar" name="guarda_sec" class="btn_guardar" onclick="valida()"> GUARDAR</button>    
                 <button class="btn_cancelar" type="button" value="Cancelar" name="cancela_sec" onclick="location.href='http://localhost/index.php'"> CANCELAR</button>
             </form>
         </div>
     </div>
-<script src="/PaginasVista/script/cajas_maestros.js"></script>
+<script src="../PaginasVista/script/cajas_maestros.js"></script>
 <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>

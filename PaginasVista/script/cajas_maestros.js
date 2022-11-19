@@ -13,11 +13,11 @@ var b12=false;
 var b13=false;
 
 //expresion regular para texto que comience letra y continue numero
-const expresion = /^[a-zA-Z][a-zA-Z0-9]*$/;
+/* const expresion = /^[a-zA-Z][a-zA-Z0-9]*$/; */
 //expresion regular de correo
-const expresion2 = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+/* const expresion2 = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/; */
 //expresion regular de letras con acentos
-const expresion3 = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/;
+/* const expresion3 = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/; */
 
 
 
@@ -32,12 +32,12 @@ const expresiones = {
     telefono:/^[\d]{10}$/,
     secretaria:/^RH[\d]{3}$/,  
     //nom:/^([a-zA-Z]{3,30})+$/,
-    nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,30}$/,
+    nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ.]{3,30}$/,
     //apellido:/^([a-zA-Z]{3,15})+$/,
     apellido:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,15}$/,
     colonia:/^([a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]{4,10})+$/,
     estado:/^([a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,20})+$/,
-    titulo:/^([\d]{8})+$/,
+    titulo:/^([\d]{8})$/,
     municipio:/^([a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,25})+$/,
     calle:/^(^[a-zA-Z0-9#áéíóúÁÉÍÓÚñÑ ]{5,30})+$/,
     password: /^[\w\W]{8,16}$/,
@@ -66,14 +66,14 @@ clave.addEventListener('keyup', (e) => {
         b1 = true;
         clave.removeAttribute("style");
         clave.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b1 = false;
         clave.removeAttribute("style");
         clave.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const nombre = document.getElementById('nombre');
@@ -94,14 +94,14 @@ nombre.addEventListener('keyup', (e) => {
         b2 = true;
         nombre.removeAttribute("style");
         nombre.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b2 = false;
         nombre.removeAttribute("style");
         nombre.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const apePat = document.getElementById('apePat');
@@ -122,14 +122,14 @@ apePat.addEventListener('keyup', (e) => {
         b3= true;
         apePat.removeAttribute("style");
         apePat.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b3 = false;
         apePat.removeAttribute("style");
         apePat.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 /* const apeMat = document.getElementById('apeMat');
@@ -173,14 +173,14 @@ calle.addEventListener('keyup', (e) => {
         b5 = true;
         calle.removeAttribute("style");
         calle.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b5 = false;
         calle.removeAttribute("style");
         calle.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const colonia = document.getElementById('colonia');
@@ -201,14 +201,14 @@ colonia.addEventListener('keyup', (e) => {
         b6 = true;
         colonia.removeAttribute("style");
         colonia.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b6= false;
         colonia.removeAttribute("style");
         colonia.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const municipio = document.getElementById('municipio');
@@ -229,14 +229,14 @@ municipio.addEventListener('keyup', (e) => {
         b7 = true;
         municipio.removeAttribute("style");
         municipio.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b7 = false;
         municipio.removeAttribute("style");
         municipio.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const estado = document.getElementById('estado');
@@ -257,14 +257,14 @@ estado.addEventListener('keyup', (e) => {
         b8 = true;
         estado.removeAttribute("style");
         estado.style.border = "5px solid green";
-        validar();
+       /*  validar(); */
 
     }
     else {
         b8 = false;
         estado.removeAttribute("style");
         estado.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const cp = document.getElementById('cp');
@@ -285,14 +285,14 @@ cp.addEventListener('keyup', (e) => {
         b9 = true;
         cp.removeAttribute("style");
         cp.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b9 = false;
         cp.removeAttribute("style");
         cp.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const telefono = document.getElementById('telefono');
@@ -313,14 +313,14 @@ telefono.addEventListener('keyup', (e) => {
         b10 = true;
         telefono.removeAttribute("style");
         telefono.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b10 = false;
         telefono.removeAttribute("style");
         telefono.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const rfc = document.getElementById('rfc');
@@ -341,14 +341,14 @@ rfc.addEventListener('keyup', (e) => {
         b11= true;
         rfc.removeAttribute("style");
         rfc.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b11 = false;
         rfc.removeAttribute("style");
         rfc.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const titulo = document.getElementById('titulo');
@@ -369,14 +369,14 @@ titulo.addEventListener('keyup', (e) => {
         b12 = true;
         titulo.removeAttribute("style");
         titulo.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b12 = false;
         titulo.removeAttribute("style");
         titulo.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const correo = document.getElementById('correo');
@@ -397,23 +397,61 @@ correo.addEventListener('keyup', (e) => {
         b13 = true;
         correo.removeAttribute("style");
         correo.style.border = "5px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b13= false;
         correo.removeAttribute("style");
         correo.style.border = "5px solid red";
-        validar();
+        /* validar(); */
     }
 });
 
-function validar(){
-    const btn = document.getElementById('btn');
+function valida(){
+    /* const btn = document.getElementById('btn'); */
     if (b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true && b13 == true) {
-        btn.disabled=false;
+        
+        location.href = '../ModificacionesBD/InsertaMaes.php'
     }
     else {
-        btn.disabled=true;
+        
+        if (b1 == false) {
+            clave.style.border = "5px solid red";
+        }
+        if (b2 == false) {
+            nombre.style.border = "5px solid red";
+        }
+        if (b3 == false) {
+            apePat.style.border = "5px solid red";
+        }
+        if (b5 == false) {
+            calle.style.border = "5px solid red";
+        }
+        if (b6 == false) {
+            colonia.style.border = "5px solid red";
+        }
+        if (b7 == false) {
+            municipio.style.border = "5px solid red";
+        }
+        if (b8 == false) {
+            estado.style.border = "5px solid red";
+        }
+        if (b9 == false) {
+            cp.style.border = "5px solid red";
+        }
+        if (b10 == false) {
+            telefono.style.border = "5px solid red";
+        }
+        if (b11 == false) {
+            rfc.style.border = "5px solid red";
+        }
+        if (b12 == false) {
+            titulo.style.border = "5px solid red";
+        }
+        if (b13 == false) {
+            correo.style.border = "5px solid red";
+        }
+
     }
 }
