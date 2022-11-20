@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MODIFICAR MATERIAS</title> 
-    <link rel="stylesheet" href="/css/estilos_modificar_materias.css"> 
+    <title>MODIFICAR UNIDADES</title> 
+    <link rel="stylesheet" href="/css/estilos_modificar_unidades.css"> 
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
 <body>
@@ -20,19 +20,16 @@
             </div> 
         </div> 
         <div class="titulo1">
-            <h2>MODIFICAR DATOS DE LAS MATERIAS</h2>
+            <h2>MODIFICAR DATOS DE LAS UNIDADES</h2>
         </div> 
         <div class="datos" style="float: center;">
-            <input class="input" type="text" name="clave_buscar" placeholder="Clave">&nbsp;&nbsp;
+            <input class="input" type="text" name="clave_buscar" placeholder="Clave" > &nbsp;&nbsp;
             <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" >&nbsp;&nbsp;
             <input class="btnSalir" type="button"  value="CANCELAR">
         </div>
         <div class="contenedor_generalDatos">  
-            <input class="parte1" type="text" placeholder="CLAVE">
-            <input class="parte1" type="text" placeholder="NOMBRE">
-            <input class="parte1" type="text" placeholder="CRÉDITOS">  
-            <select class="parte2" placeholder="CARRERA"></select>
-            <select class="parte2" placeholder="UNIDADES"></select>
+            <input class="parte1" type="text" placeholder="CLAVE" value="<?php echo $row['ClaveMat']; ?>" readonly>
+            <input class="parte1" type="text" placeholder="NOMBRE"  value="<?php echo $row['ClaveMa']; ?>">
         </div> 
         <div class="contebotones">
             <button class="botones">MODIFICA</button>
