@@ -22,16 +22,14 @@
         <div class="titulo1">
             <h2>MODIFICAR DATOS DE LAS UNIDADES</h2>
         </div> 
-        <div class="datos" style="float: center;"  action="/ModificacionesBD/IdUnidadMod.php">
-            <input class="input" type="text" name="clave1" id="clave1" placeholder="Clave" > &nbsp;&nbsp;
-            <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" onclick="location.href = '/ModificacionesBD/IdUnidadMod.php' ">&nbsp;&nbsp;
+        <div class="datos" style="float: center;">
+            <input class="input" type="text" name="clave_buscar" placeholder="Clave" > &nbsp;&nbsp;
+            <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" >&nbsp;&nbsp;
             <input class="btnSalir" type="button"  value="CANCELAR">
         </div>
         <div class="contenedor_generalDatos">  
-            <input class="parte1" type="text" placeholder="CLAVE">
-            <input class="parte1" type="text" placeholder="NOMBRE"> 
-            <input class="parte2" type="text" placeholder="TEMA" style="float: left;"> 
-            <textarea class="textarea" cols="45" rows="8" style="float: right;"></textarea>
+            <input class="parte1" type="text" placeholder="CLAVE" value="<?php echo $row['ClaveMat']; ?>" readonly>
+            <input class="parte1" type="text" placeholder="NOMBRE"  value="<?php echo $row['ClaveMa']; ?>">
         </div> 
         <div class="contebotones">
             <button class="botones">MODIFICA</button>
