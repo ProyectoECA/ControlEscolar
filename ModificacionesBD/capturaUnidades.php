@@ -22,21 +22,25 @@ class Registra_Unidad{
             //echo $id.$uni.$tema.$sub;
             $query="SELECT Unidades FROM Materias WHERE ClaveMat='".$id."'";
             $datos=sqlsrv_query($conexion,$query);
+            $ban=True;
             while($row = sqlsrv_fetch_array($datos)){
-                echo $row["Unidades"];
-                if($row["Unidades"]>$uni){
-                echo"<script>alert('Esta unidad no existe');
-                location.href='/PaginasVista/captura_Unidades.php'</script>";
+                $unidad=$row["Unidades"];
+                if($uni>intval($unidad)){
+                    $ban=False;
                 }
             }
-            
-
-            $query="INSERT INTO [CapUnidades] (ClaveMat,NoUni,TemaUni,Subtemas) VALUES (?,?,?,?)";
+            if($ban==False){
+                echo"<script>alert('Esta unidad no existe en la materia');
+                        location.href='/PaginasVista/captura_Unidades.php'</script>";
+            }
+            else{
+            $query="INSERT INTO [CaptuUnidades] (ClaveMat,NoUni,TemaUni,Subtemas) VALUES (?,?,?,?)";
             $parametros=array($id,$uni,$tema,$sub);
             $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
-            //echo"<script>alert('Unidad capturada con éxito');
-                        //location.href='/PaginasVista/captura_Unidades.php'</script>";
+            echo"<script>alert('Unidad capturada con éxito');
+                        location.href='/PaginasVista/captura_Unidades.php'</script>";
+            }
         }
         else{
             echo"<script>alert('No se puede establecer una conexión');
