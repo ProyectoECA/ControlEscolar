@@ -104,14 +104,14 @@ numerocontrol.addEventListener('keyup', (e) => {
         b1 = true;
         numerocontrol.removeAttribute("style");
         numerocontrol.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b1 = false;
         numerocontrol.removeAttribute("style");
         numerocontrol.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const nombre = document.getElementById('nombre');
@@ -131,14 +131,14 @@ nombre.addEventListener('keyup', (e) => {
         b2 = true;
         nombre.removeAttribute("style");
         nombre.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b2 = false;
         nombre.removeAttribute("style");
         nombre.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const apellidoP = document.getElementById('apellidoP');
@@ -158,13 +158,13 @@ apellidoP.addEventListener('keyup', (e) => {
         b3 = true;
         apellidoP.removeAttribute("style");
         apellidoP.style.border = "3px solid green";
-        validar();
+        /* validar(); */
     }
     else {
         b3 = false;
         apellidoP.removeAttribute("style");
         apellidoP.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 /* const apellidoM = document.getElementById('apellidoM');
@@ -203,14 +203,14 @@ calle.addEventListener('keyup', (e) => {
         b5= true;
         calle.removeAttribute("style");
         calle.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b5 = false;
         calle.removeAttribute("style");
         calle.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const colonia = document.getElementById('colonia');
@@ -230,14 +230,14 @@ colonia.addEventListener('keyup', (e) => {
         b6 = true;
         colonia.removeAttribute("style");
         colonia.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b6 = false;
         colonia.removeAttribute("style");
         colonia.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const municipio = document.getElementById('municipio');
@@ -257,14 +257,14 @@ municipio.addEventListener('keyup', (e) => {
         b7 = true;
         municipio.removeAttribute("style");
         municipio.style.border = "3px solid green";
-        validar();
+       /*  validar(); */
 
     }
     else {
         b7 = false;
         municipio.removeAttribute("style");
         municipio.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const estado = document.getElementById('estado');
@@ -284,14 +284,14 @@ estado.addEventListener('keyup', (e) => {
         b8 = true;
         estado.removeAttribute("style");
         estado.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b8 = false;
         estado.removeAttribute("style");
         estado.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const cp = document.getElementById('cp');
@@ -311,14 +311,14 @@ cp.addEventListener('keyup', (e) => {
         b9 = true;
         cp.removeAttribute("style");
         cp.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b9 = false;
         cp.removeAttribute("style");
         cp.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const tel = document.getElementById('tel');
@@ -338,14 +338,14 @@ tel.addEventListener('keyup', (e) => {
         b10 = true;
         tel.removeAttribute("style");
         tel.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b10 = false;
         tel.removeAttribute("style");
         tel.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const tutor = document.getElementById('tutor');
@@ -365,14 +365,14 @@ tutor.addEventListener('keyup', (e) => {
         b11 = true;
         tutor.removeAttribute("style");
         tutor.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b11 = false;
         tutor.removeAttribute("style");
         tutor.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const teltutor = document.getElementById('teltutor');
@@ -392,14 +392,14 @@ teltutor.addEventListener('keyup', (e) => {
         b12 = true;
         teltutor.removeAttribute("style");
         teltutor.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b12 = false;
         teltutor.removeAttribute("style");
-        teltutor.style.border = "3px solid red";
-        validar();
+        /* teltutor.style.border = "3px solid red";
+        validar(); */
     }
 });
 const correo = document.getElementById('correo');
@@ -419,23 +419,61 @@ correo.addEventListener('keyup', (e) => {
         b13 = true;
         correo.removeAttribute("style");
         correo.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b13 = false;
         correo.removeAttribute("style");
         correo.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 
 function validar(){
     const bot = document.getElementById('btn');
     if(b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true &&  b13 == true){
-        bot.disabled=false;
+       /*  bot.disabled=false; */
+       location.href = '../ModificacionesBD/InsertaEstu.php' 
     }
     else{
-        bot.disabled=true;
+        /* bot.disabled=true; */
+        if(b1== false){
+            numerocontrol.style.border = "3px solid red";
+        }
+        if(b2== false){
+            nombre.style.border = "3px solid red";
+        }
+        if(b3== false){
+            apellidoP.style.border = "3px solid red";
+        }
+        if(b5== false){
+            calle.style.border = "3px solid red";
+        }
+        if(b6== false){
+            colonia.style.border = "3px solid red";
+        }
+        if(b7== false){
+            municipio.style.border = "3px solid red";
+        }
+        if(b8== false){
+            estado.style.border = "3px solid red";
+        }
+        if(b9== false){
+            cp.style.border = "3px solid red";
+        }
+        if(b10== false){
+            tel.style.border = "3px solid red";
+        }
+        if(b11== false){
+            tutor.style.border = "3px solid red";
+        }
+        if(b12== false){
+            teltutor.style.border = "3px solid red";
+        }
+        if(b13== false){
+            correo.style.border = "3px solid red";
+        }
+
     }
 }

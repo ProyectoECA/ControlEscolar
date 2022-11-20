@@ -36,29 +36,29 @@ $resultado= sqlsrv_query($conexion,$query);
             <!--<form class="cajas_de_texto_alumnos" action="#" id="formulario" method="POST">-->
            <form  method="POST" action="../ModificacionesBD/InsertaEstu.php" class="cajas_de_texto_alumnos">
                 <label class="numero_de_control">No.control</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: TNM1234567899)" name="numerocontrol" id="numerocontrol">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: TNM1234567899)" name="numerocontrol" id="numerocontrol" required pattern="^TNM[\d]{10}$">
                 <label class="Nombre">Nombre</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: JUAN)" name="nombre" id="nombre">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: JUAN)" name="nombre" id="nombre"  required minlength="3">
                 <label class="Apellido_pater">Apellido paterno</label>
                 <input class="caja_texto" type="text" placeholder="(EJEMPLO: ARTEAGA)" name="apellidoP"
-                    id="apellidoP">
+                    id="apellidoP" required minlength="3">
                 <label class="Apellido_mater">Apellido materno</label>    
                 <input class="caja_texto" type="text" placeholder="(EJEMPLO: MORENO)" name="apellidoM"
                     id="apellidoM">
                 <label class="calle_numero">Calle y número</label>     
-                <input class="caja_texto" type="text" placeholder="(HIDALGO #2)" name="calle" id="calle">
+                <input class="caja_texto" type="text" placeholder="(HIDALGO #2)" name="calle" id="calle"  required minlength="5">
                 <label class="Colonia">Colonia</label>  
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: CENTRO)" name="colonia" id="colonia">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: CENTRO)" name="colonia" id="colonia" required minlength="4">
                 <label class="Municipio">Municipio</label>  
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: TEPECHITLAN)" name="municipio" id="municipio">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: TEPECHITLAN)" name="municipio" id="municipio" required minlength="4">
                 <label class="estado">Estado</label>  
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ZACATECAS)" name="estado" id="estado">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ZACATECAS)" name="estado" id="estado" required minlength="4">
                 <label class="Codigo_postal">Código postal</label> 
-                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 12345)" name="cp" id="cp">
+                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 12345)" name="cp" id="cp" required pattern="[\d]{5}$">
                 <label class="no_telefono">No.teléfono</label> 
-                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 1234567890)" name="tel" id="tel">
+                <input class="caja_texto" type="int" placeholder="(EJEMPLO: 1234567890)" name="tel" id="tel" required pattern="[\d]{10}$">
                 <label class="correo">Correo</label>       
-                <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: JOSE@GMAIL.COM)" name="correo" id="correo">
+                <input class="caja_texto_email" type="email" placeholder="(EJEMPLO: JOSE@GMAIL.COM)" name="correo" id="correo" required pattern="([a-zA-Z0-9áéíóúÁÉÍÓÚñÑ_.+-]{2})+@[a-zA-Z0-9-]+\.([a-zA-Z0-9-.]{2,5})+$">
                 <div>
                 <label class="carrera">Carrera</label>       
                 <select class="combobox" name="selecion_carrera" id="selecion_carrera">
@@ -88,11 +88,12 @@ $resultado= sqlsrv_query($conexion,$query);
                 </div>      
                 <label class="nombrepadre">Nombre del padre o tutor</label> 
                 <input class="caja_texto" type="text" placeholder="(ejemplo: Alonso)" name="tutor"
-                    id="tutor">
+                    id="tutor" required minlength="3">
                 <label class="telefonopadre">Teléfono del padre o tutor</label>     
                 <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567890)" name="teltutor"
-                    id="teltutor">
-                    <button disabled id="btn" class="btn_guardar" name="guardar" type="submit" onclick="location.href = '../ModificacionesBD/InsertaEstu.php' ">GUARDAR</button>
+                    id="teltutor" required pattern="[\d]{10}$">
+                    <!-- <button id="btn" class="btn_guardar" name="guardar" type="submit" onclick="location.href = '../ModificacionesBD/InsertaEstu.php' ">GUARDAR</button> -->
+                    <button id="btn" class="btn_guardar" name="guardar" type="submit" onclick="validar()">GUARDAR</button>
                     <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">CANCELAR</button>    
             </form>
         </div>
