@@ -9,13 +9,14 @@
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head> 
 <body> 
-    <div class="logo" style="float: left;">
-        <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
-    </div>  
+     
 
     <div class="nombre" style="float: center;"> 
+        <div class="logo" style="float: left;">
+        <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
+    </div>  
         <div class="tituloP" style="float: left;">
-            <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
+            <br><h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
         </div> 
         <div class="contenedor_der" style="float: right;">
             <div class="mostrar_usuario" style="float: center;"> 
