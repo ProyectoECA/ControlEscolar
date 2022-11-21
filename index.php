@@ -28,7 +28,7 @@ if (isset($_SESSION['user'])) {
                 include_once "PaginasVista/principal_secretarias.php";
                 break;
             case 3:
-                include_once "PaginasVista/principal_maestros.html.html";
+                include_once "PaginasVista/principal_maestros.html";
                 break;
     
             case 4:
