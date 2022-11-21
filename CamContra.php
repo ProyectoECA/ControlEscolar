@@ -47,7 +47,7 @@ class Cambio_Password  {
                
                 $_SESSION['user'][3] = false;
                 echo"<script>alert('Contraseña modificada con éxito');
-                location.href='http://localhost/index.php'</script>";
+                location.href='https://controlescolarweb.azurewebsites.net'</script>";
                 //onclick="location.href ='http://localhost/index.php'";
                 //include_once("/PaginasVista/jefe_Control.php");
            
@@ -55,7 +55,7 @@ class Cambio_Password  {
             }
             else{
                 echo"<script>alert('No se pudo modificar la contraseña');
-                location.href='http://localhost/index.php'</script>";
+                location.href='https://controlescolarweb.azurewebsites.net'</script>";
                
             }
 
@@ -83,14 +83,14 @@ class Cambio_Password  {
                 $_SESSION['user'][3] = false;
 
                 echo"<script>alert('Contraseña modificada con éxito');
-                location.href='http://localhost/index.php'</script>";
+                location.href='https://controlescolarweb.azurewebsites.net'</script>";
               
             
     
             }
             else{
                 echo"<script>alert('No se pudo modificar la contraseña');
-                location.href='http://localhost/index.php'</script>";
+                location.href='https://controlescolarweb.azurewebsites.net'</script>";
            
                 
             }
