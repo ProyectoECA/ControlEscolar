@@ -38,7 +38,7 @@
                 <input id="estado" class="conteDatos2" type="text" placeholder="ESTADO" name="estado" value="<?php echo $row['Estado'];?>" required minlength="4" >
                 <input id="cp" class="conteDatos3" type="text" placeholder="CÓDIGO POSTAL" name="cp" value="<?php echo $row['CP'];?>" required pattern="[\d]{5}$">
                 <input id="tel" class="conteDatos3" type="text" placeholder="TELÉFONO" name="tel" value="<?php echo $row['Telefono'];?>" required pattern="[\d]{10}$">
-                <input id="correo" class="conteDatos3" type="email" placeholder="CORREO" name="correo" value="<?php echo $row['Correo'];?>" >
+                <input id="correo" class="conteDatos3" type="email" placeholder="CORREO" name="correo" value="<?php echo $row['Correo'];?>" required pattern="([a-zA-Z0-9áéíóúÁÉÍÓÚñÑ_.+-]{2})+@[a-zA-Z0-9-]+\.([a-zA-Z0-9-.]{2,5})+$">
                 </div>
                 <div class="contenedor-botones" style="float: center;">
                 <!-- <input  id="btn" class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href='/ModificacionesBD/ModificaSecre.php'">

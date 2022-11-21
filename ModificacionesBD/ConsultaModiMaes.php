@@ -39,7 +39,7 @@
                         <input id="tel" class="conteDatos3" type="text" placeholder="TELÉFONO" name="telefono" value="<?php echo $row['Telefono']; ?>" required pattern="[\d]{10}$">  
                         <input id="rfc" class="conteDatos4" type="text" placeholder="RFC" name="rfc" value="<?php echo $row['RFC']; ?>" required pattern="[a-zA-Z0-9]{12,13}$"> 
                         <input id="titulo" class="conteDatos4" type="text" placeholder="TÍTULO" name="titulo" value="<?php echo $row['Titulo']; ?>" required pattern="[\d]{8}$">
-                        <input id="correo" class="conteDatos4" type="text" placeholder="CORREO" name="correo" value="<?php echo $row['Correo']; ?>" required pattern="([a-zA-Z0-9áéíóúÁÉÍÓÚñÑ])+@+([a-zA-Z0-9])+.+([a-zA-Z0-9. ])">
+                        <input id="correo" class="conteDatos4" type="email" placeholder="CORREO" name="correo" value="<?php echo $row['Correo']; ?>" required pattern="([a-zA-Z0-9áéíóúÁÉÍÓÚñÑ_.+-]{2})+@[a-zA-Z0-9-]+\.([a-zA-Z0-9-.]{2,5})+$">
                     </div> 
                     <div class="contenedor-botones" style="float: center;">
                     <!-- <input disabled id="btn" class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificaMaes.php' ">
