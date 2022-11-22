@@ -857,7 +857,7 @@ span a:hover {
 
 @media screen and (max-width: 500px){ 
     body{ 
-        height: 270vh; 
+        height: 210vh; 
         background-image: linear-gradient(to top, #1e355e 0%, white 80%);
     } 
 
@@ -865,8 +865,7 @@ span a:hover {
         height: 12em;
         width: 98%;
         margin: auto; 
-        flex-direction: column;  
-        border: 2px solid green;  
+        flex-direction: column;    
     }  
 
     .logo{ 
@@ -879,17 +878,13 @@ span a:hover {
     }  
 
     .tituloP{  
-        width: 100%;
-        border: 2px solid yellow;
-        transform:translate(12.5%,100%); 
-        align-items: center; 
-        float: center;
+        width: 98%;
+        transform:translate(0.5%,110%); 
     }
 
     .contenedor_der{
         height: 8em;
         width: 17em;  
-        border: 2px solid red; 
         transform:translate(0%,-90%);
     } 
 

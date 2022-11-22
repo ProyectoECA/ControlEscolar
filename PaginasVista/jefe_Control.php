@@ -9,8 +9,6 @@
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head> 
 <body> 
-     
-
     <div class="nombre" style="float: center;"> 
         <div class="logo" style="float: left;">
         <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
