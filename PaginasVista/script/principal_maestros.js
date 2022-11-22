@@ -32,7 +32,8 @@ function RellenarTabla(materias) {
         var celda_clave = document.createElement("td");
         var celda_nombre = document.createElement("td");
 
-        var clave_materia = document.createTextNode(materias[i][0]);
+        var clave = materias[i][0];
+        var clave_materia = document.createTextNode(clave);
         var nombre_materia = document.createTextNode(materias[i][1]);
 
         var link_clave = document.createElement("a");
@@ -42,8 +43,8 @@ function RellenarTabla(materias) {
         link_clave.appendChild(clave_materia);
         link_nombre.appendChild(nombre_materia);
         
-        link_clave.href = "https://www.geeksforgeeks.org"; 
-        link_nombre.href = "https://www.geeksforgeeks.org";
+        link_clave.href = "../ModificacionesBD/CapturaCalif.php?clave="+encodeURIComponent(clave); 
+        link_nombre.href = "../ModificacionesBD/fechas_evaluacion.html?clave"+encodeURIComponent(clave);
 
         celda_clave.appendChild(link_clave);
         celda_nombre.appendChild(link_nombre);

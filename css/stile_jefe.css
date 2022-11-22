@@ -24,13 +24,13 @@ nav{
 
 .nombre{ 
     height: 7em;
-    width: 64em;
-    margin: 0em 20em; 
+    width: 99%;
+    margin: auto 0em ; 
     color: #1e355e;  
     text-align: center;    
     justify-content: space-between;
     overflow: hidden;
-    display: flex;
+    display: flex; 
 }  
 
 .tituloP{
@@ -91,12 +91,12 @@ nav{
  /*#####################################################*/ 
 
 .conte{ 
-    margin: 0.5em auto;
+    margin: 2em auto;
     display: flex;
     justify-content: space-between; 
     overflow: hidden; 
     text-align: center; 
-    position: relative;
+    position: relative; 
 }
 
 .contenedor-secretarias{
@@ -584,28 +584,414 @@ span a:hover {
 
 /* ####################### RESPONSIVE #################################*/ 
 
-@media screen and (max-width: 1000px){
-    .logo{ 
-        height: 4em;
-        width: 12em; 
-        border: 2px solid red; 
-    } 
+@media screen and (max-width: 1000px){ 
+    body{ 
+        height: 110vh;
+    }
+
+    
 
     .nombre{ 
         height: 7em;
-        width: 50em;
-        margin: auto; 
-        border: 2px solid orange;
+        width: 55em;
+        margin: auto;  
     } 
 
     h2{
         font-size: 1.2em;
     } 
 
-    .imagen{
-        border: 2px solid magenta; 
+    .imagen{ 
         height: 40px; 
         width: 45px;
+    }  
+
+    .mostrar_usuario{ 
+        height: 42px; 
+        width: 265px; 
+        margin: 0.19em auto;
+        border: 1.45px solid #1e355e; 
+    }
+
+    .contenedor-secretarias{
+        height: 29em;
+        width: 17em; 
+    }  
+    
+    .contenedor-maestros{
+        height: 29em;
+        width: 18em;
+    } 
+
+    .contenedor-alumnos{
+        height: 29em;
+        width: 18em; 
+    } 
+
+    .botonesS{
+        height: 2.5em;
+        width: 9em;  
+    }
+
+    .btn-registrar{
+        height: 40px;
+        width: 15em;  
+        font-size: 0.6rem; 
+        text-align: center; 
+    }  
+
+    .btn-registrar span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 13%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    } 
+
+    .botonM{
+        height: 2.5em;
+        width: 9em; 
+    }
+
+    .btn-modificar{
+        height: 40px;
+        width: 15em;  
+        font-size: 0.6rem; 
+        text-align: center;
+    } 
+
+    .btn-modificar span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 20%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    } 
+
+    .botonC{
+        height: 2.5em;
+        width: 9em;
+    }
+
+    .btn-consultar{
+        height: 40px;
+        width: 15em;  
+        font-size: 0.6rem; 
+        text-align: center;
+    } 
+
+    .btn-consultar span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 15%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }  
+
+    .botonesCA{
+        height: 2.5em;
+        width: 9em; 
+    } 
+
+    .btn-consultarA{
+        height: 40px;
+        width: 15em;  
+        font-size: 0.6rem; 
+        text-align: center;
+    } 
+
+    .btn-consultarA span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 15%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }
+
+    .contenedor-imageA{
+        margin:  0em auto ;  
+    }
+} 
+
+@media screen and (max-width: 650px){ 
+    body{ 
+        height: 270vh; 
+        background-image: linear-gradient(to top, #1e355e 0%, white 80%);
+    }
+
+    .logo{ 
+        height: 5em;
+        width: 15em;  
+    } 
+
+    .nombre{ 
+        height: 10em;
+        width: 80em;
+        margin: auto;   
+    }  
+
+    .tituloP{
+        transform:translate(-40%,70%);
+
+    }
+
+    h2{
+        font-size: 1.2em;
+    } 
+
+    .contenedor_der{
+        height: 6.5em;
+        width: 20em; 
+        transform:translate(-190%,-0%);
+    } 
+
+    .conte{  
+        width: 25em;
+        margin: auto;
+        display: flex;
+        flex-direction: column; 
+    } 
+
+    .contenedor-secretarias{
+        height: 29em;
+        width: 20em; 
+        margin: 1em auto; 
+    }  
+    
+    .contenedor-maestros{
+        height: 29em;
+        width: 20em; 
+        margin: 1em auto;
+    } 
+
+    .contenedor-alumnos{
+        height: 29em;
+        width: 20em;  
+        margin: 1em auto;
+    } 
+
+    .botonesS{
+        height: 2.5em;
+        width: 10em; 
+    }
+
+    .btn-registrar{
+        height: 40px;
+        width: 20em;  
+    }
+    
+    .btn-registrar span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 25%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }  
+
+    .botonM{
+        height: 2.5em;
+        width: 10em; 
+    }
+
+    .btn-modificar{
+        height: 40px;
+        width: 20em;  
+    } 
+
+    .btn-modificar span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 25%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    } 
+
+    .botonC{
+        height: 2.5em;
+        width: 10em; 
+    }
+
+    .btn-consultar{
+        height: 40px;
+        width: 20em;
+    } 
+
+    .btn-consultar span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 25%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }  
+
+    .botonesCA{
+        height: 2.5em;
+        width: 10em; 
+    } 
+
+    .btn-consultarA{
+        height: 40px;
+        width: 20em;
+    } 
+
+    .btn-consultarA span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 25%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }
+
+    .contenedor-imageA{
+        margin:  0em auto ;  
     }
 }
+
+@media screen and (max-width: 500px){ 
+    body{ 
+        height: 210vh; 
+        background-image: linear-gradient(to top, #1e355e 0%, white 80%);
+    } 
+
+    .nombre{ 
+        height: 12em;
+        width: 98%;
+        margin: auto; 
+        flex-direction: column;    
+    }  
+
+    .logo{ 
+        display: none;  
+    } 
+
+
+    h1{
+        font-size: 1.2em; 
+    }  
+
+    .tituloP{  
+        width: 98%;
+        transform:translate(0.5%,110%); 
+    }
+
+    .contenedor_der{
+        height: 8em;
+        width: 17em;  
+        transform:translate(0%,-90%);
+    } 
+
+    .conte{  
+        width: 98%;
+        margin: auto; 
+        display: flex;
+        flex-direction: column; 
+    } 
+
+    .contenedor-secretarias{
+        height: 29em;
+        width: 20em; 
+        margin: 1em auto; 
+    }  
+    
+    .contenedor-maestros{
+        height: 29em;
+        width: 20em; 
+        margin: 1em auto;
+    } 
+
+    .contenedor-alumnos{
+        height: 29em;
+        width: 20em;  
+        margin: 1em auto;
+    } 
+
+    .botonesS{
+        height: 2.5em;
+        width: 10em; 
+    }
+
+    .btn-registrar{
+        height: 40px;
+        width: 20em;  
+    }
+    
+    .btn-registrar span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 25%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }  
+
+    .botonM{
+        height: 2.5em;
+        width: 10em; 
+    }
+
+    .btn-modificar{
+        height: 40px;
+        width: 20em;  
+    } 
+
+    .btn-modificar span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 25%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    } 
+
+    .botonC{
+        height: 2.5em;
+        width: 10em; 
+    }
+
+    .btn-consultar{
+        height: 40px;
+        width: 20em;
+    } 
+
+    .btn-consultar span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 25%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }  
+
+    .botonesCA{
+        height: 2.5em;
+        width: 10em; 
+    } 
+
+    .btn-consultarA{
+        height: 40px;
+        width: 20em;
+    } 
+
+    .btn-consultarA span{
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 25%; 
+        color: #1e355e; 
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }
+
+    .contenedor-imageA{
+        margin:  0em auto ;  
+    }
+}
+
 

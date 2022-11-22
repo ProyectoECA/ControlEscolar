@@ -1,15 +1,15 @@
-var b1=false;
-var b2=false;
-var b3=false;
-var b4=false;
-var b5=false;
-var b6=false;
-var b7=false;
-var b8=false;
-var b9=false;
-var b10=false;
-var b11=false;
-var b12=false;
+var b1=true;
+var b2=true;
+var b3=true;
+var b4=true;
+var b5=true;
+var b6=true;
+var b7=true;
+var b8=true;
+var b9=true;
+var b10=true;
+var b11=true;
+var b12=true;
 
 
 var expreg = /^\S+$/;
@@ -64,14 +64,14 @@ nombre.addEventListener('keyup', (e) => {
         b2 = true;
         nombre.removeAttribute("style");
         nombre.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b2 = false;
         nombre.removeAttribute("style");
         nombre.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const ap = document.getElementById('ap');
@@ -85,14 +85,14 @@ ap.addEventListener('keyup', (e) => {
         b3 = true;
         ap.removeAttribute("style");
         ap.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b3 = false;
         ap.removeAttribute("style");
         ap.style.border = "3px solid red";
-        validar();
+       /*  validar(); */
     }
 });
 const calle= document.getElementById('calle');
@@ -106,14 +106,14 @@ calle.addEventListener('keyup', (e) => {
         b4 = true;
         calle.removeAttribute("style");
         calle.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b4 = false;
         calle.removeAttribute("style");
         calle.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const colonia= document.getElementById('colonia');
@@ -127,14 +127,14 @@ colonia.addEventListener('keyup', (e) => {
         b5 = true;
         colonia.removeAttribute("style");
         colonia.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b5 = false;
         colonia.removeAttribute("style");
         colonia.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const municipio= document.getElementById('municipio');
@@ -148,14 +148,14 @@ municipio.addEventListener('keyup', (e) => {
         b6 = true;
         municipio.removeAttribute("style");
         municipio.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b6 = false;
         municipio.removeAttribute("style");
         municipio.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const estado= document.getElementById('estado');
@@ -169,14 +169,14 @@ estado.addEventListener('keyup', (e) => {
         b7 = true;
         estado.removeAttribute("style");
         estado.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b7 = false;
         estado.removeAttribute("style");
         estado.style.border = "3px solid red";
-        validar();
+       /*  validar(); */
     }
 });
 const cp= document.getElementById('cp');
@@ -190,14 +190,14 @@ cp.addEventListener('keyup', (e) => {
         b8 = true;
         cp.removeAttribute("style");
         cp.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b8 = false;
         cp.removeAttribute("style");
         cp.style.border = "3px solid red";
-        validar();
+       /*  validar(); */
     }
 });
 const tel= document.getElementById('tel');
@@ -211,14 +211,14 @@ tel.addEventListener('keyup', (e) => {
         b9 = true;
         tel.removeAttribute("style");
         tel.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b9 = false;
         tel.removeAttribute("style");
         tel.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const correo= document.getElementById('correo');
@@ -232,14 +232,14 @@ correo.addEventListener('keyup', (e) => {
         b10 = true;
         correo.removeAttribute("style");
         correo.style.border = "3px solid green";
-        validar();
+       /*  validar(); */
 
     }
     else {
         b10 = false;
         correo.removeAttribute("style");
         correo.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const teltu= document.getElementById('teltu');
@@ -253,14 +253,14 @@ teltu.addEventListener('keyup', (e) => {
         b11 = true;
         teltu.removeAttribute("style");
         teltu.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b11 = false;
         teltu.removeAttribute("style");
         teltu.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 const nomtu= document.getElementById('nomtu');
@@ -274,24 +274,24 @@ nomtu.addEventListener('keyup', (e) => {
         b12 = true;
         nomtu.removeAttribute("style");
         nomtu.style.border = "3px solid green";
-        validar();
+        /* validar(); */
 
     }
     else {
         b12 = false;
         nomtu.removeAttribute("style");
         nomtu.style.border = "3px solid red";
-        validar();
+        /* validar(); */
     }
 });
 //funcion validar
 function validar() {
     if (b2 == true && b3 == true && b4 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true) {
-        document.getElementById("btn").disabled = false;
-        document.getElementById("btn2").disabled = false;
+        /* document.getElementById("btn").disabled = false;
+        document.getElementById("btn2").disabled = false; */
     }
     else {
-        document.getElementById("btn").disabled = true;
-        document.getElementById("btn2").disabled = true;
+        /* document.getElementById("btn").disabled = true;
+        document.getElementById("btn2").disabled = true; */
     }
 }
