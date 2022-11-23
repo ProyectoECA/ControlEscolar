@@ -1,13 +1,7 @@
 <?php
 include_once "../CRUD/CRUD_bd_SQLServer.php";
 
-define("ServerName1", 'localhost');
-define("Database1", "ConEscolarNoc");
-define("UID1", "Admini");
-define("PWD1", "control2022");
-define("CharacterSet1", 'UTF-8');
-
-class Modifica_Estu{
+class Modifica_Uni{
     
     function modificando(){
         $cone=new CRUD_SQL_SERVER();
@@ -62,6 +56,6 @@ class Modifica_Estu{
 
 }
 
-$mod=new Modifica_Estu;
+$mod=new Modifica_Uni;
 $mod->modificando();
 ?>
