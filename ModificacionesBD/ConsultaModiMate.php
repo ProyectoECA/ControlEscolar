@@ -38,12 +38,12 @@ $resultado= sqlsrv_query($conexion,$query);
         </div> 
         <form method="POST">
         <div class="datos" style="float: center;">
-            <input class="input" type="text" name="clave1" placeholder="Clave">&nbsp;&nbsp;
-            <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" onclick="location.href = '/ModificacionesBD/IdMateMod.php' ">&nbsp;&nbsp;
+            <input name="clave1" id="clave1" class="input" type="text" placeholder="Clave">&nbsp;&nbsp;
+            <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" onclick="location.href = '../ModificacionesBD/IdMateMod.php' ">&nbsp;&nbsp;
             <input class="btnSalir" type="button"  value="CANCELAR">
         </div>
         </form>
-        <form method="POST" action="/ModificacionesBD/IdMateMod.php" id="formulario_modificar_materias">
+        <form action="/ModificacionesBD/ModificaMate.php" id="formulario_modificar_materias" method="POST">
         <div class="contenedor_generalDatos">  
             <input class="parte1" type="text" placeholder="CLAVE"  name="clave" id="clave" value="<?php echo $row['ClaveMat']; ?>" readonly>
             <input class="parte1" type="text" placeholder="NOMBRE"  name="nombre" id="nombre" value="<?php echo $row['Nombre']; ?>">
