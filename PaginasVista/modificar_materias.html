@@ -9,46 +9,25 @@
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
 <body>
-    <form action="" id="formulario_modificar_materias">
-        <div class="logo" style="float: left;">
-            <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
-        </div>  
+        <div class="principal">
+            <div class="logo" style="float: left;"> 
+                <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
+            </div>  
 
-        <div class="nombre" style="float: center;"> 
-            <div class="tituloP" style="float: left;">
-                <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
+            <div class="nombre" style="float: center;"> 
+                <div class="tituloP" style="float: right;">
+                    <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
+                </div> 
             </div> 
         </div> 
         <div class="titulo1">
             <h2>MODIFICAR DATOS DE LAS MATERIAS</h2>
         </div> 
+        <form method="POST" action="/ModificacionesBD/IdMateMod.php" id="formulario_modificar_materias"> 
         <div class="datos" style="float: center;">
-            <input class="input" type="text" name="clave_buscar" placeholder="Clave">&nbsp;&nbsp;
-            <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" >&nbsp;&nbsp;
+            <input name="clave1" id="clave1" class="input" type="text" placeholder="Clave">&nbsp;&nbsp;
+            <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" onclick="location.href='/ModificacionesBD/IdMateMod.php'">&nbsp;&nbsp;
             <input class="btnSalir" type="button"  value="CANCELAR">
-        </div>
-        <div class="contenedor_generalDatos">  
-            <input class="parte1" type="text" placeholder="CLAVE">
-            <input class="parte1" type="text" placeholder="NOMBRE">
-            <input class="parte1" type="text" placeholder="CRÉDITOS">  
-            <select class="parte2" placeholder="CARRERA"></select>
-            <select class="parte2" placeholder="UNIDADES"></select> 
-            <select class="parte2" >
-                <option value="semestre_1">Semestre 1</option>
-                <option value="semestre_2">Semestre 2</option>
-                <option value="semestre_3">Semestre 3</option>
-                <option value="semestre_4">Semestre 4</option>
-                <option value="semestre_5">Semestre 5</option>
-                <option value="semestre_6">Semestre 6</option>
-                <option value="semestre_7">Semestre 7</option>
-                <option value="semestre_8">Semestre 8</option>
-                <option value="semestre_9">Semestre 9</option>
-            </select>      
-           <textarea name="objetivos" id="objetivos" class="textarea" cols="45" rows="8"></textarea>
-        </div> 
-        <div class="contebotones">
-            <button class="botones">MODIFICA</button>
-            <button class="botones">ELIMINA</button>
         </div>
     </form>
     

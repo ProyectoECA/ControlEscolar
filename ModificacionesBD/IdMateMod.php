@@ -5,31 +5,30 @@ define("UID3", "Admini");
 define("PWD3", "control2022");
 define("CharacterSet3", 'UTF-8');
 
-class saca_IDUni{
-    function busca_idUni(){
+class saca_IDMate{
+    function busca_idMate(){
         $connectionInfo = array("Database"=>Database3 , "UID"=>UID3, "PWD"=>PWD3, "CharacterSet"=>CharacterSet3);
         $conexion=sqlsrv_connect(ServerName3, $connectionInfo);
         
         $clave = $_POST["clave1"];
-        $uni = $_POST["unidad1"];
-        $query="SELECT ClaveMat FROM [CaptuUnidades] WHERE ClaveMat=? and NoUni=?";
-        $parametros=array($clave,$uni);
+        $query="SELECT ClaveMat FROM [Materias] WHERE ClaveMat=?";
+        $parametros=array($clave);
         $stmt = sqlsrv_query($conexion, $query,$parametros);
         $datos= sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
 
         if(!empty($datos)){
-            $query="SELECT * FROM [CaptuUnidades] WHERE ClaveMat=? and NoUni=?";
-            $parametros=array($clave,$uni);
+            $query="SELECT * FROM [Materias] WHERE ClaveMat=?";
+            $parametros=array($clave);
             $stmt2 = sqlsrv_query($conexion, $query, $parametros);
             $row=sqlsrv_fetch_array($stmt2,SQLSRV_FETCH_ASSOC);
-            include_once("ConsultaModiUnidad.php");
+            include_once("ConsultaModiMate.php");
         }
         else{
-            include_once("../PaginasVista/modificaUnidad.html");
+            include_once("../PaginasVista/modificar_materias.html");
         }
     }
 }
 
-$id=new saca_IDUni;
-$id->busca_idUni();
+$id=new saca_IDMate;
+$id->busca_idMate();
 ?>

@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
 <body>
-    <form action="" id="formulario_modificar_materias">
+
         <div class="logo" style="float: left;">
             <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
         </div>  
@@ -22,18 +22,35 @@
         <div class="titulo1">
             <h2>MODIFICAR DATOS DE LAS UNIDADES</h2>
         </div> 
+        <form method="POST">
         <div class="datos" style="float: center;">
-            <input class="input" type="text" name="clave_buscar" placeholder="Clave" > &nbsp;&nbsp;
-            <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" >&nbsp;&nbsp;
+            <input class="input" type="text" placeholder="Clave" id="clave1" name="clave1"> &nbsp;&nbsp;
+            <select class="input" name="unidad1" id="unidad1">
+                <option value="1">1</option> 
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>&nbsp;&nbsp;
+            <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" onclick="location.href = '/ModificacionesBD/IdUnidadMod.php' ">&nbsp;&nbsp;
             <input class="btnSalir" type="button"  value="CANCELAR">
         </div>
+        </form>
+        <form id="formulario_modificar_materias" action="/ModificacionesBD/ModificaUni.php" method="POST">
         <div class="contenedor_generalDatos">  
-            <input class="parte1" type="text" placeholder="CLAVE" value="<?php echo $row['ClaveMat']; ?>" readonly>
-            <input class="parte1" type="text" placeholder="NOMBRE"  value="<?php echo $row['ClaveMa']; ?>">
+            <input id="clave" name="clave" class="parte1" type="text" placeholder="CLAVE"  value="<?php echo $row['ClaveMat']; ?>" readonly>
+            <input id="numUni" name="numUni" class="parte1" type="text" placeholder="NÚMERO UNIDAD" value="<?php echo $row['NoUni']; ?>">
+            <input id="tema" name="tema" class="parte2" type="text" placeholder="TEMA" style="float: left;" value="<?php echo $row['TemaUni']; ?>">
+            <textarea id="sub" name="sub" class="textarea" cols="45" rows="8" style="float: right;"><?php echo $row['Subtemas']; ?></textarea>
         </div> 
         <div class="contebotones">
-            <button class="botones">MODIFICA</button>
-            <button class="botones">ELIMINA</button>
+            <button id="btn" class="botones" type="submit" name="modifica" value="EDITAR" onclick="location.href = '/ModificacionesBD/ModificaUni.php' ">MODIFICA</button>
+            <button id="btn" class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificaUni.php' ">ELIMINA</button>
         </div>
     </form>
     
