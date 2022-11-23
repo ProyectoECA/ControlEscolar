@@ -20,17 +20,36 @@ class Registra_Unidad{
             $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
             $conexion=sqlsrv_connect(ServerName, $connectionInfo);
             //echo $id.$uni.$tema.$sub;
+            
+            #COMPRUEBA QUE EL NUMERO DE UNIDAD QUE INTENA REGISTRAR NO EXCEDA LOS DE LA MATERIA
             $query="SELECT Unidades FROM Materias WHERE ClaveMat='".$id."'";
             $datos=sqlsrv_query($conexion,$query);
-            $ban=True;
+            $ban=0;
             while($row = sqlsrv_fetch_array($datos)){
                 $unidad=$row["Unidades"];
                 if($uni>intval($unidad)){
-                    $ban=False;
+                    $ban=1;
+                }
+                else if($uni==$unidad){
+                    $ban=2;
                 }
             }
-            if($ban==False){
+            
+            #COMPRUEBA QUE ESA UNIDAD NO SE ENCUENTRE CAPTURADA
+            $query="SELECT NoUni FROM CaptuUnidades WHERE ClaveMat='".$id."'";
+            $datos2=sqlsrv_query($conexion,$query);
+            while($row = sqlsrv_fetch_array($datos2)){
+                $unidad=$row["NoUni"];
+                if($uni==$unidad){
+                    $ban=2;
+                }
+            }
+            if($ban==1){
                 echo"<script>alert('Esta unidad no existe en la materia');
+                        location.href='/PaginasVista/captura_Unidades.php'</script>";
+            }
+            else if($ban==2){
+                echo"<script>alert('Esta unidad ya se encuentra registrada');
                         location.href='/PaginasVista/captura_Unidades.php'</script>";
             }
             else{
