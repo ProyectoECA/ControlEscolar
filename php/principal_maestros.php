@@ -14,9 +14,9 @@ if(isset($_SESSION['user'])){
     $user = $_SESSION['user'][0];
 
 
-    $sql = "SELECT AsignaMaes.ClaveMat, Materias.Nombre, Carreras.NombreCarre FROM Materias,AsignaMaes,Carreras
-            WHERE AsignaMaes.Maestro = ? AND AsignaMaes.ClaveMat = Materias.ClaveMat
-            AND AsignaMaes.ClaveCa = Carreras.ClaveCa";
+    $sql = "SELECT AsigMaes.ClaveMat, Materias.Nombre, Carreras.NombreCarre FROM Materias,AsigMaes,Carreras
+            WHERE AsigMaes.Maestro = ? AND AsigMaes.ClaveMat = Materias.ClaveMat
+            AND AsigMaes.ClaveCa = Carreras.ClaveCa";
     $parametros = array($user);
     $materias = $conexion->Buscar($sql,$parametros);
 
