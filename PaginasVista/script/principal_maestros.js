@@ -31,10 +31,14 @@ function RellenarTabla(materias) {
         var fila = TABLA.insertRow();
         var celda_clave = document.createElement("td");
         var celda_nombre = document.createElement("td");
+        var celda_carrera = document.createElement("td");
 
+        var carrera = materias[i][2];
         var clave = materias[i][0];
+
         var clave_materia = document.createTextNode(clave);
         var nombre_materia = document.createTextNode(materias[i][1]);
+        var carrera_materia = document.createTextNode(carrera);
 
         var link_clave = document.createElement("a");
         var link_nombre = document.createElement("a");
@@ -43,12 +47,14 @@ function RellenarTabla(materias) {
         link_clave.appendChild(clave_materia);
         link_nombre.appendChild(nombre_materia);
         
-        link_clave.href = "../ModificacionesBD/CapturaCalif.php?clave="+encodeURIComponent(clave); 
-        link_nombre.href = "../ModificacionesBD/fechas_evaluacion.html?clave"+encodeURIComponent(clave);
+        link_clave.href = "../ModificacionesBD/CapturaCalif.php?clave="+encodeURIComponent(clave)+"&carrera="+encodeURIComponent(carrera); 
+        link_nombre.href = "../ModificacionesBD/fechas_evaluacion.html?clave="+encodeURIComponent(clave)+"&carrera="+encodeURIComponent(carrera);
 
         celda_clave.appendChild(link_clave);
         celda_nombre.appendChild(link_nombre);
-
+        celda_carrera.appendChild(carrera_materia);
+        
+        fila.appendChild(celda_carrera);
         fila.appendChild(celda_clave);
         fila.appendChild(celda_nombre);
 
