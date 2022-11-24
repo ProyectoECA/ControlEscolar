@@ -18,6 +18,7 @@ class saca_IDUni{
         $datos= sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
 
         if(!empty($datos)){
+            #SI SE ENCUENTRAN LOS DATOS
             $query="SELECT * FROM [CaptuUnidades] WHERE ClaveMat=? and NoUni=?";
             $parametros=array($clave,$uni);
             $stmt2 = sqlsrv_query($conexion, $query, $parametros);
@@ -25,6 +26,7 @@ class saca_IDUni{
             include_once("ConsultaModiUnidad.php");
         }
         else{
+            #SI NO SE ENCUENTRAN LOS DATOS
             include_once("../PaginasVista/modificaUnidad.html");
         }
     }
