@@ -95,17 +95,17 @@ class Insertar_Maestros {
                         
                     }
                     echo"<script>alert('Maestr@ registrado con éxito (Recuerda que el usuario y la contraseña es el RH con mayúsculas)');
-                        location.href='/PaginasVista/maestros_datos_per.html'</script>";
+                        location.href='https://controlescolarweb.azurewebsites.net'</script>";
                     sqlsrv_close($conexion);
             }
             else{
                 echo"<script>alert('Ya existe un usuario registrado con este RH');
-                        location.href='/PaginasVista/maestros_datos_per.html'</script>";
+                        location.href='https://controlescolarweb.azurewebsites.net'</script>";
             }
             
         }
     else if(isset($_POST['cancela_sec'])){
-        include_once "../PaginasVista/jefe_Control.html";
+        include_once "https://controlescolarweb.azurewebsites.net";
     }
 }
     
