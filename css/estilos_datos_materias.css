@@ -17,17 +17,20 @@ body{
 .nombre{ 
     height: 7em;
     width: 64em;
-    margin: 0em auto; 
+    margin: 0em 0em; 
     color: #1e355e;  
-    text-align: center;
+    text-align: center;    
     justify-content: space-between;
     overflow: hidden;
     display: flex;
 }  
 
-.titulo{
-    height: 7em;
-    width: 40em; 
+.titulo1{
+    width: 30em;
+    height: 3em;
+    margin: 0em auto;
+    align-items: center;
+    color: #1e355e;
 } 
 
 /* ############################################################## */ 
@@ -79,4 +82,74 @@ tr:nth-child(even){
 tr:hover td{
 	background-color: #274374;
 	color: white;
+}
+
+/* ######################## RESPONSIVE ########################## */
+
+@media screen and (max-width: 1000px){
+    body{ 
+        height: 120vh;
+    }
+
+    .logo{ 
+        height: 7em;
+        width: 15em;
+        display: flexs; 
+    } 
+    
+    .nombre{ 
+        height: 7em;
+        width: 98%;
+    }  
+    
+    .tituloP{
+        height: 7em;
+        width: 50em;  
+    } 
+
+    .titulo1{
+        width: 98%;
+        text-align: center;
+    }
+
+    .contenedor-general{
+        width: 95%;
+    }
+} 
+
+@media screen and (max-width: 650px){
+    .logo{ 
+        height: 8em;
+        width: 25em;
+        display: flexs; 
+    }
+}
+
+@media screen and (max-width: 500px){
+    body{ 
+        height: 120vh;
+    }
+
+    .logo{ 
+        display: none; 
+    } 
+    
+    .nombre{ 
+        height: 7em;
+        width: 98%;
+    }  
+    
+    .tituloP{
+        height: 7em;
+        width: 50em;  
+    } 
+
+    .titulo1{
+        width: 98%;
+        text-align: center;
+    }
+
+    .contenedor-general{
+        width: 95%;
+    }
 }

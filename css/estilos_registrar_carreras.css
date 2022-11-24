@@ -25,7 +25,7 @@ nav{
 .nombre{ 
     height: 7em;
     width: 64em;
-    margin: 0em 20em; 
+    margin: 0em 0em; 
     color: #1e355e;  
     text-align: center;    
     justify-content: space-between;
@@ -147,4 +147,123 @@ nav{
     cursor: pointer;
     border: none;
     justify-content: space-between;
+} 
+
+/* ############################ RESPONSIVE ################################### */ 
+
+@media screen and (max-width: 1000px){
+    body{ 
+        height: 120vh;
+    }
+
+    .logo{ 
+        height: 7em;
+        width: 12em;
+        display: flexs; 
+    } 
+    
+    .nombre{ 
+        height: 7em;
+        width: 98%;
+    }  
+    
+    .tituloP{
+        height: 7em;
+        width: 50em;  
+    } 
+} 
+
+@media screen and (max-width: 650px){
+    body{ 
+        height: 120vh;
+    }
+    
+    .logo{ 
+        height: 7em;
+        width: 12em;
+        display: flexs; 
+    } 
+    
+    .nombre{ 
+        height: 7em;
+        width: 98%;
+    }  
+    
+    .tituloP{
+        height: 7em;
+        width: 30em;   
+    }
+
+    .contenedor_general{
+        height: 30em; 
+        width: 90%; 
+    }
+
+    .conte1{
+        height: 5em; 
+        width: 99%; 
+        margin: 1 auto; 
+    }  
+    
+    .conte2{
+        height: 15em; 
+        width: 99%; 
+        margin: 2em auto; 
+        text-align: center; 
+        align-items: center; 
+    }  
+    
+    .cajas_texto{ 
+        height: 3em;
+        width: 80%;
+        font-size: 0.9em;
+        border-radius: 4px; 
+        margin: auto; 
+        font-size: 1em;
+        border: 2px solid #1e355e;
+        flex-direction: column center; 
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+    } 
+    
+    .conte3{
+        height: 4em; 
+        width: 99%;  
+        display: flex;
+    } 
+    
+    .btnGuardar{ 
+        width: 30%;
+        height:65%;
+        margin: auto 5em; 
+    }  
+    
+    .btnCancelar{ 
+        width: 30%;
+        height: 65%; 
+        margin: auto 1em;
+    } 
+} 
+
+@media screen and (max-width: 500px){
+    body{ 
+        height: 120vh;
+    }
+    
+    .logo{ 
+        display: none; 
+    } 
+
+    .btnGuardar{ 
+        width: 30%;
+        height:65%;
+        margin: auto 4em; 
+    }  
+    
+    .btnCancelar{ 
+        width: 30%;
+        height: 65%; 
+        margin: auto 1em;
+    }
 }
