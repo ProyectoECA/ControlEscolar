@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, #1e355e 0%, white 70%);
+}
+.Contenedor_ubicacion{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+    font-size: large;
+}
+.Contenedor_datos_alumnos{
+    height:70em;
+    width: 70em;
+    margin: 3em auto;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    
+}
+.social_alumnos{
+    width: 100%;
+    justify-content: space-evenly;
+}
+.nombre{ 
+    height: 5em;
+    width: 50em;
+    margin: 0em auto; 
+    color: #1e355e; 
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+} 
+.login-container{
+    height: 25em;
+    width: 90em;
+    margin: 1em auto; 
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    justify-content: center;
+} 
+
+.login-info-container{
+    width: 50%;
+    height: 150%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid gray;
+    padding-top: 0%;
+    background-color: white;
+} 
+
+
+.inputs-container{
+    height: 100%;
+    width: 90%; 
+    margin: 2em auto; 
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}  
+
+.input_planeada{
+    width: 30%;
+    height: 7%; 
+    font-size: 1em; 
+    border: #1e355e;
+    border-radius: 5px;
+    transform:translate(-50%,10%);
+}
+.input_planeada_fecha_2{
+    width: 30%;
+    height: 7%; 
+    font-size: 1em; 
+    border: #1e355e;
+    border-radius: 5px;
+    transform:translate(-50%,-150%);
+}
+.input_real_fecha_1{
+    width: 30%;
+    height: 7%; 
+    font-size: 1em; 
+    border: #1e355e;
+    border-radius: 5px;
+    transform:translate(90%,-159%);
+}
+.input_real_fecha_2{
+    width: 30%;
+    height: 7%; 
+    font-size: 1em; 
+    border: #1e355e;
+    border-radius: 5px;
+    transform:translate(90%,-320%);
+}
+.input_planeada_fecha_3{
+    width: 30%;
+    height: 7%; 
+    font-size: 1em; 
+    border: #1e355e;
+    border-radius: 5px;
+    transform:translate(-50%,-290%);
+}
+.input_real_fecha_3{
+    width: 30%;
+    height: 7%; 
+    font-size: 1em; 
+    border: #1e355e;
+    border-radius: 5px;
+    transform:translate(90%,-450%);
+}
+
+.input{
+    padding-left: 20px;
+    border: #1e355e;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.input:hover{
+    border: 2px solid #1e355e;
+} 
+
+.bot{
+    width: 90%;
+    align-items: center;
+    text-align: center;
+    padding-top: 0%;
+    background-color: white; 
+    display: flex;
+    margin: 2em auto; 
+}
+.planeada{
+    font : 1.3em "typewriter";
+    color: black;
+    transform:translate(-120%,10%);
+}
+.real_fecha_1{
+    font : 1.3em "typewriter";
+    color: black;
+    transform:translate(390%,-250%);
+}
+.fechas_2{
+    font : 1.3em "typewriter";
+    color: black;
+    transform:translate(10%,-250%);
+}
+.planeada_fecha_2{
+    font : 1.3em "typewriter";
+    color: black;
+    transform:translate(-120%,-250%);
+}
+.real_fecha_2{
+    font : 1.3em "typewriter";
+    color: black;
+    transform:translate(399%,-550%);
+}
+.fechas_3{
+    font : 1.3em "typewriter";
+    color: black;
+    transform:translate(10%,-520%);
+}
+.planeada_fecha_3{
+    font : 1.3em "typewriter";
+    color: black;
+    transform:translate(-120%,-520%);
+}
+.real_fecha_3{
+    font : 1.3em "typewriter";
+    color: black;
+    transform:translate(399%,-800%);
+}
+label{
+    font : 1.3em "typewriter";
+    color: black;
+}
+
+.btn{ 
+    width: 12rem;
+    height: 2.2em; 
+    color: white;
+    background-color: #1e355e; 
+    border-radius: 5px;
+    letter-spacing: 1px;  
+    justify-content: space-between; 
+    margin-top: 0%;
+    transform:translate(50%,-690%);
+    
+} 
