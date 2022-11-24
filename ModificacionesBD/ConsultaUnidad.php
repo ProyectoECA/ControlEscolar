@@ -3,7 +3,7 @@
 class Consultas_Unidad{
     function consultando(){
         $serverName='localhost';
-        $connectionInfo=array("Database"=>"ConEscolarNoc", "UID"=>"Admini", "PWD"=>"control2022", "CharacterSet"=>"UTF-8");
+        $connectionInfo=array("Database"=>"ConEscolarBD", "UID"=>"nochistlanadm", "PWD"=>"Sok03951", "CharacterSet"=>"UTF-8");
         $con = sqlsrv_connect($serverName, $connectionInfo); 
 
 
