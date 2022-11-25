@@ -258,4 +258,36 @@ label{
     margin-top: 0%;
     transform:translate(50%,-690%);
     
-} 
+}
+
+@media (max-width:992px){
+    .body{
+        font-size: 16px;
+    }
+    .login-container{
+        height: 25em;
+        width: 90em;
+        margin: 1em auto; 
+        display: flex;
+        justify-content: space-evenly;
+        overflow: hidden;
+        justify-content: center;
+        transform:translate(-15%,0%);
+    } 
+
+}
+@media (max-width:758px) {
+    .body{
+        ont-size: 16px;
+    }
+    .login-container{
+        height: 25em;
+        width: 90em;
+        margin: 1em auto; 
+        display: flex;
+        justify-content: space-evenly;
+        overflow: hidden;
+        justify-content: center;
+        transform:translate(-25%,0%);
+    } 
+}
