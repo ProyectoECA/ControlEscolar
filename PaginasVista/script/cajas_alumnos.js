@@ -433,11 +433,11 @@ correo.addEventListener('keyup', (e) => {
 function validar(){
     const bot = document.getElementById('btn');
     if(b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true &&  b13 == true){
-        bot.disabled=false;
+        /* bot.disabled=false; */
        /* location.href = '../ModificacionesBD/InsertaEstu.php'  */
     }
     else{
-        bot.disabled=true;
+        /* bot.disabled=true; */
        /*  if(b1== false){
             numerocontrol.style.border = "3px solid red";
         }

@@ -92,7 +92,7 @@ $resultado= sqlsrv_query($conexion,$query);
                 <label class="telefonopadre">Teléfono del padre o tutor</label>     
                 <input class="caja_texto" type="int" placeholder="(ejemplo: 1234567890)" name="teltutor"
                     id="teltutor">
-                    <button disabled id="btn" class="btn_guardar" name="guardar" type="submit" onclick="location.href = '../ModificacionesBD/InsertaEstu.php' ">GUARDAR</button>
+                    <button  id="btn" class="btn_guardar" name="guardar" type="submit" onclick="location.href = '../ModificacionesBD/InsertaEstu.php' ">GUARDAR</button>
                     <!-- <button id="btn" class="btn_guardar" name="guardar" type="submit" onclick="validar()">GUARDAR</button> -->
                     <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">CANCELAR</button>    
             </form>
