@@ -24,6 +24,11 @@ class Asigna_Maes{
             $idMat = $_POST["materia"];
             $maestro = $_POST["maestro"]; 
 
+            #COMPRUEBA QUE EL MAESTRO ESTE REGISTRADO EN TABLA MAESTROS
+            $query="SELECT * FROM [AsigMaes] where ClaveMat=? and ClaveCa=? and Maestro=?";
+            $parametros=array($idMat,$idCarre,$maestro);
+            $res=$cone->Buscar($query,$parametros);
+
             
             #COMPRUEBA QUE LA MATERIA NO ESTE ASIGNADA A MAESTRO
             $query="SELECT * FROM [AsigMaes] where ClaveMat=? and ClaveCa=? and Maestro=?";
