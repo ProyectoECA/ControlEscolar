@@ -83,11 +83,11 @@
     
             <div class="contenedor-maestros">
                 <div class="contenedor-imageM">
-                    <img src="/css/imagenes/carreras.png" alt="" width="70%">  
+                    <img src="/css/imagenes/carreras.png" alt="" width="63%">  
                     <span class="titulo">CARRERAS</span>
                 </div> 
-                <div class="botonesS" >
-                    <button class="btn-registrar">
+                <div class="botonesSCa" >
+                    <button class="btn-registrarCa">
                         <div class="icono">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="5" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
@@ -96,8 +96,8 @@
                         <span><b><a href="/PaginasVista/registrar_carreras.html">   REGISTRAR</b></span></a>
                     </button> 
                 </div>  
-                <div class="botonM" >
-                    <button class="btn-modificar">
+                <div class="botonMCa" >
+                    <button class="btn-modificarCa">
                         <div class="icono" style="margin-top: -5px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="5" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
@@ -106,14 +106,24 @@
                         <span><b><a href="/PaginasVista/modificar_carreras.html">MODIFICAR</b></span></a>
                     </button> 
                 </div> 
-                <div class="botonC" >
-                    <button class="btn-consultar">
+                <div class="botonCCa" >
+                    <button class="btn-consultarCa">
                         <div class="icono" style="margin-top: -5px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="5" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
                             </svg>
                         </div>
                         <span><b><a href="/PaginasVista/consulta_carreras.html">CONSULTAR</b></span></a>
+                    </button> 
+                </div> 
+                <div class="botonRCa" >
+                    <button class="btn-reticula">
+                        <div class="icono" style="margin-top: -5px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="5" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                            </svg>
+                        </div>
+                        <span><b><a href="">RETÍCULAS</b></span></a>
                     </button> 
                 </div> 
             </div>
