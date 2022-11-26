@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fechas planeadas</title>
+    <link rel="stylesheet" href="/css/estilo_fechas_de_corte.css">
+</head>
+<body>
+    <div class="nombre" style="float: center;">
+        <h1><b>TECNOLÓGICO DE NOCHISTLÁN</b></h1>
+    </div> 
+      <div class="Contenedor_titulo">
+        <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
+      </div>
+      <div class="Contenedor_ubicacion">
+           <h2 class="ubicacion">FECHAS PLANEADAS DE CORTE</h2>
+      </div>
+    <div class="login-container">
+        <div class="login-info-container">
+            <form class="inputs-container"  method="POST" action="/ModificacionesBD/InsertaFechaPlanea.php" >
+                <label><b>Fecha 1</b></label>
+                <input class="input" type="date" placeholder="Contraseña" name="date1" id="date1"><br>
+                <label><b>Fecha 2</b></label>
+                <input class="input" type="date" placeholder="Confirmar contraseña" name="date2" id="date2"><br>
+                <label><b>Fecha 3</b></label>
+                <input class="input" type="date" placeholder="Confirmar contraseña" name="date3" id="date3">
+                <div class="bot">
+                    <button class="btn" style="float: right;" id="btn"type="submit" onclick="location.href ='/ModificacionesBD/InsertaFechaPlanea.php'">Guardar</button>
+                    <button class="btn" style="float: left;" type="button">Limpiar</button> 
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
