@@ -25,12 +25,16 @@ class Asigna_Maes{
             $maestro = $_POST["maestro"]; 
 
             #COMPRUEBA QUE EL MAESTRO ESTE REGISTRADO EN TABLA MAESTROS
-            $query="SELECT * FROM [AsigMaes] where ClaveMat=? and ClaveCa=? and Maestro=?";
-            $parametros=array($idMat,$idCarre,$maestro);
-            $res=$cone->Buscar($query,$parametros);
+            $query="SELECT * FROM [Maestros] where ClaveMa=?";
+            $parametros=array($maestro);
+            $re=$cone->Buscar($query,$parametros);
 
-            
-            #COMPRUEBA QUE LA MATERIA NO ESTE ASIGNADA A MAESTRO
+            if(empty($re)){
+                echo"<script>alert('La clave del maestro(a) no se encuentra registrada');
+                location.href='/PaginasVista/asignacion_maestros.php'</script>";
+            }
+            else{
+                #COMPRUEBA QUE LA MATERIA NO ESTE ASIGNADA A MAESTRO
             $query="SELECT * FROM [AsigMaes] where ClaveMat=? and ClaveCa=? and Maestro=?";
             $parametros=array($idMat,$idCarre,$maestro);
             $res=$cone->Buscar($query,$parametros);
@@ -50,6 +54,8 @@ class Asigna_Maes{
                 location.href='/PaginasVista/asignacion_maestros.php'</script>";
                
             }
+            }
+            
             }
         
         else{
