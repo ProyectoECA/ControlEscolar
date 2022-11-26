@@ -21,7 +21,15 @@
       <div class="login-container">
         <div class="login-info-container">
             <form class="inputs-container"  method="POST" action="/CamContra.php" >
-                <label><b>Fecha 1</b></label>
+                <label class="carrera"><b>Carrera</b></label>
+                <select class="combobox_carrera" name="selecion_carrera" id="selecion_carrera">
+                    <option>Va lo de la base de datos</option>
+                </select>
+                <label class="clave_mate"><b>Clave materia</b></label>
+                <select class="combobox_materia" name="selecion_materia" id="selecion_materia">
+                    <option>Va lo de la base de datos</option>
+                </select>
+                <label class="fecha_1"><b>Fecha 1</b></label>
                 <label class="planeada">Planeada</label>
                 <input class="input_planeada" type="date" placeholder="Contraseña" name="contra1" id="contrasena">
                 <label class="real_fecha_1">Real</label>
