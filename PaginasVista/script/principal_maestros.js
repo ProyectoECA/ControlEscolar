@@ -49,7 +49,7 @@ function RellenarTabla(materias) {
         link_clave.appendChild(clave_materia);
         link_nombre.appendChild(nombre_materia);
         
-        link_clave.href = "../ModificacionesBD/CapturaCalif.php?claveMa="+encodeURIComponent(clave)+"&carrera="+encodeURIComponent(carrera)+"&claveCa="+encodeURIComponent(clave_carrera); 
+        link_clave.href = "../PaginasVista/captura_de_calificaciones.html?claveMa="+encodeURIComponent(clave)+"&carrera="+encodeURIComponent(carrera)+"&claveCa="+encodeURIComponent(clave_carrera); 
         link_nombre.href = "../ModificacionesBD/fechas_evaluacion.html?claveMa="+encodeURIComponent(clave)+"&carrera="+encodeURIComponent(carrera)+"&claveCa="+encodeURIComponent(clave_carrera);
 
         celda_clave.appendChild(link_clave);
