@@ -1,16 +1,17 @@
 <?php
 include_once "../CRUD/CRUD_bd_SQLServer.php";
 
-$claveMat=$_GET['clave'];
+$claveMat=$_GET['claveMa'];
 $carrera=$_GET['carrera'];
+$claveCa=$_GET['claveCa'];
 
 $cone=new CRUD_SQL_SERVER();
 $cone->conexionBD();
-
+/*
 $que="SELECT ClaveCa from [Carreras] where NombreCarre=?";
 $para=array($carrera);
 $re=$cone->Buscar($que,$para);
-$claveCa=$re[0]['ClaveCa'];
+$claveCa=$re[0]['ClaveCa'];*/
 
 $query="SELECT ClaveMat,Nombre, Objetivos from [Materias] where ClaveMat=? and carrera=?";
 $parametros=array($claveMat,$claveCa);
@@ -39,7 +40,7 @@ $res=$cone->Buscar($query,$parametros);
       </div>    
       
       <article class="contenedor_tabla_general">
-        <table  class="table-datos_generales" >
+        <table  class="table-datos_generales"  id="tabla_unidades">
         <tbody>
             <tr>
                 <td><?php echo $res[0]['ClaveMat'];?></td>
@@ -100,7 +101,7 @@ $res=$cone->Buscar($query,$parametros);
 
                         #SE LLENE LA TABLA CON LOS DATOS QUE TIENE CADA UNIDAD
                         ?>
-                        <td><a href="pagina_tema_1.html"><?php echo $res2[0]['TemaUni'];?></a></td>
+                        <td><a href="pagina_tema_1.php"><?php echo $res2[0]['TemaUni'];?></a></td>
                         <td><?php echo $res2[0]['Subtemas'];?></td>
                         <td><?php echo date_format($res2[0]['ProI'],"d/m/y");?></td>
                         <td><?php echo date_format($res2[0]['ProT'],"d/m/y");?></td>
@@ -118,5 +119,6 @@ $res=$cone->Buscar($query,$parametros);
 
     </div>  
     <script src="../SesionesUsuario/session_expiracion.js"></script>
+    <script src="../PaginasVista/script/fechas_Eva.js"></script>
 </body>
 </html>
