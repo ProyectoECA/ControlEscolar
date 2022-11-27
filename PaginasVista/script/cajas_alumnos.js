@@ -431,13 +431,28 @@ correo.addEventListener('keyup', (e) => {
 });
 
 function validar(){
+   /*  console.log(b1);
+    console.log(b2);
+    console.log(b3);
+    console.log(b4);
+    console.log(b5);
+    console.log(b6);
+    console.log(b7);
+    console.log(b8);
+    console.log(b9);
+    console.log(b10);
+    console.log(b11);
+    console.log(b12);
+    console.log(b13); */
     const bot = document.getElementById('btn');
     if(b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true &&  b13 == true){
-        /* bot.disabled=false; */
+        /* console.log("habilitado"); */
+         bot.disabled=false; 
        /* location.href = '../ModificacionesBD/InsertaEstu.php'  */
     }
     else{
-        /* bot.disabled=true; */
+        /* console.log("deshabilitado"); */
+         bot.disabled=true; 
        /*  if(b1== false){
             numerocontrol.style.border = "3px solid red";
         }
