@@ -89,7 +89,7 @@ class Insertar_Estu{
 
                             $mat=$row["ClaveMat"];
 
-                            $query= "INSERT INTO [AlumMate] (NoControl,ClaveMat,rep) VALUES (?,?,?)";
+                            $query= "INSERT INTO [AlumMate] (NoControl,ClaveMat,Rep) VALUES (?,?,?)";
                             $parametros=array($clave,$mat,$rep);
                             $cone->Insertar_Eliminar_Actualizar($query,$parametros);
                         }
@@ -119,7 +119,7 @@ class Insertar_Estu{
 
                             $mat=$row["ClaveMat"];
 
-                            $query= "INSERT INTO [AlumMate] (NoControl,ClaveMat,rep) VALUES (?,?,?)";
+                            $query= "INSERT INTO [AlumMate] (NoControl,ClaveMat,Rep) VALUES (?,?,?)";
                             $parametros=array($clave,$mat,$rep);
                             $cone->Insertar_Eliminar_Actualizar($query,$parametros); 
                         }

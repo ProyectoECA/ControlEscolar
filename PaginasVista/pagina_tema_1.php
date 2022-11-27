@@ -1,3 +1,25 @@
+<?php
+include_once "../CRUD/CRUD_bd_SQLServer.php";
+
+$claveMat=$_GET['claveMa'];
+$noUni=$_GET['NoUni'];
+$claveCa=$_GET['claveCa'];
+
+echo $claveMat;
+echo $noUni;
+$cone=new CRUD_SQL_SERVER();
+$cone->conexionBD();
+/*
+$que="SELECT ClaveCa from [Carreras] where NombreCarre=?";
+$para=array($carrera);
+$re=$cone->Buscar($que,$para);
+$claveCa=$re[0]['ClaveCa'];*/
+
+$query="SELECT ClaveMat,Nombre, Objetivos from [Materias] where ClaveMat=? and carrera=?";
+$parametros=array($claveMat,$claveCa);
+$res=$cone->Buscar($query,$parametros);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +59,7 @@
 
       </article>
     <div>  
-    <form class="formulario_de_tabla" method="POST" action="../ModificacionesBD/FechasEvaluacion.php">
+    <form class="formulario_de_tabla" method="POST" action="../ModificacionesBD/GuardaFechasEvaluacion.php">
         <div class="Contenedor_tabla_evaluación">
             <table class="table-calificaciones">
                <thead>
