@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTUDIANTES</title> 
+    <link rel="stylesheet" href="/css/estilos_principal_alumnos.css">
+    <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
+</head> 
+<body> 
+    <div class="nombre" style="float: center;"> 
+        <div class="logo" style="float: left;">
+            <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
+        </div>  
+        <div class="tituloP" style="float: left;">
+            <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
+        </div> 
+        <div class="contenedor_der" style="float: right;">
+            <div class="mostrar_usuario" style="float: center;"> 
+                <div class="imagen" style="float: left;">
+                    <img src="/css/imagenes/Usuario.png" alt="" width="89%">
+                </div>  
+                <div class="texto" style="float: center;">
+                    <!-- codigo php -->
+                    <?php
+                        if(isset($nombre_bienvenida)){
+                            echo "<a href=''>Bienvenid@ $nombre_bienvenida</a>";
+                        }
+                    ?>
+                    <!-- Codigo php     -->
+                </div>
+            </div>
+            <div class="contenedor"> 
+                <a href="../SesionesUsuario/logout.php"> 
+                    <button class="boton_cerrarSesion" type="button">CERRAR SESIÓN</button></a>
+
+                <a href="/PaginasVista/cambio_contrasena.html">
+                <button type="button" class="boton_cambiarContraseña"> CAMBIAR CONTRASEÑA </button></a>
+
+                <a href="">
+                    <button type="button" class="boton_calificaciones"> CALIFICACIONES </button></a>
+            </div>  
+        </div>
+    </div> 
+    <div class="contenedor_general"> 
+        <div class="titulo1">
+            <h1>DATOS GENERALES DEL ESTUDIANTE</h1>
+        </div>
+        <table class="table" id="tabla_maestros">
+            <thead>
+                <tr>
+                    <th class="titulo"> No. control</th>
+                    <th class="dato"> Dato de la BD</th>
+                </tr> 
+                <tr>
+                    <td class="titulo"> Nombre</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>  
+                <tr>
+                    <td class="titulo"> Ap. paterno</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr> 
+                <tr>
+                    <td class="titulo"> Ap. materno</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>
+                <tr>
+                    <td class="titulo"> Nombre</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>
+                <tr>
+                    <td class="titulo"> Calle y número</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr> 
+                <tr>
+                    <td class="titulo"> Municipio</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>
+                <tr>
+                    <td class="titulo"> Estado</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>
+                <tr>
+                    <td class="titulo"> Código postal</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>
+                <tr>
+                    <td class="titulo"> No. teléfono</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>
+                <tr>
+                    <td class="titulo"> Correo</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>
+                <tr>
+                    <td class="titulo"> Carrera</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>
+                <tr>
+                    <td class="titulo"> Semestre</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr> 
+                <tr>
+                    <td class="titulo"> Nombre del padre o tutor</td>
+                    <td class="dato"> Guadalupe Monserrath Gonzalez Serrano </td>     
+                </tr> 
+                <tr>
+                    <td class="titulo"> Teléfono del padre o tutor</td>
+                    <td class="dato"> Dato de la BD</td>     
+                </tr>
+            </thead> 
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>

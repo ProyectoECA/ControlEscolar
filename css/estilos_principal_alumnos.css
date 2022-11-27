@@ -1,0 +1,280 @@
+body{ 
+    height: 120vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; 
+    background-image: linear-gradient(to top, #1e355e 0%, white 60%);
+} 
+
+nav{
+    max-width: 70%;
+    margin: auto;
+    background-color: #15469b;
+    font-size: 20px;
+    margin-top: none;
+}  
+
+.logo{ 
+    height: 7em;
+    width: 15em;
+    display: flexs; 
+    
+} 
+
+.nombre{ 
+    height: 9em;
+    width: 98%;
+    margin: 0em ; 
+    color: #1e355e;  
+    text-align: center;    
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex;
+}  
+
+.tituloP{
+    height: 7em;
+    width: 40em;  
+} 
+
+.contenedor_der{
+    height: 8.5em;
+    width: 20em;
+    margin: 0em auto; 
+    color: #1e355e;  
+    text-align: center;    
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+}
+
+.mostrar_usuario{ 
+    height: 45px; 
+    width: 290px; 
+    margin: 0.19em auto;
+    border: 1.45px solid #1e355e; 
+    border-radius: 10px;  
+    justify-content: space-around;
+    align-items: center;
+}
+.imagen{ 
+    height: 45px; 
+    width: 50px;
+} 
+
+.texto{
+    height: 45px;
+    width: 230px; 
+} 
+
+.contenedor{
+    height: 47px;
+    width: 290px;  
+    margin: 0.1em auto; 
+}   
+
+.boton_cerrarSesion{
+    padding:2px 52px;
+    background:#1e355e;
+    border:0; 
+    margin: 0.1em auto;
+    outline:none;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:200;
+    border-radius:30px;
+    color: white; 
+}
+
+.boton_cambiarContraseña{ 
+    padding:2px 30px;
+    background:#1e355e;
+    border:0; 
+    outline:none;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:200;
+    border-radius:30px;
+    color: white;
+}
+
+.boton_calificaciones{ 
+    height: 1.5em;
+    width: 15.5em;
+    margin: 0.2em auto ;
+    background:#1e355e;
+    border:0; 
+    outline:none;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:200;
+    border-radius:30px;
+    color: white;
+} 
+
+/* ############################################################## */ 
+
+.contenedor_general{
+    width: 98%;
+    height: 80%;
+    margin: 0.5em auto;
+    display: flex;
+    flex-direction: column; 
+    overflow: hidden; 
+    text-align: center; 
+    position: relative; 
+}  
+
+.titulo1{
+    width: 98%;
+    height: 5em;
+    margin: 0em auto;
+    align-items: center;
+    color: #1e355e; 
+}
+
+
+.table{
+	background-color: white;
+	border-collapse: collapse;
+	width: 90%;
+    text-align: center; 
+    margin: auto; 
+    align-items: center;
+} 
+
+.titulo{
+    width: 40%;
+    color: white;
+    background-color: #1e355e;
+    border: 2px solid gray;
+    font-size: 1.3em;
+}
+
+.dato{
+    width: 40%;
+    font-size: 1.3em;
+    border: 2px solid gray;
+}
+
+/* ###################### RESPONSIVE ############################# */ 
+
+@media screen and (max-width: 1000px){ 
+    body{ 
+        height: 110vh;
+    }
+
+    
+
+    .nombre{ 
+        height: 8em;
+        width: 55em;
+        margin: auto;  
+    } 
+
+    h2{
+        font-size: 1.2em;
+    } 
+
+    .imagen{ 
+        height: 40px; 
+        width: 45px;
+    }  
+
+    .mostrar_usuario{ 
+        height: 42px; 
+        width: 265px; 
+        margin: 0.19em auto;
+        border: 1.45px solid #1e355e; 
+    }
+}
+
+@media screen and (max-width: 650px){ 
+    body{ 
+        height: 150vh; 
+        background-image: linear-gradient(to top, #1e355e 0%, white 80%);
+    }
+
+    .logo{ 
+        height: 5em;
+        width: 15em;  
+    } 
+
+    .nombre{ 
+        height: 12em;
+        width: 80em;
+        margin: auto;   
+    }  
+
+    .tituloP{
+        transform:translate(-40%,100%);
+    }
+
+    h2{
+        font-size: 1.2em;
+    } 
+
+    .contenedor_der{
+        height: 8em;
+        width: 20em; 
+        transform:translate(-190%,-0%);
+    } 
+
+    .contenedor_general{
+        width: 98%;
+        height: 70%;
+        margin: 0.5em auto;
+        display: flex;
+        flex-direction: column; 
+        overflow: hidden; 
+        text-align: center; 
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 500px){ 
+    body{ 
+        height: 210vh; 
+        background-image: linear-gradient(to top, #1e355e 0%, white 80%);
+    } 
+
+    .nombre{ 
+        height: 12em;
+        width: 98%;
+        margin: auto; 
+        flex-direction: column;    
+    }  
+
+    .logo{ 
+        display: none;  
+    } 
+
+    h1{
+        font-size: 1.5em; 
+    }  
+
+    .tituloP{  
+        display: none;
+    }
+
+    .titulo1{
+        transform:translate(0.5%, -20%); 
+    }
+
+    .contenedor_der{
+        height: 13em;
+        width: 17em;  
+        transform:translate(0%,-50%);
+    } 
+
+    .contenedor_general{
+        width: 98%;
+        height: 50%;
+        margin: -8em auto;
+        display: flex;
+        flex-direction: column; 
+        overflow: hidden; 
+        text-align: center; 
+        position: relative;    }
+}
