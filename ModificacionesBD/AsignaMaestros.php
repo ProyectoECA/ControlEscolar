@@ -9,12 +9,12 @@ define("CharacterSet1", 'UTF-8');
 
 
 
+
 class Asigna_Maes{
     function asignacion(){
         $cone=new CRUD_SQL_SERVER();
         $cone->conexionBD();
-        
-        
+
         $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
         $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
@@ -23,8 +23,17 @@ class Asigna_Maes{
             $idMat = $_POST["materia"];
             $maestro = $_POST["maestro"]; 
 
-            
-            #COMPRUEBA QUE LA MATERIA NO ESTE ASIGNADA A MAESTRO
+            #COMPRUEBA QUE EL MAESTRO ESTE REGISTRADO EN TABLA MAESTROS
+            $query="SELECT * FROM [Maestros] where ClaveMa=?";
+            $parametros=array($maestro);
+            $re=$cone->Buscar($query,$parametros);
+
+            if(empty($re)){
+                echo"<script>alert('La clave del maestro(a) no se encuentra registrada');
+                location.href='/PaginasVista/asignacion_maestros.php'</script>";
+            }
+            else{
+                #COMPRUEBA QUE LA MATERIA NO ESTE ASIGNADA A MAESTRO
             $query="SELECT * FROM [AsigMaes] where ClaveMat=? and ClaveCa=? and Maestro=?";
             $parametros=array($idMat,$idCarre,$maestro);
             $res=$cone->Buscar($query,$parametros);
@@ -44,6 +53,8 @@ class Asigna_Maes{
                 location.href='/PaginasVista/asignacion_maestros.php'</script>";
                
             }
+            }
+            
             }
         
         else{
