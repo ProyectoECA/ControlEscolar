@@ -5,15 +5,8 @@ $claveMat=$_GET['claveMa'];
 $noUni=$_GET['NoUni'];
 $claveCa=$_GET['claveCa'];
 
-echo $claveMat;
-echo $noUni;
 $cone=new CRUD_SQL_SERVER();
 $cone->conexionBD();
-/*
-$que="SELECT ClaveCa from [Carreras] where NombreCarre=?";
-$para=array($carrera);
-$re=$cone->Buscar($que,$para);
-$claveCa=$re[0]['ClaveCa'];*/
 
 $query="SELECT ClaveMat,Nombre, Objetivos from [Materias] where ClaveMat=? and carrera=?";
 $parametros=array($claveMat,$claveCa);
@@ -45,13 +38,13 @@ $res=$cone->Buscar($query,$parametros);
         <table  class="table-datos_generales" >
         <tbody>
             <tr>
-                <td>NOMBRE DE LA MATERIA DE LA BASE DE DATOS</td>
+                <td><?php echo $res[0]['ClaveMat'];?></td>
                </tr>
                <tr>
-              <td>CLAVE DE LA MATERIA DE LA BASE DE DATOS</td>
+              <td><?php echo $res[0]['Nombre'];?></td>
                </tr>   
                <tr>
-                <td>OBJETIVOS DE LA BASE DE DATOS</td>
+                <td><?php echo $res[0]['Objetivos'];?></td>
                    </tr>     
             </tbody>
 
@@ -59,7 +52,7 @@ $res=$cone->Buscar($query,$parametros);
 
       </article>
     <div>  
-    <form class="formulario_de_tabla" method="POST" action="../ModificacionesBD/GuardaFechasEvaluacion.php">
+    <form class="formulario_de_tabla" method="POST" action="../ModificacionesBD/InsertaFechasEvaluacion.php">
         <div class="Contenedor_tabla_evaluación">
             <table class="table-calificaciones">
                <thead>
@@ -87,8 +80,17 @@ $res=$cone->Buscar($query,$parametros);
                </thead> 
                <tbody>
                    <tr>
-                       <td><a href="ventana_auxiliar_qr.html"> 01 El secmento de aprender etica  </a></td>
-                       <td> Se saca de la base de datos </td>
+                    <?php 
+                        $query2="SELECT TemaUni, Subtemas FROM [CaptuUnidades]
+                        WHERE ClaveMat=? and ClaveCa=? and NoUni=? ";
+                        $parametros2=array($claveMat,$claveCa,$noUni);
+                        $res2=$cone->Buscar($query2,$parametros2);
+                    ?>
+                        <input id="claveMat" name="claveMat" type="hidden" value=<?php echo $claveMat;?>>
+                        <input id="noUni" name="noUni" type="hidden" value=<?php echo $noUni;?>>
+                        <input id="claveCa" name="claveCa" type="hidden" value=<?php echo $claveCa;?>>
+                       <td><?php echo $res2[0]['TemaUni'];?></td>
+                       <td> <?php echo $res2[0]['Subtemas'];?> </td>
                        <td><input class="caja_de_texto_fecha" type="date" name="ProI" id="Pro"></td>
                        <td><input class="caja_de_texto_fecha" type="date" name="ProT" id="ProT"></td>
                        <td><input class="caja_de_texto_fecha" type="date" name="RealI" id="RealI"></td>
@@ -99,9 +101,13 @@ $res=$cone->Buscar($query,$parametros);
                </tbody>
             </table>   
         <div class="contenedor_botones">    
-            <input  id="btn" class="btnGuardar" type="submit" value="GUARDAR">
+            <input  id="btn" class="btnGuardar" type="submit" value="GUARDAR" onclick="location.href = '../ModificacionesBD/InsertaFechasEvaluacion.php' " >
+            <input  id="btn" class="btnCancelar" type="submit" value="CANCELAR" >
         </div>    
-    </form>  
+    </form> 
+    <?php
+    $cone->CerrarConexion(); 
+    ?>
 </div>
 </body>
 </html>
