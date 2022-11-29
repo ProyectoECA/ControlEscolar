@@ -35,11 +35,11 @@ $resultado= sqlsrv_query($conexion,$query);
             </div>
             <form  method="POST" action="../ModificacionesBD/InsertaMateria.php" class="cajas_de_texto_materias">
                 <label >Clave</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ASD-1234)" name="clave" id="clave" required pattern="^([a-zA-ZáéíóúÁÉÍÓÚñÑ.]{3})-([0-9]{4})$">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: ASD-1234)" name="clave" id="clave">
                 <label >Nombre</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: SISTEMAS)" name="nombre" id="nombre" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ. ]{3,30}$">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: SISTEMAS)" name="nombre" id="nombre" >
                 <label >Créditos</label>
-                <input class="caja_texto" type="text" placeholder="(EJEMPLO: 1)" name="creditos" id="creditos" required pattern="^[0-9]{1,2}$">
+                <input class="caja_texto" type="text" placeholder="(EJEMPLO: 1)" name="creditos" id="creditos" >
                 <div>
                 <label >Carreras</label>
                 <select class="combobox" name="carre" id="carre">
@@ -83,9 +83,9 @@ $resultado= sqlsrv_query($conexion,$query);
                 <label>Objetivos</label>      
                 <textarea name="objetivos" id="objetivos" class="textarea" cols="45" rows="8"></textarea>
 
-                    <!-- <button id="btn" class="btn_guardar" name="guardar" onclick="location.href = '../ModificacionesBD/InsertaMateria.php' ">GUARDAR</button> -->
-                    <button id="btn" class="btn_guardar" name="guardar" onclick="validar()">GUARDAR</button>
-                    <button class="btn_cancelar" name="cancela" onclick="location.href='http://localhost/index.php'">CANCELAR</button>    
+                    <button disabeled id="btn" class="btn_guardar" name="guardar" onclick="location.href = '../ModificacionesBD/InsertaMateria.php' ">GUARDAR</button>
+                    <!-- <button disabled id="btn" class="btn_guardar" name="guardar" onclick="validar()">GUARDAR</button> -->
+                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">CANCELAR</button>    
             </form>
         </div>
     </div>

@@ -95,12 +95,12 @@ $res=$cone->Buscar($query,$parametros);
                         <input id="claveCa" name="claveCa" type="hidden" value=<?php echo $claveCa;?>>
                        <td><?php echo $res2[0]['TemaUni'];?></td>
                        <td> <?php echo $res2[0]['Subtemas'];?> </td>
-                       <td><input class="caja_de_texto_fecha" type="text" name="ProI" id="ProI" value="<?php echo $res2[0]['ProI'];?>"></td>
-                       <td><input class="caja_de_texto_fecha" type="text" name="ProT" id="ProT" value="<?php echo $res2[0]['ProT'];?>"></td>
-                       <td><input class="caja_de_texto_fecha" type="text" name="RealI" id="RealI" value="<?php echo $res2[0]['RealI'];?>"></td>
-                       <td><input class="caja_de_texto_fecha" type="text" name="RealT" id=RealT value="<?php echo $res2[0]['RealT'];?>"></td>
-                       <td><input class="caja_de_texto_fecha" type="text" name="EvaP" id="EvaP" value="<?php echo $res2[0]['EvaI'];?>"></td>
-                       <td><input class="caja_de_texto_fecha" type="text" name="EvaR" id="EvaR" value="<?php echo $res2[0]['EvaT'];?>"></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="ProI" id="ProI" value="<?php echo $res2[0]['ProI'];?>" requiered pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$"></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="ProT" id="ProT" value="<?php echo $res2[0]['ProT'];?>" requiered pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$"></td></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="RealI" id="RealI" value="<?php echo $res2[0]['RealI'];?>" requiered pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$"></td></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="RealT" id=RealT value="<?php echo $res2[0]['RealT'];?>" requiered pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$"></td></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="EvaP" id="EvaP" value="<?php echo $res2[0]['EvaI'];?>" requiered pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$"></td></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="EvaR" id="EvaR" value="<?php echo $res2[0]['EvaT'];?>" requiered pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$"></td></td>
                    </tr>
                </tbody>
             </table>   
