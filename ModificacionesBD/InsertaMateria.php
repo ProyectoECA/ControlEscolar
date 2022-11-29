@@ -26,9 +26,27 @@ class Insertar_Mat{
 
             if(empty($res)){
                 #INSERTA EN TABLA MATERIAS
-                $query= "INSERT INTO [Materias] (ClaveMat,Nombre,Creditos,Carrera,Unidades,Objetivos,semestre) VALUES (?,?,?,?,?,?,?)";
-                $parametros=array($clave,$nombre,$creditos,$carrera,$unidades,$objetivos,$sem);
+                $query= "INSERT INTO [Materias] (ClaveMat,Nombre,Creditos,Unidades,Objetivos,semestre) VALUES (?,?,?,?,?,?)";
+                $parametros=array($clave,$nombre,$creditos,$unidades,$objetivos,$sem);
                 $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+
+                #COMPRUEBA QUE LA MATERIA SE IMPARTA EN TODAS LAS CARRERAS, SE INSERTA EN LA TABLA CARREMATERIAS
+                if($carrera=="Todas"){
+                    $query= "SELECT ClaveCa from Carreras";
+                    $resp=$cone->Buscar($query);
+                    for($i=0;$i<count($resp);$i++){
+                        $claveCa=$resp[$i]['ClaveCa'];
+                        $query= "INSERT INTO [CarreMaterias] (ClaveMat,ClaveCa) VALUES (?,?)";
+                        $parametros=array($clave,$claveCa);
+                        $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                    }
+                }
+                #SI SOLO SE IMPARTE EN UNA CARRERA, SE INSERTA EN LA TABLA CARREMATERIAS
+                else{
+                    $query= "INSERT INTO [CarreMaterias] (ClaveMat,ClaveCa) VALUES (?,?)";
+                    $parametros=array($clave,$carrera);
+                    $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                }
                 echo"<script>alert('Materia registrada con éxito');
                 location.href='/PaginasVista/registro_materias.php'</script>";
                     
