@@ -5,7 +5,7 @@ var b3=false;
 const expresiones = {
     clave:/^[a-zA-Z]{3}\-[0-9]{4}$/,
     nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ. ]{3,30}$/,
-    creditos:/^[0-9]{1,2}$/
+    creditos:/^[0-9-]{1,10}$/
 }
 
 const clave = document.getElementById('clave');
@@ -39,9 +39,8 @@ nombre.addEventListener('keyup', (e) => {
     var i = 0;
     var encontrado = false;
 
-    nombre.value = valorinput.replace(/\s/g, '').trim();
     console.log(valorinput);
-    if (expresiones.nom.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
+    if (expresiones.nom.test(valorinput.replace(/\s/g, '').trim()) && encontrado == false) {
         b2 = true;
         nombre.removeAttribute("style");
         nombre.style.border = "5px solid green";
