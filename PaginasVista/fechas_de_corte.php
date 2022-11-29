@@ -48,20 +48,20 @@ $resultado3=$cone->Buscar($query3,$parametros);
                 </select>
                 <label class="fecha_1"><b>Fecha 1</b></label>
                 <label class="planeada">Planeada</label>
-                <input class="input_planeada" type="text" name="plan1" id="plan1" value="<?php echo date_format($resultado3[0]['FechaP1'],"d/m/Y"); ?>" readonly>
+                <input class="input_planeada" type="text" name="plan1" id="plan1" value="<?php echo $resultado3[0]['FechaP1']; ?>" readonly>
                 <label class="real_fecha_1">Real</label>
-                <input class="input_real_fecha_1" type="date" name="real1" id="real1">
+                <input class="input_real_fecha_1" type="text" placeholder="01/01/2000" name="real1" id="real1">
                 <label class="fechas_2"><b>Fecha 2</b></label>
                 <label class="planeada_fecha_2">Planeada</label>
-                <input class="input_planeada_fecha_2" value="<?php echo date_format($resultado3[0]['FechaP2'],"d/m/Y")?>" type="text" name="plan2" id="plan2" readonly>
+                <input class="input_planeada_fecha_2" value="<?php echo $resultado3[0]['FechaP2'];?>" type="text" name="plan2" id="plan2" readonly>
                 <label class="real_fecha_2">Real</label>
-                <input class="input_real_fecha_2" type="date" placeholder="Contraseña" name="real2" id="real2">
+                <input class="input_real_fecha_2" type="text" placeholder="01/01/2000" name="real2" id="real2">
                 <label class="fechas_3"><b>Fecha 3</b></label>
                 <label class="planeada_fecha_3">Planeada</label>
-                <input class="input_planeada_fecha_3" value="<?php echo date_format($resultado3[0]['FechaP3'],"d/m/Y");?>" type="text" name="plan3" id="plan3"readonly>
+                <input class="input_planeada_fecha_3" value="<?php echo $resultado3[0]['FechaP3'];?>" type="text" name="plan3" id="plan3"readonly>
 
                 <label class="real_fecha_3">Real</label>
-                <input class="input_real_fecha_3" type="date" placeholder="Contraseña" name="real3" id="real3">
+                <input class="input_real_fecha_3" type="text" placeholder="01/01/2000" name="real3" id="real3">
                 <div class="bot">
                     <button class="btn" style="float: right;" id="btn"type="submit" onclick="location.href ='/ModificacionesBD/InsertaFechaCorte.php'">Guardar</button>
                     <button class="btn" style="float: left;" type="button">Cancelar</button> 
