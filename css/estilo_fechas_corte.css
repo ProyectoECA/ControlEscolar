@@ -61,6 +61,7 @@ body{
     border: 2px solid gray;
     padding-top: 0%;
     background-color: white;
+    background: #1e355e;
 } 
 
 
@@ -72,6 +73,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background: #1e355e;
 }  
 
 .input_planeada{
@@ -147,63 +149,63 @@ body{
 }
 .fecha_1{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(10%,-250%);
 }
 .planeada{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(-120%,-250%);
 }
 .real_fecha_1{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(390%,-450%);
 }
 .fechas_2{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(10%,-390%);
 }
 .planeada_fecha_2{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(-120%,-390%);
 }
 .real_fecha_2{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(399%,-580%);
 }
 .fechas_3{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(10%,-600%);
 }
 .planeada_fecha_3{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(-120%,-620%);
 }
 .real_fecha_3{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(399%,-820%);
 }
 .carrera{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(-300%,-50%);
 }
 .clave_mate{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
     transform:translate(180%,-290%);
 }
 
 label{
     font : 1.3em "typewriter";
-    color: black;
+    color: white;
 }
 .combobox_carrera{
     display: block;
