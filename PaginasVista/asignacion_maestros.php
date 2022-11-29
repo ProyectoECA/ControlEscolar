@@ -59,7 +59,8 @@ $resultado1= sqlsrv_query($conexion,$query1);
                 <label >Clave maestro</label>
                 <input class="caja_texto" type="text" placeholder="" name="maestro" id="maestro">
                     <button id="btn" class="btn_guardar" name="guardar" onclick="location.href = '/ModificacionesBD/AsignaMaestros.php' " >Guardar</button>
-                    <button class="btn_cancelar" name="cancela" onclick="location.href='http://localhost/index.php'">Cancelar</button>    
+                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">CANCELAR</button>  
+                      
             </form>
         </div>
     </div>

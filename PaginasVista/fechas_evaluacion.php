@@ -7,13 +7,9 @@ $claveCa=$_GET['claveCa'];
 
 $cone=new CRUD_SQL_SERVER();
 $cone->conexionBD();
-/*
-$que="SELECT ClaveCa from [Carreras] where NombreCarre=?";
-$para=array($carrera);
-$re=$cone->Buscar($que,$para);
-$claveCa=$re[0]['ClaveCa'];*/
 
-$query="SELECT ClaveMat,Nombre, Objetivos from [Materias] where ClaveMat=? and carrera=?";
+$query="SELECT CarreMaterias.ClaveMat,Nombre, Objetivos from Materias,CarreMaterias 
+where Materias.ClaveMat=? and CarreMaterias.ClaveCa=? and Materias.ClaveMat=CarreMaterias.ClaveMat";
 $parametros=array($claveMat,$claveCa);
 $res=$cone->Buscar($query,$parametros);
 
@@ -86,8 +82,8 @@ $res=$cone->Buscar($query,$parametros);
                 <tr>
                 <?php
                     #SABER CUANTAS UNIDADES TIENE LA MATERIA
-                    $query1="SELECT * from CaptuUnidades where ClaveMat=?";
-                    $parametros1=array($claveMat);
+                    $query1="SELECT * from CaptuUnidades where ClaveMat=? and ClaveCa=?";
+                    $parametros1=array($claveMat,$claveCa);
                     $res1=$cone->Buscar($query1,$parametros1);
                     
                     for($i=0;$i<count($res1);$i++){
@@ -101,14 +97,14 @@ $res=$cone->Buscar($query,$parametros);
 
                         #SE LLENE LA TABLA CON LOS DATOS QUE TIENE CADA UNIDAD
                         ?>
-                        <td><a href="pagina_tema_1.php"><?php echo $res2[0]['TemaUni'];?></a></td>
+                        <td><a href="pagina_tema_1.php?claveMa=<?php echo $claveMat;?>&NoUni=<?php echo $i+1;?>&claveCa=<?php echo $claveCa;?>"><?php echo $res2[0]['TemaUni'];?></a></td>
                         <td><?php echo $res2[0]['Subtemas'];?></td>
-                        <td><?php echo date_format($res2[0]['ProI'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['ProT'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['RealI'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['RealT'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['EvaI'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['EvaT'],"d/m/y");?></td>
+                        <td><?php echo $res2[0]['ProI'];?></td>
+                        <td><?php echo $res2[0]['ProT'];?></td>
+                        <td><?php echo $res2[0]['RealI'];?></td>
+                        <td><?php echo $res2[0]['RealT'];?></td>
+                        <td><?php echo $res2[0]['EvaI'];?></td>
+                        <td><?php echo $res2[0]['EvaT'];?></td>
                         </tr>
 
              <?php
@@ -116,9 +112,11 @@ $res=$cone->Buscar($query,$parametros);
               ?>
             </tbody>
          </table>
+         <?php
+            $cone->CerrarConexion();
+        ?>
 
     </div>  
     <script src="../SesionesUsuario/session_expiracion.js"></script>
-    <script src="../PaginasVista/script/fechas_Eva.js"></script>
 </body>
 </html>

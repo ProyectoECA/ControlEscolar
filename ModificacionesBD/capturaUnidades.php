@@ -22,12 +22,16 @@ class Registra_Unidad{
             //echo $id.$uni.$tema.$sub;
             
             #COMPRUEBA QUE EL NUMERO DE UNIDAD QUE INTENA REGISTRAR NO EXCEDA LOS DE LA MATERIA
-            $query="SELECT Unidades FROM Materias WHERE ClaveMat='".$id."'";
-            $datos=sqlsrv_query($conexion,$query);
+            $query="SELECT Unidades FROM Materias WHERE ClaveMat=?";
+            $parametros=array($id);
+            $datos=sqlsrv_query($conexion,$query,$parametros);
             $ban=0;
             while($row = sqlsrv_fetch_array($datos)){
+               
                 $unidad=$row["Unidades"];
-                if($uni>intval($unidad)){
+                echo "uni". $uni;
+                 echo "uni2". $unidad;
+                if($uni>($unidad)){
                     $ban=1;
                 }
                 else if($uni==$unidad){
@@ -36,8 +40,11 @@ class Registra_Unidad{
             }
             
             #COMPRUEBA QUE ESA UNIDAD NO SE ENCUENTRE CAPTURADA
-            $query="SELECT NoUni FROM CaptuUnidades WHERE ClaveMat='".$id."'";
-            $datos2=sqlsrv_query($conexion,$query);
+            $query="SELECT NoUni FROM CaptuUnidades WHERE ClaveMat=?";
+            $parametros=array($id);
+            $datos2=sqlsrv_query($conexion,$query,$parametros);
+            echo "checando";
+            var_dump($datos2);
             while($row = sqlsrv_fetch_array($datos2)){
                 $unidad=$row["NoUni"];
                 if($uni==$unidad){
@@ -53,12 +60,26 @@ class Registra_Unidad{
                         location.href='/PaginasVista/captura_Unidades.php'</script>";
             }
             else{
-            $query="INSERT INTO [CaptuUnidades] (ClaveMat,NoUni,TemaUni,Subtemas) VALUES (?,?,?,?)";
-            $parametros=array($id,$uni,$tema,$sub);
-            $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                #COMPRUEBA CUANTAS CARRERAS LLEVAN LA MATERIA, INSERTA EN LA TABLA CAPTUUNIDADES
+                $query= "SELECT ClaveCa from CarreMaterias where ClaveMat=?";
+                $parametros=array($id);
+                $resp=$cone->Buscar($query,$parametros);
+                for($i=0;$i<count($resp);$i++){
+                    $claveCa=$resp[$i]['ClaveCa'];
+                    $query="INSERT INTO [CaptuUnidades] (ClaveMat,NoUni,TemaUni,Subtemas,ClaveCa) VALUES (?,?,?,?,?)";
+                    $parametros=array($id,$uni,$tema,$sub,$claveCa);
+                    $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                    
+                    #INICIALIZA LA TABLA FECHASEVA
+                    $val='';
+                    $query="INSERT INTO [FechasEva] (ClaveMat,NoUniE,ClaveCa,ProI,ProT,RealI,RealT,EvaI,EvaT) VALUES (?,?,?,?,?,?,?,?,?)";
+                    $parametros=array($id,$uni,$claveCa,$val,$val,$val,$val,$val,$val);
+                    $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
-            echo"<script>alert('Unidad capturada con éxito');
-                        location.href='/PaginasVista/captura_Unidades.php'</script>";
+                    }
+                
+                echo"<script>alert('Unidad capturada con éxito');
+                            location.href='/PaginasVista/captura_Unidades.php'</script>";
             }
         }
         else{
