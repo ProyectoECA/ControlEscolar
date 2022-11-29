@@ -27,27 +27,19 @@ class Registra_Unidad{
             $datos=sqlsrv_query($conexion,$query,$parametros);
             $ban=0;
             while($row = sqlsrv_fetch_array($datos)){
-               
                 $unidad=$row["Unidades"];
-                echo "uni". $uni;
-                 echo "uni2". $unidad;
-                if($uni>($unidad)){
+                if(intval($uni)>intval($unidad)){;
                     $ban=1;
                 }
-                else if($uni==$unidad){
-                    $ban=2;
-                }
+               
             }
-            
             #COMPRUEBA QUE ESA UNIDAD NO SE ENCUENTRE CAPTURADA
-            $query="SELECT NoUni FROM CaptuUnidades WHERE ClaveMat=?";
-            $parametros=array($id);
-            $datos2=sqlsrv_query($conexion,$query,$parametros);
-            echo "checando";
-            var_dump($datos2);
-            while($row = sqlsrv_fetch_array($datos2)){
-                $unidad=$row["NoUni"];
-                if($uni==$unidad){
+            $query1="SELECT NoUni FROM CaptuUnidades WHERE ClaveMat=?";
+            $parametros1=array($id);
+            $datos2=sqlsrv_query($conexion,$query1,$parametros1);
+            while($row2 = sqlsrv_fetch_array($datos2)){
+                $unidad=$row2["NoUni"];
+                if(intval($uni)==intval($unidad)){
                     $ban=2;
                 }
             }
