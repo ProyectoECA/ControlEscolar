@@ -21,14 +21,14 @@ clave.addEventListener('keyup', (e) => {
         b1 = true;
         clave.removeAttribute("style");
         clave.style.border = "5px solid green";
-        /* validar(); */
+        validar();
 
     }
     else {
         b1 = false;
         clave.removeAttribute("style");
         clave.style.border = "5px solid red";
-        /* validar(); */
+        validar();
     }
 });
 
@@ -44,14 +44,14 @@ nombre.addEventListener('keyup', (e) => {
         b2 = true;
         nombre.removeAttribute("style");
         nombre.style.border = "5px solid green";
-        /* validar(); */
+        validar();
 
     }
     else {
         b2 = false;
         nombre.removeAttribute("style");
         nombre.style.border = "5px solid red";
-        /* validar(); */
+        validar();
     }
 });
 
@@ -68,31 +68,24 @@ creditos.addEventListener('keyup', (e) => {
         b3 = true;
         creditos.removeAttribute("style");
         creditos.style.border = "5px solid green";
-        /* validar(); */
+        validar();
 
     }
     else {
         b3 = false;
         creditos.removeAttribute("style");
         creditos.style.border = "5px solid red";
-        /* validar(); */
+        validar();
     }
 });
 
 function validar(){
     const bot = document.getElementById('btn');
     if(b1 == true && b2 == true && b3 == true ){
-        location.href = '../ModificacionesBD/InsertaMateria.php'
+        bot.disabled=false; 
     }
     else{
-        if (b1==false){
-            clave.style.border = "5px solid red";
-        }
-        if (b2==false){
-            nombre.style.border = "5px solid red";
-        }
-        if (b3==false){
-            creditos.style.border = "5px solid red";
-        }
+        bot.disabled=true; 
     }
+  
 }

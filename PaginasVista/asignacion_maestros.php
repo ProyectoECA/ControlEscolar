@@ -57,14 +57,16 @@ $resultado1= sqlsrv_query($conexion,$query1);
                     </select>
                 </div>   
                 <label >Clave maestro</label>
-                <input class="caja_texto" type="text" placeholder="" name="maestro" id="maestro">
-                    <button id="btn" class="btn_guardar" name="guardar" onclick="location.href = '/ModificacionesBD/AsignaMaestros.php' " >Guardar</button>
+                <input class="caja_texto" type="text" placeholder="" name="maestro" id="maestro" required pattern="^RH[\d]{3}$">
+                   <!--  <button id="btn" class="btn_guardar" name="guardar" onclick="location.href = '/ModificacionesBD/AsignaMaestros.php' " >Guardar</button> -->
+                    <button id="btn" class="btn_guardar" name="guardar" onclick="validar()" >Guardar</button>
                     <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">CANCELAR</button>  
                       
             </form>
         </div>
     </div>
     <script src="../SesionesUsuario/session_expiracion.js"></script>
+    <script src="../PaginasVista/script/asignacion_maestro.js"></script>
 </body>
 </html>
 <?php
