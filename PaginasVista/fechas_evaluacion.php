@@ -116,7 +116,8 @@ $res=$cone->Buscar($query,$parametros);
             $cone->CerrarConexion();
         ?>
 
-    </div>  
+    </div>
+    <input  id="btn" class="btnCancelar" type="button" value="CANCELAR" onclick="location.href = '../PaginasVista/principal_maestros.html' ">  
     <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>
