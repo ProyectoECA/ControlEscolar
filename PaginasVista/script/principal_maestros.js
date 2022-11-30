@@ -1,3 +1,5 @@
+
+
 const USER_CONTENEDOR = document.getElementById("nameuser");
 const TABLA = document.getElementById("tabla_maestros").getElementsByTagName('tbody')[0];
 
@@ -60,3 +62,4 @@ function RellenarTabla(materias) {
         
     }
 }
+
