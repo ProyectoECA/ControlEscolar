@@ -1,25 +1,23 @@
 <?php
-define("ServerName1", 'controlescolarservidor.database.windows.net');
-define("Database1", "ConEscolarBD");
-define("UID1", "nochistlanadm");
-define("PWD1", "Sok03951");
-define("CharacterSet1", 'UTF-8');
 class ConsultaMat{
     function consultando(){
-
-        $connectionInfo=array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
-        $con = sqlsrv_connect(ServerName1, $connectionInfo); 
+        $serverName='localhost';
+        $connectionInfo=array("Database"=>"ConEscolarNoc", "UID"=>"Admini", "PWD"=>"control2022", "CharacterSet"=>"UTF-8");
+        $con = sqlsrv_connect($serverName, $connectionInfo); 
 
 
         #CONSULTA GENERAL
         $salida="";
-        $query="SELECT * from Materias";
+        $query="SELECT Materias.ClaveMat,Nombre,Creditos,Unidades,Objetivos,Materias.semestre,NombreCarre
+        FROM Materias,Carreras,CarreMaterias where CarreMaterias.ClaveCa=Carreras.ClaveCa";
 
         #CONSULTA INTELIGENTE
         if(isset($_POST['consulta'])){
             $q=($_POST['consulta']);
-            $query="SELECT * from Materias WHERE
-            ClaveMat like '%".$q."%' OR Nombre like '%".$q."%' OR Carrera like '%".$q."%' ORDER BY ClaveMat";
+            $query="SELECT Materias.ClaveMat,Nombre,Creditos,Unidades,Objetivos,Materias.semestre,NombreCarre
+            FROM Materias,Carreras,CarreMaterias where CarreMaterias.ClaveCa=Carreras.ClaveCa and
+            (Materias.ClaveMat like '%".$q."%' OR Nombre like '%".$q."%' OR NombreCarre like '%".$q."%' 
+            OR Unidades like '%".$q."%' OR Materias.semestre like '%".$q."%') ORDER BY Materias.ClaveMat";
         }
 
         $res=sqlsrv_query($con, $query);
@@ -33,6 +31,7 @@ class ConsultaMat{
                    <th>Nombre</th>
                    <th>Créditos</th>
                    <th>Carrera</th>
+                   <th>Semestre</th>
                    <th>No. Unidades</th>
                    <th>Objetivos</th>
                </tr>
@@ -42,7 +41,8 @@ class ConsultaMat{
                 $clave=$row['ClaveMat'];
                 $nom=$row['Nombre'];
                 $cred=$row['Creditos'];
-                $carre=$row['Carrera'];
+                $carre=$row['NombreCarre'];
+                $sem=$row['semestre'];
                 $uni=$row['Unidades'];
                 $obj=$row['Objetivos'];
 
@@ -52,6 +52,7 @@ class ConsultaMat{
                     <th>$nom</th> 
                     <th>$cred</th> 
                     <th>$carre</th>
+                    <th>$sem</th>
                     <th>$uni</th>
                     <th>$obj</th>
                 </tr>";

@@ -27,7 +27,7 @@ class Modifica_Mate{
                 $parametros=array($credi);
                 $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
-                $query="UPDATE [Materias] SET Carrera=? WHERE ClaveMat='".$clave."'";
+                $query="UPDATE [CarreMaterias] SET ClaveCa=? WHERE ClaveMat='".$clave."'";
                 $parametros=array($carrera);
                 $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
@@ -55,6 +55,10 @@ class Modifica_Mate{
         else if(isset($_POST['elimina'])){
             try{
                 $query="DELETE FROM [Materias] WHERE ClaveMat=?";
+                $parametros=array($clave);
+                $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+
+                $query="DELETE FROM [CarreMaterias] WHERE ClaveMat=?";
                 $parametros=array($clave);
                 $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
