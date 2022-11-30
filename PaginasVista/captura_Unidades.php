@@ -59,7 +59,7 @@ $resultado= sqlsrv_query($conexion,$query);
             <label class="etiquetas" style="float: center;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subtemas</b></label> 
             <textarea class="textarea" cols="45" rows="8"  name="subtema" id="subtema"></textarea>
             <input class="btnGuardar" type="submit" value="GUARDAR" onclick="location.href = '../ModificacionesBD/capturaUnidades.php' ">
-            <input class="btnCancelar" type="button" value="CANCELAR">
+            <input class="btnCancelar" type="button" value="CANCELAR" onclick="location.href='https://controlescolarweb.azurewebsites.net'">
           </form>
     </div>
     <script src="../SesionesUsuario/session_expiracion.js"></script>

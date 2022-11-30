@@ -1,5 +1,3 @@
-
-
 const USER_CONTENEDOR = document.getElementById("nameuser");
 const TABLA = document.getElementById("tabla_maestros").getElementsByTagName('tbody')[0];
 
@@ -17,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function(){
         item_nombre.innerHTML = "Bienvenid@ " + data.nombre;
         USER_CONTENEDOR.appendChild(item_nombre);
       
-
         RellenarTabla(data.materias);
 
     });
@@ -33,8 +30,10 @@ function RellenarTabla(materias) {
         var celda_nombre = document.createElement("td");
         var celda_carrera = document.createElement("td");
 
-        var carrera = materias[i][2];
+        
         var clave = materias[i][0];
+        var carrera = materias[i][2];
+        var clave_carrera = materias[i][3];
 
         var clave_materia = document.createTextNode(clave);
         var nombre_materia = document.createTextNode(materias[i][1]);
@@ -47,8 +46,8 @@ function RellenarTabla(materias) {
         link_clave.appendChild(clave_materia);
         link_nombre.appendChild(nombre_materia);
         
-        link_clave.href = "../ModificacionesBD/CapturaCalif.php?clave="+encodeURIComponent(clave)+"&carrera="+encodeURIComponent(carrera); 
-        link_nombre.href = "../ModificacionesBD/fechas_evaluacion.html?clave="+encodeURIComponent(clave)+"&carrera="+encodeURIComponent(carrera);
+        link_clave.href = "../PaginasVista/captura_de_calificaciones.php?claveMa="+encodeURIComponent(clave)+"&carrera="+encodeURIComponent(carrera)+"&claveCa="+encodeURIComponent(clave_carrera); 
+        link_nombre.href = "../Paginasvista/fechas_evaluacion.php?claveMa="+encodeURIComponent(clave)+"&carrera="+encodeURIComponent(carrera)+"&claveCa="+encodeURIComponent(clave_carrera);
 
         celda_clave.appendChild(link_clave);
         celda_nombre.appendChild(link_nombre);
@@ -61,4 +60,3 @@ function RellenarTabla(materias) {
         
     }
 }
-

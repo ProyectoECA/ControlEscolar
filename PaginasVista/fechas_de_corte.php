@@ -64,7 +64,7 @@ $resultado3=$cone->Buscar($query3,$parametros);
                 <input class="input_real_fecha_3" type="date" placeholder="Contraseña" name="real3" id="real3">
                 <div class="bot">
                     <button class="btn" style="float: right;" id="btn"type="submit" onclick="location.href ='/ModificacionesBD/InsertaFechaCorte.php'">Guardar</button>
-                    <button class="btn" style="float: left;" type="button">Cancelar</button> 
+                    <button class="btn" style="float: left;" type="button" onclick="location.href='https://controlescolarweb.azurewebsites.net'">Cancelar</button> 
                 </div>
             </form>
         </div>
