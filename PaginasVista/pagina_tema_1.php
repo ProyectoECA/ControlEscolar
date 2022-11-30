@@ -105,7 +105,8 @@ $res=$cone->Buscar($query,$parametros);
                </tbody>
             </table>   
         <div class="contenedor_botones">    
-            <input  id="btn" class="btnGuardar" type="submit" value="GUARDAR" onclick="location.href = '../ModificacionesBD/InsertaFechasEvaluacion.php' " >
+            <input  id="btn" class="btnGuardar" type="submit" value="GUARDAR" onclick="validar()" >
+            <!-- <input  id="btn" class="btnGuardar" type="submit" value="GUARDAR" onclick="location.href = '../ModificacionesBD/InsertaFechasEvaluacion.php' " > -->
             <input  id="btn" class="btnCancelar" type="button" value="CANCELAR" onclick="location.href = '../PaginasVista/principal_maestros.html' ">
         </div>    
     </form> 
