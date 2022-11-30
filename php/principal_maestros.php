@@ -14,7 +14,7 @@ if(isset($_SESSION['user'])){
     $user = $_SESSION['user'][0];
 
 
-    $sql = "SELECT AsigMaes.ClaveMat, Materias.Nombre, Carreras.NombreCarre FROM Materias,AsigMaes,Carreras
+    $sql = "SELECT AsigMaes.ClaveMat, Materias.Nombre, Carreras.NombreCarre, Carreras.ClaveCa FROM Materias,AsigMaes,Carreras
             WHERE AsigMaes.Maestro = ? AND AsigMaes.ClaveMat = Materias.ClaveMat
             AND AsigMaes.ClaveCa = Carreras.ClaveCa";
     $parametros = array($user);
