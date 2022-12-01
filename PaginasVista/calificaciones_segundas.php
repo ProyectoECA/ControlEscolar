@@ -1,10 +1,9 @@
 <?php
-session_start();
 include_once "../CRUD/CRUD_bd_SQLServer.php";
 
-$claveMat=$_GET['claveMa'];
-$carrera=$_GET['carrera'];
-$claveCa=$_GET['claveCa'];
+$claveMat=$_POST['clavemat1'];
+$carrera=$_POST['carrera1'];
+$claveCa=$_POST['claveca1'];
 
 $cone=new CRUD_SQL_SERVER();
 $cone->conexionBD();
@@ -36,7 +35,7 @@ $resul = $cone->Buscar($query,$parametros);
         <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="17%" >
       </div>
       <div class="Contenedor_ubicacion">
-           <h2 class="ubicacion">CAPTURA CALIFICACIONES</h2>
+           <h2 class="ubicacion">CAPTURA CALIFICACIONES SEGUNDAS</h2>
       </div>
       <div class="Contenedor_ubicacion">
            <h3 class="ubicacion"><?php echo $resul[0]['Nombre'];?></h3>
@@ -64,14 +63,6 @@ $resul = $cone->Buscar($query,$parametros);
                 <th>Calificación unidad 10</th>
             </tr>
             <?php
-            #CONSULTA LAS FECHAS DE CORTE
-            $query="SELECT * FROM FechasCorte where ClaveMat=? and NomCarrera=?";
-            $parametros = array($claveMat,$claveCa);
-            $feCo = $cone->Buscar($query,$parametros);
-            $fec1=strtotime($feCo[0]['FechaC1']);
-            $fec2=strtotime($feCo[0]['FechaC2']);
-            $fec3=strtotime($feCo[0]['FechaC3']);
-
             #CONSULTA PARA VER CUANTAS UNIDADES TIENE LA MATERIA Y HABILITAR SUS UNIDADES CORRESPONDIENTES
             $query1="SELECT Unidades FROM Materias where ClaveMat=?";
             $parametros1 = array($claveMat);
@@ -86,48 +77,11 @@ $resul = $cone->Buscar($query,$parametros);
                 $res2 = $cone->Buscar($query2,$parametros2);
                 $nomComple=$res2[$i]['ApePaterno'].' '.$res2[$i]['ApeMaterno'].' '.$res2[$i]['Nombre'];
 
-                #CONSULTA LAS FECHAS DE EVALUACION 
-                $uni=$i+1;
-                $query3="SELECT EvaT FROM FechasEva where ClaveMat=? and NoUniE=? and ClaveCa=?";
-                $parametros3 = array($claveMat,$uni,$claveCa);
-                $res3 = $cone->Buscar($query3,$parametros3);
-                $fecha=strtotime($res3[0]['EvaT']);
-                #COMPARA LAS FECHAS, si BAN=1 BLOQUE CAJAS, SI BAN=0 DESBLOQUEA CAJAS
                 $ban=0;
-                if($fec1==""){
-                    $ban=0;
-                }
-                else if($fec1!=""){
-                    if($fecha<$fec1){
-                        #BLOQUE CAJAS DE FECHAS DE CORTE 1
-                        $ban=1;
-                    }
-                    else{
-                        if($fec2!=""){
-                            if($fecha<$fec2){
-                                #BLOQUE CAJAS DE FECHAS DE CORTE 2
-                                $ban=1;
-                            }
-                            else{
-                                if($fec3!=""){
-                                    if($fecha<$fec3){
-                                        #BLOQUE CAJAS DE FECHAS DE CORTE 3
-                                        $ban=1;
-                                    }
-                                    else{
-                                        #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES
-                                        $ban=1;
-                                    }
-                                }
-                                else{
-                                    $ban=0;
-                                }
-                            }
-                        }
-                        else{
-                            $ban=0;
-                        }
-                    }
+                $califin=$res2[$i]['CalFinal'];
+
+                if($califin!='N/A'){
+                    $ban=1;
                 }
 
                 $x=1;
@@ -179,14 +133,9 @@ $resul = $cone->Buscar($query,$parametros);
         </table>
     </div>
     </form>
-    <form method="POST" action="../PaginasVista/calificaciones_segundas.php">
-        <input name="claveca1" value="<?php echo $claveCa;?>" hidden>
-        <input name="clavemat1" value="<?php echo $claveMat;?>" hidden>
-        <input name="carrera1" value="<?php echo $carrera;?>" hidden>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="btn_Guardar" id="btn" type="submit" onclick="location.href ='/ModificacionesBD/CapturaCalif.php'">Guardar</button>
-        <button class="btn_Segundas" type="button"  onclick="location.href ='../PaginasVista/calificaciones_segundas.php'">Segundas</button>
         <button class="btn_Cancelar" type="button" onclick="location.href = '../PaginasVista/principal_maestros.html' ">Cancelar</button>
-    </form>
     </div>   
     <!---<script src="../PaginasVista/script/captura_calificaciones_tabla.js "></script> -->
 </body>
