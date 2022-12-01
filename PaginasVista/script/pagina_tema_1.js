@@ -4,9 +4,8 @@ var b3=true;
 var b4=true;
 var b5=true;
 var b6=true;
-
 const expresiones = {
-    fecha:/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/,
+    fecha: /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/,
 }
 
 const proi = document.getElementById('ProI');
