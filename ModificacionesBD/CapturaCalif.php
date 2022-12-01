@@ -43,6 +43,77 @@ class InsertaCalificacion{
             $cal9=$_POST["$u9"];
             $cal10=$_POST["$u10"];
 
+            #COMPARAMOS PARA SABER SI APROBO O NO
+            $query1="SELECT Unidades FROM Materias where ClaveMat=?";
+            $parametros1 = array($mat);
+            $res1 = $cone->Buscar($query1,$parametros1);
+            //var_dump($res1);
+            $val=$res1[0]['Unidades'];
+            //echo $val;
+            $x=0;
+
+            $x++;
+            if(intval($cal1)<70 and $x<intval($val)){
+                $cal1='N/A';
+            }
+            $x++;
+            if(intval($cal2)<70 and $x<intval($val)){
+                $cal2='N/A';
+            }
+            $x++;
+            if(intval($cal3)<70 and $x<intval($val)){
+                $cal3='N/A';
+            }
+            $x++;
+            if(intval($cal4)<70 and $x<intval($val)){
+                $cal4='N/A';
+            }
+            $x++;
+            if(intval($cal5)<70 and $x<intval($val)){
+                $cal5='N/A';
+            }
+            $x++;
+            if(intval($cal6)<70 and $x<intval($val)){
+                $cal6='N/A';
+            }
+            $x++;
+            if(intval($cal7)<70  and $x<intval($val)){
+                $cal7='N/A';
+            }
+            $x++;
+            if(intval($cal8)<70 and $x<intval($val) ){
+                $cal8='N/A';
+            }
+            $x++;
+            if(intval($cal9)<70 and $x<intval($val)){
+                $cal9='N/A';
+            }
+            $x++;
+            if(intval($cal9)<70 and $x<intval($val)){
+                $cal10='N/A';
+            }
+
+            #VERIFICAMOS SI ESTA LA 3RA FECHA DE CORTE PARA CALCULAR PROMEDIO FINAL
+            $query2="SELECT FechaC3 FROM FechasCorte where ClaveMat=?";
+            $parametros2 = array($mat);
+            $res2 = $cone->Buscar($query2,$parametros2);
+            $val2=$res2[0]['FechaC3'];
+            if($val2!=''){
+                if($cal1=='N/A' or $cal2=='N/A' or $cal3=='N/A' or $cal4=='N/A' or $cal5=='N/A' 
+                or $cal6=='N/A' or $cal7=='N/A' or $cal8=='N/A' or $cal9=='N/A' or $cal10=='N/A'){
+                    $calFin='N/A';
+                }
+                else{
+                    $suma=intval($cal1)+intval($cal2)+intval($cal3)+intval($cal4)+intval($cal5)+intval($cal6)+intval($cal7)+intval($cal8)+intval($cal9)+intval($cal10);
+                    echo $suma." -";
+                    $prom=round(($suma)/intval($val));
+                    echo $prom." -";
+                    $calFin=strval($prom);
+                    echo $calFin;
+                }
+
+            }
+
             #ACTUALIZAMOS EN BD
             $query="UPDATE [CapturaCal] SET CalFinal=? WHERE NoControl=? and ClaveMat=?";
             $parametros=array($calFin,$noCont,$mat);
