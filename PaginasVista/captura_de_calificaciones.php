@@ -78,7 +78,7 @@ $resul = $cone->Buscar($query,$parametros);
             $res1 = $cone->Buscar($query1,$parametros1);
             $numUni=$res1[0]['Unidades'];
 
-            for($i=0;$i<count($res);$i++){
+            for($i=0;$i<count($res1);$i++){
                 #CONSULTA PARA TODOS LOS ALUMNOS
                 $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
                 and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
@@ -87,8 +87,9 @@ $resul = $cone->Buscar($query,$parametros);
                 $nomComple=$res2[$i]['ApePaterno'].' '.$res2[$i]['ApeMaterno'].' '.$res2[$i]['Nombre'];
 
                 #CONSULTA LAS FECHAS DE EVALUACION 
-                $query3="SELECT EvaT FROM FechasEva where ClaveMat=? and ClaveCa=? and NoUniE=?";
-                $parametros3 = array($claveMat,$claveCa,($i+1));
+                $uni=$i+1;
+                $query3="SELECT EvaT FROM FechasEva where ClaveMat=? and NoUniE=? and ClaveCa=?";
+                $parametros3 = array($claveMat,$uni,$claveCa);
                 $res3 = $cone->Buscar($query3,$parametros3);
                 $fecha=strtotime($res3[0]['EvaT']);
                 #COMPARA LAS FECHAS, si BAN=1 BLOQUE CAJAS, SI BAN=0 DESBLOQUEA CAJAS
@@ -99,21 +100,18 @@ $resul = $cone->Buscar($query,$parametros);
                 else if($fec1!=""){
                     if($fecha<$fec1){
                         #BLOQUE CAJAS DE FECHAS DE CORTE 1
-                        echo "CORTE 1";
                         $ban=1;
                     }
                     else{
                         if($fec2!=""){
                             if($fecha<$fec2){
                                 #BLOQUE CAJAS DE FECHAS DE CORTE 2
-                                echo "CORTE 2";
                                 $ban=1;
                             }
                             else{
                                 if($fec3!=""){
                                     if($fecha<$fec3){
                                         #BLOQUE CAJAS DE FECHAS DE CORTE 3
-                                        echo "CORTE 3";
                                         $ban=1;
                                     }
                                     else{
@@ -132,13 +130,8 @@ $resul = $cone->Buscar($query,$parametros);
                     }
                 }
 
-
-
-
-
                 $x=1;
                 $state='';
-
                 #SE LLENA LA TABLA CON LOS INPUTS DE CALIFICACIONES
                 ?>
                 <td><?php echo $nomComple;?></td>
@@ -177,7 +170,7 @@ $resul = $cone->Buscar($query,$parametros);
                 <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> <?php $x++; echo $state;?>> </td>
             </tr>
              <?php
-                    }
+                   }
               ?>
          </thead>
          <tbody>

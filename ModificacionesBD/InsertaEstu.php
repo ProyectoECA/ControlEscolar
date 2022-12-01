@@ -86,6 +86,13 @@ class Insertar_Estu{
                             $query= "INSERT INTO [AlumMate] (NoControl,ClaveMat,Rep) VALUES (?,?,?)";
                             $parametros=array($clave,$mat,$rep);
                             $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+
+                            #AGREGA A CAPTURACAL
+                            $ca="0";
+                            $query= "INSERT INTO [CapturaCal] (NoControl,ClaveMat,ClaveCa,Repeticion,CalFinal,Uni1,Uni2,Uni3,Uni4,Uni5,Uni6,Uni7,Uni8,Uni9,Uni10) 
+                            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                            $parametros=array($clave,$mat,$carrera,$rep,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca);
+                            $cone->Insertar_Eliminar_Actualizar($query,$parametros);
                         }
 
                         #Agrega contraseña en hash
@@ -117,13 +124,13 @@ class Insertar_Estu{
                             $query= "INSERT INTO [AlumMate] (NoControl,ClaveMat,Rep) VALUES (?,?,?)";
                             $parametros=array($clave,$mat,$rep);
                             $cone->Insertar_Eliminar_Actualizar($query,$parametros);
-                            /*
+                            
                             #AGREGA A CAPTURACAL
                             $ca="0";
                             $query= "INSERT INTO [CapturaCal] (NoControl,ClaveMat,ClaveCa,Repeticion,CalFinal,Uni1,Uni2,Uni3,Uni4,Uni5,Uni6,Uni7,Uni8,Uni9,Uni10) 
                             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                             $parametros=array($clave,$mat,$carrera,$rep,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca);
-                            $cone->Insertar_Eliminar_Actualizar($query,$parametros);*/
+                            $cone->Insertar_Eliminar_Actualizar($query,$parametros);
                         }
 
                         #Agrega contraseña en hash
