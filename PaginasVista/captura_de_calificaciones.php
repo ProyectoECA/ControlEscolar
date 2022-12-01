@@ -64,6 +64,14 @@ $resul = $cone->Buscar($query,$parametros);
                 <th>Calificación unidad 10</th>
             </tr>
             <?php
+            #CONSULTA LAS FECHAS DE CORTE
+            $query="SELECT * FROM FechasCorte where ClaveMat=? and NomCarrera=?";
+            $parametros = array($claveMat,$claveCa);
+            $feCo = $cone->Buscar($query,$parametros);
+            $fec1=strtotime($feCo[0]['FechaC1']);
+            $fec2=strtotime($feCo[0]['FechaC2']);
+            $fec3=strtotime($feCo[0]['FechaC3']);
+
             #CONSULTA PARA VER CUANTAS UNIDADES TIENE LA MATERIA Y HABILITAR SUS UNIDADES CORRESPONDIENTES
             $query1="SELECT Unidades FROM Materias where ClaveMat=?";
             $parametros1 = array($claveMat);
@@ -78,6 +86,56 @@ $resul = $cone->Buscar($query,$parametros);
                 $res2 = $cone->Buscar($query2,$parametros2);
                 $nomComple=$res2[$i]['ApePaterno'].' '.$res2[$i]['ApeMaterno'].' '.$res2[$i]['Nombre'];
 
+                #CONSULTA LAS FECHAS DE EVALUACION 
+                $query3="SELECT EvaT FROM FechasEva where ClaveMat=? and ClaveCa=? and NoUniE=?";
+                $parametros3 = array($claveMat,$claveCa,($i+1));
+                $res3 = $cone->Buscar($query3,$parametros3);
+                $fecha=strtotime($res3[0]['EvaT']);
+                #COMPARA LAS FECHAS, si BAN=1 BLOQUE CAJAS, SI BAN=0 DESBLOQUEA CAJAS
+                $ban=0;
+                if($fec1==""){
+                    $ban=0;
+                }
+                else if($fec1!=""){
+                    if($fecha<$fec1){
+                        #BLOQUE CAJAS DE FECHAS DE CORTE 1
+                        echo "CORTE 1";
+                        $ban=1;
+                    }
+                    else{
+                        if($fec2!=""){
+                            if($fecha<$fec2){
+                                #BLOQUE CAJAS DE FECHAS DE CORTE 2
+                                echo "CORTE 2";
+                                $ban=1;
+                            }
+                            else{
+                                if($fec3!=""){
+                                    if($fecha<$fec3){
+                                        #BLOQUE CAJAS DE FECHAS DE CORTE 3
+                                        echo "CORTE 3";
+                                        $ban=1;
+                                    }
+                                    else{
+                                        #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES
+                                        $ban=1;
+                                    }
+                                }
+                                else{
+                                    $ban=0;
+                                }
+                            }
+                        }
+                        else{
+                            $ban=0;
+                        }
+                    }
+                }
+
+
+
+
+
                 $x=1;
                 $state='';
 
@@ -87,34 +145,34 @@ $resul = $cone->Buscar($query,$parametros);
                 <td><input name="<?php echo 'noCon'.$i;?>" value=<?php echo $res2[$i]['NoControl'];?> readonly></td>
                 <td><input value=<?php echo $res2[$i]['Repeticion'];?> readonly></td>
                 <td><input name="<?php echo 'calfin'.$i;?>" value=<?php echo $res2[$i]['CalFinal'];?> readonly></td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni){
+                <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> <?php $x++; echo $state;?>> </td>
             </tr>

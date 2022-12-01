@@ -53,13 +53,6 @@ class Insertar_Estu{
                     $parametros=array($clave,$nombre,$apePaterno,$apeMaterno,$telefono,$correo,$calle,$colonia,$tutor,$teltutor);
                     $cone->Insertar_Eliminar_Actualizar($query,$parametros);
                     
-                    #Consultar la clave de la carrera
-                    #$query="SELECT * FROM [Carreras] where NombreCarre=?";
-                    #$parametros=array($carrera);
-                    #$carre=$cone->Buscar($query,$parametros);
-                    #$carre1=$carre[0][0];
-                    #$carre1=strval($carre1);
-
                     #Agrega a CarreAlumnos
                     $query= "INSERT INTO [CarreAlumnos] (NoControl, ClaveCa, Semestre) VALUES (?,?,?)";
                     $parametros=array($clave, $carrera, $semestre);
@@ -80,8 +73,9 @@ class Insertar_Estu{
                         $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
                         #Asigna a los estudiantes las materias correspondientes al semestre
-                        $query1="SELECT ClaveMat  FROM [Materias] where Carrera=?";
-                        $parametros1=array($carrera);
+                        $query1="SELECT CarreMaterias.ClaveMat FROM CarreMaterias, Materias 
+                        WHERE semestre=? and Materias.ClaveMat=CarreMaterias.ClaveMat and CarreMaterias.ClaveCa=?";
+                        $parametros1=array($semestre,$carrera);
                         $resultado= sqlsrv_query($conexion,$query1,$parametros1);
         
                         while($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)){
@@ -110,10 +104,11 @@ class Insertar_Estu{
                         $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
                         #Asigna a los estudiantes las materias correspondientes al semestre
-                        $query1="SELECT ClaveMat  FROM [Materias] where Carrera=?";
-                        $parametros1=array($carrera);
+                        $query1="SELECT CarreMaterias.ClaveMat FROM CarreMaterias, Materias 
+                        WHERE semestre=? and Materias.ClaveMat=CarreMaterias.ClaveMat and CarreMaterias.ClaveCa=?";
+                        $parametros1=array($semestre,$carrera);
                         $resultado= sqlsrv_query($conexion,$query1,$parametros1);
-        
+
                         while($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)){
                             $rep="P";
 
@@ -121,7 +116,14 @@ class Insertar_Estu{
 
                             $query= "INSERT INTO [AlumMate] (NoControl,ClaveMat,Rep) VALUES (?,?,?)";
                             $parametros=array($clave,$mat,$rep);
-                            $cone->Insertar_Eliminar_Actualizar($query,$parametros); 
+                            $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                            /*
+                            #AGREGA A CAPTURACAL
+                            $ca="0";
+                            $query= "INSERT INTO [CapturaCal] (NoControl,ClaveMat,ClaveCa,Repeticion,CalFinal,Uni1,Uni2,Uni3,Uni4,Uni5,Uni6,Uni7,Uni8,Uni9,Uni10) 
+                            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                            $parametros=array($clave,$mat,$carrera,$rep,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca);
+                            $cone->Insertar_Eliminar_Actualizar($query,$parametros);*/
                         }
 
                         #Agrega contraseña en hash
