@@ -135,7 +135,7 @@ $resul = $cone->Buscar($query,$parametros);
                 #SE LLENA LA TABLA CON LOS INPUTS DE CALIFICACIONES
                 ?>
                 <td><?php echo $nomComple;?></td>
-                <td><input class="caja_calificacion"  name="<?php echo 'noCon'.$i;?>" value=<?php echo $res2[$i]['NoControl'];?> readonly></td>
+                <td><input class="caja_nocontrol"  name="<?php echo 'noCon'.$i;?>" value=<?php echo $res2[$i]['NoControl'];?> readonly></td>
                 <td><input class="caja_calificacion" value=<?php echo $res2[$i]['Repeticion'];?> readonly></td>
                 <td><input class="caja_calificacion" name="<?php echo 'calfin'.$i;?>" value=<?php echo $res2[$i]['CalFinal'];?> readonly></td>
                 <?php if($x > $numUni or $ban==1){
