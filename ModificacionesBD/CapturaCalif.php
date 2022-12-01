@@ -105,11 +105,11 @@ class InsertaCalificacion{
                 }
                 else{
                     $suma=intval($cal1)+intval($cal2)+intval($cal3)+intval($cal4)+intval($cal5)+intval($cal6)+intval($cal7)+intval($cal8)+intval($cal9)+intval($cal10);
-                    echo $suma." -";
+                    //echo $suma." -";
                     $prom=round(($suma)/intval($val));
-                    echo $prom." -";
+                    //echo $prom." -";
                     $calFin=strval($prom);
-                    echo $calFin;
+                    //echo $calFin;
                 }
 
             }
