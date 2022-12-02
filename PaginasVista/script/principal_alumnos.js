@@ -1,6 +1,7 @@
 
 
 const USER_CONTENEDOR = document.getElementById("nameuser");
+let boton_calificaciones = document.getElementById("linkcal");
 
 
 
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
         Rellenar_Tabla(data.arreglo);
     }); 
+
 });
 
 function Rellenar_Tabla(datos) {
@@ -27,4 +29,9 @@ function Rellenar_Tabla(datos) {
     for (let i = 0; i < celdas.length; i++) {
         celdas[i].textContent = datos[0][i];
     }
+    clave = celdas[0].textContent;
+    semestre = celdas[11].textContent;
+    //pone el link con los datos a boton calificaciones
+    boton_calificaciones.setAttribute("href", "../PaginasVista/consulta_calificaciones_alumnos.html?claveAlu="+ encodeURIComponent(clave)+"&semestre="+encodeURIComponent(semestre));
+
 }
