@@ -64,7 +64,7 @@ $resultado3=$cone->Buscar($query3,$parametros);
                 <input class="input_real_fecha_3" type="text" placeholder="01/01/2000" name="real3" id="real3">
                 <div class="bot">
                     <button class="btn" style="float: right;" id="btn"type="submit" onclick="location.href ='/ModificacionesBD/InsertaFechaCorte.php'">Guardar</button>
-                    <button class="btn" style="float: left;" type="button">Cancelar</button> 
+                    <button class="btn" style="float: left;" type="button" onclick="location.href='http://localhost/index.php'">Cancelar</button> 
                 </div>
             </form>
         </div>
