@@ -71,4 +71,5 @@ $resultado3=$cone->Buscar($query3,$parametros);
     </div>
     
 </body>
+    echo "Aqui mero fany";
 </html>
