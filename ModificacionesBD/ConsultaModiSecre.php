@@ -9,15 +9,20 @@
 </head>
 <body>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <div class="logo" style="float: left;">
+<div class="principal">
+    <div class="logo" style="float: left;"> 
         <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
-    </div> 
+    </div>  
+
     <div class="nombre" style="float: center;"> 
-        <div class="titulo">
+        <div class="tituloP" style="float: right;">
             <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
         </div> 
-        <h2>MODIFICAR DATOS DE SECRETARIAS(OS)</h2>
     </div> 
+</div> 
+<div class="titulo1">
+    <h2>MODIFICAR DATOS DE MAESTROS</h2>
+</div> 
     <form method="POST">
     <div class="datos" style="float: center;">
         <input class="input" type="text" placeholder="No. Empleado" name="noEmpl">&nbsp;&nbsp;

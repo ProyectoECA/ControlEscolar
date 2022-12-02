@@ -15,22 +15,30 @@ nav{
     margin-top: none;
 }  
 
+.principal{ 
+    height: 7em;
+    width: 98%; 
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex; 
+}
+
 .logo{ 
     height: 7em;
-    width: 15em;
+    width: 30em;
     display: flex; 
     
 } 
 
 .nombre{ 
-    height: 7em;
-    width: 64em;
-    margin: 0em 20em; 
+    height: 6em;
+    width: 100em;
+    margin: 0em 8em; 
     color: #1e355e;  
     text-align: center;    
     justify-content: space-between;
     overflow: hidden;
-    display: flex;
+    display: flex; 
 }  
 
 .tituloP{
@@ -167,4 +175,133 @@ nav{
     background-color: #1e355e;
     cursor: pointer;
     border: none;
+}  
+
+@media screen and (max-width: 1000px){ 
+    body{ 
+        height: 135vh;
+    }
+    .nombre{ 
+        height: 7em;
+        width: 55em;
+        margin: auto;  
+    } 
+    .logo{ 
+        height: 6em; 
+        width: 28%;  
+    }  
+    h1{
+        font-size: 1.8em;
+    }
+    .tituloP{
+        height: 6em; 
+        width: 85%;  
+        align-items: center;
+    }  
+    .titulo1{ 
+        width: 98%; 
+        text-align: center;
+    }
+}  
+
+@media screen and (max-width: 650px){
+    body{ 
+        height: 180vh;
+    }
+    .nombre{ 
+        height: 7em;
+        width: 55em;
+        margin: auto;  
+    } 
+    .logo{ 
+        height: 6em; 
+        width: 50%;   
+    }  
+    h1{
+        font-size: 1.8em;
+    }
+    .tituloP{
+        height: 6em; 
+        width: 85%;  
+        transform:translate(02%, 0%);
+    }  
+    .titulo1{ 
+        width: 98%; 
+        text-align: center;
+    }  
+    .datos{ 
+        width: 98%;
+    } 
+    .contenedor_generalDatos{  
+        height: 22%;
+        width: 98%;
+    }  
+    .parte1{
+        width: 45%;
+        margin: 1em 1em;
+    } 
+    .contenedor-botones{ 
+        width: 98%; 
+        display: flex;
+    } 
+    .botones{
+        width: 40%;
+        height: 3.5em;
+        margin: auto;
+    }
 } 
+
+@media screen and (max-width: 500px){
+    body{ 
+        height: 240vh;
+    }
+    .nombre{ 
+        height: 7em;
+        width: 55em;
+        margin: auto;  
+    } 
+    .logo{ 
+        display: none;   
+    }  
+    h1{
+        font-size: 1.8em;
+    }
+    .tituloP{
+        height: 6em; 
+        width: 98%;  
+        transform:translate(02%, 0%);
+    }  
+    .titulo1{ 
+        width: 98%; 
+        text-align: center;
+    }  
+    .datos{ 
+        width: 98%;
+    } 
+    .input{
+        width: 20em;
+    }  
+    .btnBuscar{
+        width: 18%;
+    } 
+    .btnSalir{
+        width: 20%;
+    }
+    .contenedor_generalDatos{  
+        height: 22%;
+        width: 98%;
+    }  
+    .parte1{
+        width: 70%; 
+        margin: 1em 5.5em;
+    }  
+    .contenedor-botones{ 
+        width: 98%; 
+        display: flex;
+    } 
+    .botones{
+        width: 40%;
+        height: 4em;
+        margin: auto;
+    }
+}
