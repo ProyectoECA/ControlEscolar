@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MODIFICAR ALUMNOS</title> 
+    <title>MODIFICAR ESTUDIANTES</title> 
     <link rel="stylesheet" href="/css/estilos_modificar_alumnos.css"> 
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
 <body>
-        <div class="logo" style="float: left;">
+    <div class="principal">
+        <div class="logo" style="float: left;"> 
             <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
         </div>  
+
         <div class="nombre" style="float: center;"> 
-            <div class="tituloP" style="float: left;">
+            <div class="tituloP" style="float: right;">
                 <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
             </div> 
         </div> 
+    </div> > 
         <div class="titulo1">
             <h2>MODIFICAR DATOS DE ESTUDIANTES</h2>
         </div> 
