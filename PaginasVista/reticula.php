@@ -41,6 +41,11 @@
         <div class="tituloP" style="float: left;">
             <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
         </div> 
+    </div>
+    <div class="datos" style="float: center;">
+        <input class="input" type="text" placeholder="CARRERA" name="">&nbsp;&nbsp;
+        <input class="btnBuscar" type="submit" value="BUSCAR">&nbsp;&nbsp;
+        <input class="btnSalir" type="button" value="CANCELAR" onclick="location.href = 'http://localhost/index.php' ">&nbsp;&nbsp;
     </div> 
     <div class="contenedor-general">  
 
