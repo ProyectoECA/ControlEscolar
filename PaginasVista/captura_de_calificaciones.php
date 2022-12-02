@@ -78,7 +78,7 @@ $resul = $cone->Buscar($query,$parametros);
             $res1 = $cone->Buscar($query1,$parametros1);
             $numUni=$res1[0]['Unidades'];
 
-            for($i=0;$i<count($res1);$i++){
+            for($i=0;$i<=count($res1);$i++){
                 #CONSULTA PARA TODOS LOS ALUMNOS
                 $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
                 and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
@@ -132,6 +132,7 @@ $resul = $cone->Buscar($query,$parametros);
 
                 $x=1;
                 $state='';
+                $ban=0;
                 #SE LLENA LA TABLA CON LOS INPUTS DE CALIFICACIONES
                 ?>
                 <td><?php echo $nomComple;?></td>
@@ -178,14 +179,16 @@ $resul = $cone->Buscar($query,$parametros);
          </tbody>
         </table>
     </div>
+    <br>
+    <button class="btn_Guardar" id="btn" type="submit" onclick="location.href ='/ModificacionesBD/CapturaCalif.php'">Guardar</button>
+    <button class="btn_Cancelar" type="button" onclick="location.href = '../PaginasVista/principal_maestros.html' ">Cancelar</button>
     </form>
     <form method="POST" action="../PaginasVista/calificaciones_segundas.php">
+        <br>
+    <button class="btn_Segundas" type="button"  onclick="location.href ='../PaginasVista/calificaciones_segundas.php'">Segundas</button>
         <input name="claveca1" value="<?php echo $claveCa;?>" hidden>
         <input name="clavemat1" value="<?php echo $claveMat;?>" hidden>
         <input name="carrera1" value="<?php echo $carrera;?>" hidden>
-        <button class="btn_Guardar" id="btn" type="submit" onclick="location.href ='/ModificacionesBD/CapturaCalif.php'">Guardar</button>
-        <button class="btn_Segundas" type="button"  onclick="location.href ='../PaginasVista/calificaciones_segundas.php'">Segundas</button>
-        <button class="btn_Cancelar" type="button" onclick="location.href = '../PaginasVista/principal_maestros.html' ">Cancelar</button>
     </form>
     </div>   
     <!---<script src="../PaginasVista/script/captura_calificaciones_tabla.js "></script> -->

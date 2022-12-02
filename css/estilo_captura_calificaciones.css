@@ -127,7 +127,7 @@ body{
    letter-spacing: 1px;  
    justify-content: space-between; 
    margin-top: 0%;
-   transform:translate(180%,0%);
+   transform:translate(230%,0%);
 }
 .btn_Segundas{
    width: 12rem;
@@ -138,7 +138,7 @@ body{
    letter-spacing: 1px;  
    justify-content: space-between; 
    margin-top: 0%;
-   transform:translate(205%,0%);
+   transform:translate(5%,0%);
 }
 .btn_Cancelar{
    width: 12rem;
@@ -149,7 +149,7 @@ body{
    letter-spacing: 1px;  
    justify-content: space-between; 
    margin-top: 0%;
-   transform:translate(230%,0%);
+   transform:translate(250%,0%);
 }
 .caja_nocontrol{
    padding-left: 20px;
