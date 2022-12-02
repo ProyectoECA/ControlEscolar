@@ -30,6 +30,20 @@ class Insertar_Mat{
                 $parametros=array($clave,$nombre,$creditos,$unidades,$objetivos,$sem);
                 $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
+                #INSERTA EN TABLA FECHAS DE CORTE
+                $query="SELECT Nombre FROM [Materias] where ClaveMat=?";
+                $parametros=array($clave);
+                $res=$cone->Buscar($query,$parametros);
+                $nomCarre=$res[0]['Nombre'];
+                
+                $f1='';
+                $f2='';
+                $f3='';
+
+                $query= "INSERT INTO [FechasCorte] (ClaveMat,NomCarrera,FechaC1,FechaC2,FechaC3) VALUES (?,?,?,?,?)";
+                $parametros=array($clave,$nomCarre,$f1,$f2,$f3);
+                $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+
                 #COMPRUEBA QUE LA MATERIA SE IMPARTA EN TODAS LAS CARRERAS, SE INSERTA EN LA TABLA CARREMATERIAS
                 if($carrera=="Todas"){
                     $query= "SELECT ClaveCa from Carreras";
