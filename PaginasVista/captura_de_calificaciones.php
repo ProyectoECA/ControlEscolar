@@ -66,7 +66,7 @@ $resul = $cone->Buscar($query,$parametros);
             <?php
             #CONSULTA LAS FECHAS DE CORTE
             $query="SELECT * FROM FechasCorte where ClaveMat=? and NomCarrera=?";
-            $parametros = array($claveMat,$claveCa);
+            $parametros = array($claveMat,$carrera);
             $feCo = $cone->Buscar($query,$parametros);
             $fec1=strtotime($feCo[0]['FechaC1']);
             $fec2=strtotime($feCo[0]['FechaC2']);
@@ -91,7 +91,12 @@ $resul = $cone->Buscar($query,$parametros);
                 $query3="SELECT EvaT FROM FechasEva where ClaveMat=? and NoUniE=? and ClaveCa=?";
                 $parametros3 = array($claveMat,$uni,$claveCa);
                 $res3 = $cone->Buscar($query3,$parametros3);
-                $fecha=strtotime($res3[0]['EvaT']);
+                if(empty($res3[0]['EvaT'])){
+                    $fecha='';
+                }
+                else{
+                    $fecha=strtotime($res3[0]['EvaT']);
+                }
                 #COMPARA LAS FECHAS, si BAN=1 BLOQUE CAJAS, SI BAN=0 DESBLOQUEA CAJAS
                 $ban=0;
                 if($fec1==""){
@@ -185,11 +190,11 @@ $resul = $cone->Buscar($query,$parametros);
     </form>
     <form method="POST" action="calificaciones_segundas.php">
         <br>
-        <input name="claveca" value="<?php echo $claveCa;?>" hidden>
+        <input name="claveca" value="SELECT * FROM FechasCorte where ClaveMat=? and NomCarrera=?" hidden>
         <input name="clavemat" value="<?php echo $claveMat;?>" hidden>
         <input name="carrera" value="<?php echo $carrera;?>" hidden>
         <?php
-        if($fec3!=''){
+        if($feCo[0]['FechaC3']!=' '){
             $state='';
         }
         else{
