@@ -19,7 +19,7 @@
                 <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
             </div> 
         </div> 
-    </div> > 
+    </div> 
         <div class="titulo1">
             <h2>MODIFICAR DATOS DE ESTUDIANTES</h2>
         </div> 
