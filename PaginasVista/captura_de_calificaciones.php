@@ -183,14 +183,20 @@ $resul = $cone->Buscar($query,$parametros);
     <button class="btn_Guardar" id="btn" type="submit" onclick="location.href ='/ModificacionesBD/CapturaCalif.php'">Guardar</button>
     <button class="btn_Cancelar" type="button" onclick="location.href = '../PaginasVista/principal_maestros.html' ">Cancelar</button>
     </form>
-    <form method="POST" action="../PaginasVista/calificaciones_segundas.php">
+    <form method="POST" action="calificaciones_segundas.php">
         <br>
-    <button class="btn_Segundas" type="button"  onclick="location.href ='../PaginasVista/calificaciones_segundas.php'">Segundas</button>
-        <input name="claveca1" value="<?php echo $claveCa;?>" hidden>
-        <input name="clavemat1" value="<?php echo $claveMat;?>" hidden>
-        <input name="carrera1" value="<?php echo $carrera;?>" hidden>
+        <input name="claveca" value="<?php echo $claveCa;?>" hidden>
+        <input name="clavemat" value="<?php echo $claveMat;?>" hidden>
+        <input name="carrera" value="<?php echo $carrera;?>" hidden>
+        <?php
+        if($fec3!=''){
+            $state='';
+        }
+        else{
+            $state='disabled';
+        }?>
+        <button class="btn_Segundas" type="submit"  onclick="location.href ='calificaciones_segundas.php'" <?php echo $state;?>>Segundas</button>
     </form>
     </div>   
-    <!---<script src="../PaginasVista/script/captura_calificaciones_tabla.js "></script> -->
 </body>
 </html>

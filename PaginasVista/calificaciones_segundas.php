@@ -1,9 +1,9 @@
 <?php
 include_once "../CRUD/CRUD_bd_SQLServer.php";
 
-$claveMat=$_POST['clavemat1'];
-$carrera=$_POST['carrera1'];
-$claveCa=$_POST['claveca1'];
+$claveMat=$_POST['clavemat'];
+$carrera=$_POST['carrera'];
+$claveCa=$_POST['claveca'];
 
 $cone=new CRUD_SQL_SERVER();
 $cone->conexionBD();
@@ -69,7 +69,7 @@ $resul = $cone->Buscar($query,$parametros);
             $res1 = $cone->Buscar($query1,$parametros1);
             $numUni=$res1[0]['Unidades'];
 
-            for($i=0;$i<count($res1);$i++){
+            for($i=0;$i<=count($res1);$i++){
                 #CONSULTA PARA TODOS LOS ALUMNOS
                 $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
                 and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
@@ -77,6 +77,7 @@ $resul = $cone->Buscar($query,$parametros);
                 $res2 = $cone->Buscar($query2,$parametros2);
                 $nomComple=$res2[$i]['ApePaterno'].' '.$res2[$i]['ApeMaterno'].' '.$res2[$i]['Nombre'];
 
+                //COMPARAMOS PARA VER QUIEN DEBE SEGUNDAS
                 $ban=0;
                 $califin=$res2[$i]['CalFinal'];
 
@@ -92,34 +93,34 @@ $resul = $cone->Buscar($query,$parametros);
                 <td><input class="caja_nocontrol"  name="<?php echo 'noCon'.$i;?>" value=<?php echo $res2[$i]['NoControl'];?> readonly></td>
                 <td><input class="caja_calificacion" value=<?php echo $res2[$i]['Repeticion'];?> readonly></td>
                 <td><input class="caja_calificacion" name="<?php echo 'calfin'.$i;?>" value=<?php echo $res2[$i]['CalFinal'];?> readonly></td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni1']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni2']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni3']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni4']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni5']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni6']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni7']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni8']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni9']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
+                <?php if($x > $numUni or $ban==1 or $res2[$i]['Uni10']!='N/A'){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> <?php $x++; echo $state;?>> </td>
             </tr>
@@ -131,11 +132,11 @@ $resul = $cone->Buscar($query,$parametros);
             
          </tbody>
         </table>
-    </div>
+        </div>
+    <br>
+    <button class="btn_Guardar" id="btn" type="submit" onclick="location.href ='/ModificacionesBD/CapturaCalif.php'">Guardar</button>
+    <button class="btn_Cancelar" type="button" onclick="location.href = '../PaginasVista/principal_maestros.html' ">Cancelar</button>
     </form>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn_Guardar" id="btn" type="submit" onclick="location.href ='/ModificacionesBD/CapturaCalif.php'">Guardar</button>
-        <button class="btn_Cancelar" type="button" onclick="location.href = '../PaginasVista/principal_maestros.html' ">Cancelar</button>
     </div>   
     <!---<script src="../PaginasVista/script/captura_calificaciones_tabla.js "></script> -->
 </body>
