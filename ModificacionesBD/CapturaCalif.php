@@ -3,6 +3,8 @@ include_once "../CRUD/CRUD_bd_SQLServer.php";
 
 class InsertaCalificacion{
     function insertando(){
+        $ban=0;
+        echo $ban;
         $cone=new CRUD_SQL_SERVER();
         $cone->conexionBD();
 
@@ -15,6 +17,9 @@ class InsertaCalificacion{
         $parametros = array($carre,$mat);
         $res = $cone->Buscar($query,$parametros);
         for($i=0;$i<count($res);$i++){
+            echo "ESTOY AQUI";
+            $ban=0;
+            echo $ban;
             #SACAMOS LOS ID DE LOS INPUTS
             $con='noCon'.$i;
             $calF='calfin'.$i;
@@ -47,51 +52,181 @@ class InsertaCalificacion{
             $query1="SELECT Unidades FROM Materias where ClaveMat=?";
             $parametros1 = array($mat);
             $res1 = $cone->Buscar($query1,$parametros1);
-            //var_dump($res1);
             $val=$res1[0]['Unidades'];
-            //echo $val;
             $x=0;
-
             $x++;
-            if(intval($cal1)<70 and $x<intval($val)){
-                $cal1='N/A';
+            if(!is_numeric($cal1)){
+                #COMPRUEBA QUE NO SEA TEXTO, ESPACIO EN BLANCO
+                if($cal2=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
+            }
+            else{
+                if(intval($cal1)<70 and $x<intval($val)){
+                    $cal1='N/A';
+                }
+                if(intval($cal1)>100){
+                    #COMPRUEBA QUE NO SEA MAYOR A 100
+                    $ban=1;
+                }
             }
             $x++;
-            if(intval($cal2)<70 and $x<intval($val)){
-                $cal2='N/A';
+            if(!is_numeric($cal2)){
+                if($cal2=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
+            }
+            else{
+                if(intval($cal2)<70 and $x<intval($val)){
+                    $cal2='N/A';
+                }
+                if(intval($cal2)>100){
+                    $ban=1;
+                }
             }
             $x++;
-            if(intval($cal3)<70 and $x<intval($val)){
-                $cal3='N/A';
+            if(!is_numeric($cal3)){
+                if($cal3=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
+            }
+            else{
+                if(intval($cal3)<70 and $x<intval($val)){
+                    $cal3='N/A';
+                }
+                if(intval($cal3)>100){
+                    $ban=1;
+                }
             }
             $x++;
-            if(intval($cal4)<70 and $x<intval($val)){
-                $cal4='N/A';
+            if(!is_numeric($cal4)){
+                if($cal4=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
+            }
+            else{
+                if(intval($cal4)<70 and $x<intval($val)){
+                    $cal4='N/A';
+                }
+                if(intval($cal4)>100){
+                    $ban=1;
+                }
             }
             $x++;
-            if(intval($cal5)<70 and $x<intval($val)){
-                $cal5='N/A';
+            if(!is_numeric($cal5)){
+                if($cal5=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
+            }
+            else{
+                if(intval($cal5)<70 and $x<intval($val)){
+                    $cal5='N/A';
+                }
+                if(intval($cal5)>100){
+                    $ban=1;
+                }
             }
             $x++;
-            if(intval($cal6)<70 and $x<intval($val)){
-                $cal6='N/A';
+            if(!is_numeric($cal6)){
+                if($cal6=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
+            }
+            else{
+                if(intval($cal6)<70 and $x<intval($val)){
+                    $cal6='N/A';
+                }
+                if(intval($cal6)>100){
+                    $ban=1;
+                }
             }
             $x++;
-            if(intval($cal7)<70  and $x<intval($val)){
-                $cal7='N/A';
+            if(!is_numeric($cal7)){
+                if($cal7=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
+            }
+            else{
+                if(intval($cal7)<70 and $x<intval($val)){
+                    $cal7='N/A';
+                }
+                if(intval($cal7)>100){
+                    $ban=1;
+                }
             }
             $x++;
-            if(intval($cal8)<70 and $x<intval($val) ){
-                $cal8='N/A';
+            if(!is_numeric($cal8)){
+                if($cal8=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
+            }
+            else{
+                if(intval($cal8)<70 and $x<intval($val)){
+                    $cal8='N/A';
+                }
+                if(intval($cal8)>100){
+                    $ban=1;
+                }
             }
             $x++;
-            if(intval($cal9)<70 and $x<intval($val)){
-                $cal9='N/A';
+            if(!is_numeric($cal9)){
+                if($cal9=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
+            }
+            else{
+                if(intval($cal9)<70 and $x<intval($val)){
+                    $cal9='N/A';
+                }
+                if(intval($cal9)>100){
+                    $ban=1;
+                }
             }
             $x++;
-            if(intval($cal9)<70 and $x<intval($val)){
-                $cal10='N/A';
+            if(!is_numeric($cal10)){
+                if($cal10=='N/A'){
+                    $ban=0;
+                }
+                else{
+                    $ban=1;
+                }
             }
+            else{
+                if(intval($cal10)<70 and $x<intval($val)){
+                    $cal10='N/A';
+                }
+                if(intval($cal10)>100){
+                    $ban=1;
+                }
+            }
+            
 
             #VERIFICAMOS SI ESTA LA 3RA FECHA DE CORTE PARA CALCULAR PROMEDIO FINAL
             $query2="SELECT FechaC3 FROM FechasCorte where ClaveMat=?";
@@ -113,8 +248,8 @@ class InsertaCalificacion{
                 }
 
             }
-
-            #ACTUALIZAMOS EN BD
+            if($ban==0){
+                #ACTUALIZAMOS EN BD
             $query="UPDATE [CapturaCal] SET CalFinal=? WHERE NoControl=? and ClaveMat=?";
             $parametros=array($calFin,$noCont,$mat);
             $cone->Insertar_Eliminar_Actualizar($query,$parametros);
@@ -158,9 +293,18 @@ class InsertaCalificacion{
             $query="UPDATE [CapturaCal] SET Uni10=? WHERE NoControl=? and ClaveMat=?";
             $parametros=array($cal10,$noCont,$mat);
             $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+            }
+            
         }
-        echo"<script>alert('Calificaciones registradas con éxito');
+        if($ban==0){
+            echo"<script>alert('Calificaciones registradas con éxito');
                 location.href='/PaginasVista/principal_maestros.html'</script>";
+        }
+        if($ban==1){
+            echo"<script>alert('Error al registrar algunas calificaciones, recuerda no se admite texto, simbolos y calificaciones mayores a 100');
+                location.href='/PaginasVista/principal_maestros.html'</script>";
+        }
+        
     }
 }
 $ins=new InsertaCalificacion;

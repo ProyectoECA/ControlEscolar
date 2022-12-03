@@ -72,20 +72,28 @@ $resul = $cone->Buscar($query,$parametros);
             $fec2=strtotime($feCo[0]['FechaC2']);
             $fec3=strtotime($feCo[0]['FechaC3']);
 
+            $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
+                and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
+                $parametros2 = array($claveCa,$claveMat);
+                $res2 = $cone->Buscar($query2,$parametros2);
+                
+            for($j=0;$j<count($res2);$j++){
+                $nomComple=$res2[$j]['ApePaterno'].' '.$res2[$j]['ApeMaterno'].' '.$res2[$j]['Nombre'];
+                ?>
+                <td><?php echo $nomComple;?></td>
+                <td><input class="caja_nocontrol"  name="<?php echo 'noCon'.$j;?>" value=<?php echo $res2[$j]['NoControl'];?> readonly></td>
+                <td><input class="caja_calificacion" value=<?php echo $res2[$j]['Repeticion'];?> readonly></td>
+                <td><input class="caja_calificacion" name="<?php echo 'calfin'.$j;?>" value=<?php echo $res2[$j]['CalFinal'];?> readonly></td>
+            <?php
             #CONSULTA PARA VER CUANTAS UNIDADES TIENE LA MATERIA Y HABILITAR SUS UNIDADES CORRESPONDIENTES
             $query1="SELECT Unidades FROM Materias where ClaveMat=?";
             $parametros1 = array($claveMat);
             $res1 = $cone->Buscar($query1,$parametros1);
             $numUni=$res1[0]['Unidades'];
 
-            for($i=0;$i<=count($res1);$i++){
+            for($i=0;$i<count($res1);$i++){
                 #CONSULTA PARA TODOS LOS ALUMNOS
-                $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
-                and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
-                $parametros2 = array($claveCa,$claveMat);
-                $res2 = $cone->Buscar($query2,$parametros2);
-                $nomComple=$res2[$i]['ApePaterno'].' '.$res2[$i]['ApeMaterno'].' '.$res2[$i]['Nombre'];
-
+                
                 #CONSULTA LAS FECHAS DE EVALUACION 
                 $uni=$i+1;
                 $query3="SELECT EvaT FROM FechasEva where ClaveMat=? and NoUniE=? and ClaveCa=?";
@@ -137,13 +145,10 @@ $resul = $cone->Buscar($query,$parametros);
 
                 $x=1;
                 $state='';
-                $ban=0;
+
                 #SE LLENA LA TABLA CON LOS INPUTS DE CALIFICACIONES
                 ?>
-                <td><?php echo $nomComple;?></td>
-                <td><input class="caja_nocontrol"  name="<?php echo 'noCon'.$i;?>" value=<?php echo $res2[$i]['NoControl'];?> readonly></td>
-                <td><input class="caja_calificacion" value=<?php echo $res2[$i]['Repeticion'];?> readonly></td>
-                <td><input class="caja_calificacion" name="<?php echo 'calfin'.$i;?>" value=<?php echo $res2[$i]['CalFinal'];?> readonly></td>
+                
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
                 <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> <?php $x++; echo $state;?>> </td>
@@ -176,6 +181,7 @@ $resul = $cone->Buscar($query,$parametros);
                 <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> <?php $x++; echo $state;?>> </td>
             </tr>
              <?php
+                   }
                    }
               ?>
          </thead>
