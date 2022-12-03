@@ -10,13 +10,15 @@
 </head>
 <body>
     <form action="" id="formulario_modificar_careras">
-        <div class="logo" style="float: left;">
-            <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
-        </div>  
-
-        <div class="nombre" style="float: center;"> 
-            <div class="tituloP" style="float: left;">
-                <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
+        <div class="principal">
+            <div class="logo" style="float: left;"> 
+                <img src="/logo_pagina/logo-tecnm-2018_orig.png" alt="" width="100%">   
+            </div>  
+    
+            <div class="nombre" style="float: center;"> 
+                <div class="tituloP" style="float: right;">
+                    <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
+                </div> 
             </div> 
         </div> 
         <div class="titulo1">
@@ -27,14 +29,14 @@
             <input class="btnBuscar" type="submit" id="btn_buscar" value="BUSCAR" >&nbsp;&nbsp;
             <input class="btnSalir" type="button"  value="CANCELAR" onclick="location.href = 'http://localhost/index.php' ">&nbsp;&nbsp;
         </div>
-        <div class="contenedor_generalDatos" hidden id="contenedorInput">  
+        <div class="contenedor_generalDatos"  id="contenedorInput">  
             <input class="parte1" type="text" name="clave" placeholder="CLAVE" id="clave" readonly>
             <input class="parte1" type="text" name="nombre" placeholder="NOMBRE" id="nombre">
             <input class="parte1" type="text" name="semestres" placeholder="NO.SEMESTRES" id="semestres">
         </div> 
         <div class="contenedor-botones" style="float: center;">
-            <button disabled id="btn" hidden class="botones">MODIFICA</button>
-            <button disabled id="btn1" hidden class="botones">ELIMINA</button>
+            <button disabled id="btn"  class="botones">MODIFICA</button>
+            <button disabled id="btn1"  class="botones">ELIMINA</button>
 <!--             <input class="botones" type="submit" name="modifica" value="EDITAR">
             <input class="botones" type="submit" name="elimina" value="ELIMINAR"> -->
         </div>
