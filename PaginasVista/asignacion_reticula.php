@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="/logo_pagina/Logo-TecNM.ico" type="image/x-icon">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="script/consulUnidad.js"></script>
+<!-- <script src="script/consulUnidad.js"></script> -->
 <body>
     <div class="contenedor_titulo_2">
         <h1 class="titulo_de_tec"><b>TECNOLÓGICO DE NOCHISTLÁN</b></h1>
@@ -30,10 +30,27 @@
     <div class="contenedor-tabla">
         <div class="table" name="tablaUni" id="tablaUni">
 
+        "<script>
+        $('.boton_confirmar').click(function(){
+            $.ajax({
+                type:'POST',
+                url:'/PaginasVista/jerarquia.php',
+                data:{dato:$('#dato').val()},
+                success:function(html){
+                    $('#tablaUni').html(html);
+                }
+            });
+        });
+        </script>";
+        
+        
+ 
+ 
+
         </div>
 
     </div>  
-        
+  
     <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>
