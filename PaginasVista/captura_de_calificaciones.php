@@ -72,6 +72,7 @@ $resul = $cone->Buscar($query,$parametros);
             $fec2=strtotime($feCo[0]['FechaC2']);
             $fec3=strtotime($feCo[0]['FechaC3']);
 
+            #CONSULTA PARA TODOS LOS ALUMNOS
             $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
                 and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
                 $parametros2 = array($claveCa,$claveMat);
@@ -92,7 +93,6 @@ $resul = $cone->Buscar($query,$parametros);
             $numUni=$res1[0]['Unidades'];
 
             for($i=0;$i<count($res1);$i++){
-                #CONSULTA PARA TODOS LOS ALUMNOS
                 
                 #CONSULTA LAS FECHAS DE EVALUACION 
                 $uni=$i+1;
@@ -151,34 +151,34 @@ $resul = $cone->Buscar($query,$parametros);
                 
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$j]['Uni1'];?> <?php $x++; echo $state;?>> </td>
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$j]['Uni2'];?> <?php $x++; echo $state;?>> </td>
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$j]['Uni3'];?> <?php $x++; echo $state;?>> </td>
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$j]['Uni4'];?> <?php $x++; echo $state;?>> </td>
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$j]['Uni5'];?> <?php $x++; echo $state;?>> </td>
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$j]['Uni6'];?> <?php $x++; echo $state;?>> </td>
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$j]['Uni7'];?> <?php $x++; echo $state;?>> </td>
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$j]['Uni8'];?> <?php $x++; echo $state;?>> </td>
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$j]['Uni9'];?> <?php $x++; echo $state;?>> </td>
                 <?php if($x > $numUni or $ban==1){
                     $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> <?php $x++; echo $state;?>> </td>
+                <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$j]['Uni10'];?> <?php $x++; echo $state;?>> </td>
             </tr>
              <?php
                    }

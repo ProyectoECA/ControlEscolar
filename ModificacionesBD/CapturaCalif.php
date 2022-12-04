@@ -12,11 +12,17 @@ class InsertaCalificacion{
         $mat=$_POST["clavemat"];
         $carre=$_POST["claveca"];
 
-        $query = "SELECT Alumnos.NoControl FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
+        /*$query = "SELECT Alumnos.NoControl FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
         and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ?";
         $parametros = array($carre,$mat);
+        $res = $cone->Buscar($query,$parametros);*/
+        $query = "SELECT * FROM  CapturaCal WHERE CapturaCal.ClaveCa =? and CapturaCal.ClaveMat = ?";
+        $parametros = array($carre,$mat);
         $res = $cone->Buscar($query,$parametros);
+        $cuenta=count($res);
+        echo "SY CUENTA".$cuenta;
         for($i=0;$i<count($res);$i++){
+            echo "SOY I". $i;
             echo "ESTOY AQUI";
             $ban=0;
             echo $ban;
@@ -47,6 +53,17 @@ class InsertaCalificacion{
             $cal8=$_POST["$u8"];
             $cal9=$_POST["$u9"];
             $cal10=$_POST["$u10"];
+            echo "CALIFICACIONES";
+            echo $cal1;
+            echo $cal2;
+            echo $cal3;
+            echo $cal4;
+            echo $cal5;
+            echo $cal6;
+            echo $cal7;
+            echo $cal8;
+            echo $cal9;
+            echo $cal10;
 
             #COMPARAMOS PARA SABER SI APROBO O NO
             $query1="SELECT Unidades FROM Materias where ClaveMat=?";
