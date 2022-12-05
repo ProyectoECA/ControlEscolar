@@ -26,7 +26,7 @@
         }
         #tab {
             word-wrap: break-word;
-            margin: 5px;
+            margin: 0px;
             float: left;
             table-layout: fixed;
         }
@@ -281,7 +281,16 @@ sqlsrv_close($con);
                 </td>
             </tr>
             </div>
-            
+            <div>
+            <table border="1"  width="130.5" height="0" id="tab">
+            <tr>
+                <td width="130.5" height="100">
+                    <?php
+                    echo $r8;
+                    ?>
+                </td>
+            </tr>
+            </div>
             
     </div>
 </body>
