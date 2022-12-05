@@ -10,9 +10,13 @@ $resultado=$cone->Buscar($query);
 $query2="SELECT ClaveCa,NombreCarre FROM Carreras ";
 $resultado2=$cone->Buscar($query2);
 
-$query3="SELECT * FROM FechasPlaneadas";
+$query3="SELECT * FROM FechasCorte";
 $resultado3=$cone->Buscar($query3);
+
+$query4="SELECT * FROM FechasPlaneadas";
+$resultado4=$cone->Buscar($query4);
 ?>
+
 <!--comentario-->
 <!DOCTYPE html>
 <html lang="en">
@@ -52,28 +56,28 @@ $resultado3=$cone->Buscar($query3);
                 <div class="contenedor-derecha">
                     <label class="etiquetas"><b>Materia</b></label>
                         <select class="combos" name="materia" id="materia">
-                            <option value="<?php echo $resultado[0]['ClaveMat'];?>"><?php echo $resultado[0]['NomCarrera'];?></option>
+                            <option value="<?php echo $resultado[0]['ClaveMat'];?>"><?php echo $resultado[0]['Nombre'];?></option>
                         </select>
                 </div>
             </div>
             <div class="conte-fechas">
                 <label class="etiquetas"><b>Fecha 1</b></label><br><br>
                 <label class="etiquetas1">Planeada</label>
-                <input class="input" type="text" name="plan1" id="plan1" value="<?php echo $resultado3[0]['FechaC1']; ?>" readonly>
+                <input class="input" type="text" name="plan1" id="plan1" value="<?php echo date_format($resultado4[0]['FechaP1'],"d-m-Y"); ?>" readonly>
                 <label class="etiquetas1">Real</label>
-                <input class="input" type="text" placeholder="01/01/2000" name="real1" id="real1"><br><br>
+                <input class="input" type="text" placeholder="01-01-2000" name="real1" id="real1" value="<?php echo $resultado3[0]['FechaC1'];?>"><br><br>
 
                 <label class="etiquetas"><b>Fecha 2</b></label><br><br>
                 <label class="etiquetas2">Planeada</label>
-                <input class="input" value="<?php echo $resultado3[0]['FechaC2'];?>" type="text" name="plan2" id="plan2" readonly>
+                <input class="input" value="<?php echo date_format($resultado4[0]['FechaP2'],"d-m-Y");?>" type="text" name="plan2" id="plan2" readonly>
                 <label class="etiquetas2">Real</label>
-                <input class="input" type="text" placeholder="01/01/2000" name="real2" id="real2"><br><br>
+                <input class="input" type="text" placeholder="01-01-2000" name="real2" id="real2" value="<?php echo $resultado3[0]['FechaC2'];?>"><br><br>
 
                 <label class="etiquetas2"><b>Fecha 3</b></label><br><br>
                 <label class="etiquetas3">Planeada</label>
-                <input class="input" value="<?php echo $resultado3[0]['FechaC3'];?>" type="text" name="plan3" id="plan3"readonly>
+                <input class="input" value="<?php echo date_format($resultado4[0]['FechaP3'],"d-m-Y");?>" type="text" name="plan3" id="plan3"readonly>
                 <label class="etiquetas3">Real</label>
-                <input class="input" type="text" placeholder="01/01/2000" name="real3" id="real3">
+                <input class="input" type="text" placeholder="01-01-2000" name="real3" id="real3" value="<?php echo $resultado3[0]['FechaC3'];?>">
             </div>
             <div class="conte-botones">
                 <button class="btn" id="btn"type="submit" onclick="location.href ='/ModificacionesBD/InsertaFechaCorte.php'">Guardar</button>
