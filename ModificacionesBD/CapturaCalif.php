@@ -12,12 +12,17 @@ class InsertaCalificacion{
         $mat=$_POST["clavemat"];
         $carre=$_POST["claveca"];
 
-        $query = "SELECT Alumnos.NoControl FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
+        /*$query = "SELECT Alumnos.NoControl FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
         and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ?";
+        $parametros = array($carre,$mat);
+        $res = $cone->Buscar($query,$parametros);*/
+        $query = "SELECT * FROM  CapturaCal WHERE CapturaCal.ClaveCa =? and CapturaCal.ClaveMat = ?";
         $parametros = array($carre,$mat);
         $res = $cone->Buscar($query,$parametros);
         
         $array_ban=array();
+        $cuenta=count($res);
+        echo "SY CUENTA".$cuenta;
         for($i=0;$i<count($res);$i++){
             
             $ban=0;
@@ -49,6 +54,19 @@ class InsertaCalificacion{
             $cal8=$_POST["$u8"];
             $cal9=$_POST["$u9"];
             $cal10=$_POST["$u10"];
+            echo "CALIFICACIONES";
+            echo $cal1;
+            echo $cal2;
+            echo $cal3;
+            echo $cal4;
+            echo $cal5;
+            echo $cal6;
+            echo $cal7;
+            echo $cal8;
+            echo $cal9;
+            echo $cal10;
+
+            //echo $cal1;
 
             //echo $cal1;
 
