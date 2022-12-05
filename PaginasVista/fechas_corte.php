@@ -14,6 +14,7 @@ $resultado2=$cone->Buscar($query2,$parametros);
 $query3="SELECT * FROM FechasPlaneadas";
 $resultado3=$cone->Buscar($query3,$parametros);
 ?>
+<!--comentario-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
