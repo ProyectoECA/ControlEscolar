@@ -32,7 +32,7 @@ if (isset($_SESSION['user'])) {
                 break;
     
             case 4:
-                include_once "PaginasVista/mostrar_datos_alumnos.php";
+                include_once "PaginasVista/principal_alumnos.html";
                 break;
     
         }
@@ -154,7 +154,7 @@ if (isset($_SESSION['user'])) {
                 include_once "PaginasVista/cambio_contrasena.html";
            }else{
 
-                include_once "PaginasVista/mostrar_datos_alumnos.php";
+                include_once "PaginasVista/principal_alumnos.html";
            }
            
            

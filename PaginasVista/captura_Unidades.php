@@ -1,8 +1,8 @@
 <?php
-define("ServerName1", 'localhost');
-define("Database1", "ConEscolarNoc");
-define("UID1", "Admini");
-define("PWD1", "control2022");
+define("ServerName1", 'controlescolarservidor.database.windows.net');
+define("Database1", "ConEscolarBD");
+define("UID1", "nochistlanadm");
+define("PWD1", "Sok03951");
 define("CharacterSet1", 'UTF-8');
 $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
 $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
@@ -59,7 +59,7 @@ $resultado= sqlsrv_query($conexion,$query);
             <label class="etiquetas" style="float: center;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subtemas</b></label> 
             <textarea class="textarea" cols="45" rows="8"  name="subtema" id="subtema"></textarea>
             <input class="btnGuardar" type="submit" value="GUARDAR" onclick="location.href = '../ModificacionesBD/capturaUnidades.php' ">
-            <input class="btnCancelar" type="button" value="CANCELAR">
+            <input class="btnCancelar" type="button" value="CANCELAR" onclick="location.href = 'https://controlescolarweb.azurewebsites.net' ">
           </form>
     </div>
     <script src="../SesionesUsuario/session_expiracion.js"></script>

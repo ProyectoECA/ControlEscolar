@@ -8,7 +8,8 @@ $claveCa=$_GET['claveCa'];
 $cone=new CRUD_SQL_SERVER();
 $cone->conexionBD();
 
-$query="SELECT ClaveMat,Nombre, Objetivos from [Materias] where ClaveMat=? and carrera=?";
+$query="SELECT CarreMaterias.ClaveMat,Nombre, Objetivos from Materias,CarreMaterias 
+where Materias.ClaveMat=? and CarreMaterias.ClaveCa=? and Materias.ClaveMat=CarreMaterias.ClaveMat";
 $parametros=array($claveMat,$claveCa);
 $res=$cone->Buscar($query,$parametros);
 
@@ -81,8 +82,11 @@ $res=$cone->Buscar($query,$parametros);
                <tbody>
                    <tr>
                     <?php 
-                        $query2="SELECT TemaUni, Subtemas FROM [CaptuUnidades]
-                        WHERE ClaveMat=? and ClaveCa=? and NoUni=? ";
+                        $query2="SELECT TemaUni, Subtemas, ProI,ProT,RealI,RealT,EvaI,EvaT
+                        FROM CaptuUnidades,FechasEva
+                        WHERE CaptuUnidades.ClaveMat=FechasEva.ClaveMat and FechasEva.ClaveMat=? 
+                        and CaptuUnidades.ClaveCa=FechasEva.ClaveCa and FechasEva.ClaveCa=? 
+                        and CaptuUnidades.NoUni=FechasEva.NoUniE and FechasEva.NoUniE=? ";
                         $parametros2=array($claveMat,$claveCa,$noUni);
                         $res2=$cone->Buscar($query2,$parametros2);
                     ?>
@@ -91,18 +95,19 @@ $res=$cone->Buscar($query,$parametros);
                         <input id="claveCa" name="claveCa" type="hidden" value=<?php echo $claveCa;?>>
                        <td><?php echo $res2[0]['TemaUni'];?></td>
                        <td> <?php echo $res2[0]['Subtemas'];?> </td>
-                       <td><input class="caja_de_texto_fecha" type="date" name="ProI" id="Pro"></td>
-                       <td><input class="caja_de_texto_fecha" type="date" name="ProT" id="ProT"></td>
-                       <td><input class="caja_de_texto_fecha" type="date" name="RealI" id="RealI"></td>
-                       <td><input class="caja_de_texto_fecha" type="date" name="RealT" id=RealT></td>
-                       <td><input class="caja_de_texto_fecha" type="date" name="EvaP" id="EvaP"></td>
-                       <td><input class="caja_de_texto_fecha" type="date" name="EvaR" id="EvaR"></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="ProI" id="ProI" value="<?php echo $res2[0]['ProI'];?>" requiered pattern="^([0-9]{2})-([0-9]{2})-([0-9]{4})$"></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="ProT" id="ProT" value="<?php echo $res2[0]['ProT'];?>" requiered pattern="^([0-9]{2})-([0-9]{2})-([0-9]{4})$"></td></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="RealI" id="RealI" value="<?php echo $res2[0]['RealI'];?>" requiered pattern="^([0-9]{2})-([0-9]{2})-([0-9]{4})$"></td></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="RealT" id=RealT value="<?php echo $res2[0]['RealT'];?>" requiered pattern="^([0-9]{2})-([0-9]{2})-([0-9]{4})$"></td></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="EvaP" id="EvaP" value="<?php echo $res2[0]['EvaI'];?>" requiered pattern="^([0-9]{2})-([0-9]{2})-([0-9]{4})$"></td></td>
+                       <td><input class="caja_de_texto_fecha" type="text" name="EvaR" id="EvaR" value="<?php echo $res2[0]['EvaT'];?>" requiered pattern="^([0-9]{2})-([0-9]{2})-([0-9]{4})$"></td></td>
                    </tr>
                </tbody>
             </table>   
         <div class="contenedor_botones">    
-            <input  id="btn" class="btnGuardar" type="submit" value="GUARDAR" onclick="location.href = '../ModificacionesBD/InsertaFechasEvaluacion.php' " >
-            <input  id="btn" class="btnCancelar" type="submit" value="CANCELAR" >
+            <input  id="btn" class="btnGuardar" type="submit" value="GUARDAR" onclick="validar()" >
+            <!-- <input  id="btn" class="btnGuardar" type="submit" value="GUARDAR" onclick="location.href = '../ModificacionesBD/InsertaFechasEvaluacion.php' " > -->
+            <input  id="btn" class="btnCancelar" type="button" value="CANCELAR" onclick="location.href = 'https://controlescolarweb.azurewebsites.net' ">
         </div>    
     </form> 
     <?php
