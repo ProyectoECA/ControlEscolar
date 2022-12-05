@@ -24,13 +24,13 @@ class Fecha_Evalua{
             $cone->Insertar_Eliminar_Actualizar($query,$parametros);
             
             echo"<script>alert('Fechas guardadas con éxito')
-            location.href='/PaginasVista/principal_maestros.html'</script>";
+            location.href='https://controlescolarweb.azurewebsites.net'</script>";
                         
 
         }
         else{
             echo"<script>alert('No se puede establecer una conexión')
-            location.href='/PaginasVista/principal_maestros.html'</script>";
+            location.href='https://controlescolarweb.azurewebsites.net'</script>";
                        
         }
         $cone->CerrarConexion();

@@ -1,8 +1,8 @@
 <?php
-define("ServerName1", 'localhost');
-define("Database1", "ConEscolarNoc");
-define("UID1", "Admini");
-define("PWD1", "control2022");
+define("ServerName1", 'controlescolarservidor.database.windows.net');
+define("Database1", "ConEscolarBD");
+define("UID1", "nochistlanadm");
+define("PWD1", "Sok03951");
 define("CharacterSet1", 'UTF-8');
 $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
 $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
@@ -60,7 +60,7 @@ $resultado1= sqlsrv_query($conexion,$query1);
                 <input class="caja_texto" type="text" placeholder="" name="maestro" id="maestro" required pattern="^RH[\d]{3}$">
                    <!--  <button id="btn" class="btn_guardar" name="guardar" onclick="location.href = '/ModificacionesBD/AsignaMaestros.php' " >Guardar</button> -->
                     <button id="btn" class="btn_guardar" name="guardar" onclick="validar()" >Guardar</button>
-                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">CANCELAR</button>  
+                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='https://controlescolarweb.azurewebsites.net'">CANCELAR</button>  
                       
             </form>
         </div>
