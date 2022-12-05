@@ -8,7 +8,8 @@ $claveCa=$_GET['claveCa'];
 $cone=new CRUD_SQL_SERVER();
 $cone->conexionBD();
 
-$query="SELECT ClaveMat,Nombre, Objetivos from [Materias] where ClaveMat=? and carrera=?";
+$query="SELECT CarreMaterias.ClaveMat,Nombre, Objetivos from Materias,CarreMaterias 
+where Materias.ClaveMat=? and CarreMaterias.ClaveCa=? and Materias.ClaveMat=CarreMaterias.ClaveMat";
 $parametros=array($claveMat,$claveCa);
 $res=$cone->Buscar($query,$parametros);
 
@@ -81,8 +82,8 @@ $res=$cone->Buscar($query,$parametros);
                 <tr>
                 <?php
                     #SABER CUANTAS UNIDADES TIENE LA MATERIA
-                    $query1="SELECT * from CaptuUnidades where ClaveMat=?";
-                    $parametros1=array($claveMat);
+                    $query1="SELECT * from CaptuUnidades where ClaveMat=? and ClaveCa=?";
+                    $parametros1=array($claveMat,$claveCa);
                     $res1=$cone->Buscar($query1,$parametros1);
                     
                     for($i=0;$i<count($res1);$i++){
@@ -98,12 +99,12 @@ $res=$cone->Buscar($query,$parametros);
                         ?>
                         <td><a href="pagina_tema_1.php?claveMa=<?php echo $claveMat;?>&NoUni=<?php echo $i+1;?>&claveCa=<?php echo $claveCa;?>"><?php echo $res2[0]['TemaUni'];?></a></td>
                         <td><?php echo $res2[0]['Subtemas'];?></td>
-                        <td><?php echo date_format($res2[0]['ProI'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['ProT'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['RealI'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['RealT'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['EvaI'],"d/m/y");?></td>
-                        <td><?php echo date_format($res2[0]['EvaT'],"d/m/y");?></td>
+                        <td><?php echo $res2[0]['ProI'];?></td>
+                        <td><?php echo $res2[0]['ProT'];?></td>
+                        <td><?php echo $res2[0]['RealI'];?></td>
+                        <td><?php echo $res2[0]['RealT'];?></td>
+                        <td><?php echo $res2[0]['EvaI'];?></td>
+                        <td><?php echo $res2[0]['EvaT'];?></td>
                         </tr>
 
              <?php
@@ -115,7 +116,8 @@ $res=$cone->Buscar($query,$parametros);
             $cone->CerrarConexion();
         ?>
 
-    </div>  
+    </div>
+    <input  id="btn" class="btnCancelar" type="button" value="CANCELAR" onclick="location.href = '../PaginasVista/principal_maestros.html' ">  
     <script src="../SesionesUsuario/session_expiracion.js"></script>
 </body>
 </html>

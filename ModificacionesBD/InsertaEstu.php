@@ -3,6 +3,13 @@
 include_once '../CRUD/Usuarios_password.php';
 include_once "../CRUD/CRUD_bd_SQLServer.php";
 
+define("ServerName1", 'localhost');
+define("Database1", "ConEscolarNoc");
+define("UID1", "Admini");
+define("PWD1", "control2022");
+define("CharacterSet1", 'UTF-8');
+
+
 class Insertar_Estu{
     function insertando(){
         $cone=new CRUD_SQL_SERVER();
@@ -12,21 +19,25 @@ class Insertar_Estu{
         $conexion_pass->conexionBD();
 
         if($cone){
-        $clave = $_POST["numerocontrol"]; 
-        $nombre = $_POST["nombre"]; 
-        $apePaterno = $_POST["apellidoP"]; 
-        $apeMaterno = $_POST["apellidoM"]; 
-        $calle = $_POST["calle"]; 
-        $colonia = $_POST["colonia"]; 
-        $municipio = $_POST["municipio"]; 
-        $estado = $_POST["estado"]; 
-        $cp = $_POST["cp"]; 
-        $telefono = $_POST["tel"]; 
-        $tutor = $_POST["tutor"]; 
-        $teltutor = $_POST["teltutor"]; 
-        $correo = $_POST["correo"]; 
-        $carrera = $_POST["selecion_carrera"]; 
-        $semestre = $_POST["selecion_semestre"]; 
+
+            $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
+            $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
+
+            $clave = $_POST["numerocontrol"]; 
+            $nombre = $_POST["nombre"]; 
+            $apePaterno = $_POST["apellidoP"]; 
+            $apeMaterno = $_POST["apellidoM"]; 
+            $calle = $_POST["calle"]; 
+            $colonia = $_POST["colonia"]; 
+            $municipio = $_POST["municipio"]; 
+            $estado = $_POST["estado"]; 
+            $cp = $_POST["cp"]; 
+            $telefono = $_POST["tel"]; 
+            $tutor = $_POST["tutor"]; 
+            $teltutor = $_POST["teltutor"]; 
+            $correo = $_POST["correo"]; 
+            $carrera = $_POST["selecion_carrera"]; 
+            $semestre = $_POST["selecion_semestre"]; 
  
         #if(isset($_POST['guardar'])){
             #COMPRUEBA QUE EL ID NO ESTE REGISTRADO
@@ -42,13 +53,6 @@ class Insertar_Estu{
                     $parametros=array($clave,$nombre,$apePaterno,$apeMaterno,$telefono,$correo,$calle,$colonia,$tutor,$teltutor);
                     $cone->Insertar_Eliminar_Actualizar($query,$parametros);
                     
-                    #Consultar la clave de la carrera
-                    #$query="SELECT * FROM [Carreras] where NombreCarre=?";
-                    #$parametros=array($carrera);
-                    #$carre=$cone->Buscar($query,$parametros);
-                    #$carre1=$carre[0][0];
-                    #$carre1=strval($carre1);
-
                     #Agrega a CarreAlumnos
                     $query= "INSERT INTO [CarreAlumnos] (NoControl, ClaveCa, Semestre) VALUES (?,?,?)";
                     $parametros=array($clave, $carrera, $semestre);
@@ -68,6 +72,29 @@ class Insertar_Estu{
                         $parametros=array($clave,$cp);
                         $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
+                        #Asigna a los estudiantes las materias correspondientes al semestre
+                        $query1="SELECT CarreMaterias.ClaveMat FROM CarreMaterias, Materias 
+                        WHERE semestre=? and Materias.ClaveMat=CarreMaterias.ClaveMat and CarreMaterias.ClaveCa=?";
+                        $parametros1=array($semestre,$carrera);
+                        $resultado= sqlsrv_query($conexion,$query1,$parametros1);
+        
+                        while($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)){
+                            $rep="P";
+
+                            $mat=$row["ClaveMat"];
+
+                            $query= "INSERT INTO [AlumMate] (NoControl,ClaveMat,Rep) VALUES (?,?,?)";
+                            $parametros=array($clave,$mat,$rep);
+                            $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+
+                            #AGREGA A CAPTURACAL
+                            $ca="0";
+                            $query= "INSERT INTO [CapturaCal] (NoControl,ClaveMat,ClaveCa,Repeticion,CalFinal,Uni1,Uni2,Uni3,Uni4,Uni5,Uni6,Uni7,Uni8,Uni9,Uni10) 
+                            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                            $parametros=array($clave,$mat,$carrera,$rep,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca);
+                            $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                        }
+
                         #Agrega contraseña en hash
                         $conexion_pass->InsertarUsuarioAlumno($clave, $clave);
                         $conexion_pass->CerrarConexion();
@@ -83,6 +110,29 @@ class Insertar_Estu{
                         $parametros=array($clave,$cp);
                         $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
+                        #Asigna a los estudiantes las materias correspondientes al semestre
+                        $query1="SELECT CarreMaterias.ClaveMat FROM CarreMaterias, Materias 
+                        WHERE semestre=? and Materias.ClaveMat=CarreMaterias.ClaveMat and CarreMaterias.ClaveCa=?";
+                        $parametros1=array($semestre,$carrera);
+                        $resultado= sqlsrv_query($conexion,$query1,$parametros1);
+
+                        while($row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC)){
+                            $rep="P";
+
+                            $mat=$row["ClaveMat"];
+
+                            $query= "INSERT INTO [AlumMate] (NoControl,ClaveMat,Rep) VALUES (?,?,?)";
+                            $parametros=array($clave,$mat,$rep);
+                            $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                            
+                            #AGREGA A CAPTURACAL
+                            $ca="0";
+                            $query= "INSERT INTO [CapturaCal] (NoControl,ClaveMat,ClaveCa,Repeticion,CalFinal,Uni1,Uni2,Uni3,Uni4,Uni5,Uni6,Uni7,Uni8,Uni9,Uni10) 
+                            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                            $parametros=array($clave,$mat,$carrera,$rep,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca);
+                            $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                        }
+
                         #Agrega contraseña en hash
                         $conexion_pass->InsertarUsuarioAlumno($clave, $clave);
                         $conexion_pass->CerrarConexion();
@@ -93,6 +143,8 @@ class Insertar_Estu{
                       
                     }
                     $cone->CerrarConexion();
+                    sqlsrv_close($conexion);
+
                    
             }
             else{
