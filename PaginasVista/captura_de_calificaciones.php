@@ -9,11 +9,6 @@ $claveCa=$_GET['claveCa'];
 $cone=new CRUD_SQL_SERVER();
 $cone->conexionBD();
 
-$query = "SELECT Alumnos.NoControl FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
-and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ?";
-$parametros = array($claveCa,$claveMat);
-$res = $cone->Buscar($query,$parametros);
-
 $query="SELECT Nombre FROM Materias where ClaveMat=?";
 $parametros = array($claveMat);
 $resul = $cone->Buscar($query,$parametros);
@@ -78,7 +73,12 @@ $resul = $cone->Buscar($query,$parametros);
             $res1 = $cone->Buscar($query1,$parametros1);
             $numUni=$res1[0]['Unidades'];
 
-            for($i=0;$i<=count($res1);$i++){
+            $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
+            and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
+            $parametros2 = array($claveCa,$claveMat);
+            $res = $cone->Buscar($query2,$parametros2);
+
+            for($i=0;$i<count($res);$i++){
                 #CONSULTA PARA TODOS LOS ALUMNOS
                 $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
                 and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
@@ -190,11 +190,11 @@ $resul = $cone->Buscar($query,$parametros);
     </form>
     <form method="POST" action="calificaciones_segundas.php">
         <br>
-        <input name="claveca" value="SELECT * FROM FechasCorte where ClaveMat=? and NomCarrera=?" hidden>
+        <input name="claveca" value="<?php echo $claveCa;?>" hidden>
         <input name="clavemat" value="<?php echo $claveMat;?>" hidden>
         <input name="carrera" value="<?php echo $carrera;?>" hidden>
         <?php
-        if($feCo[0]['FechaC3']!=' '){
+        if($feCo[0]['FechaC3']!=''){
             $state='';
         }
         else{

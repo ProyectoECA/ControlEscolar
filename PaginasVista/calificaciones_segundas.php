@@ -5,13 +5,10 @@ $claveMat=$_POST['clavemat'];
 $carrera=$_POST['carrera'];
 $claveCa=$_POST['claveca'];
 
+//echo $claveMat.$claveCa;
+
 $cone=new CRUD_SQL_SERVER();
 $cone->conexionBD();
-
-$query = "SELECT Alumnos.NoControl FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
-and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ?";
-$parametros = array($claveCa,$claveMat);
-$res = $cone->Buscar($query,$parametros);
 
 $query="SELECT Nombre FROM Materias where ClaveMat=?";
 $parametros = array($claveMat);
@@ -63,20 +60,25 @@ $resul = $cone->Buscar($query,$parametros);
                 <th>Calificación unidad 10</th>
             </tr>
             <?php
-            #CONSULTA PARA VER CUANTAS UNIDADES TIENE LA MATERIA Y HABILITAR SUS UNIDADES CORRESPONDIENTES
-            $query1="SELECT Unidades FROM Materias where ClaveMat=?";
-            $parametros1 = array($claveMat);
-            $res1 = $cone->Buscar($query1,$parametros1);
-            $numUni=$res1[0]['Unidades'];
+           #CONSULTA PARA VER CUANTAS UNIDADES TIENE LA MATERIA Y HABILITAR SUS UNIDADES CORRESPONDIENTES
+           $query1="SELECT Unidades FROM Materias where ClaveMat=?";
+           $parametros1 = array($claveMat);
+           $res1 = $cone->Buscar($query1,$parametros1);
+           $numUni=$res1[0]['Unidades'];
 
-            for($i=0;$i<=count($res1);$i++){
-                #CONSULTA PARA TODOS LOS ALUMNOS
+           $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
+           and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
+           $parametros2 = array($claveCa,$claveMat);
+           $res = $cone->Buscar($query2,$parametros2);
+           
+
+            for($i=0;$i<count($res);$i++){
                 $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
                 and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
                 $parametros2 = array($claveCa,$claveMat);
                 $res2 = $cone->Buscar($query2,$parametros2);
                 $nomComple=$res2[$i]['ApePaterno'].' '.$res2[$i]['ApeMaterno'].' '.$res2[$i]['Nombre'];
-
+                
                 //COMPARAMOS PARA VER QUIEN DEBE SEGUNDAS
                 $ban=0;
                 $califin=$res2[$i]['CalFinal'];
