@@ -9,13 +9,15 @@ class ConsultaMat{
         #CONSULTA GENERAL
         $salida="";
         $query="SELECT Materias.ClaveMat,Nombre,Creditos,Unidades,Objetivos,Materias.semestre,NombreCarre
-        FROM Materias,Carreras,CarreMaterias where CarreMaterias.ClaveCa=Carreras.ClaveCa";
+        FROM Materias,Carreras,CarreMaterias where CarreMaterias.ClaveCa=Carreras.ClaveCa and
+		CarreMaterias.ClaveMat=Materias.ClaveMat";
 
         #CONSULTA INTELIGENTE
         if(isset($_POST['consulta'])){
             $q=($_POST['consulta']);
             $query="SELECT Materias.ClaveMat,Nombre,Creditos,Unidades,Objetivos,Materias.semestre,NombreCarre
             FROM Materias,Carreras,CarreMaterias where CarreMaterias.ClaveCa=Carreras.ClaveCa and
+		    CarreMaterias.ClaveMat=Materias.ClaveMat and
             (Materias.ClaveMat like '%".$q."%' OR Nombre like '%".$q."%' OR NombreCarre like '%".$q."%' 
             OR Unidades like '%".$q."%' OR Materias.semestre like '%".$q."%') ORDER BY Materias.ClaveMat";
         }
