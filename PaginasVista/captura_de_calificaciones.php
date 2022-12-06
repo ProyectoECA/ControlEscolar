@@ -98,7 +98,6 @@ $resul = $cone->Buscar($query,$parametros);
                 
                 #CONSULTA LAS FECHAS DE EVALUACION 
                 $uni=$j+1;
-                echo "uin".$uni;
                 $query3="SELECT EvaT FROM FechasEva where ClaveMat=? and NoUniE=? and ClaveCa=?";
                 $parametros3 = array($claveMat,$uni,$claveCa);
                 $res3 = $cone->Buscar($query3,$parametros3);
