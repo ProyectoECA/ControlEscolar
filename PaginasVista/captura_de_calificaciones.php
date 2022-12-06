@@ -79,15 +79,25 @@ $resul = $cone->Buscar($query,$parametros);
             $res = $cone->Buscar($query2,$parametros2);
 
             for($i=0;$i<count($res);$i++){
+
                 #CONSULTA PARA TODOS LOS ALUMNOS
                 $query2 = "SELECT * FROM [CapturaCal], [Alumnos] WHERE Alumnos.NoControl = CapturaCal.NoControl 
                 and CapturaCal.ClaveCa = ? and CapturaCal.ClaveMat = ? ORDER BY ApePaterno";
                 $parametros2 = array($claveCa,$claveMat);
                 $res2 = $cone->Buscar($query2,$parametros2);
                 $nomComple=$res2[$i]['ApePaterno'].' '.$res2[$i]['ApeMaterno'].' '.$res2[$i]['Nombre'];
-
+                ?>
+                <td><?php echo $nomComple;?></td>
+                <td><input class="caja_nocontrol"  name="<?php echo 'noCon'.$i;?>" value=<?php echo $res2[$i]['NoControl'];?> readonly></td>
+                <td><input class="caja_calificacion" value=<?php echo $res2[$i]['Repeticion'];?> readonly></td>
+                <td><input class="caja_calificacion" name="<?php echo 'calfin'.$i;?>" value=<?php echo $res2[$i]['CalFinal'];?> readonly></td>
+                
+                <?php
+                $x=1;
+                for($j=0;$j<intval(11);$j++){
+                
                 #CONSULTA LAS FECHAS DE EVALUACION 
-                $uni=$i+1;
+                $uni=$j+1;
                 $query3="SELECT EvaT FROM FechasEva where ClaveMat=? and NoUniE=? and ClaveCa=?";
                 $parametros3 = array($claveMat,$uni,$claveCa);
                 $res3 = $cone->Buscar($query3,$parametros3);
@@ -97,83 +107,445 @@ $resul = $cone->Buscar($query,$parametros);
                 else{
                     $fecha=strtotime($res3[0]['EvaT']);
                 }
-                #COMPARA LAS FECHAS, si BAN=1 BLOQUE CAJAS, SI BAN=0 DESBLOQUEA CAJAS
-                $ban=0;
-                if($fec1==""){
-                    $ban=0;
-                }
-                else if($fec1!=""){
-                    if($fecha<$fec1){
-                        #BLOQUE CAJAS DE FECHAS DE CORTE 1
-                        $ban=1;
+                #COMPARA LAS FECHAS PARA DESBLOQUEAR LAS CAJAS POR UNIDAD
+                #UNIDAD 1
+                if($uni==1){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?>> </td> <?php
+                        }
                     }
-                    else{
-                        if($fec2!=""){
-                            if($fecha<$fec2){
-                                #BLOQUE CAJAS DE FECHAS DE CORTE 2
-                                $ban=1;
-                            }
-                            else{
-                                if($fec3!=""){
-                                    if($fecha<$fec3){
-                                        #BLOQUE CAJAS DE FECHAS DE CORTE 3
-                                        $ban=1;
-                                    }
-                                    else{
-                                        #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES
-                                        $ban=1;
-                                    }
-                                }
-                                else{
-                                    $ban=0;
-                                }
-                            }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> readonly> </td><?php
                         }
                         else{
-                            $ban=0;
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> > </td><?php
+                            }
+                        }
+                    }
+                }
+                #UNIDAD 2
+                if($uni==2){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?>> </td> <?php
+                        }
+                    }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> readonly> </td><?php
+                        }
+                        else{
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> > </td><?php
+                            }
+                        }
+                    }
+                }
+                #UNIDAD 3
+                if($uni==3){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?>> </td> <?php
+                        }
+                    }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> readonly> </td><?php
+                        }
+                        else{
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> > </td><?php
+                            }
+                        }
+                    }
+                }
+                #UNIDAD 4
+                if($uni==4){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?>> </td> <?php
+                        }
+                    }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> readonly> </td><?php
+                        }
+                        else{
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> > </td><?php
+                            }
+                        }
+                    }
+                }
+                #UNIDAD 5
+                if($uni==5){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?>> </td> <?php
+                        }
+                    }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> readonly> </td><?php
+                        }
+                        else{
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> > </td><?php
+                            }
+                        }
+                    }
+                }
+                #UNIDAD 6
+                if($uni==6){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?>> </td> <?php
+                        }
+                    }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> readonly> </td><?php
+                        }
+                        else{
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> > </td><?php
+                            }
+                        }
+                    }
+                }
+                #UNIDAD 7
+                if($uni==7){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?>> </td> <?php
+                        }
+                    }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> readonly> </td><?php
+                        }
+                        else{
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> > </td><?php
+                            }
+                        }
+                    }
+                }
+                #UNIDAD 8
+                if($uni==8){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?>> </td> <?php
+                        }
+                    }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> readonly> </td><?php
+                        }
+                        else{
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> > </td><?php
+                            }
+                        }
+                    }
+                }
+                #UNIDAD 9
+                if($uni==9){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?>> </td> <?php
+                        }
+                    }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> readonly> </td><?php
+                        }
+                        else{
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> > </td><?php
+                            }
+                        }
+                    }
+                }
+                #UNIDAD 10
+                if($uni==10){
+                    if($fec1==""){
+                        if($fecha==''){ ?>
+                         <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> readonly> </td><?php
+                        }
+                        else{?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?>> </td> <?php
+                        }
+                    }
+                    else if($fec1!=""){
+                        if($fecha<$fec1){
+                            #BLOQUE CAJAS DE FECHAS DE CORTE 1 ?>
+                            <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> readonly> </td><?php
+                        }
+                        else{
+                            if($fec2!=""){
+                                if($fecha<$fec2){
+                                    #BLOQUE CAJAS DE FECHAS DE CORTE 2 ?>
+                                    <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> readonly> </td><?php
+                                }
+                                else{
+                                    if($fec3!=""){
+                                        if($fecha<$fec3){
+                                            #BLOQUE CAJAS DE FECHAS DE CORTE 3 ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> readonly> </td><?php
+                                        }
+                                        else{
+                                            #DESPUES DE PONER CORTE 3 YA NO SE PUEDEN MODIFICAR LAS CALIFICACIONES ?>
+                                            <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> readonly> </td><?php
+                                        }
+                                    }
+                                    else{ ?>
+                                        <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> > </td><?php
+                                    }
+                                }
+                            }
+                            else{?>
+                                <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> > </td><?php
+                            }
                         }
                     }
                 }
 
-                $x=1;
-                $state='';
-                $ban=0;
-                #SE LLENA LA TABLA CON LOS INPUTS DE CALIFICACIONES
-                ?>
-                <td><?php echo $nomComple;?></td>
-                <td><input class="caja_nocontrol"  name="<?php echo 'noCon'.$i;?>" value=<?php echo $res2[$i]['NoControl'];?> readonly></td>
-                <td><input class="caja_calificacion" value=<?php echo $res2[$i]['Repeticion'];?> readonly></td>
-                <td><input class="caja_calificacion" name="<?php echo 'calfin'.$i;?>" value=<?php echo $res2[$i]['CalFinal'];?> readonly></td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal1'.$i;?>" value=<?php echo $res2[$i]['Uni1'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal2'.$i;?>" value=<?php echo $res2[$i]['Uni2'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal3'.$i;?>" value=<?php echo $res2[$i]['Uni3'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal4'.$i;?>" value=<?php echo $res2[$i]['Uni4'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal5'.$i;?>" value=<?php echo $res2[$i]['Uni5'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal6'.$i;?>" value=<?php echo $res2[$i]['Uni6'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal7'.$i;?>" value=<?php echo $res2[$i]['Uni7'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal8'.$i;?>" value=<?php echo $res2[$i]['Uni8'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal9'.$i;?>" value=<?php echo $res2[$i]['Uni9'];?> <?php $x++; echo $state;?>> </td>
-                <?php if($x > $numUni or $ban==1){
-                    $state='readonly';}?>
-                <td><input class="caja_calificacion" name="<?php echo 'cal10'.$i;?>" value=<?php echo $res2[$i]['Uni10'];?> <?php $x++; echo $state;?>> </td>
+              
+                
+            }
+                
+                
+                
+               ?>
             </tr>
              <?php
                    }
