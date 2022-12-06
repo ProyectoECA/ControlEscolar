@@ -18,9 +18,7 @@ where alumnos.NoControl=CapturaCal.NoControl and CapturaCal.ClaveMat = FechasCor
 and FechasCorte.FechaC1 != '' and FechasCorte.FechaC2 != '' 
 and FechasCorte.FechaC3 !='' and alumnos.nocontrol = '$nom' ";
 
-
 $stmt = sqlsrv_query($conn, $sql);
-
 
 
 if ($stmt != false) {
@@ -29,40 +27,45 @@ while($row = sqlsrv_fetch_array($stmt))
 
 $aux=$row['ClaveMat'];
 
-
-
 $ai=$row['ClaveMat'];
 
 //definir variable
 $cal=$row['CalFinal'];
 
 if( $cal == 'N/A'){
-  echo "no paso";
-    $sqlo = "UPDATE CapturaCal set repeticion='R' where ClaveMat= $ai";
-    $stmto = sqlsrv_query($conn, $sqlo);
+    $rep="R";
+    $sqlo = "UPDATE CapturaCal set repeticion=? where ClaveMat= ? and NoControl=?";
+    $parametros=array($rep,$ai,$nom);
+    $stmto = sqlsrv_query($conn, $sqlo,$parametros);
+
 }
 
 else if ($cal != 'N/A') {
     //mandar una alerta a pantalla
-    echo "paso";
-    $sqlx = "UPDATE CapturaCal set repeticion='P' where ClaveMat= $ai";
-    $stmtx = sqlsrv_query($conn, $sqlx);
 
+    $rep="P";
+    $sqlx = "UPDATE CapturaCal set repeticion=? where ClaveMat= ? and NoControl=?";
+    $parametros=array($rep,$ai,$nom);
+    $stmtx = sqlsrv_query($conn, $sqlx,$parametros);
+  
     //buscar materia en jerarquia y capturacal
-    $sqd = "SELECT materias.nombre, jerarquiamat.jeramaterias, jerarquiamat.clavemat,jerarquiamat.adelante
-    from capturacal,materias,jerarquiamat where
-    capturacal.ClaveMat = materias.ClaveMat
-     and materias.ClaveMat = jerarquiamat.ClaveMat and capturacal.ClaveMat = $aux";
-    $stmn = sqlsrv_query($conn, $sqd);
-    
-    $adelante='';
+    $sqd = "SELECT  JeraMaterias, jerarquiamat.clavemat, Adelante, CapturaCal.ClaveCa
+    from capturacal,jerarquiamat where
+    capturacal.ClaveMat =  jerarquiamat.ClaveMat and capturacal.ClaveMat =? and CapturaCal.NoControl=?";
+     $parametros1=array($aux,$nom);
+    $stmn = sqlsrv_query($conn, $sqd,$parametros1);
+
+    #$adelante='';
+ 
   if ($stmn!=false){
     while($rows = sqlsrv_fetch_array($stmn))
     {
-        $adelante=$rows['adelante'];
+
+        $adelante=$rows['Adelante'];
+        $carrera=$rows['ClaveCa'];
 
         //comprobar que si tiene materias asociadas
-        $a=explode(",",$rows['jeramaterias']);
+        $a=explode(",",$rows['JeraMaterias']);
         $arreglo=array();
         foreach($a as $b){
 
@@ -86,8 +89,6 @@ else if ($cal != 'N/A') {
           }
 
           $arreglo[$b]=$b1;
-          
-          
           }
         }
     }
@@ -100,19 +101,36 @@ else if ($cal != 'N/A') {
         }
       
           if($b2==true){
+            $adela=explode(",",$rows['Adelante']);
+            foreach($adela as $des){
 
-            $nocontrol=$row['nocontrol'];
-
-            $sqlh = "INSERT into CapturaCal values('$nocontrol','$adelante','P',0,0,0,0,0,0,0,0,0,0,0)";
-          $sh = sqlsrv_query($conn, $sqlh); 
+              $ca="0";
+              $rep="P";
+              $query= "INSERT INTO [CapturaCal] (NoControl,ClaveMat,ClaveCa,Repeticion,CalFinal,Uni1,Uni2,Uni3,Uni4,Uni5,Uni6,Uni7,Uni8,Uni9,Uni10) 
+              VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+              $parametros=array($nom,$des,$carrera,$rep,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca);
+              $sh = sqlsrv_query($conn, $query, $parametros); 
+            }
+            
+          /*$sqlh = "INSERT into CapturaCal values('$nocontrol','$adelante','P',0,0,0,0,0,0,0,0,0,0,0)";
+          $sh = sqlsrv_query($conn, $sqlh); */
         }
         
     }
+  }
+  else{
+            $ca="0";
+            $rep="P";
+            $query= "INSERT INTO [CapturaCal] (NoControl,ClaveMat,ClaveCa,Repeticion,CalFinal,Uni1,Uni2,Uni3,Uni4,Uni5,Uni6,Uni7,Uni8,Uni9,Uni10) 
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $parametros=array($nom,$adelante,$carrera,$rep,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca);
+          $sh = sqlsrv_query($conn, $query, $parametros); 
   }
     
 }
 }
 }
-echo "<script>alert('ACCION EXITOSA');</script>";
+echo "<script>alert('ACCIÓN EXITOSA')
+location.href='/PaginasVista/asignacion_reticula.php'</script>;"
 
 ?>
