@@ -33,15 +33,18 @@ $aux=$row['ClaveMat'];
 
 $ai=$row['ClaveMat'];
 
-if( $row['CalFinal'] == 'N/A'){
+//definir variable
+$cal=$row['CalFinal'];
 
+if( $cal == 'N/A'){
+  echo "no paso";
     $sqlo = "UPDATE CapturaCal set repeticion='R' where ClaveMat= $ai";
     $stmto = sqlsrv_query($conn, $sqlo);
 }
 
-else if ($row['CalFinal'] != 'N/A') {
+else if ($cal != 'N/A') {
     //mandar una alerta a pantalla
-    
+    echo "paso";
     $sqlx = "UPDATE CapturaCal set repeticion='P' where ClaveMat= $ai";
     $stmtx = sqlsrv_query($conn, $sqlx);
 
