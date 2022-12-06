@@ -16,7 +16,7 @@ CapturaCal.CalFinal, capturacal.repeticion
 from alumnos,capturacal,FechasCorte
 where alumnos.NoControl=CapturaCal.NoControl and CapturaCal.ClaveMat = FechasCorte.ClaveMat
 and FechasCorte.FechaC1 != '' and FechasCorte.FechaC2 != '' 
-and FechasCorte.FechaC3 !='' and alumnos.nombre = '$nom' ";
+and FechasCorte.FechaC3 !='' and alumnos.nocontrol = '$nom' ";
 
 
 $stmt = sqlsrv_query($conn, $sql);
@@ -53,7 +53,7 @@ else if ($row['CalFinal'] != 'N/A') {
     $stmn = sqlsrv_query($conn, $sqd);
     
     $adelante='';
-
+  if ($stmn!=false){
     while($rows = sqlsrv_fetch_array($stmn))
     {
         $adelante=$rows['adelante'];
@@ -105,6 +105,7 @@ else if ($row['CalFinal'] != 'N/A') {
         }
         
     }
+  }
     
 }
 }
