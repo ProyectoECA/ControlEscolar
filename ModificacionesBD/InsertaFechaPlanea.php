@@ -12,12 +12,12 @@ class InsertaFechaPlaneada{
         $f3=$_POST["date3"];
 
         $query="DELETE FROM [FechasPlaneadas]";
-        $parametros=array($f1,$f2,$f3);
+        $parametros=array('');
         $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
-        $query="INSERT INTO [FechasPlaneadas] (FechaP1, FechaP2, FechaP3) VALUES (?,?,?)";
+        $query2="INSERT INTO [FechasPlaneadas] (FechaP1, FechaP2, FechaP3) VALUES (?,?,?)";
         $parametros=array($f1,$f2,$f3);
-        $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+        $cone->Insertar_Eliminar_Actualizar($query2,$parametros);
         
         $cone->CerrarConexion();
         echo"<script>alert('Fechas registradas con éxito');
