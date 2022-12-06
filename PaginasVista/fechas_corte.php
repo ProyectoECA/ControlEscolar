@@ -47,14 +47,14 @@ $resultado4=$cone->Buscar($query4);
         <form class="inputs-container"  method="POST" action="/ModificacionesBD/InsertaFechaCorte.php" >
             <div class="conte1">
                 <div class="contenedor-izquierda">
-                    <label class="etiquetas"><b>Carrera</b></label>
+                    <label class="etiquetas"><b>Carrera</b></label><br>
                         <select class="combos" name="carrera" id="carrera">
                             <option value="<?php echo $resultado2[0]['NombreCarre'];?>"><?php echo $resultado2[0]['NombreCarre'];?></option>
                         <option value="Todas">TODAS</option>
                         </select>
                 </div>
                 <div class="contenedor-derecha">
-                    <label class="etiquetas"><b>Materia</b></label>
+                    <label class="etiquetas"><b>Materia</b></label><br>
                         <select class="combos" name="materia" id="materia">
                             <option value="<?php echo $resultado[0]['ClaveMat'];?>"><?php echo $resultado[0]['Nombre'];?></option>
                         </select>
