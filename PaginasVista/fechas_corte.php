@@ -47,7 +47,7 @@ $resultado4=$cone->Buscar($query4);
         <form class="inputs-container" method="POST" action="/PaginasVista/fechas_de_corte.php" >
             <div class="conte1">
                 <div class="contenedor-izquierda">
-                    <label class="etiquetas"><b>Carrera</b></label>
+                    <label class="etiquetas"><b>Carrera</b></label><br>
                         <select class="combos" name="carrera" id="carrera">
                             <?php for($i=0;$i<count($resultado2);$i++){?>
                             <option value="<?php echo $resultado2[$i]['NombreCarre'];?>"><?php echo $resultado2[$i]['NombreCarre'];?></option>
@@ -55,7 +55,7 @@ $resultado4=$cone->Buscar($query4);
                         </select>
                 </div>
                 <div class="contenedor-derecha">
-                    <label class="etiquetas"><b>Materia</b></label>
+                    <label class="etiquetas"><b>Materia</b></label><br>
                         <select class="combos" name="materia" id="materia">
                         <?php for($i=0;$i<count($resultado2);$i++){?>
                             <option value="<?php echo $resultado[$i]['ClaveMat'];?>"><?php echo $resultado[$i]['Nombre'];?></option>
