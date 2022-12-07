@@ -92,3 +92,14 @@ body{
     text-transform: uppercase;
     width: 50px;    
 }
+.btnCancelar{
+    width: 12rem;
+    height: 2.2em; 
+    color: white;
+    background-color: #1e355e; 
+    border-radius: 5px;
+    letter-spacing: 1px;  
+    justify-content: space-between; 
+    margin-top: 0%;
+    transform:translate(350%,0%);
+}

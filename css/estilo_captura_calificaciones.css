@@ -118,3 +118,61 @@ body{
 
 
 }
+
+.btn_Guardar{
+   width: 12rem;
+   height: 2.2em; 
+   color: white;
+   background-color: #1e355e; 
+   border-radius: 5px;
+   letter-spacing: 1px;  
+   justify-content: space-between; 
+   margin-top: 0%;
+   transform:translate(230%,0%);
+}
+.btn_Segundas{
+   width: 12rem;
+   height: 2.2em; 
+   color: white;
+   background-color: #1e355e; 
+   border-radius: 5px;
+   letter-spacing: 1px;  
+   justify-content: space-between; 
+   margin-top: 0%;
+   transform:translate(5%,0%);
+}
+.btn_Cancelar{
+   width: 12rem;
+   height: 2.2em; 
+   color: white;
+   background-color: #1e355e; 
+   border-radius: 5px;
+   letter-spacing: 1px;  
+   justify-content: space-between; 
+   margin-top: 0%;
+   transform:translate(250%,0%);
+}
+.caja_nocontrol{
+   padding-left: 20px;
+   border: #1e355e;
+   border-radius: 5px;
+   font-weight: 600;
+   letter-spacing: 1px;
+   box-sizing: border-box;
+   text-transform: uppercase;
+   width: 140px;
+   justify-content: center;
+   align-items: center;
+}
+.caja_calificacion{
+    padding-left: 20px;
+    border: #1e355e;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    width: 70px;
+    justify-content: center;
+    align-items: center;
+}
