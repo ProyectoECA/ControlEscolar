@@ -395,11 +395,11 @@ class InsertaCalificacion{
           }
         if($ban==0){
             echo"<script>alert('Calificaciones registradas con éxito');
-            location.href='/PaginasVista/principal_maestros.html'</script>";  
+            location.href='https://controlescolarweb.azurewebsites.net'</script>";  
         }
         if($ban==1){
             echo"<script>alert('Error al registrar algunas calificaciones, recuerda no se admite texto, simbolos y calificaciones mayores a 100');
-                location.href='/PaginasVista/principal_maestros.html'</script>";
+                location.href='https://controlescolarweb.azurewebsites.net'</script>";
         }
         
     }

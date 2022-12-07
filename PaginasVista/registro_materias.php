@@ -1,10 +1,12 @@
 <?php
 
-define("ServerName1", 'localhost');
-define("Database1", "ConEscolarNoc");
-define("UID1", "Admini");
-define("PWD1", "control2022");
+
+define("ServerName1", 'controlescolarservidor.database.windows.net');
+define("Database1", "ConEscolarBD");
+define("UID1", "nochistlanadm");
+define("PWD1", "Sok03951");
 define("CharacterSet1", 'UTF-8');
+
 $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
 $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
 
@@ -85,7 +87,7 @@ $resultado= sqlsrv_query($conexion,$query);
 
                     <button disabeled id="btn" class="btn_guardar" name="guardar" onclick="location.href = '../ModificacionesBD/InsertaMateria.php' ">GUARDAR</button>
                     <!-- <button disabled id="btn" class="btn_guardar" name="guardar" onclick="validar()">GUARDAR</button> -->
-                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">CANCELAR</button>    
+                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='https://controlescolarweb.azurewebsites.net'">CANCELAR</button>    
             </form>
         </div>
     </div>

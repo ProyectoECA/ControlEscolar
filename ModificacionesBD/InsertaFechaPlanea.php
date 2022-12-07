@@ -11,13 +11,18 @@ class InsertaFechaPlaneada{
         $f2=$_POST["date2"];
         $f3=$_POST["date3"];
 
-        $query="DELETE FROM [FechasPlaneadas]";
-        $parametros=array('');
+        $query="UPDATE FechasPlaneadas SET FechaP1=?";
+        $parametros=array($f1);
+        $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+         
+        $query="UPDATE FechasPlaneadas SET FechaP2=?";
+        $parametros=array($f2);
         $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
-        $query2="INSERT INTO [FechasPlaneadas] (FechaP1, FechaP2, FechaP3) VALUES (?,?,?)";
-        $parametros=array($f1,$f2,$f3);
-        $cone->Insertar_Eliminar_Actualizar($query2,$parametros);
+        $query="UPDATE FechasPlaneadas SET FechaP3=?";
+        $parametros=array($f3);
+        $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+       
         
         $cone->CerrarConexion();
         echo"<script>alert('Fechas registradas con éxito');
