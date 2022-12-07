@@ -87,7 +87,7 @@ $resultado= sqlsrv_query($conexion,$query);
 
                     <button disabeled id="btn" class="btn_guardar" name="guardar" onclick="location.href = '../ModificacionesBD/InsertaMateria.php' ">GUARDAR</button>
                     <!-- <button disabled id="btn" class="btn_guardar" name="guardar" onclick="validar()">GUARDAR</button> -->
-                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='http://localhost/index.php'">CANCELAR</button>    
+                    <button class="btn_cancelar" name="cancela" type="button" onclick="location.href='https://controlescolarweb.azurewebsites.net'">CANCELAR</button>    
             </form>
         </div>
     </div>

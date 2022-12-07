@@ -71,7 +71,7 @@ if(empty($resultado3)){
             </div>
             <div class="conte-botones">
                 <button class="btn" id="btn"type="submit" onclick="location.href ='/ModificacionesBD/InsertaFechaCorte.php'">Guardar</button>
-                <button class="btn" type="button" onclick="location.href='http://localhost/index.php'">Cancelar</button> 
+                <button class="btn" type="button" onclick="location.href='https://controlescolarweb.azurewebsites.net'">Cancelar</button> 
             </div>
         </form>
     </div>

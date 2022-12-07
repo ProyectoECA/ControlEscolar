@@ -130,7 +130,7 @@ class Consulta_Maes{
             else{
                 location.href='../PaginasVista/mostrar_datos_maestros.php';
             }
-            window.history.back('/PaginasVista/jefe_Control.html');})
+            window.history.back('https://controlescolarweb.azurewebsites.net');})
             </script>
           <?php
         }

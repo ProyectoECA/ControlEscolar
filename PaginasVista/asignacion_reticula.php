@@ -23,7 +23,7 @@
       <form method="POST" action="/PaginasVista/jerarquia.php">
         <div class="datos" style="float: center;">
           <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato" id="dato">
-          <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php'">
+          <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='https://controlescolarweb.azurewebsites.net'">
           <input class="boton_confirmar" type="submit" value="BUSCAR ">
         </div> 
         </form>
