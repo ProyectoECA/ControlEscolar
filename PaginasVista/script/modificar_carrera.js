@@ -6,7 +6,7 @@ var expreg = /^\S+$/;
 const expresiones = {
     clave:/^[\d]{5}$/, 
     semestre:/^[\d]{1,2}$/, 
-    nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,30}$/,
+    nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,80}$/,
 }
 
 /* const clave = document.getElementById('clave');

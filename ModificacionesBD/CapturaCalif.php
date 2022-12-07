@@ -22,6 +22,8 @@ class InsertaCalificacion{
         
         $array_ban=array();
         $cuenta=count($res);
+        //echo "SY CUENTA".$cuenta;
+        echo $mat;
         for($i=0;$i<count($res);$i++){
             
             $ban=0;
@@ -53,7 +55,18 @@ class InsertaCalificacion{
             $cal8=$_POST["$u8"];
             $cal9=$_POST["$u9"];
             $cal10=$_POST["$u10"];
-           
+            /*echo "CALIFICACIONES";
+            echo $cal1;
+            echo $cal2;
+            echo $cal3;
+            echo $cal4;
+            echo $cal5;
+            echo $cal6;
+            echo $cal7;
+            echo $cal8;
+            echo $cal9;
+            echo $cal10;*/
+
             //echo $cal1;
 
             //echo $cal1;
@@ -94,14 +107,16 @@ class InsertaCalificacion{
                 #COMPRUEBA QUE NO SEA TEXTO, ESPACIO EN BLANCO
                 if($cal2=='N/A'){
                     $ban2=0;
+                    echo 'aqui';
                 }
                 else{
                 $ban2=1;
                 }
             }
             else{
-                if(intval($cal2)<70 and $x<intval($val)){
-                    $cal1='N/A';
+                if(intval($cal2)<70 and $x<intval($val) and intval($cal2)!=0){
+                    echo 'aqui2';
+                    $cal2='N/A';
                     $ban2=0;
                 }
                 else if(intval($cal2)>100){
@@ -124,7 +139,7 @@ class InsertaCalificacion{
             }
             else{
                 if(intval($cal3)<70 and $x<intval($val)){
-                    $cal1='N/A';
+                    $cal3='N/A';
                     $ban3=0;
                 }
                 else if(intval($cal3)>100){
@@ -147,7 +162,7 @@ class InsertaCalificacion{
             }
             else{
                 if(intval($cal4)<70 and $x<intval($val)){
-                    $cal1='N/A';
+                    $cal4='N/A';
                     $ban4=0;
                 }
                 else if(intval($cal4)>100){
@@ -170,7 +185,7 @@ class InsertaCalificacion{
             }
             else{
                 if(intval($cal5)<70 and $x<intval($val)){
-                    $cal1='N/A';
+                    $cal5='N/A';
                     $ban5=0;
                 }
                 else if(intval($cal5)>100){
@@ -193,7 +208,7 @@ class InsertaCalificacion{
             }
             else{
                 if(intval($cal6)<70 and $x<intval($val)){
-                    $cal1='N/A';
+                    $cal6='N/A';
                     $ban6=0;
                 }
                 else if(intval($cal6)>100){
@@ -216,7 +231,7 @@ class InsertaCalificacion{
             }
             else{
                 if(intval($cal7)<70 and $x<intval($val)){
-                    $cal1='N/A';
+                    $cal7='N/A';
                     $ban7=0;
                 }
                 else if(intval($cal7)>100){
@@ -239,7 +254,7 @@ class InsertaCalificacion{
             }
             else{
                 if(intval($cal8)<70 and $x<intval($val)){
-                    $cal1='N/A';
+                    $cal8='N/A';
                     $ban8=0;
                 }
                 else if(intval($cal8)>100){
@@ -262,7 +277,7 @@ class InsertaCalificacion{
             }
             else{
                 if(intval($cal9)<70 and $x<intval($val)){
-                    $cal1='N/A';
+                    $cal9='N/A';
                     $ban9=0;
                 }
                 else if(intval($cal9)>100){
@@ -285,7 +300,7 @@ class InsertaCalificacion{
             }
             else{
                 if(intval($cal10)<70 and $x<intval($val)){
-                    $cal1='N/A';
+                    $cal10='N/A';
                     $ban10=0;
                 }
                 else if(intval($cal10)>100){
@@ -304,7 +319,8 @@ class InsertaCalificacion{
             $parametros2 = array($mat);
             $res2 = $cone->Buscar($query2,$parametros2);
             $val2=$res2[0]['FechaC3'];
-            if($val2!='' or $val2!=' '){
+            //echo 'hola'.$res2[0]['FechaC3'].'56';
+            if($val2!=''){
                 if($cal1=='N/A' or $cal2=='N/A' or $cal3=='N/A' or $cal4=='N/A' or $cal5=='N/A' 
                 or $cal6=='N/A' or $cal7=='N/A' or $cal8=='N/A' or $cal9=='N/A' or $cal10=='N/A'){
                     $calFin='N/A';
@@ -379,7 +395,7 @@ class InsertaCalificacion{
           }
         if($ban==0){
             echo"<script>alert('Calificaciones registradas con éxito');
-                location.href='/PaginasVista/principal_maestros.html'</script>";
+            location.href='/PaginasVista/principal_maestros.html'</script>";  
         }
         if($ban==1){
             echo"<script>alert('Error al registrar algunas calificaciones, recuerda no se admite texto, simbolos y calificaciones mayores a 100');
