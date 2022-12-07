@@ -408,8 +408,8 @@ correo.addEventListener('keyup', (e) => {
     }
 });
 
-function valida(){
-    /* const btn = document.getElementById('btn'); */
+function validar(){
+    const bot = document.getElementById('btn');
     if (b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true && b12 == true && b13 == true) {
         bot.disabled=false; 
         /* location.href = '../ModificacionesBD/InsertaMaes.php' */
