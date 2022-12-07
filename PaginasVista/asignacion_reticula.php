@@ -20,17 +20,17 @@
       <div class="Contenedor_ubicacion">
            <h2 class="ubicacion">ASIGNACIÓN RETICULA</h2>
       </div>
-      <form method="POST" action="/ModificacionesBD/ConsultaMaes.php">
+      <form method="POST" action="/PaginasVista/jerarquia.php">
         <div class="datos" style="float: center;">
           <input class="input_busqueda" type="text" placeholder="Inserta dato" name="dato" id="dato">
           <input class="btnBuscar" type="button" value="CANCELAR" onclick="location.href='http://localhost/index.php'">
-          <input class="boton_confirmar" type="button" value="BUSCAR">
+          <input class="boton_confirmar" type="submit" value="BUSCAR ">
         </div> 
         </form>
     <div class="contenedor-tabla">
         <div class="table" name="tablaUni" id="tablaUni">
 
-        "<script>
+        <script>
         $('.boton_confirmar').click(function(){
             $.ajax({
                 type:'POST',
@@ -41,7 +41,7 @@
                 }
             });
         });
-        </script>";
+        </script>
         
         
  

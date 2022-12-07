@@ -67,7 +67,7 @@ $resultado= sqlsrv_query($conexion,$query);
                     </select>   
                 </div> 
                 <div>
-                  <label>Semestres</label>
+                  <label>Semestre</label>
                    <select class="combobox" name="semestre" id="semestre">
                      <option value="1">1</option>
                      <option value="2">2</option>
