@@ -4,7 +4,7 @@ var b3=false;
 
 var expreg = /^\S+$/;
 const expresiones = { 
-    nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,30}$/,
+    nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,80}$/,
 }
 const clave = document.getElementById('clave');
 clave.addEventListener('keyup', (e) => {
