@@ -102,7 +102,7 @@ nav{
 }
 
 .combos{
-    width: 15em;
+    width: 98%;
     height: 2em;
 }
 
@@ -145,4 +145,6 @@ nav{
 .input{
     width: 15em;
     height: 2em;
-}
+} 
+
+/* --- */
