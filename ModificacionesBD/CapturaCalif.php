@@ -89,7 +89,7 @@ class InsertaCalificacion{
             $cone->Insertar_Eliminar_Actualizar($query,$parametros);
         }
         echo"<script>alert('Calificaciones registradas con éxito');
-                location.href='/PaginasVista/principal_maestros.html'</script>";
+                location.href='https://controlescolarweb.azurewebsites.net'</script>";
     }
 }
 $ins=new InsertaCalificacion;
