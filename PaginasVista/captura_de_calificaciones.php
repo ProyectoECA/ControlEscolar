@@ -63,21 +63,21 @@ $resul = $cone->Buscar($query,$parametros);
             $query="SELECT * FROM FechasCorte where ClaveMat=? and NomCarrera=?";
             $parametros = array($claveMat,$carrera);
             $feCo = $cone->Buscar($query,$parametros);
-            if($feCo[0]['FechaC1']=''){
+            if($feCo[0]['FechaC1']==''){
                 $fec1='';
             }
             else{
                 $fec1=strtotime($feCo[0]['FechaC1']);
             }
 
-            if($feCo[0]['FechaC2']=''){
+            if($feCo[0]['FechaC2']==''){
                 $fec2='';
             }
             else{
                 $fec2=strtotime($feCo[0]['FechaC2']);
             }
 
-            if($feCo[0]['FechaC3']=''){
+            if($feCo[0]['FechaC3']==''){
                 $fec3='';
             }
             else{
