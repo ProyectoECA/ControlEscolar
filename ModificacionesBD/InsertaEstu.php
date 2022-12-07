@@ -3,10 +3,10 @@
 include_once '../CRUD/Usuarios_password.php';
 include_once "../CRUD/CRUD_bd_SQLServer.php";
 
-define("ServerName1", 'localhost');
-define("Database1", "ConEscolarNoc");
-define("UID1", "Admini");
-define("PWD1", "control2022");
+define("ServerName1", 'controlescolarservidor.database.windows.net');
+define("Database1", "ConEscolarBD");
+define("UID1", "nochistlanadm");
+define("PWD1", "Sok03951");
 define("CharacterSet1", 'UTF-8');
 
 

@@ -1,11 +1,11 @@
 <?php
 
 include_once "../CRUD/CRUD_bd_SQLServer.php";
-define("ServerName1", 'localhost');
-define("Database1", "ConEscolarNoc");
-define("UID1", "Admini");
-define("PWD1", "control2022");
-define("CharacterSet1", 'UTF-8');
+define("ServerName", 'controlescolarservidor.database.windows.net');
+define("Database", "ConEscolarBD");
+define("UID", "nochistlanadm");
+define("PWD", "Sok03951");
+define("CharacterSet", 'UTF-8');
 
 $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
 $conexion=sqlsrv_connect(ServerName1, $connectionInfo);

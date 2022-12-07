@@ -26,7 +26,7 @@
         }
         #tab {
             word-wrap: break-word;
-            margin: 5px;
+            margin: 0px;
             float: left;
             table-layout: fixed;
         }
@@ -41,8 +41,8 @@
         <div class="tituloP" style="float: left;">
             <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
         </div> 
-    </div> 
-    <div class="contenedor-general">  
+    </div>
+    <br>
 
 
     <?php
@@ -286,17 +286,9 @@ sqlsrv_close($con);
                 </td>
             </tr>
             </div>
-            <div>
-            <table border="1"  width="130.5" height="0" id="tab">
-            <tr>
-                <td width="130.5" height="100">
-                    <?php
-                    echo $r9;
-                    ?>
-                </td>
-            </tr>
-            </div>
+            
     </div>
+
 </body>
 </html>
 

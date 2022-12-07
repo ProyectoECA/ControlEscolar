@@ -31,10 +31,10 @@ class Insertar_Mat{
                 $cone->Insertar_Eliminar_Actualizar($query,$parametros);
 
                 #INSERTA EN TABLA FECHAS DE CORTE
-                $query="SELECT Nombre FROM [Materias] where ClaveMat=?";
-                $parametros=array($clave);
+                $query="SELECT NombreCarre FROM [Carreras] where ClaveCa=?";
+                $parametros=array($carrera);
                 $res=$cone->Buscar($query,$parametros);
-                $nomCarre=$res[0]['Nombre'];
+                $nomCarre=$res[0]['NombreCarre'];
                 
                 $f1='';
                 $f2='';
@@ -83,4 +83,3 @@ class Insertar_Mat{
 $in= new Insertar_Mat;
 $in->insertando();
 ?>
-
