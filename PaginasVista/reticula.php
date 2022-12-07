@@ -26,7 +26,7 @@
         }
         #tab {
             word-wrap: break-word;
-            margin: 5px;
+            margin: 0px;
             float: left;
             table-layout: fixed;
         }
@@ -41,15 +41,15 @@
         <div class="tituloP" style="float: left;">
             <h1><b style="float: center;">TECNOLÓGICO DE NOCHISTLÁN</b></h1>  
         </div> 
-    </div> 
-    <div class="contenedor-general">  
+    </div>
+    <br>
 
 
     <?php
-define("ServerName1", 'controlescolarservidor.database.windows.net');
-define("Database1", "ConEscolarBD");
-define("UID1", "nochistlanadm");
-define("PWD1", "Sok03951");
+define("ServerName1", 'localhost');
+define("Database1", "ConEscolarNoc");
+define("UID1", "Admini");
+define("PWD1", "control2022");
 define("CharacterSet1", 'UTF-8');
 $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
 $con=sqlsrv_connect(ServerName1, $connectionInfo);
@@ -286,17 +286,9 @@ sqlsrv_close($con);
                 </td>
             </tr>
             </div>
-            <div>
-            <table border="1"  width="130.5" height="0" id="tab">
-            <tr>
-                <td width="130.5" height="100">
-                    <?php
-                    echo $r9;
-                    ?>
-                </td>
-            </tr>
-            </div>
+            
     </div>
+
 </body>
 </html>
 
