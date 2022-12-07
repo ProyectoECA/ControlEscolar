@@ -53,14 +53,14 @@ numeroEmple.addEventListener('keyup', (e) => {
         b1 = true;
         numeroEmple.removeAttribute("style");
         numeroEmple.style.border = "3px solid green";
-        /* validar(); */
+        validar();
 
     }
     else {
         b1 = false;
         numeroEmple.removeAttribute("style");
         numeroEmple.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 const nombre = document.getElementById('nombre');
@@ -80,14 +80,14 @@ nombre.addEventListener('keyup', (e) => {
         b2 = true;
         nombre.removeAttribute("style");
         nombre.style.border = "3px solid green";
-       /*  validar(); */
+        validar();
 
     }
     else {
         b2 = false;
         nombre.removeAttribute("style");
         nombre.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 const apellidoP = document.getElementById('apellidoP');
@@ -107,13 +107,13 @@ apellidoP.addEventListener('keyup', (e) => {
         b3 = true;
         apellidoP.removeAttribute("style");
         apellidoP.style.border = "3px solid green";
-       /*  validar(); */
+        validar();
     }
     else {
         b3 = false;
         apellidoP.removeAttribute("style");
         apellidoP.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 /* const apellidoM = document.getElementById('apellidoM');
@@ -153,14 +153,14 @@ calle.addEventListener('keyup', (e) => {
         b5= true;
         calle.removeAttribute("style");
         calle.style.border = "3px solid green";
-       /*  validar(); */
+        validar();
 
     }
     else {
         b5 = false;
         calle.removeAttribute("style");
         calle.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 const colonia = document.getElementById('colonia');
@@ -180,14 +180,14 @@ colonia.addEventListener('keyup', (e) => {
         b6 = true;
         colonia.removeAttribute("style");
         colonia.style.border = "3px solid green";
-     /*    validar(); */
+        validar();
 
     }
     else {
         b6 = false;
         colonia.removeAttribute("style");
         colonia.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 const municipio = document.getElementById('municipio');
@@ -207,14 +207,14 @@ municipio.addEventListener('keyup', (e) => {
         b7 = true;
         municipio.removeAttribute("style");
         municipio.style.border = "3px solid green";
-      /*   validar(); */
+        validar();
 
     }
     else {
         b7 = false;
         municipio.removeAttribute("style");
         municipio.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 const estado = document.getElementById('estado');
@@ -234,14 +234,14 @@ estado.addEventListener('keyup', (e) => {
         b8 = true;
         estado.removeAttribute("style");
         estado.style.border = "3px solid green";
-     /*    validar(); */
+        validar();
 
     }
     else {
         b8 = false;
         estado.removeAttribute("style");
         estado.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 const cp = document.getElementById('cp');
@@ -261,14 +261,14 @@ cp.addEventListener('keyup', (e) => {
         b9 = true;
         cp.removeAttribute("style");
         cp.style.border = "3px solid green";
-      /*   validar(); */
+        validar();
 
     }
     else {
         b9 = false;
         cp.removeAttribute("style");
         cp.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 const tel = document.getElementById('tel');
@@ -288,14 +288,14 @@ tel.addEventListener('keyup', (e) => {
         b10 = true;
         tel.removeAttribute("style");
         tel.style.border = "3px solid green";
-       /*  validar(); */
+        validar();
 
     }
     else {
         b10 = false;
         tel.removeAttribute("style");
         tel.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 const correo = document.getElementById('correo');
@@ -315,26 +315,26 @@ correo.addEventListener('keyup', (e) => {
         b11 = true;
         correo.removeAttribute("style");
         correo.style.border = "3px solid green";
-      /*   validar(); */
+        validar();
 
     }
     else {
         b11 = false;
         correo.removeAttribute("style");
         correo.style.border = "3px solid red";
-        /* validar(); */
+        validar();
     }
 });
 
-function valida(){
+function validar(){
     const bot = document.getElementById('btn');
     if(b1 == true && b2 == true && b3 == true && b5 == true && b6 == true && b7 == true && b8 == true && b9 == true && b10 == true && b11 == true){
-        /* bot.disabled=true; */
-        location.href = '../ModificacionesBD/InsertaSecre.php' 
+        bot.disabled=true;
+        /* location.href = '../ModificacionesBD/InsertaSecre.php'  */
     }
     else{
-        /* bot.disabled=false; */
-        if (b1 == false) {
+        bot.disabled=false;
+        /* if (b1 == false) {
             numeroEmple.style.border = "3px solid red";
         }
         if (b2 == false) {
@@ -364,6 +364,6 @@ function valida(){
         if (b11 == false) {
             correo.style.border = "3px solid red";
         }
-
+ */
     }
 }
