@@ -57,7 +57,7 @@ $resultado4=$cone->Buscar($query4);
                 <div class="contenedor-derecha">
                     <label class="etiquetas"><b>Materia</b></label><br>
                         <select class="combos" name="materia" id="materia">
-                        <?php for($i=0;$i<count($resultado2);$i++){?>
+                        <?php for($i=0;$i<count($resultado);$i++){?>
                             <option value="<?php echo $resultado[$i]['ClaveMat'];?>"><?php echo $resultado[$i]['Nombre'];?></option>
                             <?php }?>
                         </select>
