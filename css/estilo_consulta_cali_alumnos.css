@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+.page-container{
+    max-width: 700px;
+    margin: 2rem auto;
+
+}
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #1e355e 0%, white 150%);
+    
+    
+}
+.Contenedor_titulo{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: left;
+    display: flex;
+    
+}
+.contenedor_titulo_2{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+}
+.Contenedor_ubicacion{
+    max-width: 100%;
+    text-align: center;
+    background: white;
+    color: #213860;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    display: flex;
+    font-size: large;
+}
+.contenedor-tabla{
+    max-width: 100%;
+    border-left: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    text-align: center;
+    justify-items: center;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+ }
+
+ .tabla{
+	background-color: white;
+	border-collapse: collapse;
+	width: 200%;
+    text-align: center;
+}
+
+th, td{
+    width: 10%;
+    max-width: 120%;
+	padding: 4px 4px;
+}
+
+thead{
+	background-color: #1e355e;
+	border-bottom: solid 2px white;
+	color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: white;
+	color: black;
+}
+.tabla td:last-child,
+ .tabla th:last-child{
+    border-right: 0;
+ }
+ .tabla tbody tr{
+    background:white;
+ }
+ .tabla tbody tr:nth-child(2n){
+    background: black;
+ }
+ .tabla .sticky{
+    position: sticky;
+    left: 0;
+ }
+ .tabla tbody tr .sticky{
+    background: white;
+ }
+ .tabla tbody tr:nth-child(2n){
+    background: #f2f2f2;
+ }
+ .btn_cancelar {
+    margin-top: -24px; /* Damos un margen individual para el contenedor del botón */
+    width: 15%;
+    margin-left: 40%;
+    background-color:#1e355e;
+    border-radius: 5px;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: translate(10%,1050%);
+}
