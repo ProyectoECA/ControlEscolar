@@ -32,7 +32,7 @@ const expresiones = {
     correo:/^(([a-zA-ZáéíóúÁÉÍÓÚñÑ][a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\_]{1,30}))+\@(([a-zA-Z])+\.)+([a-zA-Z]{2,4})+$/,
 }
 
-const numeroe = document.getElementById('numeroe');
+/* const numeroe = document.getElementById('numeroe');
 numeroe.addEventListener('keyup', (e) => {
     let valorinput = e.target.value;
     console.log(valorinput);
@@ -52,7 +52,7 @@ numeroe.addEventListener('keyup', (e) => {
         numeroe.style.border = "3px solid red";
         validar();
     }
-});
+}); */
 const nombre = document.getElementById('nombre');
 nombre.addEventListener('keyup', (e) => {
     let valorinput = e.target.value;
