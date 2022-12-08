@@ -104,6 +104,7 @@ else if ($cal != 'N/A') {
             $adela=explode(",",$rows['Adelante']);
             foreach($adela as $des){
 
+
               $ca="0";
               $rep="P";
               $query= "INSERT INTO [CapturaCal] (NoControl,ClaveMat,ClaveCa,Repeticion,CalFinal,Uni1,Uni2,Uni3,Uni4,Uni5,Uni6,Uni7,Uni8,Uni9,Uni10) 
@@ -111,6 +112,21 @@ else if ($cal != 'N/A') {
               $parametros=array($nom,$des,$carrera,$rep,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca);
               $sh = sqlsrv_query($conn, $query, $parametros); 
             }
+            #ACTUALIZA EL SEMESTRE DEL ALUMNO
+            $query0 = "SELECT Semestre from CarreAlumnos where NoControl=?  and ClaveCa=?" ;
+            $parametros0=array($nom,$carrera); 
+            $consul = sqlsrv_query($conn, $query0,$parametros0);
+            while($rows0 = sqlsrv_fetch_array($consul))
+            {
+              $semestre=$rows0['Semestre'];
+
+            }
+            $semestre=$semestre+1;
+            $sqla = "UPDATE CarreAlumnos set Semestre=? where  NoControl=? and ClaveCa=?";
+            $parametros5=array($semestre,$nom,$carrera);
+            $modifica = sqlsrv_query($conn, $sqla,$parametros5);
+
+
             
           /*$sqlh = "INSERT into CapturaCal values('$nocontrol','$adelante','P',0,0,0,0,0,0,0,0,0,0,0)";
           $sh = sqlsrv_query($conn, $sqlh); */
@@ -125,6 +141,20 @@ else if ($cal != 'N/A') {
             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $parametros=array($nom,$adelante,$carrera,$rep,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca,$ca);
           $sh = sqlsrv_query($conn, $query, $parametros); 
+
+           #ACTUALIZA EL SEMESTRE DEL ALUMNO
+           $query0 = "SELECT Semestre from CarreAlumnos where NoControl=?  and ClaveCa=?" ;
+           $parametros0=array($nom,$carrera); 
+           $consul = sqlsrv_query($conn, $query0,$parametros0);
+           while($rows0 = sqlsrv_fetch_array($consul))
+           {
+             $semestre=$rows0['Semestre'];
+
+           }
+           $semestre=$semestre+1;
+           $sqla = "UPDATE CarreAlumnos set Semestre=? where  NoControl=? and ClaveCa=?";
+           $parametros5=array($semestre,$nom,$carrera);
+           $modifica = sqlsrv_query($conn, $sqla,$parametros5);
   }
     
 }
