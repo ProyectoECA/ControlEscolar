@@ -27,7 +27,7 @@ class Consultas_Carre{
                <tr>
                    <th>Clave</th>
                    <th>Nombre</th>
-                   <th>Cantidad de semetres</th>
+                   <th>Cantidad de semestres</th>
                </tr>
             </thead>
             <tbody>";
