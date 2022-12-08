@@ -296,6 +296,7 @@ class InsertaCalificacion{
                 }
                 else{
                 $ban10=1;
+                echo 'aqui';
                 }
             }
             else{
@@ -306,6 +307,7 @@ class InsertaCalificacion{
                 else if(intval($cal10)>100){
                     #COMPRUEBA QUE NO SEA MAYOR A 100
                     $ban10=1;
+                    echo 'si';
                 }
                 else{
                     $ban10=0;
