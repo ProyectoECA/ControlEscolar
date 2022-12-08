@@ -2,6 +2,7 @@ var b1=false;
 var b2=false;
 var b3=false;
 
+
 const expresiones = {
     clave:/^[a-zA-Z]{3}\-[0-9]{4}$/,
     nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ. ]{3,30}$/,
