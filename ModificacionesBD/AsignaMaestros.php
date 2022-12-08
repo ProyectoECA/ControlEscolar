@@ -1,11 +1,11 @@
 <?php
 
 include_once "../CRUD/CRUD_bd_SQLServer.php";
-define("ServerName", 'controlescolarservidor.database.windows.net');
-define("Database", "ConEscolarBD");
-define("UID", "nochistlanadm");
-define("PWD", "Sok03951");
-define("CharacterSet", 'UTF-8');
+define("ServerName1", 'localhost');
+define("Database1", "ConEscolarNoc");
+define("UID1", "Admini");
+define("PWD1", "control2022");
+define("CharacterSet1", 'UTF-8');
 
 $connectionInfo = array("Database"=>Database1 , "UID"=>UID1, "PWD"=>PWD1, "CharacterSet"=>CharacterSet1);
 $conexion=sqlsrv_connect(ServerName1, $connectionInfo);
@@ -24,39 +24,50 @@ class Asigna_Maes{
             $idMat = $_POST["materia"];
             $maestro = $_POST["maestro"]; 
 
-            #COMPRUEBA QUE EL MAESTRO ESTE REGISTRADO EN TABLA MAESTROS
-            $query="SELECT * FROM [Maestros] where ClaveMa=?";
-            $parametros=array($maestro);
-            $re=$cone->Buscar($query,$parametros);
-
-            if(empty($re)){
-                echo"<script>alert('La clave del maestro(a) no se encuentra registrada');
+            #COMPRUEBA QUE LA MATERIA PERTENEZCA A LA CARRERA
+            $query="SELECT * FROM [CarreMaterias] where ClaveMat=? and ClaveCa=?";
+            $parametros=array($idMat,$idCarre);
+            $resul=$cone->Buscar($query,$parametros);
+           
+            if(empty($resul)){
+                echo"<script>alert('La materia no se encuentra registrada en la carrera');
                 location.href='/PaginasVista/asignacion_maestros.php'</script>";
             }
             else{
-                #COMPRUEBA QUE LA MATERIA NO ESTE ASIGNADA A MAESTRO
-            $query="SELECT * FROM [AsigMaes] where ClaveMat=? and ClaveCa=? and Maestro=?";
-            $parametros=array($idMat,$idCarre,$maestro);
-            $res=$cone->Buscar($query,$parametros);
+                #COMPRUEBA QUE EL MAESTRO ESTE REGISTRADO EN TABLA MAESTROS
+                $query="SELECT * FROM [Maestros] where ClaveMa=?";
+                $parametros=array($maestro);
+                $re=$cone->Buscar($query,$parametros);
 
-            if(empty($res)){
-                #INSERTA EN TABLA ASIGMAES
-                $query= "INSERT INTO [AsigMaes] (ClaveMat,ClaveCa,Maestro) VALUES (?,?,?)";
+                if(empty($re)){
+                    echo"<script>alert('La clave del maestro(a) no se encuentra registrada');
+                    location.href='/PaginasVista/asignacion_maestros.php'</script>";
+                }
+                else{
+                    #COMPRUEBA QUE LA MATERIA NO ESTE ASIGNADA A MAESTRO
+                $query="SELECT * FROM [AsigMaes] where ClaveMat=? and ClaveCa=? and Maestro=?";
                 $parametros=array($idMat,$idCarre,$maestro);
-                $cone->Insertar_Eliminar_Actualizar($query,$parametros);
-                echo"<script>alert('Asignación realizada con éxito');
-                location.href='/PaginasVista/asignacion_maestros.php'</script>";
-                    
-                $cone->CerrarConexion();
-            }
-            else{
-                echo"<script>alert('La asignación ya se encuentra registrada');
-                location.href='/PaginasVista/asignacion_maestros.php'</script>";
-               
-            }
-            }
+                $res=$cone->Buscar($query,$parametros);
+
+                if(empty($res)){
+                    #INSERTA EN TABLA ASIGMAES
+                    $query= "INSERT INTO [AsigMaes] (ClaveMat,ClaveCa,Maestro) VALUES (?,?,?)";
+                    $parametros=array($idMat,$idCarre,$maestro);
+                    $cone->Insertar_Eliminar_Actualizar($query,$parametros);
+                    echo"<script>alert('Asignación realizada con éxito');
+                    location.href='/PaginasVista/asignacion_maestros.php'</script>";
+                        
+                    $cone->CerrarConexion();
+                }
+                else{
+                    echo"<script>alert('La asignación ya se encuentra registrada');
+                    location.href='/PaginasVista/asignacion_maestros.php'</script>";
+                
+                }
+                }
             
             }
+        }
         
         else{
             echo"<script>alert('No se pudo establecer una conexión');
