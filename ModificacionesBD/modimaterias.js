@@ -6,7 +6,7 @@ const expresiones = {
     clave:/^[a-zA-Z]{3}\-[0-9]{4}$/,
     nom:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ. ]{3,30}$/,
     creditos:/^[0-9-]{1,10}$/,
-    objeto:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ,-. ]{3,100}$/,
+    objeto:/^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,-. ]{3,100}$/,
 }
 
 const clave = document.getElementById('obje');
