@@ -97,6 +97,6 @@ $resultado= sqlsrv_query($conexion,$query);
             <button id="btn" class="botones" type="submit" name="elimina" value="ELIMINAR" onclick="location.href = '/ModificacionesBD/ModificaMate.php' ">ELIMINA</button>
         </div>
     </form>
-    
+    <script src="modimaterias.js"></script>
 </body>
 </html>
