@@ -17,7 +17,7 @@ clave.addEventListener('keyup', (e) => {
     var encontrado = false;
 
     console.log(valorinput);
-    if (expresiones.clave.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
+    if (expresiones.objeto.test(valorinput.replace(/\s/g, '').trim() ) && encontrado == false) {
         b1 = true;
         clave.removeAttribute("style");
         clave.style.border = "5px solid green";
