@@ -388,12 +388,12 @@ class InsertaCalificacion{
             }
         }
         for($k=0;$k<count($array_ban);$k++){
-            //echo 'HOLA '.$array_ban[$x];
+            echo ','.$array_ban[$k];
             if($array_ban[$k]=='1'){
                 $ban=1;
             }
           }
-        echo $ban;
+        //echo $ban;
         if($ban==0){
             echo"<script>alert('Calificaciones registradas con éxito');
             location.href='https://controlescolarweb.azurewebsites.net'</script>";  
