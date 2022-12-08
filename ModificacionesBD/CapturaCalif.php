@@ -25,7 +25,7 @@ class InsertaCalificacion{
         //echo "SY CUENTA".$cuenta;
         echo $mat;
         for($i=0;$i<count($res);$i++){
-            
+            echo $i;
             $ban=0;
             //echo $ban;
             #SACAMOS LOS ID DE LOS INPUTS
